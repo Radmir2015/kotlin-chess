@@ -22,7 +22,6 @@ fun main(args: Array<String>) {
 
     val chessPanel = EuropeBoard(nV = 8, nH = 8)
     val renjuPanel = AsiaBoard(nV = 10, nH = 10)
-//    chessPanel.size = Dimension(400, 400)
 
     tabbedPane.add(chessPanel, "Chess")
     tabbedPane.add(renjuPanel, "Renju")
