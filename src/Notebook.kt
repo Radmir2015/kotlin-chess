@@ -1,5 +1,7 @@
 package games.ui
 
+import game.swing.AsiaBoard
+import game.swing.EuropeBoard
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.Point
