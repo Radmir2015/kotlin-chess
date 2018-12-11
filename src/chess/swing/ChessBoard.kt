@@ -36,6 +36,13 @@ class ChessBoard : GamePanel(Chess()) {
      * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
      */
     inner class ChessBoardPanel(game: Game) : EuropeBoard(game.board) {
+        override fun getPieceImage(piece: Piece, color: PieceColor): Image? {
+            return if (color == PieceColor.WHITE)
+                whiteImages[piece.javaClass]
+            else
+                blackImages[piece.javaClass]
+        }
+
         private var moveColor = PieceColor.WHITE
         private var selectedPiece: Piece? = null
         private var selectedSquare: Square? = null
