@@ -1,12 +1,18 @@
 package game.swing
 
+import game.core.Board
+import game.swing.images.GameImages
 import java.awt.Color
 import java.awt.Graphics
 
 /**
  *
  */
-class AsiaBoard(nV: Int, nH: Int) : AbstractBoardPanel(nV, nH) {
+abstract class AsiaBoard(board: Board) : GameBoard(board) {
+    init {
+        board.reset(10, 10)
+    }
+
     override fun drawBack(gc: Graphics) {
         gc.drawImage(GameImages.woodLight, 0, 0, width, height, null)
     }
@@ -22,9 +28,9 @@ class AsiaBoard(nV: Int, nH: Int) : AbstractBoardPanel(nV, nH) {
 
         gc.color = Color.BLACK
         if (v != 0) gc.drawLine(cx, cy, cx - dv, cy)
-        if (v != nV - 1) gc.drawLine(cx, cy, cx + dv, cy)
+        if (v != board.nV - 1) gc.drawLine(cx, cy, cx + dv, cy)
 
         if (h != 0) gc.drawLine(cx, cy, cx, cy - dh)
-        if (h != nH - 1) gc.drawLine(cx, cy, cx, cy + dh)
+        if (h != board.nH - 1) gc.drawLine(cx, cy, cx, cy + dh)
     }
 }

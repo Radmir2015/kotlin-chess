@@ -1,7 +1,7 @@
-package games.ui
+package notebook.swing
 
-import game.swing.AsiaBoard
-import game.swing.EuropeBoard
+import chess.swing.ChessBoard
+import renju.swing.RenjuBoard
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.Point
@@ -11,7 +11,7 @@ import javax.swing.JTabbedPane
 
 fun main(args: Array<String>) {
     val frame = JFrame("Games Notebook")
-    frame.iconImage = ImageIcon("images/GamesNoteBook.png").image
+    frame.iconImage = ImageIcon("images/GamesNotebook.png").image
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.size = Dimension(400, 400)
     frame.location = Point(600, 200)
@@ -20,8 +20,8 @@ fun main(args: Array<String>) {
     val tabbedPane = JTabbedPane()
     frame.add(tabbedPane, BorderLayout.CENTER)
 
-    val chessPanel = EuropeBoard(nV = 8, nH = 8)
-    val renjuPanel = AsiaBoard(nV = 10, nH = 10)
+    val chessPanel = ChessBoard()
+    val renjuPanel = RenjuBoard()
 
     tabbedPane.add(chessPanel, "Chess")
     tabbedPane.add(renjuPanel, "Renju")

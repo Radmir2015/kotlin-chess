@@ -1,9 +1,11 @@
 package game.swing
 
+import game.core.Board
+import game.swing.images.GameImages
 import java.awt.Color
 import java.awt.Graphics
 
-class EuropeBoard(nV: Int, nH: Int) : AbstractBoardPanel(nV, nH) {
+abstract class EuropeBoard(board: Board) : GameBoard(board) {
     override fun drawBack(gc: Graphics) {
         gc.drawImage(GameImages.woodLight, 0, 0, width, height, null)
     }
