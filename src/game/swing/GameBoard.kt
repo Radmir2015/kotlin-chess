@@ -9,6 +9,8 @@ import game.swing.listeners.IMouseMoveListener
 import game.swing.listeners.MovePiecePromptListener
 import java.awt.*
 import java.awt.event.MouseEvent
+import java.awt.event.MouseListener
+import java.awt.event.MouseMotionListener
 import java.util.*
 import javax.swing.JPanel
 
@@ -16,7 +18,12 @@ import javax.swing.JPanel
 /**
  *
  */
-abstract class GameBoard(var board: Board) : JPanel(BorderLayout()) {
+abstract class GameBoard(var board: Board) : JPanel(BorderLayout()), MouseListener, MouseMotionListener {
+    init {
+        this.addMouseListener(this)
+        this.addMouseMotionListener(this)
+    }
+
     override fun paint(gc: Graphics) {
         val sw = size.width / board.nV
         val sh = size.height / board.nH
@@ -68,7 +75,9 @@ abstract class GameBoard(var board: Board) : JPanel(BorderLayout()) {
      * - событие от мыши.
      * @return клетка под мышкой
      */
-    private fun getSquare(e: MouseEvent): Square? {
+    private fun getSquare(e: MouseEvent?): Square? {
+        if (e == null) return null
+
         val squareW = getSquareWidth()
         val squareH = getSquareHeight()
 
@@ -156,6 +165,33 @@ abstract class GameBoard(var board: Board) : JPanel(BorderLayout()) {
      */
     protected var listener = IGameListner.EMPTY
 
+    override fun mouseClicked(e: MouseEvent?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun mousePressed(e: MouseEvent?) {
+        if (e == null) return
+
+        val s = getSquare(e)
+
+        if (s != null)
+            listener.mouseDown(s, e.button)
+    }
+
+    override fun mouseDragged(e: MouseEvent?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun mouseReleased(e: MouseEvent?) {
+        if (e == null) return
+
+        val s = getSquare(e)
+
+        if (s != null)
+            listener.mouseUp(s, e.button)
+    }
+
+
     fun mouseDown(e: MouseEvent) {
         val s = getSquare(e)
 
@@ -188,6 +224,19 @@ abstract class GameBoard(var board: Board) : JPanel(BorderLayout()) {
      * Слушатель события перемещения мыши.
      */
     protected var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
+
+
+    override fun mouseExited(e: MouseEvent?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun mouseMoved(e: MouseEvent?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun mouseEntered(e: MouseEvent?) {
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     fun mouseMove(e: MouseEvent) {
         val s = getSquare(e)
