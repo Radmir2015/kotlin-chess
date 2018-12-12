@@ -10,12 +10,12 @@ import game.core.PieceColor
 import game.core.Square
 import game.swing.EuropeBoard
 import game.swing.GamePanel
+import game.swing.listeners.MovePieceListener
 import java.awt.BorderLayout
 import java.awt.Cursor
 import java.awt.Graphics
 import java.awt.Image
 import java.util.*
-
 
 /**
  * Панель для доски стандартных шахмат.
@@ -49,6 +49,8 @@ class ChessBoard : GamePanel(Chess()) {
         private var savedCursor: Cursor? = null
 
         init {
+            listener = MovePieceListener(this)
+
 //
 //            Chess.putPieces(board, PieceColor.WHITE)
 //            Chess.putPieces(board, PieceColor.BLACK)
