@@ -1,4 +1,4 @@
-package game.swing.listeners;
+package game.core.listeners;
 
 import game.core.Square;
 
@@ -12,10 +12,7 @@ public interface IMouseMoveListener {
      * Простейшая реализация интерфейса без реализации
      * реакции на перемещения мыши.
      */
-    IMouseMoveListener EMPTY = new IMouseMoveListener() {
-        @Override
-        public void mouseMove(Square s) {
-        }
+    IMouseMoveListener EMPTY = s -> {
     };
 
     /**

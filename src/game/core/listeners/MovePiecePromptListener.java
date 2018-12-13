@@ -1,4 +1,4 @@
-package game.swing.listeners;
+package game.core.listeners;
 
 import game.core.Board;
 import game.core.IBoardPanel;

@@ -1,13 +1,13 @@
 package game.swing
 
 import game.core.*
+import game.core.listeners.IGameListner
+import game.core.listeners.IMouseMoveListener
+import game.core.listeners.MovePiecePromptListener
 import game.core.moves.CompositeMove
 import game.core.moves.ICaptureMove
 import game.core.moves.IPutMove
 import game.core.moves.ITransferMove
-import game.swing.listeners.IGameListner
-import game.swing.listeners.IMouseMoveListener
-import game.swing.listeners.MovePiecePromptListener
 import java.awt.*
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
@@ -50,9 +50,9 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
             for (h in 0..board.nH - 1)
                 drawPiece(gc, v, h, sw, sh)
 
-        markLastPutMove(gc)
+        markLastPutMove(gc, sw, sh)
 
-        drawSquaresPrompt(gc, getSquareHeight(), getSquareHeight())
+        drawSquaresPrompt(gc, sw, sh)
     }
 
     private fun drawPiece(gc: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
@@ -114,7 +114,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         gc.color = promptColor
 
         for (s in prompted)
-            markSquare(gc, s, promptColor)
+            markSquare(gc, s, sw, sh, promptColor)
     }
 
     /**
@@ -127,15 +127,17 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * @param markColor
      * - цвет маркера.
      */
-    fun markSquare(gc: Graphics, square: Square, markColor: Color) {
+    fun markSquare(gc: Graphics, square: Square, sw: Int, sh: Int, markColor: Color) {
+        val d = 10
+
         val v = square.v
         val h = square.h
-        val sw = getSquareWidth()
-        val sh = getSquareHeight()
 
-        val d = 10
+        val x = v * sw + (sw - d) / 2
+        val y = h * sh + (sh - d) / 2
+
         gc.color = markColor
-        gc.fillOval(v * sw + (sw - d) / 2, h * sh + (sh - d) / 2, d, d)
+        gc.fillOval(x, y, d, d)
     }
 
     /**
@@ -150,10 +152,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * @param color
      * - цвет линии.
      */
-    fun markLine(gc: Graphics, source: Square, target: Square, color: Color) {
-        val sw = getSquareWidth()
-        val sh = getSquareHeight()
-
+    fun markLine(gc: Graphics, source: Square, target: Square, sw: Int, sh: Int, color: Color) {
         val v1 = sw * source.v + sw / 2
         val h1 = sh * source.h + sh / 2
 
@@ -230,8 +229,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         val move = board.history.curMove as Move
 
         if (move is CompositeMove<*>) {
-            val cm = move
-            for (m in cm.moves)
+            for (m in move.moves)
                 markLastTransferMove(gc, m)
         }
 
@@ -245,7 +243,9 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         val target = m.target
 
 //        gc.l.setLineWidth(3) TODO Line Width
-        markLine(gc, source, target, lastMoveColor)
+        val sw = getSquareWidth()
+        val sh = getSquareHeight()
+        markLine(gc, source, target, sw, sh, lastMoveColor)
 
         if (m is ICaptureMove) {
             val capture = m as ICaptureMove
@@ -262,7 +262,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * @param gc
      * - графический контекст для отрисовки маркера.
      */
-    private fun markLastPutMove(gc: Graphics) {
+    private fun markLastPutMove(gc: Graphics, sw: Int, sh: Int) {
         val moves = board.history.moves
         if (moves.isEmpty()) return
 
@@ -272,13 +272,13 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
             val target = move.target
 
 //            gc.setLineWidth(3) TODO Line Width
-            markSquare(gc, target, lastMoveColor)
+            markSquare(gc, target, sw, sh, lastMoveColor)
 
             if (move is ICaptureMove) {
                 val capture = move as ICaptureMove
 
                 for (s in capture.captured)
-                    markSquare(gc, s, lastCaptureColor)
+                    markSquare(gc, s, sw, sh, lastCaptureColor)
             }
         }
     }

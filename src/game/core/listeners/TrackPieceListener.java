@@ -1,4 +1,4 @@
-package game.swing.listeners;
+package game.core.listeners;
 
 import game.core.*;
 import game.core.moves.CompositeMove;

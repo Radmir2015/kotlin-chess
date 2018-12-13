@@ -7,10 +7,10 @@ import game.core.Game
 import game.core.Piece
 import game.core.PieceColor
 import game.core.Square
+import game.core.listeners.MovePieceListener
+import game.core.listeners.MovePiecePromptListener
 import game.swing.EuropeBoard
 import game.swing.GamePanel
-import game.swing.listeners.MovePieceListener
-import game.swing.listeners.MovePiecePromptListener
 import java.awt.BorderLayout
 import java.awt.Image
 
@@ -33,6 +33,11 @@ class ChessBoard : GamePanel(Chess()) {
      * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
      */
     inner class ChessBoardPanel(game: Game) : EuropeBoard(game.board) {
+        init {
+            listener = MovePieceListener(this)
+            mouseMoveListener = MovePiecePromptListener(this)
+        }
+
         override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }
@@ -42,11 +47,6 @@ class ChessBoard : GamePanel(Chess()) {
                 whiteImages[piece.javaClass]
             else
                 blackImages[piece.javaClass]
-        }
-
-        init {
-            listener = MovePieceListener(this)
-            this.mouseMoveListener = MovePiecePromptListener(this)
         }
 
         override fun getImage(piece: Piece): Image? {

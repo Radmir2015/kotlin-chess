@@ -1,4 +1,4 @@
-package game.swing.listeners;
+package game.core.listeners;
 
 import game.core.*;
 
@@ -56,7 +56,6 @@ public class MovePieceListener implements IGameListner {
 
         // Перерисуем изображение доски с временно снятой фигурой.
         board.setBoardChanged();
-        boardPanel.updateBoard();
     }
 
     @Override
@@ -77,7 +76,7 @@ public class MovePieceListener implements IGameListner {
             try {
                 move.doMove();
             } catch (GameOver e) {
-                // Сохраним экземпляр кода и истории партии.
+                // Сохраним экземпляр хода в истории партии.
                 board.history.addMove(move);
                 board.history.setResult(e.result);
 
@@ -90,7 +89,6 @@ public class MovePieceListener implements IGameListner {
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
-                boardPanel.updateBoard();
             }
 
             // Сохраним экземпляр кода и истории партии.
@@ -111,6 +109,5 @@ public class MovePieceListener implements IGameListner {
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
         board.setBoardChanged();
-        boardPanel.updateBoard();
     }
 }
