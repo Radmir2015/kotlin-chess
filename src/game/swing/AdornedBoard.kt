@@ -109,7 +109,7 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * - очищаемый элемент.
      */
     fun clear(composite: JComponent) {
-        val children = composite.getComponents()
+        val children = composite.components
         val length = children.size
 
 //        for (i in length - 1 downTo 0)
@@ -178,7 +178,7 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * @param nH
      * - количество горизонталей.
      */
-    public fun resizeBoard(nV: Int, nH: Int) {
+    fun resizeBoard(nV: Int, nH: Int) {
         left!!.resize(nH)
         right!!.resize(nH)
 

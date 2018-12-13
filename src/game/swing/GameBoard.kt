@@ -25,51 +25,60 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         this.addMouseMotionListener(this)
     }
 
-    override fun getPanelBoard(): Board {
-        return board
-    }
+    override fun getPanelBoard(): Board = board
 
     override fun updateBoard() {
         validate()
         repaint()
     }
 
-    override fun paint(gc: Graphics) {
-        val sw = width / board.nV
-        val sh = height / board.nH
+    override fun paint(g: Graphics) {
+        val sw = getSquareWidth()
+        val sh = getSquareHeight()
 
-        drawBack(gc)
+        drawBack(g)
 
-        for (v in 0..board.nV - 1)
-            for (h in 0..board.nH - 1)
-                drawSquare(gc, v, h, sw, sh)
+        for (v in 0 until board.nV)
+            for (h in 0 until board.nH)
+                drawSquare(g, v, h, sw, sh)
 
-        markLastTransferMove(gc)
+        markLastTransferMove(g)
 
-        for (v in 0..board.nV - 1)
-            for (h in 0..board.nH - 1)
-                drawPiece(gc, v, h, sw, sh)
+        for (v in 0 until board.nV)
+            for (h in 0 until board.nH)
+                drawPiece(g, v, h, sw, sh)
 
-        markLastPutMove(gc, sw, sh)
+        markLastPutMove(g, sw, sh)
 
-        drawSquaresPrompt(gc, sw, sh)
+        drawSquaresPrompt(g, sw, sh)
     }
 
-    private fun drawPiece(gc: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
+    private fun drawPiece(g: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
         val piece = board.getSquare(v, h).piece ?: return
 
         val sx = v * sw
         val sy = h * sh
 
         val image = getImage(piece)
-        gc.drawImage(image, sx, sy, sw, sh, null)
+        g.drawImage(image, sx, sy, sw, sh, null)
     }
+
+    /**
+     * Выдать изображение фигуры заданного цвета.
+     *
+     * @param piece
+     * - фигура для которой выдается изображение.
+     * @param color
+     * - цвет фигуры.
+     * @return изображение фигуры.
+     */
+    abstract fun getPieceImage(piece: Piece, color: PieceColor): Image?
 
     protected abstract fun getImage(piece: Piece): Image?
 
-    protected abstract fun drawBack(gc: Graphics)
+    protected abstract fun drawBack(g: Graphics)
 
-    protected abstract fun drawSquare(gc: Graphics, v: Int, h: Int, sw: Int, sh: Int)
+    protected abstract fun drawSquare(g: Graphics, v: Int, h: Int, sw: Int, sh: Int)
 
     /**
      * @return высота клетки.
@@ -99,130 +108,31 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     /**
      * Нарисовать подсказку для клеток на которые фигура может сделать очередной ход.
      *
-     * @param gc
+     * @param g
      * - графический контекст для отрисовки подсказки.
      * @param sw
      * - ширина клетки.
      * @param sh
      * - высота клетки.
      */
-    fun drawSquaresPrompt(gc: Graphics, sw: Int, sh: Int) {
+    private fun drawSquaresPrompt(g: Graphics, sw: Int, sh: Int) {
         if (prompted.isEmpty())
             return
 
-//        gc.setLineWidth(3) TODO ширина линии
-        gc.color = promptColor
+        g.color = promptColor
 
         for (s in prompted)
-            markSquare(gc, s, sw, sh, promptColor)
-    }
-
-    /**
-     * Пометить клетку цветным маркером.
-     *
-     * @param gc
-     * - графический контекст.
-     * @param square
-     * - помечаемая клетка.
-     * @param markColor
-     * - цвет маркера.
-     */
-    fun markSquare(gc: Graphics, square: Square, sw: Int, sh: Int, markColor: Color) {
-        val d = 10
-
-        val v = square.v
-        val h = square.h
-
-        val x = v * sw + (sw - d) / 2
-        val y = h * sh + (sh - d) / 2
-
-        gc.color = markColor
-        gc.fillOval(x, y, d, d)
-    }
-
-    /**
-     * Соединить линией центры двух клеток.
-     *
-     * @param gc
-     * - графический контекст.
-     * @param source
-     * - откуда линия.
-     * @param target
-     * - куда линия.
-     * @param color
-     * - цвет линии.
-     */
-    fun markLine(gc: Graphics, source: Square, target: Square, sw: Int, sh: Int, color: Color) {
-        val v1 = sw * source.v + sw / 2
-        val h1 = sh * source.h + sh / 2
-
-        val v2 = sw * target.v + sw / 2
-        val h2 = sh * target.h + sh / 2
-
-        gc.color = color
-        gc.drawLine(v1, h1, v2, h2)
-    }
-
-    /**
-     * Нарисовать на клетке перекрестье.
-     *
-     * @param gc
-     * - графический контекст.
-     * @param where
-     * - откуда линия.
-     * @param color
-     * - цвет линии.
-     */
-    fun markCross(gc: Graphics, where: Square, color: Color) {
-        val sw = getSquareWidth()
-        val sh = getSquareHeight()
-
-        val v1 = sw * where.v
-        val h1 = sh * where.h
-
-        val v2 = sw * where.v + sw
-        val h2 = sh * where.h + sh
-
-        gc.color = color
-        gc.drawLine(v1, h1, v2, h2)
-        gc.drawLine(v2, h1, v1, h2)
-    }
-
-    /**
-     * Пометить две клетки рамками заданного цвета.
-     *
-     * @param gc
-     * - графический конеткст для рисования.
-     * @param source
-     * - клетка откуда идет фигура.
-     * @param target
-     * - клетка куда идет фигура.
-     * @param color
-     * - цвет рамки.
-     */
-    fun markSquares(gc: Graphics, source: Square, target: Square, color: Color) {
-        val sw = getSquareWidth()
-        val sh = getSquareHeight()
-
-        val v1 = sw * source.v + sw / 2
-        val h1 = sh * source.h + sh / 2
-
-        val v2 = sw * target.v + sw / 2
-        val h2 = sh * target.h + sh / 2
-
-        gc.color = color
-        gc.drawRect(v1 * sw, h1 * sh, sw, sh)
-        gc.drawRect(v2 * sw, h2 * sh, sw, sh)
+            Markers.markSquare(g, s, sw, sh, promptColor)
     }
 
     /**
      * Пометить на доске маркером последний ход для игр с перемещаемыми
      * фигурами.
      *
-     * @param gc
+     * @param g
      * - графический контекст для отрисовки маркера.
      */
-    protected fun markLastTransferMove(gc: Graphics) {
+    private fun markLastTransferMove(g: Graphics) {
         val moves = board.history.moves
         if (moves.isEmpty()) return
 
@@ -230,28 +140,26 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
 
         if (move is CompositeMove<*>) {
             for (m in move.moves)
-                markLastTransferMove(gc, m)
+                markLastTransferMove(g, m)
         }
 
-        if (move is ITransferMove) {
-            markLastTransferMove(gc, move)
-        }
+        if (move is ITransferMove)
+            markLastTransferMove(g, move)
     }
 
-    private fun markLastTransferMove(gc: Graphics, m: ITransferMove) {
+    private fun markLastTransferMove(g: Graphics, m: ITransferMove) {
         val source = m.source
         val target = m.target
 
-//        gc.l.setLineWidth(3) TODO Line Width
         val sw = getSquareWidth()
         val sh = getSquareHeight()
-        markLine(gc, source, target, sw, sh, lastMoveColor)
+        Markers.markLine(g, source, target, sw, sh, lastMoveColor)
 
         if (m is ICaptureMove) {
             val capture = m as ICaptureMove
 
             for (s in capture.captured)
-                markCross(gc, s, lastMoveColor)
+                Markers.markCross(g, s, sw, sh, lastMoveColor)
         }
     }
 
@@ -259,10 +167,10 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * Пометить на доске маркером последний ход для игр с фигурами которые
      * ставятся на доску.
      *
-     * @param gc
+     * @param g
      * - графический контекст для отрисовки маркера.
      */
-    private fun markLastPutMove(gc: Graphics, sw: Int, sh: Int) {
+    private fun markLastPutMove(g: Graphics, sw: Int, sh: Int) {
         val moves = board.history.moves
         if (moves.isEmpty()) return
 
@@ -271,14 +179,13 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         if (move is IPutMove) {
             val target = move.target
 
-//            gc.setLineWidth(3) TODO Line Width
-            markSquare(gc, target, sw, sh, lastMoveColor)
+            Markers.markSquare(g, target, sw, sh, lastMoveColor)
 
             if (move is ICaptureMove) {
                 val capture = move as ICaptureMove
 
                 for (s in capture.captured)
-                    markSquare(gc, s, sw, sh, lastCaptureColor)
+                    Markers.markSquare(g, s, sw, sh, lastCaptureColor)
             }
         }
     }
@@ -305,21 +212,10 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         return if (!board.onBoard(selectedV, selectedH)) null else board.getSquare(selectedV, selectedH)
     }
 
-    /**
-     * Выдать изображение фигуры заданного цвета.
-     *
-     * @param piece
-     * - фигура для которой выдается изображение.
-     * @param color
-     * - цвет фигуры.
-     * @return изображение фигуры.
-     */
-    abstract fun getPieceImage(piece: Piece, color: PieceColor): Image?
-
-    //
-    // Cursor
-    //
-    var boardCursor = Cursor(Cursor.DEFAULT_CURSOR)
+    // --------------------------------------
+    // --------------- Cursor ---------------
+    // --------------------------------------
+    private var boardCursor = Cursor(Cursor.DEFAULT_CURSOR)
 
     /**
      * Сохраненный курсор.
@@ -332,9 +228,10 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     override fun saveCursor(piece: Piece) {
         // Сохраним курсор для его восстановления
         // после перемещения фигуры мышкой.
-        savedCursor = getCursor()
+        savedCursor = cursor
 
-        // Зададим изображение курсора такое как избражение у фигуры.
+        // Зададим изображение курсора такое же
+        // как избражение у перемещаемой фигуры.
         pieceToCursor(piece)
     }
 
@@ -342,7 +239,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * Восстановить сохраненный курсор
      */
     override fun restoreCursor() {
-        setCursor(savedCursor)
+        cursor = savedCursor
     }
 
     /**
@@ -351,7 +248,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * @param image
      * - новое изображение курсора.
      */
-    fun imageToCursor(image: Image?) {
+    private fun imageToCursor(image: Image?) {
         val sw = getSquareWidth()
         val sh = getSquareHeight()
 
@@ -377,10 +274,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * @param piece
      * - фигура изображение которой "перемешается" в курсор.
      */
-    override fun pieceToCursor(piece: Piece) {
-        val image = getImage(piece)
-        imageToCursor(image)
-    }
+    override fun pieceToCursor(piece: Piece) = imageToCursor(getImage(piece))
 
     /**
      * Слушатель нажатий кнопок мыши над клетками доски.
@@ -407,20 +301,6 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     override fun mouseReleased(e: MouseEvent?) {
         if (e == null) return
 
-        val s = getSquare(e)
-
-        if (s != null)
-            listener.mouseUp(s, e.button)
-    }
-
-    fun mouseDown(e: MouseEvent) {
-        val s = getSquare(e)
-
-        if (s != null)
-            listener.mouseDown(s, e.button)
-    }
-
-    fun mouseUp(e: MouseEvent) {
         val s = getSquare(e)
 
         if (s != null)

@@ -58,7 +58,7 @@ open class GamePanel(var game: Game) : JPanel(BorderLayout()) {
      * @param nH
      * - количество горизонталей.
      */
-    public fun resizeBoard(nV: Int, nH: Int) {
+    fun resizeBoard(nV: Int, nH: Int) {
         // Новые размеры доски и расстановка фигур.
         game.initBoard(nV, nH)
 

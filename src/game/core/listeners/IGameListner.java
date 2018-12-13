@@ -3,7 +3,7 @@ package game.core.listeners;
 import game.core.Square;
 
 /**
- * Слушатель событий проиcходящих с доской для игр.
+ * Слушатель событий на доске.
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
