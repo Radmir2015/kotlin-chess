@@ -1,5 +1,6 @@
 package notebook.swing
 
+import chess.images.ChessImages
 import chess.swing.ChessBoard
 import renju.swing.RenjuBoard
 import java.awt.BorderLayout
@@ -23,7 +24,7 @@ fun main(args: Array<String>) {
     val chessPanel = ChessBoard()
     val renjuPanel = RenjuBoard()
 
-    tabbedPane.add(chessPanel, "Chess")
+    tabbedPane.addTab("Chess", ChessImages.icoChess, chessPanel)
     tabbedPane.add(renjuPanel, "Renju")
 
     frame.isVisible = true
