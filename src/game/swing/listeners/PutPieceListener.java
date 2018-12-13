@@ -1,7 +1,6 @@
 package game.swing.listeners;
 
 import game.core.*;
-import game.swing.GameBoard;
 
 /**
  * Слушатель событий о нажатии кнопок мыши используемых
@@ -18,7 +17,7 @@ public class PutPieceListener implements IGameListner {
     /**
      * Панель для отрисовки доски.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
     /**
      * Создать слушателя событий от нажатий кнопок мыши
@@ -26,8 +25,8 @@ public class PutPieceListener implements IGameListner {
      *
      * @param boardPanel - панель доски на которую ставятся фигуры.
      */
-    public PutPieceListener(GameBoard boardPanel) {
-        this.board = boardPanel.getBoard();
+    public PutPieceListener(IBoardPanel boardPanel) {
+        this.board = boardPanel.getPanelBoard();
         this.boardPanel = boardPanel;
     }
 
@@ -64,8 +63,7 @@ public class PutPieceListener implements IGameListner {
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
-//			boardPanel.redraw();
-            boardPanel.updateUI();
+            boardPanel.updateBoard();
             return;
         }
 
@@ -75,8 +73,7 @@ public class PutPieceListener implements IGameListner {
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
         board.setBoardChanged();
-//			boardPanel.redraw();
-        boardPanel.updateUI();
+        boardPanel.updateBoard();
 
         // Теперь ходить должен противник.
         board.changeMoveColor();

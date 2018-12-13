@@ -1,9 +1,6 @@
 package game.swing.listeners;
 
 import game.core.*;
-import game.swing.GameBoard;
-
-import java.awt.*;
 
 /**
  * Слушатель постановки перемещения фигуры на доске.
@@ -22,12 +19,6 @@ public class MovePieceListener implements IGameListner {
     private Square selectedSquare;
 
     /**
-     * Сохраненный курсов. После перемещения фигуры как курсора,
-     * этот курсор будет восстановлен.
-     */
-    private Cursor savedCursor;
-
-    /**
      * Доска на которой происходят изменения.
      */
     private Board board;
@@ -35,13 +26,13 @@ public class MovePieceListener implements IGameListner {
     /**
      * Панель на которой рисуется доска.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
     /**
      * Создать слушателя мыши для панели доски на которой перемещяются фигуры.
      */
-    public MovePieceListener(GameBoard boardPanel) {
-        this.board = boardPanel.getBoard();
+    public MovePieceListener(IBoardPanel boardPanel) {
+        this.board = boardPanel.getPanelBoard();
         this.boardPanel = boardPanel;
     }
 
@@ -61,18 +52,11 @@ public class MovePieceListener implements IGameListner {
         // снимем ее с доски.
         selectedSquare = mouseSquare;
         selectedSquare.removePiece();
-
-        // Сохраним курсор для его восстановления
-        // после перемещения фигуры мышкой.
-        savedCursor = boardPanel.getCursor();
-
-        // Зададим изображение курсора такое как избражение у фигуры.
-        boardPanel.pieceToCursor(selectedPiece);
+        boardPanel.saveCursor(selectedPiece);
 
         // Перерисуем изображение доски с временно снятой фигурой.
         board.setBoardChanged();
-        boardPanel.updateUI();
-//		boardPanel.redraw();
+        boardPanel.updateBoard();
     }
 
     @Override
@@ -101,13 +85,12 @@ public class MovePieceListener implements IGameListner {
                 selectedSquare = null;
 
                 // Восстановим курсор (с изображением стрелки).
-                boardPanel.setCursor(savedCursor);
+                boardPanel.restoreCursor();
 
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
-                boardPanel.updateUI();
-//				boardPanel.redraw();
+                boardPanel.updateBoard();
             }
 
             // Сохраним экземпляр кода и истории партии.
@@ -123,12 +106,11 @@ public class MovePieceListener implements IGameListner {
         selectedSquare = null;
 
         // Восстановим курсор (с изображением стрелки).
-        boardPanel.setCursor(savedCursor);
+        boardPanel.restoreCursor();
 
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
         board.setBoardChanged();
-        boardPanel.updateUI();
-//		boardPanel.redraw();
+        boardPanel.updateBoard();
     }
 }

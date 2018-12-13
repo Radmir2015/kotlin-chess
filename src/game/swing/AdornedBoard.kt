@@ -85,14 +85,9 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
 
                 val adorn = JLabel(text)
                 adorn.font = font
-                adorn.setText(text)
-                adorn.setBackground(null)
-//                adorn.setLayoutData(data)
+                adorn.text = text
+                adorn.background = null
             }
-
-            layout()
-//            update()
-//            redraw()
         }
     }
 
@@ -183,9 +178,7 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * @param nH
      * - количество горизонталей.
      */
-    override fun resize(nV: Int, nH: Int) {
-//        font = if (nV > 8 || nH > 8) fontSmall else fontLarge
-
+    fun resizeBoard(nV: Int, nH: Int) {
         left!!.resize(nH)
         right!!.resize(nH)
 

@@ -1,10 +1,6 @@
 package game.swing.listeners;
 
-import game.core.Board;
-import game.core.Piece;
-import game.core.PieceColor;
-import game.core.Square;
-import game.swing.GameBoard;
+import game.core.*;
 
 import java.util.List;
 
@@ -18,14 +14,14 @@ public class PutPiecePromptListener implements IMouseMoveListener {
     /**
      * Панель на которой отрисовывается доска.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
     /**
      * Создать слушатель событий от перемешения мыши
      * для выдачи подсказки допустимых для хода клеток
      * в играх с постановкой фигуры на доску.
      */
-    public PutPiecePromptListener(GameBoard boardPanel) {
+    public PutPiecePromptListener(IBoardPanel boardPanel) {
         this.boardPanel = boardPanel;
     }
 
@@ -39,13 +35,12 @@ public class PutPiecePromptListener implements IMouseMoveListener {
             // Для игр у которых фигуры ставяться на доску,
             // ход на занятую клетку невозможен.
             // Перерисуем панель доски без подсказок.
-//			boardPanel.redraw();
-            boardPanel.updateUI();
+            boardPanel.updateBoard();
             return;
         }
 
         // Доска на которой расположены фигуры.
-        Board board = boardPanel.getBoard();
+        Board board = boardPanel.getPanelBoard();
 
         // Получим фигуру НЕ стоящую на клетке.
         PieceColor moveColor = board.getMoveColor();
@@ -68,7 +63,6 @@ public class PutPiecePromptListener implements IMouseMoveListener {
 
         // Перерисуем панель доски c подсказками для тех
         // клеток на которые допустима постановка фигуры.
-//			boardPanel.redraw();
-        boardPanel.updateUI();
+        boardPanel.updateBoard();
     }
 }

@@ -1,12 +1,6 @@
 package game.swing.listeners;
 
-import game.core.Board;
-import game.core.Piece;
-import game.core.PieceColor;
-import game.core.Square;
-import game.swing.GameBoard;
-
-import java.awt.*;
+import game.core.*;
 
 
 /**
@@ -19,16 +13,16 @@ public class NoPromptListener implements IMouseMoveListener {
     /**
      * Панель на которой отрисовывается доска.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
-    public NoPromptListener(GameBoard boardPanel) {
+    public NoPromptListener(IBoardPanel boardPanel) {
         this.boardPanel = boardPanel;
     }
 
     @Override
     public void mouseMove(Square mouseSquare) {
         // Доска на которой расположены фигуры.
-        Board board = boardPanel.getBoard();
+        Board board = boardPanel.getPanelBoard();
 
         // Получим фигуру НЕ стоящую на клетке.
         PieceColor moveColor = board.getMoveColor();
@@ -40,25 +34,6 @@ public class NoPromptListener implements IMouseMoveListener {
         piece.remove(); // Уберем фигуру с доски.
 
         // Зададим изображение курсора такое как избражение у фигуры.
-        Image pieceImage = boardPanel.getPieceImage(piece, moveColor);
-        boardPanel.imageToCursor(pieceImage);
+        boardPanel.pieceToCursor(piece);
     }
-
-//	/**
-//	 * Выдать изображение фигуры заданного цвета.
-//	 * 
-//	 * @param piece - фигура.
-//	 * @param color - цвет фигуры.
-//	 * @return - изображение фигуры заданного цвета.
-//	 */
-//	abstract public Image getPieceImage(Piece piece, PieceColor color);
-//
-//	/**
-//	 * Выдать фигуру заданного цвета.
-//	 * 
-//	 * @param square - клетка для фигуры.
-//	 * @param color - цвет фигуры.
-//	 * @return - фигура заданного цвета.
-//	 */
-//	abstract public Piece getPiece(Square square, PieceColor color);
 }

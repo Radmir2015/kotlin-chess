@@ -1,9 +1,9 @@
 package game.swing.listeners;
 
 import game.core.Board;
+import game.core.IBoardPanel;
 import game.core.Piece;
 import game.core.Square;
-import game.swing.GameBoard;
 
 /**
  * Слушатель MovePiecePromptListener определяет клетки, на которые может пойти
@@ -15,7 +15,7 @@ public class MovePiecePromptListener implements IMouseMoveListener {
     /**
      * Панель, на которой рисуется доска.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
     /**
      * Слушатель MovePiecePromptListener определяет клетки, на которые может
@@ -23,7 +23,7 @@ public class MovePiecePromptListener implements IMouseMoveListener {
      *
      * @param boardPanel - панель для отрисовки доски.
      */
-    public MovePiecePromptListener(GameBoard boardPanel) {
+    public MovePiecePromptListener(IBoardPanel boardPanel) {
         this.boardPanel = boardPanel;
     }
 
@@ -35,14 +35,12 @@ public class MovePiecePromptListener implements IMouseMoveListener {
         if (underMousePiece == null) {
             // Под мышкой фигуры нет, клетка пустая.
             // Перерисуем панель доски без подсказок.
-            boardPanel.updateUI();
-//			.update();
-//			boardPanel.redraw();
+            boardPanel.updateBoard();
             return;
         }
 
         // Доска на которой расположены фигуры.
-        Board board = boardPanel.getBoard();
+        Board board = boardPanel.getPanelBoard();
 
         for (Square s : board.getSquares())
             if (underMousePiece.isCorrectMove(s))
@@ -50,8 +48,7 @@ public class MovePiecePromptListener implements IMouseMoveListener {
 
         // Перерисуем панель доски c маркерами-подсказками
         // для клеток на которые допустим ход фигуры.
-        boardPanel.updateUI();
-//		boardPanel.update();
-//		boardPanel.redraw();
+        if (!boardPanel.getPrompted().isEmpty())
+            boardPanel.updateBoard();
     }
 }

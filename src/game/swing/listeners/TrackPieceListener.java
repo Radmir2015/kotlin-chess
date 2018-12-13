@@ -4,9 +4,6 @@ import game.core.*;
 import game.core.moves.CompositeMove;
 import game.core.moves.ITrackMove;
 import game.core.moves.ITransferMove;
-import game.swing.GameBoard;
-
-import java.awt.*;
 
 /**
  * Слушатель постановки перемещения фигуры на доске.
@@ -25,12 +22,6 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
     private Square selectedSquare;
 
     /**
-     * Сохраненный курсов. После перемещения фигуры как курсора,
-     * этот курсор будет восстановлен.
-     */
-    private Cursor savedCursor;
-
-    /**
      * Доска на которой происходят изменения.
      */
     private Board board;
@@ -38,15 +29,15 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
     /**
      * Панель на которой рисуется доска.
      */
-    private GameBoard boardPanel;
+    private IBoardPanel boardPanel;
 
     private CompositeMove<T> track = null;
 
     /**
      * Создать слушателя мыши для панели доски на которой перемещяются фигуры.
      */
-    public TrackPieceListener(GameBoard boardPanel) {
-        this.board = boardPanel.getBoard();
+    public TrackPieceListener(IBoardPanel boardPanel) {
+        this.board = boardPanel.getPanelBoard();
         this.boardPanel = boardPanel;
     }
 
@@ -67,18 +58,11 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
         selectedSquare = mouseSquare;
         selectedSquare.removePiece();
 
-        // Сохраним курсор для его восстановления
-        // после перемещения фигуры мышкой.
-        savedCursor = boardPanel.getCursor();
-
-        // Зададим изображение курсора такое как избражение у фигуры.
-        boardPanel.pieceToCursor(selectedPiece);
+        boardPanel.saveCursor(selectedPiece);
 
         // Перерисуем изображение доски с временно снятой фигурой.
         board.setBoardChanged();
-
-        // boardPanel.redraw();
-        boardPanel.updateUI();
+        boardPanel.updateBoard();
     }
 
     @Override
@@ -99,14 +83,12 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
         selectedSquare = null;
 
         // Восстановим курсор (с изображением стрелки).
-        boardPanel.setCursor(savedCursor);
+        boardPanel.restoreCursor();
 
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
         board.setBoardChanged();
-
-//			boardPanel.redraw();
-        boardPanel.updateUI();
+        boardPanel.updateBoard();
     }
 
     private void doMove(Square mouseSquare) {
@@ -128,13 +110,12 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
                 selectedSquare = null;
 
                 // Восстановим курсор (с изображением стрелки).
-                boardPanel.setCursor(savedCursor);
+                boardPanel.restoreCursor();
 
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
-//				boardPanel.redraw();
-                boardPanel.updateUI();
+                boardPanel.updateBoard();
             }
 
             // Сохраним ход в истории игры.
@@ -144,7 +125,7 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
             // нарисуют новое состояние доски.
             board.setBoardChanged();
             //	boardPanel.redraw();
-            boardPanel.updateUI();
+            boardPanel.updateBoard();
 
             // Теперь ходить должен противник.
             board.changeMoveColor();
@@ -178,21 +159,19 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
                 selectedSquare = null;
 
                 // Восстановим курсор (с изображением стрелки).
-                boardPanel.setCursor(savedCursor);
+                boardPanel.restoreCursor();
 
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
-                //			boardPanel.redraw();
-                boardPanel.updateUI();
+                boardPanel.updateBoard();
 
             }
 
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
-            //			boardPanel.redraw();
-            boardPanel.updateUI();
+            boardPanel.updateBoard();
 
 
             if (trackMove.hasNext())

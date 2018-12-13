@@ -11,10 +11,8 @@ import game.core.Square
 import game.swing.EuropeBoard
 import game.swing.GamePanel
 import game.swing.listeners.MovePieceListener
-import java.awt.BorderLayout
-import java.awt.Cursor
-import java.awt.Graphics
-import java.awt.Image
+import game.swing.listeners.MovePiecePromptListener
+import java.awt.*
 import java.util.*
 
 /**
@@ -36,6 +34,10 @@ class ChessBoard : GamePanel(Chess()) {
      * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
      */
     inner class ChessBoardPanel(game: Game) : EuropeBoard(game.board) {
+        override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
         override fun getPieceImage(piece: Piece, color: PieceColor): Image? {
             return if (color == PieceColor.WHITE)
                 whiteImages[piece.javaClass]
@@ -50,6 +52,7 @@ class ChessBoard : GamePanel(Chess()) {
 
         init {
             listener = MovePieceListener(this)
+            this.mouseMoveListener = MovePiecePromptListener(this)
 
 //
 //            Chess.putPieces(board, PieceColor.WHITE)
@@ -64,10 +67,8 @@ class ChessBoard : GamePanel(Chess()) {
         override fun getImage(piece: Piece): Image? {
             return getChessPieceImage(piece)
         }
-//
-//        protected fun mouseDoubleClick(s: Square, button: Int) {}
-//
-//        /*
+
+//      /**
 //		 * Захват фигуры на клетке s.
 //		 */
 //        protected fun mouseDown(s: Square, button: Int) {
@@ -127,14 +128,13 @@ class ChessBoard : GamePanel(Chess()) {
             if (moves.isEmpty()) return
 
             val move = board.history.curMove as SimpleMove
-//
-//            if (move != null)
-//                markLine(gc, move.source, move.target, Color.RED)
+
+            if (move != null)
+                markLine(gc, move.source, move.target, Color.RED)
         }
     }
 
     companion object {
-
         /**
          * Изображения белых фигур.
          */
