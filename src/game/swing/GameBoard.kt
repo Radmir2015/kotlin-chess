@@ -385,7 +385,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     /**
      * Слушатель нажатий кнопок мыши над клетками доски.
      */
-    protected var listener = IGameListner.EMPTY
+    protected var listener: IGameListner = IGameListner.EMPTY
 
     //
     // Реализация интерфейса MouseListener

@@ -178,7 +178,7 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * @param nH
      * - количество горизонталей.
      */
-    fun resizeBoard(nV: Int, nH: Int) {
+    public fun resizeBoard(nV: Int, nH: Int) {
         left!!.resize(nH)
         right!!.resize(nH)
 

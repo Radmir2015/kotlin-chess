@@ -2,7 +2,6 @@ package chess.swing
 
 import chess.Chess
 import chess.images.ChessImages
-import chess.moves.SimpleMove
 import chess.pieces.*
 import game.core.Game
 import game.core.Piece
@@ -12,8 +11,8 @@ import game.swing.EuropeBoard
 import game.swing.GamePanel
 import game.swing.listeners.MovePieceListener
 import game.swing.listeners.MovePiecePromptListener
-import java.awt.*
-import java.util.*
+import java.awt.BorderLayout
+import java.awt.Image
 
 /**
  * Панель для доски стандартных шахмат.
@@ -45,92 +44,13 @@ class ChessBoard : GamePanel(Chess()) {
                 blackImages[piece.javaClass]
         }
 
-        private var moveColor = PieceColor.WHITE
-        private var selectedPiece: Piece? = null
-        private var selectedSquare: Square? = null
-        private var savedCursor: Cursor? = null
-
         init {
             listener = MovePieceListener(this)
             this.mouseMoveListener = MovePiecePromptListener(this)
-
-//
-//            Chess.putPieces(board, PieceColor.WHITE)
-//            Chess.putPieces(board, PieceColor.BLACK)
         }
 
-        /*
-		 * (non-Javadoc)
-		 *
-		 * @see game.ui.AbstractBoardPanel#getImage(game.core.Piece)
-		 */
         override fun getImage(piece: Piece): Image? {
             return getChessPieceImage(piece)
-        }
-
-//      /**
-//		 * Захват фигуры на клетке s.
-//		 */
-//        protected fun mouseDown(s: Square, button: Int) {
-//            if (s.isEmpty)
-//                return
-//
-//            selectedPiece = s.piece
-//            if (selectedPiece!!.color != moveColor)
-//                return
-//
-//            selectedSquare = s
-//            s.removePiece()
-//
-//            savedCursor = cursor
-//            pieceToCursor(selectedPiece)
-//
-//            redraw()
-//        }
-//
-//        /*
-//		 * Отпускание фигуры на клетке s.
-//		 */
-//        protected fun mouseUp(s: Square, button: Int) {
-//            if (selectedSquare == null)
-//                return
-//
-//            // Возвращаем фигуру на начальную клетку.
-//            selectedSquare!!.piece = selectedPiece
-//
-//            if (selectedPiece!!.isCorrectMove(s)) {
-//                val move = selectedPiece!!.moveTo(s)
-//                board.history.addMove(move)
-//
-//                // TODO Реализовать запрос фигуры для превращения пешки.
-//
-//                moveColor = if (moveColor == PieceColor.WHITE)
-//                    PieceColor.BLACK
-//                else
-//                    PieceColor.WHITE
-//            }
-//
-//            selectedPiece = null
-//            selectedSquare = null
-//
-//            cursor = savedCursor
-//
-//            board.setBoardChanged()
-//
-//            redraw()
-//        }
-
-        /*
-		 * Пометить на доске последний ход.
-		 */
-        protected fun markLastMove(gc: Graphics) {
-            val moves = board.history.moves
-            if (moves.isEmpty()) return
-
-            val move = board.history.curMove as SimpleMove
-
-            if (move != null)
-                markLine(gc, move.source, move.target, Color.RED)
         }
     }
 

@@ -30,7 +30,7 @@ public class Pawn extends ChessPiece {
             //Lets find the instance of enemy Pawn object, which satisfies the following requirements.
             for (Piece enemy : listEnemies) {
                 if (enemy.getClass() == Pawn.class) {
-                    flgMakeDoubleMove = (boolean) ((Pawn) enemy).IfMakeDoubleMove();
+                    flgMakeDoubleMove = ((Pawn) enemy).IfMakeDoubleMove();
                 }
 
                 if (
