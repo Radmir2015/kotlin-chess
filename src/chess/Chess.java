@@ -2,8 +2,8 @@ package chess;
 
 import chess.pieces.*;
 import game.core.Game;
+import game.core.IPlayer;
 import game.core.PieceColor;
-import game.players.IPlayer;
 import game.players.Neznaika;
 
 /**

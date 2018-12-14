@@ -1,8 +1,5 @@
 package game.core;
 
-import game.players.IPlayer;
-import game.players.Neznaika;
-
 import java.util.*;
 
 /**
@@ -36,7 +33,7 @@ public class Board extends Observable {
 
     {
         setWhitePlayer(IPlayer.HOMO_SAPIENCE);
-        setBlackPlayer(new Neznaika());
+        setBlackPlayer(IPlayer.HOMO_SAPIENCE);
     }
 
     public Board() {

@@ -2,7 +2,7 @@ package renju;
 
 import game.core.Game;
 import game.core.IPieceProvider;
-import game.players.IPlayer;
+import game.core.IPlayer;
 import game.players.Vinni;
 import renju.pieces.RenjuPiece;
 

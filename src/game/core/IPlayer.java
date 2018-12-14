@@ -1,9 +1,4 @@
-package game.players;
-
-import game.core.Board;
-import game.core.GameOver;
-import game.core.GameResult;
-import game.core.PieceColor;
+package game.core;
 
 /**
  * Интерфейс для игроков (программ и человека).
