@@ -239,7 +239,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * Восстановить сохраненный курсор
      */
     override fun restoreCursor() {
-        cursor = savedCursor
+        cursor = null
     }
 
     /**
@@ -257,7 +257,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
 
         val toolkit = Toolkit.getDefaultToolkit()
         val cursorImage: Image = image!!.getScaledInstance(pw, ph, Image.SCALE_DEFAULT)
-        val hotSpot = Point(0, 0)
+        val hotSpot = Point(sw / 2, sh / 2)
         cursor = toolkit.createCustomCursor(cursorImage, hotSpot, "customCursor")
     }
 
