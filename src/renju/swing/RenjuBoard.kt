@@ -15,14 +15,11 @@ import java.awt.Image
 /**
  */
 class RenjuBoard : GamePanel(Renju()) {
-
     init {
         val gamePanel = RenjuBoardPanel(game)
         insertSquares(gamePanel)
 
         add(gamePanel, BorderLayout.CENTER)
-
-        insertSquares(RenjuBoardPanel(game))
     }
 }
 

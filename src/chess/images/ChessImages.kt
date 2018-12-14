@@ -25,5 +25,5 @@ object ChessImages {
     val imageRookWhite: Image = ImageIO.read(javaClass.getResource("wRookZurich.gif"))
     val imagePawnWhite: Image = ImageIO.read(javaClass.getResource("wPawnZurich.gif"))
 
-    val icoChess = ImageIcon(imageKnightBlack.getScaledInstance(20, 20, 0))
+    val icoChess = ImageIcon(imageKnightBlack.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
 }

@@ -55,6 +55,7 @@ public class MovePieceListener implements IGameListner {
         boardPanel.saveCursor(selectedPiece);
 
         // Перерисуем изображение доски с временно снятой фигурой.
+        boardPanel.updateBoard();
         board.setBoardChanged();
     }
 
@@ -89,6 +90,7 @@ public class MovePieceListener implements IGameListner {
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
+                return;
             }
 
             // Сохраним экземпляр кода и истории партии.
@@ -98,6 +100,7 @@ public class MovePieceListener implements IGameListner {
 
             // Теперь ходить должен противник.
             board.changeMoveColor();
+            return;
         }
 
         selectedPiece = null;

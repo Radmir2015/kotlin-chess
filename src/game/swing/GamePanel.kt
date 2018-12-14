@@ -16,25 +16,19 @@ import javax.swing.JPanel
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-open class GamePanel(var game: Game) : JPanel(BorderLayout()) {
+abstract class GamePanel(var game: Game) : JPanel(BorderLayout()) {
     //    protected var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
-//    protected var jornal: MovesJornal
+    private var jornal: MovesJornal = MovesJornal(game.board.history)
 
     init {
-//        setLayout(GridLayout(3, 3))
+        add(jornal, BorderLayout.LINE_END)
 
-//        var data: GridData
-//
-//        data = GridData(SWT.LEFT, SWT.FILL, false, true)
-//        data.widthHint = 150
+        // control = GameControlPanel(game)
+        // add(control, BorderLayout.CENTER)
 
-//        control = GameControlPanel(this, game)
-//        control.setLayoutData(data)
-
-//        data = GridData(SWT.FILL, SWT.FILL, true, true)
-//        adorned = AdornedBoard(this)
-//        adorned.setLayoutData(data)
+        adorned = AdornedBoard()
+        add(adorned, BorderLayout.CENTER)
     }
 
     /**
@@ -46,8 +40,6 @@ open class GamePanel(var game: Game) : JPanel(BorderLayout()) {
     protected fun insertSquares(gameBoard: GameBoard) {
         adorned.insertSquares(gameBoard)
 //
-//        jornal = MovesJornal(this, gameBoard.board.history)
-//        jornal.setLayoutData(GridData(SWT.RIGHT, SWT.FILL, false, true))
     }
 
     /**

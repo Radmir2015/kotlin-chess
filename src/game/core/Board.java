@@ -181,11 +181,9 @@ public class Board extends Observable {
     }
 
     /**
-     * Пуста ли клетка с заданными координатами?
-     *
      * @param v - вертикаль
      * @param h - горизонталь
-     * @return
+     * @return Пуста ли клетка с заданными координатами?
      */
     public boolean isEmpty(int v, int h) {
         return getSquare(v, h).isEmpty();
@@ -194,7 +192,7 @@ public class Board extends Observable {
     /**
      * Выдать игрока белыми фигурами.
      *
-     * @return
+     * @return игрок белыми фигурами
      */
     public IPlayer getWhitePlayer() {
         return players.get(PieceColor.WHITE);
@@ -204,7 +202,7 @@ public class Board extends Observable {
      * Задать игрока белыми фигурами.
      *
      * @param player - игрок белыми фигурами.
-     * @see game.players.IPlayer
+     * @see IPlayer
      */
     public void setWhitePlayer(IPlayer player) {
         players.put(PieceColor.WHITE, player);
@@ -214,7 +212,7 @@ public class Board extends Observable {
     /**
      * Выдать игрока черными фигурами.
      *
-     * @return
+     * @return игрок черными фигурами
      */
     public IPlayer getBlackPlayer() {
         return players.get(PieceColor.BLACK);
@@ -224,7 +222,7 @@ public class Board extends Observable {
      * Задать игрока черными фигурами.
      *
      * @param player - игрок черными фигурами.
-     * @see game.players.IPlayer
+     * @see IPlayer
      */
     public void setBlackPlayer(IPlayer player) {
         players.put(PieceColor.BLACK, player);
@@ -313,7 +311,7 @@ public class Board extends Observable {
     /**
      * Максимальное расстояние между клетками доски.
      *
-     * @return
+     * @return расстояние между клетками
      */
     public int maxDistance() {
         return nH + nV;

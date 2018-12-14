@@ -10,4 +10,5 @@ object GameImages {
 
     val stoneWhite: Image = ImageIO.read(javaClass.getResource("StoneWhite.png"))
     val stoneBlack: Image = ImageIO.read(javaClass.getResource("StoneBlack.png"))
+    val papiro: Image = ImageIO.read(javaClass.getResource("papiro.png"))
 }
