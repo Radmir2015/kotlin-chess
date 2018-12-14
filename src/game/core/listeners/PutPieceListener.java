@@ -47,7 +47,7 @@ public class PutPieceListener implements IGameListner {
 
         piece.remove();
 
-        if (piece.isCorrectMove(mouseSquare)) return; // На эту клетку ставить нельзя.
+        if (!piece.isCorrectMove(mouseSquare)) return; // На эту клетку ставить нельзя.
 
         // Постановка фигуры на заданную клетку правильная.
         // Создадим экземпляр хода и выполним его.
@@ -63,9 +63,11 @@ public class PutPieceListener implements IGameListner {
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
-            boardPanel.updateBoard();
             return;
         }
+
+        // Теперь ходить должен противник.
+        board.changeMoveColor();
 
         // Зададим изображение курсора такое как избражение у фигуры.
         boardPanel.pieceToCursor(piece);
@@ -73,9 +75,5 @@ public class PutPieceListener implements IGameListner {
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
         board.setBoardChanged();
-        boardPanel.updateBoard();
-
-        // Теперь ходить должен противник.
-        board.changeMoveColor();
     }
 }
