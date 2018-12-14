@@ -255,17 +255,10 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         val pw = sw - sw / 8 // Ширина фигуры в клетке.
         val ph = sh - sh / 8 // Высота фигуры в клетке.
 
-//        boardCursor.dispose()
-
         val toolkit = Toolkit.getDefaultToolkit()
-        val point = Point(pw, ph)
-
-        boardCursor = toolkit.createCustomCursor(image, point, "CopyVisualCursor")
-
-//        val imageDate = image.getImageData().scaledTo(pw, ph)
-//        val display = Display.getCurrent()
-//        boardCursor = Cursor(display, imageDate, sw / 2, sh / 2)
-        cursor = boardCursor
+        val cursorImage: Image = image!!.getScaledInstance(pw, ph, Image.SCALE_DEFAULT)
+        val hotSpot = Point(0, 0)
+        cursor = toolkit.createCustomCursor(cursorImage, hotSpot, "customCursor")
     }
 
     /**
