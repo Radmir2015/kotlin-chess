@@ -48,9 +48,9 @@ internal class RenjuBoardPanel(game: Game) : AsiaBoard(game.board), IPieceProvid
 
     override fun getPieceImage(piece: Piece, color: PieceColor): Image? {
         return if (color == PieceColor.WHITE)
-            GameImages.imageStoneWhite
+            GameImages.stoneWhite
         else
-            GameImages.imageStoneBlack
+            GameImages.stoneBlack
     }
 
     override fun getPiece(square: Square, color: PieceColor): Piece {

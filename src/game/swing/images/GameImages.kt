@@ -8,6 +8,6 @@ object GameImages {
     val woodLight: Image = ImageIO.read(javaClass.getResource("wood_light.png"))
     val woodMedium: Image = ImageIO.read(javaClass.getResource("wood_medium.png"))
 
-    val imageStoneWhite: Image = ImageIO.read(javaClass.getResource("StoneWhite.png"))
-    val imageStoneBlack: Image = ImageIO.read(javaClass.getResource("StoneBlack.png"))
+    val stoneWhite: Image = ImageIO.read(javaClass.getResource("StoneWhite.png"))
+    val stoneBlack: Image = ImageIO.read(javaClass.getResource("StoneBlack.png"))
 }
