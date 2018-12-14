@@ -121,14 +121,12 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
             // Сохраним ход в истории игры.
             board.history.addMove(move);
 
+            // Теперь ходить должен противник.
+            board.changeMoveColor();
+
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
-            //	boardPanel.redraw();
-            boardPanel.updateBoard();
-
-            // Теперь ходить должен противник.
-            board.changeMoveColor();
         } else {
             // Простой ход фигурой - часть составного хода фигурой
             // (последовательности простых ходов той же фигурой).
@@ -164,15 +162,11 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
                 board.setBoardChanged();
-                boardPanel.updateBoard();
-
             }
 
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
-            boardPanel.updateBoard();
-
 
             if (trackMove.hasNext())
                 return;
@@ -183,10 +177,10 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListner
             // Сохраним экземпляр хода в истории игры.
             board.history.addMove(track);
 
-            track = null;
-
             // Теперь ходить должен противник.
             board.changeMoveColor();
+
+            track = null;
         }
     }
 }

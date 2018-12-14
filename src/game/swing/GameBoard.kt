@@ -103,7 +103,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     /**
      * Цвет для подсказок правильных ходов.
      */
-    protected var promptColor = Color.GREEN
+    protected var promptColor: Color = Color.GREEN
 
     /**
      * Нарисовать подсказку для клеток на которые фигура может сделать очередной ход.
