@@ -96,9 +96,9 @@ public class Square {
     }
 
     /**
-     * Пустая ли клетка?
      *
-     * @return
+     *
+     * @return Пустая ли клетка?
      */
     public boolean isEmpty() {
         return piece == null;
