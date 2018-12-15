@@ -24,7 +24,7 @@ public class Game {
      */
     public Board board;
 
-    public Game() {
+    protected Game() {
         board = new Board();
     }
 
