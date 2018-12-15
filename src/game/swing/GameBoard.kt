@@ -239,7 +239,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
      * Восстановить сохраненный курсор
      */
     override fun restoreCursor() {
-        cursor = null
+        cursor = savedCursor
     }
 
     /**
