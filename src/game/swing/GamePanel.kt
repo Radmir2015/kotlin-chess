@@ -19,10 +19,10 @@ import javax.swing.JPanel
 abstract class GamePanel(var game: Game) : JPanel(BorderLayout()) {
     //    protected var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
-    private var jornal: MovesJornal = MovesJornal(game.board.history)
+    private var history: MovesHistory = MovesHistory(game.board.history)
 
     init {
-        add(jornal, BorderLayout.LINE_END)
+        add(history, BorderLayout.LINE_END)
 
         // control = GameControlPanel(game)
         // add(control, BorderLayout.CENTER)
