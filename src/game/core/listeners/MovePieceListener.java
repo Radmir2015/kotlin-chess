@@ -93,6 +93,8 @@ public class MovePieceListener implements IGameListner {
                 return;
             }
 
+            boardPanel.restoreCursor();
+
             // Сохраним экземпляр кода и истории партии.
             board.history.addMove(move);
 
