@@ -11,6 +11,7 @@ import java.util.*
 import javax.swing.JLabel
 import javax.swing.JPanel
 import javax.swing.JScrollPane
+import javax.swing.ScrollPaneConstants
 import javax.swing.border.LineBorder
 
 /**
@@ -35,6 +36,10 @@ class MovesHistory
     private val resultPanel: JLabel
 
     internal inner class MovesPanel : JPanel(FlowLayout(FlowLayout.LEFT)) {
+        init {
+            preferredSize = Dimension(100, 1000)
+        }
+
         override fun paintComponent(g: Graphics) {
             super.paintComponent(g)
             g.drawImage(GameImages.papiro, 0, 0, this)
@@ -104,7 +109,11 @@ class MovesHistory
         //
         movesPanel = MovesPanel()
         movesPanel.background = PAPER_COLOR
-        add(JScrollPane(movesPanel), BorderLayout.CENTER)
+        val sp = JScrollPane(movesPanel,
+                ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
+        )
+        add(sp, BorderLayout.CENTER)
 
         //
         // Панель для выдачи результата игры.
@@ -139,8 +148,9 @@ class MovesHistory
         headerPanel.horizontalAlignment = JLabel.CENTER
         headerPanel.text = title
         headerPanel.toolTipText = aTitle
-        headerPanel.foreground = HEADER_COLOR
-        headerPanel.isOpaque = false
+        headerPanel.foreground = TITLE_COLOR
+        headerPanel.background = HEADER_COLOR
+        headerPanel.isOpaque = true
     }
 
     private fun setResultText(board: Board) {
@@ -151,8 +161,9 @@ class MovesHistory
 
         resultPanel.text = text
         resultPanel.toolTipText = title
-        resultPanel.isOpaque = false
-        resultPanel.foreground = RESULT_COLOR
+        resultPanel.isOpaque = true
+        resultPanel.foreground = Color.BLACK
+        resultPanel.background = RESULT_COLOR
         resultPanel.horizontalAlignment = JLabel.CENTER
     }
 
@@ -180,7 +191,7 @@ class MovesHistory
     }
 
     /**
-     * Отрисуем в списке ходов темным фоном текущий ход.
+     * Выделим в списке ходов текущий ход игры.
      */
     private fun paintSelection() {
         //
@@ -201,10 +212,11 @@ class MovesHistory
     companion object {
         private val hand = Cursor(Cursor.HAND_CURSOR)
 
-        private val PAPER_COLOR = Color(192, 192, 0, 255)
+        private val PAPER_COLOR = Color(192, 145, 0, 255)
         private val MOVE_COLOR = Color(0, 0, 255, 255)
         private val SELECT_COLOR = Color(255, 0, 0, 255)
-        private val HEADER_COLOR = Color(0, 255, 0, 255)
-        private val RESULT_COLOR = Color(255, 0, 0, 255)
+        private val HEADER_COLOR = Color(192, 145, 0, 255)
+        private val TITLE_COLOR = Color(80, 40, 30, 255)
+        private val RESULT_COLOR = Color(192, 145, 0, 255)
     }
 }
