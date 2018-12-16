@@ -13,6 +13,7 @@ import game.swing.EuropeBoard
 import game.swing.GamePanel
 import java.awt.BorderLayout
 import java.awt.Image
+import java.util.*
 
 /**
  * Панель для доски стандартных шахмат.
