@@ -19,10 +19,11 @@ import javax.swing.JPanel
  *
  */
 abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
-        MouseListener, MouseMotionListener, IBoardPanel {
+        MouseListener, MouseMotionListener, IBoardPanel, Observer {
     init {
         this.addMouseListener(this)
         this.addMouseMotionListener(this)
+        board.addObserver(this)
     }
 
     override fun getPanelBoard(): Board = board
@@ -30,6 +31,10 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     override fun updateBoard() {
         validate()
         repaint()
+    }
+
+    override fun update(o: Observable?, arg: Any?) {
+        updateBoard()
     }
 
     override fun paint(g: Graphics) {
