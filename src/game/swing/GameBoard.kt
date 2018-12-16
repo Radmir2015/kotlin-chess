@@ -21,8 +21,8 @@ import javax.swing.JPanel
 abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         MouseListener, MouseMotionListener, IBoardPanel, Observer {
     init {
-        this.addMouseListener(this)
-        this.addMouseMotionListener(this)
+        addMouseListener(this)
+        addMouseMotionListener(this)
         board.addObserver(this)
     }
 
