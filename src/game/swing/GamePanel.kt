@@ -16,16 +16,16 @@ import javax.swing.JPanel
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class GamePanel(var game: Game) : JPanel(BorderLayout()) {
-    //    protected var control: GameControlPanel
+abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
+    private var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
     private var history: MovesHistory = MovesHistory(game.board.history)
 
     init {
         add(history, BorderLayout.LINE_END)
 
-        // control = GameControlPanel(game)
-        // add(control, BorderLayout.CENTER)
+        control = GameControlPanel(game)
+        add(control, BorderLayout.LINE_START)
 
         adorned = AdornedBoard()
         add(adorned, BorderLayout.CENTER)

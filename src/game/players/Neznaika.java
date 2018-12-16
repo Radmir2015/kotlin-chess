@@ -36,9 +36,6 @@ public class Neznaika extends MovePiecePlayer {
     public void doMove(Board board, PieceColor color) throws GameOver {
         List<Move> correctMoves = getCorrectMoves(board, color);
 
-//		if (correctMoves.isEmpty()) // Пат.
-//			throw new GameOver(GameResult.DRAWN);
-
         if (correctMoves.isEmpty())
             return;
 
