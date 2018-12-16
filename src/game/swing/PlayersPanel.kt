@@ -38,14 +38,14 @@ class PlayersPanel
         val bPlayerNumber = getPlayerIndex(board.blackPlayer, players)
 
         font = Font("mono", 10, Font.BOLD or Font.ITALIC)
-        background = Color(0, 80, 0, 255)
-        val boxLayout = BoxLayout(this, BoxLayout.Y_AXIS)
-        layout = boxLayout
+        background = BACK_COLOR
+        border = LineBorder(FORE_COLOR)
+        layout = BoxLayout(this, BoxLayout.Y_AXIS)
 
         val panel = JPanel()
         panel.layout = BoxLayout(panel, BoxLayout.Y_AXIS)
         panel.alignmentX = JPanel.CENTER_ALIGNMENT
-        panel.background = Color(0, 255, 100, 255)
+        panel.background = BACK_COLOR
         panel.isOpaque = false
         add(panel)
 
@@ -55,15 +55,11 @@ class PlayersPanel
 
         // Список для выбора игроков черными фигурами.
         val bList = getPlayersList(panel, bPlayerNumber, "Черные", BLACK_COLOR)
-        bList.addListSelectionListener {
-            board.blackPlayer = getSelectedPlayer(it)
-        }
+        bList.addListSelectionListener { board.blackPlayer = getSelectedPlayer(it) }
 
         // Список для выбора игроков белыми фигурами.
         val wList = getPlayersList(panel, wPlayerNumber, "Белые", WHITE_COLOR)
-        wList.addListSelectionListener {
-            board.whitePlayer = getSelectedPlayer(it)
-        }
+        wList.addListSelectionListener { board.whitePlayer = getSelectedPlayer(it) }
 
         // Кнопка запуска игры.
         //
@@ -112,14 +108,14 @@ class PlayersPanel
         title.layout = BoxLayout(title, BoxLayout.Y_AXIS)
         panel.add(title)
 
-        val x = players.stream().map { it.name }.collect(Collectors.toList())
-        val list = JList(x.toTypedArray())
+        val ss = players.stream().map { it.name }.collect(Collectors.toList())
+        val list = JList(ss.toTypedArray())
         panel.add(list)
 
         list.alignmentX = JLabel.CENTER_ALIGNMENT
         list.layout = BoxLayout(list, BoxLayout.Y_AXIS)
-        list.border = LineBorder(Color.BLACK)
-        list.foreground = BORDER_COLOR
+        list.border = LineBorder(FORE_COLOR)
+        list.foreground = FORE_COLOR
         list.background = LIST_COLOR
         list.selectedIndex = playerNumber
         list.selectionMode = ListSelectionModel.SINGLE_SELECTION
@@ -148,9 +144,9 @@ class PlayersPanel
     companion object {
         private val WHITE_COLOR = Color(255, 255, 255, 255)
         private val BLACK_COLOR = Color(0, 0, 0, 255)
-
-        private val TITLE_COLOR = Color(255, 255, 0, 255)
+        private val TITLE_COLOR = Color(255, 255, 255, 255)
         private val LIST_COLOR = Color(255, 255, 255, 255)
-        private val BORDER_COLOR = Color(0, 0, 0, 255)
+        private val BACK_COLOR = Color(0, 200, 100, 255)
+        private val FORE_COLOR = Color(4, 56, 14, 255)
     }
 }
