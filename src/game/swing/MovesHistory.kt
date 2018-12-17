@@ -119,11 +119,13 @@ class MovesHistory
         //
         movesPanel = MovesPanel()
         movesPanel.background = PAPER_COLOR
-        val sp = JScrollPane(movesPanel,
-                ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+        val scrollPanel = JScrollPane(movesPanel,
+                ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,
                 ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER
         )
-        add(sp, BorderLayout.CENTER)
+        scrollPanel.verticalScrollBar.background = PAPER_COLOR
+        scrollPanel.verticalScrollBar.components.forEach { it.background = PAPER_COLOR }
+        scrollPanel.background = PAPER_COLOR
 
         //
         // Панель для выдачи результата игры.
@@ -132,8 +134,8 @@ class MovesHistory
         setResultText(board)
 
         add(headerPanel, BorderLayout.NORTH)
+        add(scrollPanel, BorderLayout.CENTER)
         add(resultPanel, BorderLayout.SOUTH)
-        add(movesPanel, BorderLayout.CENTER)
 
         // Добавляем к доске обозревателя - панель ходов.
         // При изменении положения фигур на доске или результата партии
