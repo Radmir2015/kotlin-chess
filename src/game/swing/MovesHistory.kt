@@ -38,6 +38,16 @@ class MovesHistory
     internal inner class MovesPanel : JPanel(FlowLayout(FlowLayout.LEFT)) {
         init {
             preferredSize = Dimension(100, 1000)
+            addMouseWheelListener {
+                if (it.wheelRotation < 0) {
+                    history.toPrevMove()
+                    history.board.setBoardChanged()
+                }
+                if (it.wheelRotation > 0) {
+                    history.toNextMove()
+                    history.board.setBoardChanged()
+                }
+            }
         }
 
         override fun paintComponent(g: Graphics) {

@@ -24,6 +24,19 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         addMouseListener(this)
         addMouseMotionListener(this)
         board.addObserver(this)
+
+        addMouseWheelListener {
+            val history = board.history
+
+            if (it.wheelRotation < 0) {
+                history.toPrevMove()
+                board.setBoardChanged()
+            }
+            if (it.wheelRotation > 0) {
+                history.toNextMove()
+                board.setBoardChanged()
+            }
+        }
     }
 
     override fun getPanelBoard(): Board = board
@@ -141,15 +154,15 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         val moves = board.history.moves
         if (moves.isEmpty()) return
 
-        val move = board.history.curMove as Move
+        val curMove = board.history.curMove ?: return
 
-        if (move is CompositeMove<*>) {
-            for (m in move.moves)
+        if (curMove is CompositeMove<*>) {
+            for (m in curMove.moves)
                 markLastTransferMove(g, m)
         }
 
-        if (move is ITransferMove)
-            markLastTransferMove(g, move)
+        if (curMove is ITransferMove)
+            markLastTransferMove(g, curMove)
     }
 
     private fun markLastTransferMove(g: Graphics, m: ITransferMove) {
@@ -179,15 +192,15 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
         val moves = board.history.moves
         if (moves.isEmpty()) return
 
-        val move = board.history.curMove as Move
+        val curMove = board.history.curMove ?: return
 
-        if (move is IPutMove) {
-            val target = move.target
+        if (curMove is IPutMove) {
+            val target = curMove.target
 
             Markers.markSquare(g, target, sw, sh, lastMoveColor)
 
-            if (move is ICaptureMove) {
-                val capture = move as ICaptureMove
+            if (curMove is ICaptureMove) {
+                val capture = curMove as ICaptureMove
 
                 for (s in capture.captured)
                     Markers.markSquare(g, s, sw, sh, lastCaptureColor)
