@@ -1,16 +1,16 @@
 package game.swing
 
-import java.awt.BorderLayout
-import java.awt.GridLayout
+import java.awt.*
 import javax.swing.JLabel
 import javax.swing.JPanel
+
 
 /**
  * Доска с обозначениями для горизонталей и вертикалей (номер или буква).
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-open class AdornedBoard : JPanel(GridLayout(3, 3)) {
+open class AdornedBoard : JPanel(GridBagLayout()) {
     private var nV: Int = 8
     private var nH: Int = 8
 
@@ -53,12 +53,12 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
          * - новые размеры доски.
          */
         fun resize(n: Int) {
-            removeAll()
+//            removeAll()
 
             val layout = if (isVertical)
-                GridLayout(1, n)
-            else
                 GridLayout(n, 1)
+            else
+                GridLayout(1, n)
 
             setLayout(layout)
 
@@ -96,14 +96,10 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * - встраиваемая доска.
      */
     fun insertSquares(boardPanel: GameBoard) {
+        removeAll()
+
         nV = boardPanel.board.nV
         nH = boardPanel.board.nH
-
-        val layout = GridLayout(2, 2)
-        layout.hgap = 0
-        layout.vgap = 0
-
-        removeAll()
         initMainPanel(boardPanel)
     }
 
@@ -112,26 +108,64 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      */
     private fun initMainPanel(adornedControl: GameBoard) {
         // Сетевая планировка доски 3х3 ячейки.
+        background = Color.GREEN
+
         //
         // 1-я строка сетки.
         //
-        add(EmptyAdorn())
-        add(BoardAdorns(nV, false, false, false))
-        add(EmptyAdorn())
+//        add(EmptyAdorn())
+        var c = GridBagConstraints()
+        c.gridx = 0
+        c.gridy = 0
+        c.anchor = GridBagConstraints.NORTH
+        c.fill = GridBagConstraints.HORIZONTAL
+        c.weightx = 1.0
+        c.weighty = 1.0
+
+        val topAdorns = JLabel("A B C D E F G H")
+//        val boardAdorns = BoardAdorns(8, false, false, false)
+        topAdorns.isOpaque = true
+        topAdorns.background = Color.CYAN
+        topAdorns.alignmentY = 0.0f
+        add(topAdorns, c)
+//        add(EmptyAdorn())
 
         //
         // 2-я строка сетки.
         //
-        add(BoardAdorns(nH, true, false, true))
-        add(adornedControl)
-        add(BoardAdorns(nH, true, false, true))
+//        add(BoardAdorns(nH, true, false, true))
+        c = GridBagConstraints()
+        c.gridx = 0
+        c.gridy = 1
+        c.anchor = GridBagConstraints.CENTER
+        c.fill = GridBagConstraints.BOTH
+        c.weightx = 1.0
+        c.weighty = 1.0
+
+        val l = JPanel() // Label("board")
+        l.background = Color.RED
+        add(l, c)
+//        add(adornedControl, c)
+//        add(BoardAdorns(nH, true, false, true))
 
         //
         // 3-я строка сетки.
         //
-        add(EmptyAdorn())
-        add(BoardAdorns(nV, false, false, false))
-        add(EmptyAdorn())
+        c = GridBagConstraints()
+        c.gridx = 0
+        c.gridy = 2
+        c.anchor = GridBagConstraints.SOUTH
+        c.fill = GridBagConstraints.HORIZONTAL
+        c.weightx = 1.0
+        c.weighty = 1.0
+
+        val bottomAdorns = JLabel("A B C D E F G H")
+        bottomAdorns.background = Color.YELLOW
+        bottomAdorns.isOpaque = true
+        add(bottomAdorns, c)
+//        add(EmptyAdorn())
+//        add(BoardAdorns(nV, false, false, false))
+//        add(EmptyAdorn())
     }
 
     /**
