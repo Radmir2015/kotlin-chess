@@ -6,7 +6,6 @@ import javax.swing.JLabel
 import javax.swing.JPanel
 import javax.swing.border.LineBorder
 
-
 /**
  * Доска с обозначениями для горизонталей и вертикалей (номер или буква).
  *
@@ -80,7 +79,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
                 val delta = if (isInverted) -1 else 1
 
                 val i = start + delta * k
-                val text = " ${if (isNumbers) i else alphabet.substring(i - 1, i)} "
+                val text = """ ${if (isNumbers) i else alphabet.substring(i - 1, i)} """
 
                 val adorn = JLabel(text)
                 adorn.font = font
@@ -112,6 +111,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
      */
     private fun initMainPanel(adornedControl: GameBoard) {
         // Сетевая планировка доски 3х3 ячейки.
+        adornedControl.isOpaque = false
 
         var c: GridBagConstraints?
 
@@ -123,21 +123,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.gridy = 0
         c.anchor = GridBagConstraints.NORTH
         c.fill = GridBagConstraints.HORIZONTAL
-        c.weightx = 0.0
-        c.weighty = 0.0
-
-        val topAdorns = BoardAdorns(8, false, false, false)
-        topAdorns.isOpaque = false
-        add(topAdorns, c)
-
-        c = GridBagConstraints()
-        c.gridx = 2
-        c.gridy = 0
-        c.anchor = GridBagConstraints.CENTER
-        c.fill = GridBagConstraints.NONE
-        c.weightx = 0.0
-        c.weighty = 0.0
-//        add(EmptyAdorn(), c)
+        add(top, c)
 
         //
         // 2-я строка сетки.
@@ -147,11 +133,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.gridy = 1
         c.anchor = GridBagConstraints.EAST
         c.fill = GridBagConstraints.VERTICAL
-        c.weightx = 0.0
-        c.weighty = 0.0
-
-        val leftAdorns = BoardAdorns(8, true, false, true)
-        add(leftAdorns, c)
+        add(left, c)
 
         c = GridBagConstraints()
         c.gridx = 1
@@ -160,8 +142,6 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.fill = GridBagConstraints.BOTH
         c.weightx = 1.0
         c.weighty = 1.0
-
-        adornedControl.isOpaque = false
         add(adornedControl, c)
 
         c = GridBagConstraints()
@@ -169,11 +149,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.gridy = 1
         c.anchor = GridBagConstraints.WEST
         c.fill = GridBagConstraints.VERTICAL
-        c.weightx = 0.0
-        c.weighty = 0.0
-
-        val rightAdorns = BoardAdorns(8, true, false, true)
-        add(rightAdorns, c)
+        add(right, c)
 
         //
         // 3-я строка сетки.
@@ -184,11 +160,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.anchor = GridBagConstraints.SOUTH
         c.fill = GridBagConstraints.HORIZONTAL
         c.weightx = 1.0
-        c.weighty = 0.0
-
-        val bottomAdorns = BoardAdorns(8, false, false, false)
-        bottomAdorns.isOpaque = false
-        add(bottomAdorns, c)
+        add(bottom, c)
     }
 
     /**
