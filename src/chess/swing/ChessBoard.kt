@@ -11,7 +11,6 @@ import game.core.listeners.MovePieceListener
 import game.core.listeners.MovePiecePromptListener
 import game.swing.EuropeBoard
 import game.swing.GamePanel
-import java.awt.BorderLayout
 import java.awt.Image
 import java.util.*
 
@@ -25,7 +24,7 @@ class ChessBoard : GamePanel(Chess()) {
         val gamePanel = ChessBoardPanel(game)
         insertSquares(gamePanel)
 
-        add(gamePanel, BorderLayout.CENTER)
+//        add(gamePanel, BorderLayout.CENTER)
     }
 
     /**
