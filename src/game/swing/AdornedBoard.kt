@@ -1,12 +1,10 @@
 package game.swing
 
 import game.swing.images.GameImages
-import java.awt.Graphics
-import java.awt.GridBagConstraints
-import java.awt.GridBagLayout
-import java.awt.GridLayout
+import java.awt.*
 import javax.swing.JLabel
 import javax.swing.JPanel
+import javax.swing.border.LineBorder
 
 
 /**
@@ -22,6 +20,15 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
     private var left: BoardAdorns = BoardAdorns(nH, true, false, true)
     private var right: BoardAdorns = BoardAdorns(nH, true, false, true)
     private var bottom: BoardAdorns = BoardAdorns(nV, false, false, false)
+
+    init {
+        border = LineBorder(Color.BLACK)
+    }
+
+    override fun paintComponent(g: Graphics) {
+        super.paintComponent(g)
+        g.drawImage(GameImages.woodLight, 0, 0, this)
+    }
 
     /**
      * Нумерация вертикалей и горизонталей доски.
@@ -51,11 +58,6 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
             resize(n)
         }
 
-        override fun paintComponent(g: Graphics) {
-            super.paintComponent(g)
-            g.drawImage(GameImages.woodLight, 0, 0, this)
-        }
-
         /**
          * Добавить к доске с новыми размерами номера горизонталей
          * или имена вертикалей (буквы).
@@ -78,29 +80,17 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
                 val delta = if (isInverted) -1 else 1
 
                 val i = start + delta * k
-                val text = """ """ + (if (isNumbers) i else alphabet.substring(i - 1, i)) + """ """
+                val text = " ${if (isNumbers) i else alphabet.substring(i - 1, i)} "
 
                 val adorn = JLabel(text)
-                adorn.isOpaque = false
                 adorn.font = font
                 adorn.text = text
+                adorn.isOpaque = false
                 adorn.background = null
-                adorn.alignmentX = 0.5f
-                adorn.alignmentY = 0.5f
+                alignmentX = Component.CENTER_ALIGNMENT
+                alignmentY = Component.CENTER_ALIGNMENT
                 add(adorn)
             }
-        }
-    }
-
-    /**
-     * Пустое прозрачное поле.
-     *
-     * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
-     */
-    private inner class EmptyAdorn : JLabel(" ") {
-        init {
-            isOpaque = false
-            background = null
         }
     }
 
@@ -112,8 +102,6 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
      * - встраиваемая доска.
      */
     fun insertSquares(boardPanel: GameBoard) {
-//        removeAll()
-
         nV = boardPanel.board.nV
         nH = boardPanel.board.nH
         initMainPanel(boardPanel)
@@ -123,22 +111,13 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
      * @param adornedControl
      */
     private fun initMainPanel(adornedControl: GameBoard) {
-//        // Сетевая планировка доски 3х3 ячейки.
+        // Сетевая планировка доски 3х3 ячейки.
 
         var c: GridBagConstraints?
 
         //
         // 1-я строка сетки.
         //
-        c = GridBagConstraints()
-        c.gridx = 0
-        c.gridy = 0
-        c.anchor = GridBagConstraints.NORTH
-        c.fill = GridBagConstraints.NONE
-        c.weightx = 0.0
-        c.weighty = 0.0
-        add(EmptyAdorn(), c)
-
         c = GridBagConstraints()
         c.gridx = 1
         c.gridy = 0
@@ -150,6 +129,15 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         val topAdorns = BoardAdorns(8, false, false, false)
         topAdorns.isOpaque = false
         add(topAdorns, c)
+
+        c = GridBagConstraints()
+        c.gridx = 2
+        c.gridy = 0
+        c.anchor = GridBagConstraints.CENTER
+        c.fill = GridBagConstraints.NONE
+        c.weightx = 0.0
+        c.weighty = 0.0
+//        add(EmptyAdorn(), c)
 
         //
         // 2-я строка сетки.
@@ -201,9 +189,6 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         val bottomAdorns = BoardAdorns(8, false, false, false)
         bottomAdorns.isOpaque = false
         add(bottomAdorns, c)
-//        add(EmptyAdorn())
-//        add(BoardAdorns(nV, false, false, false))
-//        add(EmptyAdorn())
     }
 
     /**
