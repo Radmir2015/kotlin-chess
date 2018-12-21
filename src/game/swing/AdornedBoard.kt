@@ -1,5 +1,6 @@
 package game.swing
 
+import game.swing.images.GameImages
 import java.awt.*
 import javax.swing.JLabel
 import javax.swing.JPanel
@@ -45,6 +46,11 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
             resize(n)
         }
 
+        override fun paintComponent(g: Graphics) {
+            super.paintComponent(g)
+            g.drawImage(GameImages.woodLight, 0, 0, this)
+        }
+
         /**
          * Добавить к доске с новыми размерами номера горизонталей
          * или имена вертикалей (буквы).
@@ -67,12 +73,15 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
                 val delta = if (isInverted) -1 else 1
 
                 val i = start + delta * k
-                val text = "" + if (isNumbers) i else alphabet.substring(i - 1, i)
+                val text = """${if (isNumbers) i else alphabet.substring(i - 1, i)}"""
 
                 val adorn = JLabel(text)
                 adorn.font = font
                 adorn.text = text
                 adorn.background = null
+                adorn.alignmentX = 0.5f
+                adorn.alignmentY = 0.5f
+                add(adorn)
             }
         }
     }
@@ -96,7 +105,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
      * - встраиваемая доска.
      */
     fun insertSquares(boardPanel: GameBoard) {
-        removeAll()
+//        removeAll()
 
         nV = boardPanel.board.nV
         nH = boardPanel.board.nH
@@ -120,13 +129,14 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.anchor = GridBagConstraints.NORTH
         c.fill = GridBagConstraints.HORIZONTAL
         c.weightx = 1.0
-        c.weighty = 1.0
+        c.weighty = 0.0
 
-        val topAdorns = JLabel("A B C D E F G H")
-//        val boardAdorns = BoardAdorns(8, false, false, false)
-        topAdorns.isOpaque = true
-        topAdorns.background = Color.CYAN
-        topAdorns.alignmentY = 0.0f
+//        val topAdorns = JLabel("A B C D E F G H")
+        val topAdorns = BoardAdorns(8, false, false, false)
+//        topAdorns.preferredSize = Dimension(100, 10)
+        topAdorns.isOpaque = false
+//        topAdorns.background = Color.CYAN
+//        topAdorns.alignmentY = 0.5f
         add(topAdorns, c)
 //        add(EmptyAdorn())
 
@@ -144,7 +154,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
 
         val l = JPanel() // Label("board")
         l.background = Color.RED
-        add(l, c)
+        add(adornedControl, c)
 //        add(adornedControl, c)
 //        add(BoardAdorns(nH, true, false, true))
 
@@ -157,11 +167,11 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
         c.anchor = GridBagConstraints.SOUTH
         c.fill = GridBagConstraints.HORIZONTAL
         c.weightx = 1.0
-        c.weighty = 1.0
+        c.weighty = 0.0
 
-        val bottomAdorns = JLabel("A B C D E F G H")
-        bottomAdorns.background = Color.YELLOW
-        bottomAdorns.isOpaque = true
+        val bottomAdorns = BoardAdorns(8, false, false, false)
+//        bottomAdorns.background = Color.YELLOW
+        bottomAdorns.isOpaque = false
         add(bottomAdorns, c)
 //        add(EmptyAdorn())
 //        add(BoardAdorns(nV, false, false, false))
