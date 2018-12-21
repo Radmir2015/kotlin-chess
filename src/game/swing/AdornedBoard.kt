@@ -63,11 +63,11 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
             setLayout(layout)
 
             for (k in 1..n) {
-                val start = if (this.isInverted) n + 1 else 0
-                val delta = if (this.isInverted) -1 else 1
+                val start = if (isInverted) n + 1 else 0
+                val delta = if (isInverted) -1 else 1
 
                 val i = start + delta * k
-                val text = "" + if (this.isNumbers) i else alphabet.substring(i - 1, i)
+                val text = "" + if (isNumbers) i else alphabet.substring(i - 1, i)
 
                 val adorn = JLabel(text)
                 adorn.font = font

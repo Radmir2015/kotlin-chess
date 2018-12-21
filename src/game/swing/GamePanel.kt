@@ -39,7 +39,6 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
      */
     protected fun insertSquares(gameBoard: GameBoard) {
         adorned.insertSquares(gameBoard)
-//
     }
 
     /**
@@ -54,6 +53,6 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
         // Новые размеры доски и расстановка фигур.
         game.initBoard(nV, nH)
 
-        adorned.resize(nV, nH)
+        adorned.resizeBoard(nV, nH)
     }
 }
