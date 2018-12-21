@@ -2,7 +2,6 @@ package game.swing
 
 import java.awt.BorderLayout
 import java.awt.GridLayout
-import javax.swing.JComponent
 import javax.swing.JLabel
 import javax.swing.JPanel
 
@@ -12,14 +11,13 @@ import javax.swing.JPanel
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 open class AdornedBoard : JPanel(GridLayout(3, 3)) {
+    private var nV: Int = 8
+    private var nH: Int = 8
 
-    private var nV: Int = 0
-    private var nH: Int = 0
-
-    private var top: BoardAdorns? = null
-    private var left: BoardAdorns? = null
-    private var right: BoardAdorns? = null
-    private var bottom: BoardAdorns? = null
+    private var top: BoardAdorns = BoardAdorns(nV, false, false, false)
+    private var left: BoardAdorns = BoardAdorns(nH, true, false, true)
+    private var right: BoardAdorns = BoardAdorns(nH, true, false, true)
+    private var bottom: BoardAdorns = BoardAdorns(nV, false, false, false)
 
     /**
      * Нумерация вертикалей и горизонталей доски.
@@ -28,7 +26,8 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      */
     private inner class BoardAdorns
     /**
-     * Поле с обозначениями для горизонталей и вертикалей (номер или буква)
+     * Поле с обозначениями (номер или буква)
+     * для горизонталей и вертикалей доски
      *
      * @param n
      * сколько колонок или строк
@@ -54,27 +53,14 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
          * - новые размеры доски.
          */
         fun resize(n: Int) {
-            clear(this)
+            removeAll()
 
             val layout = if (isVertical)
                 GridLayout(1, n)
             else
                 GridLayout(n, 1)
 
-//            layout.marginHeight = 0
-//            layout.marginWidth = 0
-//            layout.marginTop = 0
-//            layout.marginLeft = 0
-//            layout.marginRight = 0
-//            layout.marginBottom = 0
-//            layout.horizontalSpacing = 0
-//            layout.makeColumnsEqualWidth = true
             setLayout(layout)
-
-//            val data = GridData(SWT.CENTER, SWT.CENTER, true, true)
-//            data.widthHint = 20
-//
-//            val style = SWT.CENTER or SWT.TRANSPARENT
 
             for (k in 1..n) {
                 val start = if (this.isInverted) n + 1 else 0
@@ -103,22 +89,8 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
     }
 
     /**
-     * Очистить составной элемент.
-     *
-     * @param composite
-     * - очищаемый элемент.
-     */
-    fun clear(composite: JComponent) {
-        val children = composite.components
-        val length = children.size
-
-//        for (i in length - 1 downTo 0)
-//            children[i].dispose()
-    }
-
-    /**
-     * Встроить в доску с нумераций вертикалей и горизонталей доску с клетками
-     * на доске. Для этих клеток будет выполняться нумерация.
+     * Встроить доску с клетками в доску с нумераций
+     * вертикалей и горизонталей доски.
      *
      * @param boardPanel
      * - встраиваемая доска.
@@ -127,18 +99,11 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
         nV = boardPanel.board.nV
         nH = boardPanel.board.nH
 
-//        font = if (nV > 8 || nH > 8) fontSmall else fontLarge
-
         val layout = GridLayout(2, 2)
         layout.hgap = 0
         layout.vgap = 0
-//        layout.verticalSpacing = 0
-//        layout.horizontalSpacing = 0
-//        layout.marginWidth = 0
-//        layout.marginHeight = 0
-//        setLayout(layout)
 
-        clear(this)
+        removeAll()
         initMainPanel(boardPanel)
     }
 
@@ -179,11 +144,11 @@ open class AdornedBoard : JPanel(GridLayout(3, 3)) {
      * - количество горизонталей.
      */
     fun resizeBoard(nV: Int, nH: Int) {
-        left!!.resize(nH)
-        right!!.resize(nH)
+        left.resize(nH)
+        right.resize(nH)
 
-        top!!.resize(nV)
-        bottom!!.resize(nV)
+        top.resize(nV)
+        bottom.resize(nV)
     }
 
     companion object {
