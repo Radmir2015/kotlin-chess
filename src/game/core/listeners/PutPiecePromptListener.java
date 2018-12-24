@@ -63,6 +63,6 @@ public class PutPiecePromptListener implements IMouseMoveListener {
 
         // Перерисуем панель доски c подсказками для тех
         // клеток на которые допустима постановка фигуры.
-        boardPanel.updateBoard();
+        board.setBoardChanged();
     }
 }

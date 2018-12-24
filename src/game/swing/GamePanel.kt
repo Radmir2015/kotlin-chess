@@ -4,6 +4,7 @@ import game.core.Game
 import java.awt.BorderLayout
 import javax.swing.JPanel
 
+
 /**
  * Составная панель для настольной игры:
  *  *
@@ -17,7 +18,7 @@ import javax.swing.JPanel
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
-    private var control: GameControlPanel
+    protected var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
     private var history: MovesHistory = MovesHistory(game.board.history)
 

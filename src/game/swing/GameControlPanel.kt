@@ -1,8 +1,9 @@
 package game.swing
 
 import game.core.Game
-import java.awt.BorderLayout
 import java.awt.Color
+import java.awt.Insets
+import javax.swing.BoxLayout
 import javax.swing.JPanel
 
 /**
@@ -11,14 +12,26 @@ import javax.swing.JPanel
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-class GameControlPanel(game: Game) : JPanel(BorderLayout()) {
+class GameControlPanel(game: Game) : JPanel(true) {
+//    var bottomPanel: JPanel
 
     init {
         background = CONTROL_COLOR
+        layout = BoxLayout(this, BoxLayout.Y_AXIS)
 
         val players = PlayersPanel(game)
-        add(players, BorderLayout.CENTER)
+        players.layout = BoxLayout(players, BoxLayout.Y_AXIS)
+        add(players)
+
+//        bottomPanel = JPanel();
+//        bottomPanel.layout = BoxLayout(bottomPanel, BoxLayout.Y_AXIS)
+//        add(bottomPanel)
     }
+
+    override fun getInsets(): Insets {
+        return Insets(5, 5, 5, 5)
+    }
+
 
     companion object {
         private val CONTROL_COLOR = Color(0, 192, 80, 255)

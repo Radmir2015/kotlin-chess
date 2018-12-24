@@ -10,6 +10,11 @@ import java.awt.Graphics
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 abstract class GreenBoard(board: Board) : GameBoard(board) {
+    init {
+        isOpaque = false
+        background = null
+    }
+
     override fun drawBack(g: Graphics) {
         g.color = FILL_COLOR
         g.fillRect(0, 0, width, height)
@@ -22,6 +27,6 @@ abstract class GreenBoard(board: Board) : GameBoard(board) {
 
     companion object {
         private val LINE_COLOR = Color.black
-        private val FILL_COLOR = Color.GREEN
+        private val FILL_COLOR = Color(0, 200, 100, 255)
     }
 }

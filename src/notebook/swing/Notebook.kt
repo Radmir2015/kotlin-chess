@@ -3,6 +3,8 @@ package notebook.swing
 import chess.images.ChessImages
 import chess.swing.ChessBoard
 import renju.swing.RenjuBoard
+import reversi.ui.ReversiGamePanel
+import reversi.ui.images.ReversiImages
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.Point
@@ -23,7 +25,9 @@ fun main(args: Array<String>) {
 
     val chessPanel = ChessBoard()
     val renjuPanel = RenjuBoard()
+    val reversiPanel = ReversiGamePanel()
 
+    tabbedPane.addTab("Reversi", ReversiImages.icoReversi, reversiPanel)
     tabbedPane.addTab("Chess", ChessImages.icoChess, chessPanel)
     tabbedPane.add(renjuPanel, "Renju")
 

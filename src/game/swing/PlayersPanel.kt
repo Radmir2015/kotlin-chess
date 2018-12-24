@@ -4,6 +4,7 @@ import game.core.Game
 import game.core.IPlayer
 import java.awt.Color
 import java.awt.Font
+import java.awt.Insets
 import java.util.stream.Collectors
 import javax.swing.*
 import javax.swing.border.LineBorder
@@ -71,6 +72,10 @@ class PlayersPanel
         }
 
         add(start)
+    }
+
+    override fun getInsets(): Insets {
+        return Insets(5, 5, 5, 5)
     }
 
     /**
