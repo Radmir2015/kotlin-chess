@@ -1,4 +1,4 @@
-package reversi.ui.images
+package reversi.swing.images
 
 import java.awt.Image
 import javax.imageio.ImageIO

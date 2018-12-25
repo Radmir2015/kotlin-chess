@@ -4,15 +4,16 @@ import game.core.Game
 import java.awt.BorderLayout
 import javax.swing.JPanel
 
-
 /**
  * Составная панель для настольной игры:
- *  *
- * доска с клетками
- *  *
- * панель истории партии (список ходов)
- *  *
- * управляющая панель (выбор игроков, размера доски, счет, ...)
+ *
+ * * доска с клетками
+ * * панель истории партии (список ходов)
+ * * управляющая панель
+ *   * выбор игроков,
+ *   * размера доски,
+ *   * счет,
+ *   * ...)
  *
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
@@ -38,9 +39,7 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
      * @param gameBoard
      * - вставляемая доска с клетками.
      */
-    protected fun insertSquares(gameBoard: GameBoard) {
-        adorned.insertSquares(gameBoard)
-    }
+    protected fun insertSquares(gameBoard: GameBoard) = adorned.insertSquares(gameBoard)
 
     /**
      * Изменить размеры доски.
@@ -50,7 +49,7 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
      * @param nH
      * - количество горизонталей.
      */
-    fun resizeBoard(nV: Int, nH: Int) {
+    open fun resizeBoard(nV: Int, nH: Int) {
         // Новые размеры доски и расстановка фигур.
         game.initBoard(nV, nH)
 

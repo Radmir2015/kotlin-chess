@@ -226,37 +226,19 @@ public class Square {
     }
 
     /**
-     * Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
-     *
      * @param d - направление
-     * @return
+     * @return Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
      */
     public boolean hasNext(Dirs d) {
         return board.onBoard(v + d.dv, h + d.dh);
     }
 
     /**
-     * Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
-     *
-     * @param d
-     * @return
+     * @param d - направление
+     * @return Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
      */
     public Square next(Dirs d) {
         return board.getSquare(v + d.dv, h + d.dh);
-    }
-
-    /**
-     * Выдать расстояние между клетками доски -
-     * сумму расстояний по вертикали и горизонтали.
-     *
-     * @param s - клетка откуда идет фигура.
-     * @return Расстояние между клетками <b>target</b> и <b>source</b>.
-     */
-    public int distance(Square s) {
-        int dv = v - s.v;
-        int dh = h - s.h;
-
-        return Math.abs(dv) + Math.abs(dh);
     }
 
     /**
@@ -271,5 +253,18 @@ public class Square {
         int dh = s.h - h;
 
         return dv + dh;
+    }
+
+    /**
+     * Выдать расстояние между клетками доски -
+     * сумму расстояний по вертикали и горизонтали.
+     *
+     * @param square@return Расстояние между клетками <b>target</b> и <b>source</b>.
+     */
+    public int distance(Square square) {
+        int dv = square.v - this.v;
+        int dh = square.h - this.h;
+
+        return Math.abs(dv) + Math.abs(dh);
     }
 }

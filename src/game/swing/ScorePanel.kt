@@ -36,6 +36,7 @@ class ScorePanel(private val game: Game) : JPanel(true), Observer {
         border = titledBorder
 
         whiteScore = JLabel("""Белые:	$wScore""")
+        whiteScore.isOpaque = false
         whiteScore.background = COLOR_WHITE
         whiteScore.foreground = COLOR_TEXT
         whiteScore.alignmentX = Component.LEFT_ALIGNMENT

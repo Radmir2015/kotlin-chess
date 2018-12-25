@@ -1,4 +1,4 @@
-package reversi.ui
+package reversi.swing
 
 import game.core.*
 import game.core.listeners.PutPieceListener
@@ -10,7 +10,7 @@ import game.swing.images.GameImages
 import reversi.Reversi
 import reversi.pieces.Hole
 import reversi.pieces.Stone
-import reversi.ui.images.ReversiImages
+import reversi.swing.images.ReversiImages
 import java.awt.Color
 import java.awt.Component
 import java.awt.Dimension

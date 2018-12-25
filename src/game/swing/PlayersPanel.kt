@@ -63,20 +63,13 @@ class PlayersPanel
         wList.addListSelectionListener { board.whitePlayer = getSelectedPlayer(it) }
 
         // Кнопка запуска игры.
-        //
         val start = JButton("Старт")
         start.alignmentX = JPanel.CENTER_ALIGNMENT
-        start.addActionListener {
-            game.initBoardDefault()
-            board.startGame()
-        }
-
+        start.addActionListener { board.startGame() }
         add(start)
     }
 
-    override fun getInsets(): Insets {
-        return Insets(5, 5, 5, 5)
-    }
+    override fun getInsets(): Insets = Insets(5, 5, 5, 5)
 
     /**
      * Выдать игрока выбранного в списке игроков.
