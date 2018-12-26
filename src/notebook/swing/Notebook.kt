@@ -3,6 +3,7 @@ package notebook.swing
 import chess.images.ChessImages
 import chess.swing.ChessBoard
 import renju.swing.RenjuBoard
+import renju.swing.images.RenjuImages
 import reversi.swing.ReversiGamePanel
 import reversi.swing.images.ReversiImages
 import vikings.swing.VikingsGamePanel
@@ -29,10 +30,10 @@ fun main(args: Array<String>) {
     val reversiPanel = ReversiGamePanel()
     val vikingsPanel = VikingsGamePanel()
 
-    tabbedPane.addTab("Vikings", VikingImages.icoReversi, vikingsPanel)
+    tabbedPane.addTab("Vikings", VikingImages.icoVikings, vikingsPanel)
     tabbedPane.addTab("Reversi", ReversiImages.icoReversi, reversiPanel)
     tabbedPane.addTab("Chess", ChessImages.icoChess, chessPanel)
-    tabbedPane.add(renjuPanel, "Renju")
+    tabbedPane.addTab("Renju", RenjuImages.icoReversi, renjuPanel)
 
     frame.isVisible = true
 }

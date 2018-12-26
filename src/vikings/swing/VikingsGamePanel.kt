@@ -34,15 +34,6 @@ class VikingsGamePanel : GamePanel(Vikings()) {
         control.add(Box.createRigidArea(Dimension(0, 5)))
         control.add(bsp)
     }
-
-//    override fun resizeBoard(nV: Int, nH: Int) {
-//        super.resizeBoard(nV, nH)
-//
-//        // Новые размеры доски и расстановка фигур.
-//        game.initBoard(nV, nH)
-//
-//        adorned.resizeBoard(nV, nH)
-//    }
 }
 
 /**
@@ -72,10 +63,13 @@ internal class VikingsBoardPanel(game: Game) : GreenBoard(game.board) {
             else
                 VikingImages.imageVikingBlack
 
-        return if (piece is Cyning) if (color == PieceColor.WHITE)
-            VikingImages.imageCyningWhite
-        else
-            VikingImages.imageCyningBlack else null
+        if (piece is Cyning)
+            return if (color == PieceColor.WHITE)
+                VikingImages.imageCyningWhite
+            else
+                VikingImages.imageCyningBlack
+
+        return null
     }
 
     override fun drawSquare(g: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
