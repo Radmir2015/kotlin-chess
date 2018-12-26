@@ -14,6 +14,5 @@ object ReversiImages {
     private val imageReversi = ImageIO.read(javaClass.getResource("icoReversi.png"))
     val icoReversi = ImageIcon(imageReversi.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
 
-    val icoReversiX = ImageIO.read(javaClass.getResource("icoReversiX.png"))
-    val imageHoleBlack = ImageIO.read(javaClass.getResource("bHole.png"))
+    val imageHoleBlack: Image = ImageIO.read(javaClass.getResource("bHole.png"))
 }
