@@ -2,6 +2,8 @@ package notebook.swing
 
 import chess.images.ChessImages
 import chess.swing.ChessBoard
+import halma.swing.HalmaGamePanel
+import halma.swing.images.HalmaImages
 import renju.swing.RenjuBoard
 import renju.swing.images.RenjuImages
 import reversi.swing.ReversiGamePanel
@@ -29,7 +31,9 @@ fun main(args: Array<String>) {
     val renjuPanel = RenjuBoard()
     val reversiPanel = ReversiGamePanel()
     val vikingsPanel = VikingsGamePanel()
+    val halmaPanel = HalmaGamePanel()
 
+    tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
     tabbedPane.addTab("Vikings", VikingImages.icoVikings, vikingsPanel)
     tabbedPane.addTab("Reversi", ReversiImages.icoReversi, reversiPanel)
     tabbedPane.addTab("Chess", ChessImages.icoChess, chessPanel)
