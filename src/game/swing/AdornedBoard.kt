@@ -178,14 +178,12 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
 
         top.resize(nV)
         bottom.resize(nV)
+
+        validate()
+        repaint()
     }
 
     companion object {
-//        private val fontSmall = Font(Display.getCurrent(), "mono", 10, SWT.BOLD)
-//        private val fontLarge = Font(Display.getCurrent(), "mono", 12, SWT.BOLD)
-
-//        private var font = fontSmall
-
         private const val alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     }
 }
