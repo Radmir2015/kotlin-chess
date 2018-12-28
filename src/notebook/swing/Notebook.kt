@@ -1,5 +1,7 @@
 package notebook.swing
 
+import checkers.swing.CheckersGamePanel
+import checkers.swing.images.CheckersImages
 import chess.swing.ChessBoard
 import chess.swing.images.ChessImages
 import go.swing.GoGamePanel
@@ -35,7 +37,9 @@ fun main(args: Array<String>) {
     val vikingsPanel = VikingsGamePanel()
     val halmaPanel = HalmaGamePanel()
     val goPanel = GoGamePanel()
+    val checkersPanel = CheckersGamePanel()
 
+    tabbedPane.addTab("Checkers", CheckersImages.icoCheckers, checkersPanel)
     tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
     tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
     tabbedPane.addTab("Vikings", VikingImages.icoVikings, vikingsPanel)

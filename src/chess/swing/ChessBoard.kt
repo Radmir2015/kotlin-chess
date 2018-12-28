@@ -21,10 +21,7 @@ import java.util.*
  */
 class ChessBoard : GamePanel(Chess()) {
     init {
-        val gamePanel = ChessBoardPanel(game)
-        insertSquares(gamePanel)
-
-//        add(gamePanel, BorderLayout.CENTER)
+        insertSquares(ChessBoardPanel(game))
     }
 
     /**
@@ -44,9 +41,9 @@ class ChessBoard : GamePanel(Chess()) {
 
         override fun getPieceImage(piece: Piece, color: PieceColor): Image? {
             return if (color == PieceColor.WHITE)
-                whiteImages[piece.javaClass]
+                whites[piece.javaClass]
             else
-                blackImages[piece.javaClass]
+                blacks[piece.javaClass]
         }
 
         override fun getImage(piece: Piece): Image? {
@@ -58,32 +55,32 @@ class ChessBoard : GamePanel(Chess()) {
         /**
          * Изображения белых фигур.
          */
-        private val whiteImages = HashMap<Class<out Piece>, Image>()
+        private val whites = HashMap<Class<out Piece>, Image>()
 
         /**
          * Изображения черных фигур.
          */
-        private val blackImages = HashMap<Class<out Piece>, Image>()
+        private val blacks = HashMap<Class<out Piece>, Image>()
 
         /**
          * Инициализация статических переменных - изображений белых и черных фигур.
          */
         init {
             // Изображения белых фигур.
-            whiteImages[Pawn::class.java] = ChessImages.imagePawnWhite
-            whiteImages[Rook::class.java] = ChessImages.imageRookWhite
-            whiteImages[Knight::class.java] = ChessImages.imageKnightWhite
-            whiteImages[Bishop::class.java] = ChessImages.imageBishopWhite
-            whiteImages[Queen::class.java] = ChessImages.imageQueenWhite
-            whiteImages[King::class.java] = ChessImages.imageKingWhite
+            whites[Pawn::class.java] = ChessImages.imagePawnWhite
+            whites[Rook::class.java] = ChessImages.imageRookWhite
+            whites[Knight::class.java] = ChessImages.imageKnightWhite
+            whites[Bishop::class.java] = ChessImages.imageBishopWhite
+            whites[Queen::class.java] = ChessImages.imageQueenWhite
+            whites[King::class.java] = ChessImages.imageKingWhite
 
             // Изображения черных фигур.
-            blackImages[Pawn::class.java] = ChessImages.imagePawnBlack
-            blackImages[Rook::class.java] = ChessImages.imageRookBlack
-            blackImages[Knight::class.java] = ChessImages.imageKnightBlack
-            blackImages[Bishop::class.java] = ChessImages.imageBishopBlack
-            blackImages[Queen::class.java] = ChessImages.imageQueenBlack
-            blackImages[King::class.java] = ChessImages.imageKingBlack
+            blacks[Pawn::class.java] = ChessImages.imagePawnBlack
+            blacks[Rook::class.java] = ChessImages.imageRookBlack
+            blacks[Knight::class.java] = ChessImages.imageKnightBlack
+            blacks[Bishop::class.java] = ChessImages.imageBishopBlack
+            blacks[Queen::class.java] = ChessImages.imageQueenBlack
+            blacks[King::class.java] = ChessImages.imageKingBlack
         }
 
         /**
@@ -94,9 +91,9 @@ class ChessBoard : GamePanel(Chess()) {
          */
         fun getChessPieceImage(piece: Piece): Image? {
             return if (piece.color == PieceColor.WHITE)
-                whiteImages[piece.javaClass]
+                whites[piece.javaClass]
             else
-                blackImages[piece.javaClass]
+                blacks[piece.javaClass]
         }
     }
 }
