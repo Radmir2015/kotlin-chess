@@ -60,6 +60,19 @@ public class PutPieceListener implements IGameListner {
             board.history.addMove(move);
             board.history.setResult(e.result);
 
+            // Теперь ходить должен противник.
+            board.changeMoveColor();
+
+            // Получим новую фигуру НЕ стоящую на клетке.
+            Piece p = boardPanel.getPiece(mouseSquare, board.getMoveColor());
+            if (p == null)
+                return;
+
+            p.remove();
+
+            // Зададим изображение курсора такое как избражение у новой фигуры.
+            boardPanel.pieceToCursor(p);
+
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
             board.setBoardChanged();
