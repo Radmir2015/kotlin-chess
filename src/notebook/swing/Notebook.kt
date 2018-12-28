@@ -14,6 +14,8 @@ import renju.swing.RenjuBoard
 import renju.swing.images.RenjuImages
 import reversi.swing.ReversiGamePanel
 import reversi.swing.images.ReversiImages
+import tamerlan.swing.TamerlanChessGamePanel
+import tamerlan.swing.images.TamerlanChessImages
 import vikings.swing.VikingsGamePanel
 import vikings.swing.images.VikingImages
 import java.awt.BorderLayout
@@ -41,7 +43,9 @@ fun main(args: Array<String>) {
     val goPanel = GoGamePanel()
     val checkersPanel = CheckersGamePanel()
     val chinaChessPanel = ChinaChessGamePanel()
+    val tamerlanChessPanel = TamerlanChessGamePanel()
 
+    tabbedPane.addTab("Tamerlan Chess", TamerlanChessImages.icoTamerlanChess, tamerlanChessPanel)
     tabbedPane.addTab("China Chess", ChinaChessImages.icoChinaChess, chinaChessPanel)
     tabbedPane.addTab("Checkers", CheckersImages.icoCheckers, checkersPanel)
     tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
