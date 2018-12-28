@@ -1,8 +1,8 @@
 package chess.swing
 
 import chess.Chess
-import chess.images.ChessImages
 import chess.pieces.*
+import chess.swing.images.ChessImages
 import game.core.Game
 import game.core.Piece
 import game.core.PieceColor

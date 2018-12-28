@@ -1,9 +1,8 @@
-package chess.images
+package chess.swing.images
 
 import java.awt.Image
 import javax.imageio.ImageIO
 import javax.swing.ImageIcon
-
 
 /**
  * Класс для доступа к уникальным изображениям шахматных фигур.
