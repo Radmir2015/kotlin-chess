@@ -4,6 +4,8 @@ import checkers.swing.CheckersGamePanel
 import checkers.swing.images.CheckersImages
 import chess.swing.ChessBoard
 import chess.swing.images.ChessImages
+import chinachess.swing.ChinaChessGamePanel
+import chinachess.swing.images.ChinaChessImages
 import go.swing.GoGamePanel
 import go.swing.images.GoImages
 import halma.swing.HalmaGamePanel
@@ -38,7 +40,9 @@ fun main(args: Array<String>) {
     val halmaPanel = HalmaGamePanel()
     val goPanel = GoGamePanel()
     val checkersPanel = CheckersGamePanel()
+    val chinaChessPanel = ChinaChessGamePanel()
 
+    tabbedPane.addTab("China Chess", ChinaChessImages.icoChinaChess, chinaChessPanel)
     tabbedPane.addTab("Checkers", CheckersImages.icoCheckers, checkersPanel)
     tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
     tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
