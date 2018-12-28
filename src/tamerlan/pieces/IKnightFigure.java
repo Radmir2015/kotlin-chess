@@ -8,15 +8,10 @@ import game.core.Square;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class IKnightFigure {
-
     public static boolean isCorrectMove(Square source, Square target) {
         int dh = Math.abs(target.h - source.h);
         int dv = Math.abs(target.v - source.v);
 
-        if ((dh == 1 && dv == 2) ||
-                (dh == 2 && dv == 1))
-            return true;
-
-        return false;
+        return ((dh == 1 && dv == 2) || (dh == 2 && dv == 1));
     }
 }
