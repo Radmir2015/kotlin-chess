@@ -22,7 +22,8 @@ import javax.swing.Box
  */
 class VikingsGamePanel : GamePanel(Vikings()) {
     init {
-        insertSquares(VikingsBoardPanel(game))
+        val gameBoard = VikingsBoardPanel(game)
+        insertSquares(gameBoard)
 
         val n9x9 = intArrayOf(9, 9)
         val n11x11 = intArrayOf(11, 11)

@@ -31,6 +31,8 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
 
         adorned = AdornedBoard()
         add(adorned, BorderLayout.CENTER)
+
+        adorned.resizeBoard(game.board.nV, game.board.nH)
     }
 
     /**

@@ -56,8 +56,8 @@ class ScorePanel(private val game: Game) : JPanel(true), Observer {
         wScore = game.getScore(PieceColor.WHITE)
         bScore = game.getScore(PieceColor.BLACK)
 
-        whiteScore.text = "Белые:\t$wScore"
-        blackScore.text = "Черные:\t$bScore"
+        whiteScore.text = "Белые:   $wScore"
+        blackScore.text = "Черные:  $bScore"
     }
 
     companion object {
