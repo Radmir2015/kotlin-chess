@@ -20,7 +20,7 @@ public class Pawn extends ChessPiece {
         super(square, color);
     }
 
-    public Square GetEnemyPieceForEnPassantMove(Square source, Square target) {
+    private Square GetEnemyPieceForEnPassantMove(Square source, Square target) {
         int dv = Math.abs(target.v - source.v);
         //Firstly, we have to ensure whether either our or opponent's piece is situated on the right position
         if ((source.h == 3 && isWhite() || source.h == 4 && isBlack()) && dv == 1) {
@@ -96,11 +96,8 @@ public class Pawn extends ChessPiece {
             if (dh <= 0)      // Смещение пешки назад.
                 return false; // Назад пешки не бьют.
 
-            if (dh > 1)       // Так далеко пешки не бьют.
-                return false;
-
-
-            return true;
+            // Так далеко пешки не бьют.
+            return dh <= 1;
         }
 
         // По вертикали пешка фигуры не бьет.
@@ -126,10 +123,7 @@ public class Pawn extends ChessPiece {
                 return false; // Перепрыгивать нельзя.
         }
 
-        if ((1 <= dh) && (dh <= upper))
-            return true;
-
-        return false;
+        return (1 <= dh) && (dh <= upper);
     }
 
     @Override
@@ -173,7 +167,7 @@ public class Pawn extends ChessPiece {
         return "";
     }
 
-    public boolean IfMakeDoubleMove() {
+    private boolean IfMakeDoubleMove() {
         return flgMakeDoubleMove;
     }
 }

@@ -4,7 +4,7 @@ import game.core.Piece;
 import game.core.Square;
 import game.core.moves.ICaptureMove;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -52,7 +52,7 @@ public class Capture extends SimpleMove
 
     @Override
     public List<Square> getCaptured() {
-        return Arrays.asList(capturedSquare);
+        return Collections.singletonList(capturedSquare);
     }
 
     @Override
@@ -89,11 +89,11 @@ public class Capture extends SimpleMove
         return capturedPiece;
     }
 
-    public void setCapturedPiece(Piece capturedPiece) {
+    void setCapturedPiece(Piece capturedPiece) {
         this.capturedPiece = capturedPiece;
     }
 
-    public Square getCapturedSquare() {
+    Square getCapturedSquare() {
         return capturedSquare;
     }
 

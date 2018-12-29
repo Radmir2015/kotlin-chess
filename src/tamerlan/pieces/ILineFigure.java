@@ -7,7 +7,7 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public interface ILineFigure {
+interface ILineFigure {
     static boolean isCorrectMove(Square source, Square target) {
         if (source.isEmptyVertical(target))
             return true;

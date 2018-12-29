@@ -5,11 +5,9 @@ package chess.moves;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public interface ICapture {
+interface ICapture {
     /**
-     * Действительно ли происходит захват фигуры противника?
-     *
-     * @return
+     * @return Действительно ли происходит захват фигуры противника?
      */
     default boolean isCapture() {
         return true;

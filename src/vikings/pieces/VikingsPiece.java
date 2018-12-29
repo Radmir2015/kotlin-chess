@@ -53,10 +53,7 @@ public class VikingsPiece extends Piece {
         if ((square.v == nv) && (square.h == 0))
             return true;
 
-        if ((square.v == nv) && (square.h == nh))
-            return true;
-
-        return false;
+        return (square.v == nv) && (square.h == nh);
     }
 
     public static List<Square> getExits(Board board) {

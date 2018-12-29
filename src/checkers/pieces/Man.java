@@ -14,8 +14,7 @@ public class Man extends CheckersPiece implements ITrackPiece {
         super(square, color);
     }
 
-    static
-    public boolean isCorrectMove(Man man, Square source, Square target) {
+    private static boolean isCorrectMove(Man man, Square source, Square target) {
         // На занятую клетку ходить нельзя.
         if (!target.isEmpty())
             return false;
@@ -92,7 +91,7 @@ public class Man extends CheckersPiece implements ITrackPiece {
 
             Square nextS = square.next(d);
 
-            if (!hasEnemy(nextS))
+            if (hasFriend(nextS))
                 continue; // Нет вражеской фигуры для перепрыгивания.
 
             if (!nextS.hasNext(d))

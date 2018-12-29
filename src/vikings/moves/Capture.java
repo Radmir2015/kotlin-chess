@@ -87,11 +87,8 @@ public class Capture extends SimpleMove implements ICaptureMove {
             return true;
 
         // Есть ли окружение фигуры с 2-х сторон по вертикали?
-        if (isCaptureSide(piece, source, target, Dirs.UP) &&
-                isCaptureSide(piece, source, target, Dirs.DOWN))
-            return true;
-
-        return false;
+        return isCaptureSide(piece, source, target, Dirs.UP) &&
+                isCaptureSide(piece, source, target, Dirs.DOWN);
     }
 
     /**
@@ -109,13 +106,10 @@ public class Capture extends SimpleMove implements ICaptureMove {
             return false;
 
         // Есть ли окружение короля с 4-х сторон.
-        if (isCaptureSide(king, source, target, Dirs.LEFT) &&
+        return isCaptureSide(king, source, target, Dirs.LEFT) &&
                 isCaptureSide(king, source, target, Dirs.RIGHT) &&
                 isCaptureSide(king, source, target, Dirs.UP) &&
-                isCaptureSide(king, source, target, Dirs.DOWN))
-            return true;
-
-        return false;
+                isCaptureSide(king, source, target, Dirs.DOWN);
     }
 
     /**

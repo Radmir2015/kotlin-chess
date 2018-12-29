@@ -9,7 +9,7 @@ public abstract class GoMove implements IPutMove {
     /**
      * Какую фигуру поставят.
      */
-    protected Piece piece;
+    Piece piece;
 
     @Override
     public Piece getPiece() {

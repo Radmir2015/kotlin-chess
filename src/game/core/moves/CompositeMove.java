@@ -23,7 +23,7 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
      */
     private Piece piece;
 
-    CompositeMove() {
+    private CompositeMove() {
         moves = new ArrayList<>();
     }
 
@@ -34,16 +34,14 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
         addMove(move);
     }
 
-    public <P> CompositeMove(Piece p) {
+    public CompositeMove(Piece p) {
         moves = new ArrayList<>();
 
         this.piece = p;
     }
 
     /**
-     * Вернуть последовательность простых ходов.
-     *
-     * @return
+     * @return Вернуть последовательность простых ходов.
      */
     public ArrayList<T> getMoves() {
         return moves;
@@ -103,16 +101,14 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
     }
 
     /**
-     * Допустим ли ход на клетку square.
-     *
      * @param square - проверяемая клетка.
-     * @return
+     * @return Допустим ли ход на клетку square.
      */
     public boolean isAcceptable(Square square) {
         // Если фигура уже была на этой клетке, то ход недопустим.
-        return !moves
+        return moves
                 .stream()
-                .anyMatch(move -> move.getSource() == square);
+                .noneMatch(move -> move.getSource() == square);
     }
 
     @Override

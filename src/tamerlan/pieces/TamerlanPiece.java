@@ -12,7 +12,7 @@ import game.core.Square;
  */
 abstract
 public class TamerlanPiece extends Piece {
-    public TamerlanPiece(Square square, PieceColor color) {
+    TamerlanPiece(Square square, PieceColor color) {
         super(square, color);
     }
 

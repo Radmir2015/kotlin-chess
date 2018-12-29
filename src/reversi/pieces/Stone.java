@@ -47,7 +47,7 @@ public class Stone extends Piece {
      * @param target - проверяемая клетка.
      * @return - есть ли враги при постановке фигуры на эту клетку.
      */
-    public boolean hasEnemy(Square target) {
+    private boolean hasEnemy(Square target) {
         Board board = target.getBoard();
         PieceColor myColor = getColor();
 

@@ -11,7 +11,7 @@ import game.core.Square;
  */
 abstract
 public class ChessPiece extends Piece {
-    public ChessPiece(Square square, PieceColor color) {
+    ChessPiece(Square square, PieceColor color) {
         super(square, color);
     }
 

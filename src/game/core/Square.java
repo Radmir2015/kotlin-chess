@@ -28,18 +28,17 @@ public class Square {
 
     /**
      * Создать клетку на доске.
-     *
-     * @param board - доска где расположена клетка.
+     *  @param board - доска где расположена клетка.
      * @param v     - вертикаль клетки.
      * @param h     - горизонталь клетки.
      */
-    protected Square(Board board, int v, int h) {
+    Square(Board board, int v, int h) {
         this.v = v;
         this.h = h;
         this.board = board;
     }
 
-    public void setPiece(Piece piece, Square square) {
+    private void setPiece(Piece piece, Square square) {
         this.piece = piece;
         piece.square = square;
     }
@@ -72,7 +71,7 @@ public class Square {
      *
      * @return - буква для обозначения вертикали (a..z)
      */
-    public String getVLetter() {
+    private String getVLetter() {
         return ALPHABET.substring(v, v + 1);
     }
 
@@ -82,8 +81,8 @@ public class Square {
      *
      * @return - номер горизонтали клетки
      */
-    public int getHNumber() {
-        return board.getHeight() - h;
+    private int getHNumber() {
+        return board.nH - h;
     }
 
     /**

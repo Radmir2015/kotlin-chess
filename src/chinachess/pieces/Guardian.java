@@ -28,7 +28,7 @@ public class Guardian extends ChinaChessPiece {
         Square target = squares[0];
 
         // Ходы вне крепости для короля запрещены.
-        if (!inCastle(getColor(), target))
+        if (outCastle(getColor(), target))
             return false;
 
         int dv = Math.abs(target.v - square.v);

@@ -19,16 +19,18 @@ public class SimpleMove implements ITransferMove {
     /**
      * Откуда пошла фигура.
      */
-    protected Square source;
+    Square source;
     /**
      * Куда пошла фигура.
      */
-    protected Square target;
+    Square target;
     /**
      * Какая фигура пошла.
      */
-    protected Piece piece;
+    Piece piece;
+
     private Map<Piece, Piece> kings = new HashMap<>();
+
     /**
      * Бало ли превращение шащки в дамку?
      */

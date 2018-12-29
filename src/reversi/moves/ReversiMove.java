@@ -16,13 +16,13 @@ public class ReversiMove implements IPutMove, ICaptureMove {
     /**
      * Клетка на которую ставится фигура.
      */
-    Square target;
+    private Square target;
 
     /**
      * Клетки на которых стоят захваченные в плен вражеские фигуры.
      * Эти пленные фигуры поменяют цвет и будут вовать на нашей стороне.
      */
-    List<Square> captured;
+    private List<Square> captured;
 
     /**
      * Фигура которая делает ход.

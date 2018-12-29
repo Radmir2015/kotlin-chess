@@ -19,11 +19,11 @@ abstract
 public class VikingsPlayer extends MovePiecePlayer {
     private int maxMoves;
 
-    public VikingsPlayer() {
+    VikingsPlayer() {
         this(180);
     }
 
-    public VikingsPlayer(int maxMoves) {
+    private VikingsPlayer(int maxMoves) {
         this.maxMoves = maxMoves;
     }
 

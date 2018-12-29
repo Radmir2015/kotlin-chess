@@ -7,7 +7,7 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class IKnightFigure {
+class IKnightFigure {
     public static boolean isCorrectMove(Square source, Square target) {
         int dh = Math.abs(target.h - source.h);
         int dv = Math.abs(target.v - source.v);

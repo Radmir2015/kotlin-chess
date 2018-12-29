@@ -17,17 +17,17 @@ public class SimpleMove implements ITransferMove {
     /**
      * Какая фигура перемещается.
      */
-    protected Piece piece;
+    Piece piece;
 
     /**
      * Откуда перемещается.
      */
-    protected Square source;
+    Square source;
 
     /**
      * Куда перемещается.
      */
-    protected Square target;
+    Square target;
 
     /**
      * Простой ход без захвата фигур противника.

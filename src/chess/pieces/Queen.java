@@ -31,10 +31,7 @@ public class Queen extends ChessPiece {
         if (square.isEmptyHorizontal(target))
             return true;
 
-        if (square.isEmptyDiagonal(target))
-            return true;
-
-        return false;
+        return square.isEmptyDiagonal(target);
     }
 
     @Override

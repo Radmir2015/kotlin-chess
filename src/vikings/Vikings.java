@@ -32,7 +32,7 @@ public class Vikings extends Game {
      *
      * @param boardSize - размер доски.
      */
-    public Vikings(int boardSize) {
+    private Vikings(int boardSize) {
         super.initBoard(boardSize, boardSize);
 
         switch (boardSize) {

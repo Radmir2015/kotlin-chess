@@ -115,7 +115,7 @@ public class TamerlanChessPlayer extends MovePiecePlayer {
      * @param s2 вторая клетка
      * @return расстояние между клетками.
      */
-    protected int distance(Square s1, Square s2) {
+    int distance(Square s1, Square s2) {
         final double dv = Math.abs(s1.v - s2.v);
         final double dh = Math.abs(s1.h - s2.h);
         return (int) (dv + dh);

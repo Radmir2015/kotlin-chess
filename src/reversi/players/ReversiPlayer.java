@@ -43,9 +43,7 @@ public class ReversiPlayer extends PutPiecePlayer {
         if ((s.v == 0) && (s.h == 0)) return true;
         if ((s.v == 0) && (s.h == b.nH - 1)) return true;
         if ((s.v == b.nV - 1) && (s.h == 0)) return true;
-        if ((s.v == b.nV - 1) && (s.h == b.nH - 1)) return true;
-
-        return false;
+        return (s.v == b.nV - 1) && (s.h == b.nH - 1);
     }
 
     @Override

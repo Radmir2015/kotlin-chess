@@ -5,7 +5,6 @@ import game.core.Piece;
 import game.core.Square;
 import game.core.moves.ICaptureMove;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,7 +33,7 @@ public class Promotion extends SimpleMove
     @Override
     public List<Square> getCaptured() {
         return capturedPiece == null
-                ? Collections.emptyList() : Arrays.asList(target);
+                ? Collections.emptyList() : Collections.singletonList(target);
     }
 
     /*

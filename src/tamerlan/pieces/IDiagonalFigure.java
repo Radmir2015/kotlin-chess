@@ -7,7 +7,7 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public interface IDiagonalFigure {
+interface IDiagonalFigure {
     static boolean isCorrectMove(Square square, Square target) {
         return square.isEmptyDiagonal(target);
     }

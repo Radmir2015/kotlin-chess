@@ -12,12 +12,12 @@ public class History {
     /**
      * Номер текущего хода на доске.
      */
-    int curMove = -1;
+    private int curMove = -1;
 
     /**
      * Список ходов сделанных на доске.
      */
-    List<Move> moves = new ArrayList<>();
+    private List<Move> moves = new ArrayList<>();
 
     /**
      * Доска на которой идет игра.
@@ -29,11 +29,11 @@ public class History {
      */
     private GameResult result = GameResult.UNKNOWN;
 
-    public History(Board board) {
+    History(Board board) {
         setBoard(board);
     }
 
-    public void clear() {
+    void clear() {
         curMove = -1;
         moves.clear();
         result = GameResult.UNKNOWN;
@@ -42,7 +42,7 @@ public class History {
     /**
      * Добавить ход в историю игры.
      *
-     * @param move
+     * @param move - ход игры
      */
     public void addMove(Move move) {
         moves.add(move);
@@ -50,27 +50,21 @@ public class History {
     }
 
     /**
-     * Вернуть ходы сделанные в игре.
-     *
-     * @return
+     * @return Вернуть ходы сделанные в игре.
      */
     public List<Move> getMoves() {
         return moves;
     }
 
     /**
-     * Вернуть номер текущего хода.
-     *
-     * @return
+     * @return Вернуть номер текущего хода.
      */
     public int getCurMoveNumber() {
         return curMove;
     }
 
     /**
-     * Вернуть текущий ход.
-     *
-     * @return
+     * @return Вернуть текущий ход.
      */
     public Move getCurMove() {
         return curMove == -1 ? null : moves.get(curMove);
@@ -158,18 +152,14 @@ public class History {
     }
 
     /**
-     * Получить результат игры.
-     *
-     * @return
+     * @return Получить результат игры.
      */
     public GameResult getResult() {
         return result;
     }
 
     /**
-     * Задать результат игры.
-     *
-     * @param result
+     * @param result Задать результат игры.
      */
     public void setResult(GameResult result) {
         this.result = result;

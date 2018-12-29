@@ -39,10 +39,7 @@ public class Viking extends VikingsPiece {
             return true;
 
         // Допустим ход по пустой горизонтали.
-        if (square.isEmptyHorizontal(target))
-            return true;
-
-        return false;
+        return square.isEmptyHorizontal(target);
     }
 
     @Override

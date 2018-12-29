@@ -35,7 +35,7 @@ public class King extends ChessPiece {
             // Возможно короткая рокировка
             //
 
-            if (!isStartPosition())
+            if (outStartPosition())
                 return false; // Ход не с начальной позиции.
 
             if (dh != 0)
@@ -56,10 +56,8 @@ public class King extends ChessPiece {
             if (!(pieceH instanceof Rook))
                 return false; // На вертикали H не ладья.
 
-            if (pieceH.getColor() != getColor())
-                return false; // На вертикали H ладья противника.
-
-            return true;
+            // На вертикали H ладья противника.
+            return pieceH.getColor() == getColor();
         }
 
         if (dv == -2) { // Ход влево.
@@ -67,7 +65,7 @@ public class King extends ChessPiece {
             // Возможно длинная рокировка
             //
 
-            if (!isStartPosition())
+            if (outStartPosition())
                 return false; // Ход не с начальной позиции.
 
             if (dh != 0)
@@ -91,16 +89,11 @@ public class King extends ChessPiece {
             if (!(pieceA instanceof Rook))
                 return false; // На вертикали A не ладья.
 
-            if (pieceA.getColor() != getColor())
-                return false; // На вертикали A ладья противника.
-
-            return true;
+            // На вертикали A ладья противника.
+            return pieceA.getColor() == getColor();
         }
 
-        if (square.isNear(target))
-            return true;
-
-        return false;
+        return square.isNear(target);
     }
 
     /**
@@ -108,21 +101,18 @@ public class King extends ChessPiece {
      *
      * @return начальная позиция?
      */
-    private boolean isStartPosition() {
+    private boolean outStartPosition() {
         int kingV = square.v;
         int kingH = square.h;
 
-        if (kingV != 4) return false;
+        if (kingV != 4) return true;
 
         final PieceColor color = getColor();
 
         if ((color == PieceColor.BLACK) && (kingH == 0))
-            return true;
+            return false;
 
-        if ((color == PieceColor.WHITE) && (kingH == 7))
-            return true;
-
-        return false;
+        return (color != PieceColor.WHITE) || (kingH != 7);
     }
 
     @Override

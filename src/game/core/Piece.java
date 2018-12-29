@@ -23,7 +23,7 @@ public class Piece {
      */
     public Square square;
 
-    public Piece(Square square, PieceColor color) {
+    protected Piece(Square square, PieceColor color) {
         this.square = square;
         this.color = color;
 
@@ -38,7 +38,7 @@ public class Piece {
     }
 
     /**
-     * @return задать цвет фигуры.
+     * задать цвет фигуры.
      */
     public void setColor(PieceColor color) {
         this.color = color;
@@ -72,9 +72,9 @@ public class Piece {
      * Стоит ли на клетке <b>s</b> вражеская фигура.
      *
      * @param s - проверяемая клетка.
-     * @return
+     * @return стоит ли фигура
      */
-    public boolean hasEnemy(Square s) {
+    public boolean hasEnemy1(Square s) {
         if (s.isEmpty())
             return false;
 
@@ -85,7 +85,7 @@ public class Piece {
      * Стоит ли на клетке <b>s</b> своя фигура.
      *
      * @param s - проверяемая клетка.
-     * @return
+     * @return стоит ли фигура
      */
     public boolean hasFriend(Square s) {
         if (s.isEmpty())
@@ -98,7 +98,7 @@ public class Piece {
      * Стоит ли по направлению <b>d</b> вражеская фигура.
      *
      * @param d - проверяемое направление
-     * @return
+     * @return стоит ли фигура
      */
     public boolean hasEnemy(Dirs d) {
         Square s = square.getBoard().getSquare(square.v + d.dv, square.h + d.dh);
@@ -113,7 +113,7 @@ public class Piece {
      * Стоит ли по направлению <b>d</b> своя фигура.
      *
      * @param d - проверяемое направление
-     * @return
+     * @return стоит ли фигура
      */
     public boolean hasFriend(Dirs d) {
         Square s = square.getBoard().getSquare(square.v + d.dv, square.h + d.dh);
@@ -128,7 +128,7 @@ public class Piece {
      * Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
      *
      * @param d - направление
-     * @return
+     * @return есть ли клетка
      */
     public boolean hasNext(Dirs d) {
         return square.getBoard().onBoard(square.v + d.dv, square.h + d.dh);
@@ -137,8 +137,8 @@ public class Piece {
     /**
      * Существует ли на доске следующая клетка в направлении <b>d</b> от текущей клетки.
      *
-     * @param d
-     * @return
+     * @param d направление просмотра
+     * @return есть ли клетка
      */
     public Square next(Dirs d) {
         return square.getBoard().getSquare(square.v + d.dv, square.h + d.dh);

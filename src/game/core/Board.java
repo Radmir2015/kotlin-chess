@@ -21,7 +21,7 @@ public class Board extends Observable {
      * История партии (последовательность ходов игры).
      */
     public History history = new History(this);
-    Map<PieceColor, IPlayer> players = new HashMap<>();
+    private Map<PieceColor, IPlayer> players = new HashMap<>();
     /**
      * Клетки доски.
      */
@@ -58,7 +58,7 @@ public class Board extends Observable {
      * @param nV - количество вертикалей доски.
      * @param nH - количество горизонталей доски.
      */
-    public void reset(int nV, int nH) {
+    void reset(int nV, int nH) {
         this.nV = nV;
         this.nH = nH;
 
@@ -157,24 +157,7 @@ public class Board extends Observable {
         if (v < 0) return false;
         if (h < 0) return false;
 
-        if (v > nV - 1) return false;
-        if (h > nH - 1) return false;
-
-        return true;
-    }
-
-    /**
-     * @return - ширина доски
-     */
-    public int getWidth() {
-        return nV;
-    }
-
-    /**
-     * @return - высота доски
-     */
-    public int getHeight() {
-        return nH;
+        return (h <= nH - 1) && (v <= nV - 1);
     }
 
     /**

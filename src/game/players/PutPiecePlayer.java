@@ -18,7 +18,7 @@ public class PutPiecePlayer implements IPlayer {
      */
     protected IPieceProvider pieceProvider;
 
-    public PutPiecePlayer(IPieceProvider pieceProvider) {
+    protected PutPiecePlayer(IPieceProvider pieceProvider) {
         this.pieceProvider = pieceProvider;
     }
 
@@ -30,7 +30,7 @@ public class PutPiecePlayer implements IPlayer {
      * @param color - цвет фигуры которая должна сделать ход.
      * @return список допустимых ходов.
      */
-    public List<Move> getCorrectMoves(Board board, PieceColor color) {
+    protected List<Move> getCorrectMoves(Board board, PieceColor color) {
         List<Move> allCorrectMoves = new ArrayList<>();
 
         // Соберем на доске все пустые клетки.

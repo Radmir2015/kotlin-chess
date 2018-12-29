@@ -37,16 +37,16 @@ public class ChinaChessPiece extends Piece {
      * @param square - проверяемая клетка.
      * @return внутри крепости или нет.
      */
-    boolean inCastle(PieceColor color, Square square) {
+    boolean outCastle(PieceColor color, Square square) {
         int minV = 3;
         int maxV = minV + 2;
 
         int minH = (color == PieceColor.BLACK ? 0 : 6);
         int maxH = (color == PieceColor.BLACK ? 2 : 8);
 
-        return (minV <= square.v) && (square.v <= maxV)
-                &&
-                (minH <= square.h) && (square.h <= maxH);
+        return (minV > square.v) || (square.v > maxV)
+                ||
+                (minH > square.h) || (square.h > maxH);
     }
 
     /**
@@ -60,8 +60,8 @@ public class ChinaChessPiece extends Piece {
     boolean isEnemyPart(PieceColor color, Square square) {
         Board board = square.getBoard();
 
-        return color == PieceColor.BLACK
-                ? (square.h >= board.nH / 2)
-                : (square.h < board.nH / 2);
+        boolean whiteInBlacks = square.h >= board.nH / 2;
+        boolean blackInWhites = square.h < board.nH / 2;
+        return color == PieceColor.BLACK ? whiteInBlacks : blackInWhites;
     }
 }

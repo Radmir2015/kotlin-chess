@@ -14,19 +14,17 @@ import game.core.moves.ITransferMove;
 abstract
 public class HalmaMove implements ITransferMove {
     /**
-     * Какая фигура перемещается.
-     */
-    protected Piece piece;
-
-    /**
      * Откуда перемещается.
      */
-    protected Square source;
-
+    Square source;
     /**
      * Куда перемещается.
      */
-    protected Square target;
+    Square target;
+    /**
+     * Какая фигура перемещается.
+     */
+    private Piece piece;
 
     /**
      * Перемешение фигуры через заданные клетки.

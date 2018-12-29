@@ -60,7 +60,7 @@ public class King extends ChinaChessPiece {
         }
 
         // Другие ходы вне крепости для короля запрещены.
-        if (!inCastle(color, target))
+        if (outCastle(color, target))
             return false;
 
         int dv = Math.abs(target.v - source.v);

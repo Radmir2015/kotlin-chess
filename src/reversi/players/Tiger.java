@@ -88,7 +88,7 @@ public class Tiger extends ReversiPlayer {
      * @param target - проверяемая клетка.
      * @return Если вы сыграете на это поле, ваш противник легко займет угол.
      */
-    public boolean isSquareX(Square target) {
+    private boolean isSquareX(Square target) {
         // TODO Козак
         // http://othello.gomel.by/stepanov/x-pole/
         return false;
@@ -102,7 +102,7 @@ public class Tiger extends ReversiPlayer {
      * @param target - проверяемая клетка.
      * @return это плохое C-поле.
      */
-    public boolean isSquareC(Square target) {
+    private boolean isSquareC(Square target) {
         // TODO Козак
         // http://othello.gomel.by/stepanov/c-pole/
         return false;
@@ -118,7 +118,7 @@ public class Tiger extends ReversiPlayer {
      * @param target - проверяемая клетка.
      * @return Эта клетка на большом кресте?
      */
-    public boolean isBigCross(Square target) {
+    private boolean isBigCross(Square target) {
         // TODO Козак
         // http://othello.gomel.by/stepanov/bolwoy-krest/
         return false;

@@ -17,8 +17,7 @@ public class Stone extends Piece {
         super(square, color);
     }
 
-    static
-    public boolean isCorrectMove(Stone stone, Square source, Square target) {
+    private static boolean isCorrectMove(Stone stone, Square source, Square target) {
         Board board = stone.square.getBoard();
 
         int dv = Math.abs(target.v - source.v);

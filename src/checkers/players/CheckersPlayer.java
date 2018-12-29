@@ -84,7 +84,7 @@ public class CheckersPlayer extends MovePiecePlayer {
             Square nextSquare = square.next(dir);
 
             // Нет вражеской фигуры для перепрыгивания.
-            if (!piece.hasEnemy(nextSquare))
+            if (piece.hasFriend(nextSquare))
                 continue;
 
             // Вражеская фигура на краю доски.

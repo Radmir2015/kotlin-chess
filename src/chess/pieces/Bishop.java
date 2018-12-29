@@ -24,10 +24,7 @@ public class Bishop extends ChessPiece {
             return false;
 
         Square target = squares[0];
-        if (square.isEmptyDiagonal(target))
-            return true;
-
-        return false;
+        return square.isEmptyDiagonal(target);
     }
 
     @Override

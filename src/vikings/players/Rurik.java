@@ -22,6 +22,10 @@ public class Rurik extends VikingsPlayer {
     private final Comparator<? super Move> brain
             = (m1, m2) -> getWeight(m2) - getWeight(m1);
 
+    public Rurik() {
+        super();
+    }
+
     @Override
     public String getName() {
         return "Рюрик (Новгород)";
