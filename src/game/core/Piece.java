@@ -159,7 +159,7 @@ public class Piece {
      * @return - список друзей.
      */
     public List<Piece> getEnemies() {
-        PieceColor enemyColor = Board.getOponentColor(color);
+        PieceColor enemyColor = Board.getOpponentColor(color);
 
         return square.getBoard().getPieces(enemyColor);
     }

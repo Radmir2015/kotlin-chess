@@ -57,7 +57,7 @@ public class Capture extends GoMove implements ICaptureMove {
     @Override
     public void undoMove() {
         PieceColor myColor = piece.getColor();
-        PieceColor enemyColor = Board.getOponentColor(myColor);
+        PieceColor enemyColor = Board.getOpponentColor(myColor);
 
         // Удалим с доски свою фигуру.
         piece.remove();

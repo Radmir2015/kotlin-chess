@@ -50,7 +50,7 @@ public class ReversiPlayer extends PutPiecePlayer {
 
     @Override
     public void doMove(Board board, PieceColor color) throws GameOver {
-        PieceColor enemyColor = Board.getOponentColor(color);
+        PieceColor enemyColor = Board.getOpponentColor(color);
         List<Piece> enemies = board.getPieces(enemyColor);
 
         if (enemies.isEmpty()) {

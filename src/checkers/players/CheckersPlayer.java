@@ -121,7 +121,7 @@ public class CheckersPlayer extends MovePiecePlayer {
         List<Move> correctMoves = getCorrectMoves(board, color);
 
         if (correctMoves.isEmpty()) {
-            PieceColor enemyColor = Board.getOponentColor(color);
+            PieceColor enemyColor = Board.getOpponentColor(color);
 
             // Все враги наши убиты. Мы выиграли.
             if (board.getPieces(enemyColor).isEmpty())

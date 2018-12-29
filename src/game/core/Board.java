@@ -47,7 +47,7 @@ public class Board extends Observable {
      * @return противоположный цвет фигур.
      */
     static
-    public PieceColor getOponentColor(PieceColor color) {
+    public PieceColor getOpponentColor(PieceColor color) {
         return color == PieceColor.WHITE
                 ? PieceColor.BLACK : PieceColor.WHITE;
     }
@@ -91,7 +91,7 @@ public class Board extends Observable {
      */
     public void changeMoveColor() {
         for (; ; ) {
-            moveColor = getOponentColor(moveColor);
+            moveColor = getOpponentColor(moveColor);
 
             IPlayer player = players.get(moveColor);
             if (player == IPlayer.HOMO_SAPIENCE)
@@ -122,7 +122,7 @@ public class Board extends Observable {
                 break;
             }
 
-            moveColor = getOponentColor(moveColor);
+            moveColor = getOpponentColor(moveColor);
         }
     }
 

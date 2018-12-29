@@ -7,11 +7,11 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public interface IGameListner {
+public interface IGameListener {
     /**
      * Единственный экземпляр пустой реализации слушателя доски.
      */
-    IGameListner EMPTY = new IGameListner() {
+    IGameListener EMPTY = new IGameListener() {
         @Override
         public void mouseDown(Square s, int button) {
         }

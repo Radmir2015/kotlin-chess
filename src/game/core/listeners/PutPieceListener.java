@@ -8,7 +8,7 @@ import game.core.*;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class PutPieceListener implements IGameListner {
+public class PutPieceListener implements IGameListener {
     /**
      * Доска на которой присходят изменения.
      */

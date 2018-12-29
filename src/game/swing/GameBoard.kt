@@ -1,7 +1,7 @@
 package game.swing
 
 import game.core.*
-import game.core.listeners.IGameListner
+import game.core.listeners.IGameListener
 import game.core.listeners.IMouseMoveListener
 import game.core.listeners.MovePiecePromptListener
 import game.core.moves.CompositeMove
@@ -287,7 +287,7 @@ abstract class GameBoard(val board: Board) : JPanel(BorderLayout()),
     /**
      * Слушатель нажатий кнопок мыши над клетками доски.
      */
-    protected var listener: IGameListner = IGameListner.EMPTY
+    protected var listener: IGameListener = IGameListener.EMPTY
 
     //
     // Реализация интерфейса MouseListener

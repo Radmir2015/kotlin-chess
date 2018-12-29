@@ -136,7 +136,7 @@ public class VikingsPlayer extends MovePiecePlayer {
      * @param exits  - клетки-выходы.
      * @return ближайшая клетка выход.
      */
-    Square getNearstExit(Square square, List<Square> exits) {
+    Square getNearestExit(Square square, List<Square> exits) {
         return exits
                 .stream()
                 .min((s1, s2) -> square.distance(s1) - square.distance(s2))

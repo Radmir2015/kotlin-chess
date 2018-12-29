@@ -70,12 +70,12 @@ public class Vikings extends Game {
 
         if (nV == 11) {
             center = 5;
-            setRhomb(0, center, PieceColor.BLACK, 1);
-            setRhomb(center, 0, PieceColor.BLACK, 1);
-            setRhomb(nV - 1, center, PieceColor.BLACK, 1);
-            setRhomb(center, nH - 1, PieceColor.BLACK, 1);
+            setRhombus(0, center, PieceColor.BLACK, 1);
+            setRhombus(center, 0, PieceColor.BLACK, 1);
+            setRhombus(nV - 1, center, PieceColor.BLACK, 1);
+            setRhombus(center, nH - 1, PieceColor.BLACK, 1);
 
-            setRhomb(center, center, PieceColor.WHITE, 2);
+            setRhombus(center, center, PieceColor.WHITE, 2);
 //			new Cyning(board.getSquare(center, center), PieceColor.WHITE);
         } else {
             center = 4;
@@ -93,7 +93,7 @@ public class Vikings extends Game {
         }
     }
 
-    private void setRhomb(int centerV, int centerH, PieceColor color, int n) {
+    private void setRhombus(int centerV, int centerH, PieceColor color, int n) {
         int startV = centerV;
         int size = 1;
         int maxH = centerH + n + 1;

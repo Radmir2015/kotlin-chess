@@ -65,9 +65,9 @@ public class Promotion extends SimpleMove
 
     @Override
     public String toString() {
-        String movekind = (capturedPiece == null) ? "-" : "x";
+        String moveKind = (capturedPiece == null) ? "-" : "x";
         String pieceKind = promotedPiece.toString();
 
-        return "" + piece + source + movekind + target + pieceKind;
+        return "" + piece + source + moveKind + target + pieceKind;
     }
 }

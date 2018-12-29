@@ -7,7 +7,7 @@ import game.core.*;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class MovePieceListener implements IGameListner {
+public class MovePieceListener implements IGameListener {
     /**
      * Выбранная для перемещения фигура.
      */

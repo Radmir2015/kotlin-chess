@@ -10,7 +10,7 @@ import game.core.moves.ITransferMove;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class TrackPieceListener<T extends ITransferMove> implements IGameListner {
+public class TrackPieceListener<T extends ITransferMove> implements IGameListener {
     /**
      * Выбранная для перемещения фигура.
      */

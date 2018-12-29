@@ -103,11 +103,11 @@ public class Haraldr extends VikingsPlayer {
             int moveWeight = maxDistance - distance2King;
 
             // Поиск клетки - ближайшего выхода для короля.
-            Square nearstExit = getNearstExit(kingSquare, exits);
+            Square nearestExit = getNearestExit(kingSquare, exits);
 
             // Если фигура встанет между королем и его ближайшим выходом,
             // то ход этой фигурой еще лучше.
-            if (target.distance(nearstExit) < kingSquare.distance(nearstExit))
+            if (target.distance(nearestExit) < kingSquare.distance(nearestExit))
                 moveWeight++;
 
             return moveWeight;
@@ -121,7 +121,7 @@ public class Haraldr extends VikingsPlayer {
             // --------------------------
             if (piece instanceof Cyning) {
                 // Поиск ближайшего выхода.
-                Square nearsExit = getNearstExit(target, exits);
+                Square nearsExit = getNearestExit(target, exits);
 
                 // Ход королем к ближайшему выходу
                 // получает наибольший приоритет.
