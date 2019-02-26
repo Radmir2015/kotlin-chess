@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwingUIj/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingUIj/SwingKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" filepath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" />
     </modules>
   </component>
 </project>
