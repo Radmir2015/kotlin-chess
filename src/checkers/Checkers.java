@@ -8,7 +8,7 @@ import game.core.Board;
 import game.core.Game;
 import game.core.IPlayer;
 import game.core.PieceColor;
-import game.players.Neznaika;
+import game.core.players.Neznaika;
 
 /**
  * Класс представляющий игру шашки.

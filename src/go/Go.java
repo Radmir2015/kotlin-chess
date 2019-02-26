@@ -3,7 +3,7 @@ package go;
 import game.core.Game;
 import game.core.IPieceProvider;
 import game.core.IPlayer;
-import game.players.Vinni;
+import game.core.players.Vinni;
 import go.pieces.GoPiece;
 
 /**

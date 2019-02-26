@@ -1,4 +1,4 @@
-package game.players;
+package game.core.players;
 
 import game.core.*;
 

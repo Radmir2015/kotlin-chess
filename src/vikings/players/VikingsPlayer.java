@@ -1,7 +1,7 @@
 package vikings.players;
 
 import game.core.*;
-import game.players.MovePiecePlayer;
+import game.core.players.MovePiecePlayer;
 import vikings.moves.Capture;
 import vikings.pieces.Cyning;
 import vikings.pieces.VikingsPiece;
@@ -139,7 +139,7 @@ public class VikingsPlayer extends MovePiecePlayer {
     Square getNearestExit(Square square, List<Square> exits) {
         return exits
                 .stream()
-                .min((s1, s2) -> square.distance(s1) - square.distance(s2))
+                .min(Comparator.comparingInt(square::distance))
                 .get();
     }
 

@@ -4,7 +4,7 @@ import chess.pieces.*;
 import game.core.Game;
 import game.core.IPlayer;
 import game.core.PieceColor;
-import game.players.Neznaika;
+import game.core.players.Neznaika;
 
 /**
  * Класс представляющий игру шахматы.

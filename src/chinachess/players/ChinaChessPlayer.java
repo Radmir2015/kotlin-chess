@@ -2,7 +2,7 @@ package chinachess.players;
 
 import chinachess.pieces.*;
 import game.core.*;
-import game.players.MovePiecePlayer;
+import game.core.players.MovePiecePlayer;
 
 import java.security.Guard;
 import java.util.Collections;

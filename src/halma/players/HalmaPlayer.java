@@ -2,7 +2,7 @@ package halma.players;
 
 import game.core.*;
 import game.core.moves.ITransferMove;
-import game.players.MovePiecePlayer;
+import game.core.players.MovePiecePlayer;
 import halma.Halma;
 
 import java.util.Collections;

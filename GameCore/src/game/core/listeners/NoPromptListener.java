@@ -1,7 +1,7 @@
 package game.core.listeners;
 
-import game.core.*;
 
+import game.core.*;
 
 /**
  * Слушатель для игр в которых фигуры ставятся на доску.

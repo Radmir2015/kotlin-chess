@@ -11,7 +11,7 @@ public interface ITrackMove extends ITransferMove {
      * Существует ли у этого хода продолжение
      * - допустимый ход той же фигурой.
      *
-     * @return
+     * @return есть ли у хода продолжение.
      */
     boolean hasNext();
 }

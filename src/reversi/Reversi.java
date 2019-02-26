@@ -1,7 +1,7 @@
 package reversi;
 
 import game.core.*;
-import game.players.Vinni;
+import game.core.players.Vinni;
 import reversi.pieces.Hole;
 import reversi.pieces.Stone;
 import reversi.players.Owl;

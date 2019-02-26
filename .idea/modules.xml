@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
     </modules>
   </component>

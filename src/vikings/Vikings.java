@@ -1,7 +1,7 @@
 package vikings;
 
 import game.core.*;
-import game.players.Neznaika;
+import game.core.players.Neznaika;
 import vikings.pieces.Cyning;
 import vikings.pieces.Viking;
 import vikings.players.Haraldr;

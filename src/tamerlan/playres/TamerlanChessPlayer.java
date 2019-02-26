@@ -1,7 +1,7 @@
 package tamerlan.playres;
 
 import game.core.*;
-import game.players.MovePiecePlayer;
+import game.core.players.MovePiecePlayer;
 import tamerlan.pieces.*;
 
 import java.util.Collections;

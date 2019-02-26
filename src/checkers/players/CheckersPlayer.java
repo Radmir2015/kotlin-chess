@@ -4,7 +4,7 @@ import checkers.moves.Capture;
 import checkers.moves.CompositeMove;
 import checkers.pieces.CheckersPiece;
 import game.core.*;
-import game.players.MovePiecePlayer;
+import game.core.players.MovePiecePlayer;
 
 import java.util.ArrayList;
 import java.util.Collections;

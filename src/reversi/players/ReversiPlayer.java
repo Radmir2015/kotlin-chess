@@ -2,7 +2,7 @@ package reversi.players;
 
 import game.core.*;
 import game.core.moves.PassMove;
-import game.players.PutPiecePlayer;
+import game.core.players.PutPiecePlayer;
 
 import java.util.Collections;
 import java.util.Comparator;

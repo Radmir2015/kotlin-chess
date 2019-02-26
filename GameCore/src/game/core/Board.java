@@ -240,11 +240,11 @@ public class Board extends Observable {
      * @return - список всех клеток доски.
      */
     public List<Square> getEmptySquares() {
-        List<game.core.Square> emptySquares = new ArrayList<>();
+        List<Square> emptySquares = new ArrayList<>();
 
         for (int v = 0; v < nV; v++)
             for (int h = 0; h < nH; h++) {
-                game.core.Square square = getSquare(v, h);
+                Square square = getSquare(v, h);
                 if (square.isEmpty())
                     emptySquares.add(square);
             }

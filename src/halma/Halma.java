@@ -1,7 +1,7 @@
 package halma;
 
 import game.core.*;
-import game.players.Neznaika;
+import game.core.players.Neznaika;
 import halma.pieces.Stone;
 import halma.players.Ants;
 import halma.players.Beetles;

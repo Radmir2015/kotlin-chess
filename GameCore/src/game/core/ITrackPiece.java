@@ -9,8 +9,8 @@ public interface ITrackPiece {
     /**
      * Есть ли правильный ход из клетки square.
      *
-     * @param square
-     * @return
+     * @param square - проверяемая клетка
+     * @return есть ли правильных ход из клетки.
      */
     boolean hasCorrectMoveFrom(Square square);
 }
