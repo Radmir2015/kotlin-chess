@@ -12,7 +12,9 @@ import game.core.listeners.MovePiecePromptListener
 import game.swing.EuropeBoard
 import game.swing.GamePanel
 import java.awt.Image
+import java.net.URL
 import java.util.*
+import javax.imageio.ImageIO
 
 /**
  * Панель для доски стандартных шахмат.
@@ -33,6 +35,15 @@ class ChessBoard : GamePanel(Chess()) {
         init {
             listener = MovePieceListener(this)
             mouseMoveListener = MovePiecePromptListener(this)
+
+
+            val images: MutableMap<PieceColor, MutableMap<Class<out Piece>, String>> = game.pieceImages;
+            val whites: MutableMap<Class<out Piece>, String>? = images[PieceColor.WHITE]
+            val file: String? = whites!![Pawn::class.java]
+            val javaClass = game.javaClass
+            val resource: URL = javaClass.getResource(file)
+            val imagePawnWhite: Image = ImageIO.read(resource)
+            imagePawnWhite.toString()
         }
 
         override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {

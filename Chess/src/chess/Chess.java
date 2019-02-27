@@ -3,8 +3,16 @@ package chess;
 import chess.pieces.*;
 import game.core.Game;
 import game.core.IPlayer;
+import game.core.Piece;
 import game.core.PieceColor;
 import game.core.players.Neznaika;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Класс представляющий игру шахматы.
@@ -16,6 +24,13 @@ public class Chess extends Game {
     static {
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
+
+        URL resource = Chess.class.getResource("wPawnZurich.gif");
+        try {
+            Image imagePawnWhite = ImageIO.read(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -63,5 +78,16 @@ public class Chess extends Game {
         // Расставляем королей.
         new King(board.getSquare(4, 0), PieceColor.BLACK);
         new King(board.getSquare(4, 7), PieceColor.WHITE);
+    }
+
+    public Map<PieceColor, Map<Class<? extends Piece>, String>> getPieceImages() {
+        Map<PieceColor, Map<Class<? extends Piece>, String>> images = new HashMap<>();
+
+        Map<Class<? extends Piece>, String> whites = new HashMap<>();
+        images.put(PieceColor.WHITE, whites);
+
+        whites.put(Pawn.class, "wPawnZurich.gif");
+
+        return images;
     }
 }
