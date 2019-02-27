@@ -41,7 +41,7 @@ class ChessBoard : GamePanel(Chess()) {
             val whites: MutableMap<Class<out Piece>, String>? = images[PieceColor.WHITE]
             val file: String? = whites!![Pawn::class.java]
             val javaClass = game.javaClass
-            val resource: URL = javaClass.getResource(file)
+            val resource: URL = javaClass.getResource("images/$file")
             val imagePawnWhite: Image = ImageIO.read(resource)
             imagePawnWhite.toString()
         }

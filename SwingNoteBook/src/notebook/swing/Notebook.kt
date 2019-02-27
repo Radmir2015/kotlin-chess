@@ -20,12 +20,16 @@ import vikings.swing.VikingsGamePanel
 import vikings.swing.images.VikingImages
 import java.awt.BorderLayout
 import java.awt.Dimension
+import java.awt.Toolkit
 import javax.swing.ImageIcon
 import javax.swing.JFrame
 import javax.swing.JTabbedPane
 
 fun main(args: Array<String>) {
     val frame = JFrame("Games Notebook")
+    val t = Toolkit.getDefaultToolkit()
+    val i = t.getImage("wPawnZurich.gif")
+
     frame.iconImage = ImageIcon("images/GamesNotebook.png").image
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.size = Dimension(800, 600)
@@ -44,6 +48,7 @@ fun main(args: Array<String>) {
     val checkersPanel = CheckersGamePanel()
     val chinaChessPanel = ChinaChessGamePanel()
     val tamerlanChessPanel = TamerlanChessGamePanel()
+
 
     tabbedPane.addTab("Tamerlan Chess", TamerlanChessImages.icoTamerlanChess, tamerlanChessPanel)
     tabbedPane.addTab("China Chess", ChinaChessImages.icoChinaChess, chinaChessPanel)

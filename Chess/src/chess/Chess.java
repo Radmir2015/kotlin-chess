@@ -24,10 +24,19 @@ public class Chess extends Game {
     static {
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
-
-        URL resource = Chess.class.getResource("wPawnZurich.gif");
+//
+//        Icon ii = new ImageIcon("wPawnZurich.gif");
+//        Toolkit t=Toolkit.getDefaultToolkit();
+//        Image i=t.getImage("wPawnZurich.gif");
+//
+//
+//        i.toString();
+//
+//        URL resource1 = Chess.class.getResource(".");
+        URL resource = Chess.class.getResource("./images/wPawnZurich.gif");
         try {
             Image imagePawnWhite = ImageIO.read(resource);
+            imagePawnWhite.toString();
         } catch (IOException e) {
             e.printStackTrace();
         }
