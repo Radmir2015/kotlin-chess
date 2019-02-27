@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
     val frame = JFrame("Games Notebook")
     frame.iconImage = ImageIcon("images/GamesNotebook.png").image
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    frame.size = Dimension(700, 500)
+    frame.size = Dimension(800, 600)
     frame.setLocationRelativeTo(null)
     frame.layout = BorderLayout()
 
