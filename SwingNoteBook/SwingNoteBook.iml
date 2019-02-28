@@ -10,5 +10,7 @@
     <orderEntry type="library" name="KotlinJavaRuntime (4)" level="project" />
     <orderEntry type="module" module-name="GamesINKotlin" />
     <orderEntry type="module" module-name="SwingKotlin" />
+    <orderEntry type="module" module-name="Chess" />
+    <orderEntry type="module" module-name="GameCore" />
   </component>
 </module>

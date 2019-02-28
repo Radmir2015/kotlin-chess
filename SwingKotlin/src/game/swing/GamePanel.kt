@@ -1,6 +1,6 @@
 package game.swing
 
-import game.core.Game
+import game.core.*
 import java.awt.BorderLayout
 import javax.swing.JPanel
 
@@ -18,7 +18,7 @@ import javax.swing.JPanel
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
+open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
     protected var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
     private var history: MovesHistory = MovesHistory(game.board.history)
@@ -33,6 +33,19 @@ abstract class GamePanel(val game: Game) : JPanel(BorderLayout()) {
         add(adorned, BorderLayout.CENTER)
 
         adorned.resizeBoard(game.board.nV, game.board.nH)
+
+        when (game.boardKind) {
+            BoardKind.EUROPE -> {
+                val gameBoard = object : EuropeBoard(game) {
+                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    }
+                }
+                insertSquares(gameBoard)
+            }
+            else -> {
+            }
+        }
     }
 
     /**

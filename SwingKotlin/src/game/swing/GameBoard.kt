@@ -3,6 +3,7 @@ package game.swing
 import game.core.*
 import game.core.listeners.IGameListener
 import game.core.listeners.IMouseMoveListener
+import game.core.listeners.MovePieceListener
 import game.core.listeners.MovePiecePromptListener
 import game.core.moves.CompositeMove
 import game.core.moves.ICaptureMove
@@ -17,11 +18,24 @@ import javax.imageio.ImageIO
 import javax.swing.JPanel
 
 /**
- *
+ * Панель для изображения доски настольной игры и расположенных на ней фигур.
  */
 abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         MouseListener, MouseMotionListener, IBoardPanel, Observer {
+    /**
+     * Изображаемая доска с фигурами.
+     */
     val board: Board
+
+    /**
+     * Слушатель нажатий кнопок мыши над клетками доски.
+     */
+    var listener: IGameListener = IGameListener.EMPTY
+
+    /**
+     * Слушатель события перемещения мыши.
+     */
+    var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
 
     /**
      * Изображения белых фигур.
@@ -38,6 +52,20 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         addMouseMotionListener(this)
 
         board = game.board
+
+        when (game.moveKind) {
+            MoveKind.PIECE_MOVE -> {
+                listener = MovePieceListener(this)
+                mouseMoveListener = MovePiecePromptListener(this)
+
+            }
+            else -> {
+
+            }
+//            MoveKind.NONE -> TODO()
+//            MoveKind.PIECE_PUT -> TODO()
+//            MoveKind.PIECE_TRACK -> TODO()
+        }
 
         val ww: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
 
@@ -317,11 +345,6 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
      */
     override fun pieceToCursor(piece: Piece) = imageToCursor(getImage(piece))
 
-    /**
-     * Слушатель нажатий кнопок мыши над клетками доски.
-     */
-    var listener: IGameListener = IGameListener.EMPTY
-
     //
     // Реализация интерфейса MouseListener
     //
@@ -368,11 +391,6 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     private var prompted: List<Square> = ArrayList()
 
     override fun getPrompted(): List<Square> = prompted
-
-    /**
-     * Слушатель события перемещения мыши.
-     */
-    var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
 
     //
     // Реализация интерфейса MouseMotionListener

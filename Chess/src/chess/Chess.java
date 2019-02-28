@@ -1,10 +1,7 @@
 package chess;
 
 import chess.pieces.*;
-import game.core.Game;
-import game.core.IPlayer;
-import game.core.Piece;
-import game.core.PieceColor;
+import game.core.*;
 import game.core.players.Neznaika;
 
 import javax.imageio.ImageIO;
@@ -105,5 +102,13 @@ public class Chess extends Game {
         }
 
         return images;
+    }
+
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_MOVE;
+    }
+
+    public BoardKind getBoardKind() {
+        return BoardKind.EUROPE;
     }
 }

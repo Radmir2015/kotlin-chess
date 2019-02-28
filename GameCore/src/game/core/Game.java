@@ -86,4 +86,12 @@ public class Game {
     public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
         return null;
     }
+
+    public MoveKind getMoveKind() {
+        return MoveKind.NONE;
+    }
+
+    public BoardKind getBoardKind() {
+        return BoardKind.PLAIN;
+    }
 }

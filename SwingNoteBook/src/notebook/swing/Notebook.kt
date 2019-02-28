@@ -2,10 +2,11 @@ package notebook.swing
 
 import checkers.swing.CheckersGamePanel
 import checkers.swing.images.CheckersImages
-import chess.swing.ChessBoard
+import chess.Chess
 import chess.swing.images.ChessImages
 import chinachess.swing.ChinaChessGamePanel
 import chinachess.swing.images.ChinaChessImages
+import game.swing.GamePanel
 import go.swing.GoGamePanel
 import go.swing.images.GoImages
 import halma.swing.HalmaGamePanel
@@ -35,7 +36,8 @@ fun main(args: Array<String>) {
     val tabbedPane = JTabbedPane()
     frame.add(tabbedPane, BorderLayout.CENTER)
 
-    val chessPanel = ChessBoard()
+    val chess = Chess()
+    val chessPanel = GamePanel(chess)
     val renjuPanel = RenjuBoard()
     val reversiPanel = ReversiGamePanel()
     val vikingsPanel = VikingsGamePanel()
