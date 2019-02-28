@@ -27,7 +27,7 @@ class RenjuBoard : GamePanel(Renju()) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class RenjuBoardPanel(game: Game) : AsiaBoard(game.board), IPieceProvider {
+internal class RenjuBoardPanel(game: Game) : AsiaBoard(game), IPieceProvider {
     override fun getImage(piece: Piece): Image? {
         return getPieceImage(piece, piece.color)
     }

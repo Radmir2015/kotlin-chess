@@ -1,6 +1,6 @@
 package game.swing
 
-import game.core.Board
+import game.core.Game
 import game.swing.images.GameImages
 import java.awt.Color
 import java.awt.Graphics
@@ -8,7 +8,7 @@ import java.awt.Graphics
 /**
  *
  */
-abstract class AsiaBoard(board: Board) : GameBoard(board) {
+abstract class AsiaBoard(game: Game) : GameBoard(game) {
     override fun drawBack(g: Graphics) {
         g.drawImage(GameImages.woodLight, 0, 0, width, height, null)
     }

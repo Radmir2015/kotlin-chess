@@ -51,7 +51,7 @@ class ReversiGamePanel(nHoles: Int) : GamePanel(Reversi(nHoles)) {
      *
      * @param game
      */
-    (game: Game) : GreenBoard(game.board), IPieceProvider {
+    (game: Game) : GreenBoard(game), IPieceProvider {
 
         init {
             // Слушатель мыши для постановки новой фигуры на доску.

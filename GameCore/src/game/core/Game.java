@@ -83,8 +83,7 @@ public class Game {
     abstract
     public void initBoardDefault();
 
-
-    public Map<PieceColor, Map<Class<? extends Piece>, String>> getPieceImages() {
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
         return null;
     }
 }

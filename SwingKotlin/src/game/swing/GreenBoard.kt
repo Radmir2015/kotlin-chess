@@ -1,6 +1,6 @@
 package game.swing
 
-import game.core.Board
+import game.core.Game
 import java.awt.Color
 import java.awt.Graphics
 
@@ -9,7 +9,7 @@ import java.awt.Graphics
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class GreenBoard(board: Board) : GameBoard(board) {
+abstract class GreenBoard(game: Game) : GameBoard(game) {
     init {
         isOpaque = false
         background = null

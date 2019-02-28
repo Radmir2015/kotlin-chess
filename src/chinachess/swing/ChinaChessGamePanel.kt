@@ -33,7 +33,7 @@ class ChinaChessGamePanel : GamePanel(ChinaChess()) {
  * Панель для доски китайских шахмат.
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class ChinaChessBoardPanel(game: Game) : AsiaBoardWithCastle(game.board) {
+internal class ChinaChessBoardPanel(game: Game) : AsiaBoardWithCastle(game) {
     init {
         mouseMoveListener = MovePiecePromptListener(this)
         listener = MovePieceListener(this)

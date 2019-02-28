@@ -1,6 +1,6 @@
 package game.swing
 
-import game.core.Board
+import game.core.Game
 import java.awt.Graphics
 
 /**
@@ -8,7 +8,7 @@ import java.awt.Graphics
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class AsiaBoardWithCastle(board: Board) : AsiaBoard(board) {
+abstract class AsiaBoardWithCastle(game: Game) : AsiaBoard(game) {
 
     override fun drawSquare(g: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
         super.drawSquare(g, v, h, sw, sh)

@@ -31,14 +31,13 @@ class ChessBoard : GamePanel(Chess()) {
      *
      * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
      */
-    inner class ChessBoardPanel(game: Game) : EuropeBoard(game.board) {
+    inner class ChessBoardPanel(game: Game) : EuropeBoard(game) {
         init {
             listener = MovePieceListener(this)
             mouseMoveListener = MovePiecePromptListener(this)
 
 
-            val images: MutableMap<PieceColor, MutableMap<Class<out Piece>, String>> = game.pieceImages;
-            val whites: MutableMap<Class<out Piece>, String>? = images[PieceColor.WHITE]
+            val whites: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
             val file: String? = whites!![Pawn::class.java]
             val javaClass = game.javaClass
             val resource: URL = javaClass.getResource("images/$file")

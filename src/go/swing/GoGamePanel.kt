@@ -28,7 +28,7 @@ class GoGamePanel(boardSize: Int) : GamePanel(Go(boardSize)) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class GoBoardPanel(game: Game) : AsiaBoard(game.board), IPieceProvider {
+internal class GoBoardPanel(game: Game) : AsiaBoard(game), IPieceProvider {
     init {
         listener = PutPieceListener(this)
 

@@ -43,7 +43,7 @@ class VikingsGamePanel : GamePanel(Vikings()) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class VikingsBoardPanel(game: Game) : GreenBoard(game.board) {
+internal class VikingsBoardPanel(game: Game) : GreenBoard(game) {
 
     init {
         listener = MovePieceListener(this)

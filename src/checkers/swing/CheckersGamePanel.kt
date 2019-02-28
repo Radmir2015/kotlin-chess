@@ -31,7 +31,7 @@ class CheckersGamePanel : GamePanel(Checkers()) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class CheckersBoardPanel(game: Game) : EuropeBoard(game.board) {
+internal class CheckersBoardPanel(game: Game) : EuropeBoard(game) {
     init {
         listener = TrackPieceListener<Capture>(this)
     }

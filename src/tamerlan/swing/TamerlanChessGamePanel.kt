@@ -31,7 +31,7 @@ class TamerlanChessGamePanel : GamePanel(TamerlanChess()) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class TamerlanChessBoardPanel(game: Game) : EuropeBoard(game.board) {
+internal class TamerlanChessBoardPanel(game: Game) : EuropeBoard(game) {
 
     init {
         listener = MovePieceListener(this)

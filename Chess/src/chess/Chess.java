@@ -24,15 +24,7 @@ public class Chess extends Game {
     static {
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
-//
-//        Icon ii = new ImageIcon("wPawnZurich.gif");
-//        Toolkit t=Toolkit.getDefaultToolkit();
-//        Image i=t.getImage("wPawnZurich.gif");
-//
-//
-//        i.toString();
-//
-//        URL resource1 = Chess.class.getResource(".");
+
         URL resource = Chess.class.getResource("./images/wPawnZurich.gif");
         try {
             Image imagePawnWhite = ImageIO.read(resource);
@@ -68,7 +60,7 @@ public class Chess extends Game {
         new Rook(board.getSquare(0, 7), PieceColor.WHITE);
         new Rook(board.getSquare(7, 7), PieceColor.WHITE);
 
-        // Расставляем ладьи.
+        // Расставляем коней.
         new Knight(board.getSquare(1, 0), PieceColor.BLACK);
         new Knight(board.getSquare(6, 0), PieceColor.BLACK);
         new Knight(board.getSquare(1, 7), PieceColor.WHITE);
@@ -89,13 +81,11 @@ public class Chess extends Game {
         new King(board.getSquare(4, 7), PieceColor.WHITE);
     }
 
-    public Map<PieceColor, Map<Class<? extends Piece>, String>> getPieceImages() {
-        Map<PieceColor, Map<Class<? extends Piece>, String>> images = new HashMap<>();
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
 
-        Map<Class<? extends Piece>, String> whites = new HashMap<>();
-        images.put(PieceColor.WHITE, whites);
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
 
-        whites.put(Pawn.class, "wPawnZurich.gif");
+        images.put(Pawn.class, "wPawnZurich.gif");
 
         return images;
     }

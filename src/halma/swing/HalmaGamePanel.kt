@@ -56,7 +56,7 @@ class HalmaGamePanel(boardSize: Int) : GamePanel(Halma(boardSize)) {
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-internal class HalmaBoardPanel(game: Game) : AsiaBoard(game.board) {
+internal class HalmaBoardPanel(game: Game) : AsiaBoard(game) {
     init {
         listener = MovePieceListener(this)
     }
