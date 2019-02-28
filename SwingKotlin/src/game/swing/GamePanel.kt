@@ -15,7 +15,6 @@ import javax.swing.JPanel
  *   * счет,
  *   * ...)
  *
- *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 open class GamePanel(val game: Game) : JPanel(BorderLayout()) {

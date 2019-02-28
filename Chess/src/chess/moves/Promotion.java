@@ -14,9 +14,8 @@ import java.util.List;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class Promotion extends SimpleMove
-        implements ICaptureMove {
-    private Piece pawn;
+public class Promotion extends SimpleMove implements ICaptureMove {
+    private final Piece pawn;
     private Piece capturedPiece;
     private Queen promotedPiece;
 

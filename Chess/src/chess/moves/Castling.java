@@ -9,13 +9,11 @@ import game.core.Square;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class Castling extends SimpleMove {
-
-    private Square rookSource;
-    private Square rookTarget;
+    private final Square rookSource;
+    private final Square rookTarget;
 
     public Castling(Square[] squares) {
         super(squares);
-//		super(history, king, source, target);
 
         Board board = source.getBoard();
 

@@ -134,8 +134,6 @@ public class Pawn extends ChessPiece {
         Square source = squares[0];
         Square target = squares[1];
 
-        int dv = Math.abs(target.v - source.v);
-
         boolean isLastHorizontal = isWhite()
                 ? target.h == 0 : target.h == 7;
 

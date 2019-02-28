@@ -4,10 +4,6 @@ import chess.pieces.*;
 import game.core.*;
 import game.core.players.Neznaika;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,14 +17,6 @@ public class Chess extends Game {
     static {
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
-
-        URL resource = Chess.class.getResource("./images/wPawnZurich.gif");
-        try {
-            Image imagePawnWhite = ImageIO.read(resource);
-            imagePawnWhite.toString();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -104,11 +92,19 @@ public class Chess extends Game {
         return images;
     }
 
+    public String getIconImage() {
+        return "bKnightZurich.gif";
+    }
+
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
     }
 
     public BoardKind getBoardKind() {
         return BoardKind.EUROPE;
+    }
+
+    public String getName() {
+        return "Chess";
     }
 }

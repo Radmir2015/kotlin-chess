@@ -97,7 +97,7 @@ public class Capture extends SimpleMove
         return capturedSquare;
     }
 
-    public void setCapturedSquare(Square capturedSquare) {
+    void setCapturedSquare(Square capturedSquare) {
         this.capturedSquare = capturedSquare;
     }
 }

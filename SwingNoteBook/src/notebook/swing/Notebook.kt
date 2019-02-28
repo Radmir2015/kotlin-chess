@@ -3,9 +3,9 @@ package notebook.swing
 import checkers.swing.CheckersGamePanel
 import checkers.swing.images.CheckersImages
 import chess.Chess
-import chess.swing.images.ChessImages
 import chinachess.swing.ChinaChessGamePanel
 import chinachess.swing.images.ChinaChessImages
+import game.core.Game
 import game.swing.GamePanel
 import go.swing.GoGamePanel
 import go.swing.images.GoImages
@@ -21,6 +21,8 @@ import vikings.swing.VikingsGamePanel
 import vikings.swing.images.VikingImages
 import java.awt.BorderLayout
 import java.awt.Dimension
+import java.awt.Image
+import javax.imageio.ImageIO
 import javax.swing.ImageIcon
 import javax.swing.JFrame
 import javax.swing.JTabbedPane
@@ -36,8 +38,6 @@ fun main(args: Array<String>) {
     val tabbedPane = JTabbedPane()
     frame.add(tabbedPane, BorderLayout.CENTER)
 
-    val chess = Chess()
-    val chessPanel = GamePanel(chess)
     val renjuPanel = RenjuBoard()
     val reversiPanel = ReversiGamePanel()
     val vikingsPanel = VikingsGamePanel()
@@ -47,6 +47,7 @@ fun main(args: Array<String>) {
     val chinaChessPanel = ChinaChessGamePanel()
     val tamerlanChessPanel = TamerlanChessGamePanel()
 
+    tabbedPane.addGame(Chess())
 
     tabbedPane.addTab("Tamerlan Chess", TamerlanChessImages.icoTamerlanChess, tamerlanChessPanel)
     tabbedPane.addTab("China Chess", ChinaChessImages.icoChinaChess, chinaChessPanel)
@@ -55,8 +56,15 @@ fun main(args: Array<String>) {
     tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
     tabbedPane.addTab("Vikings", VikingImages.icoVikings, vikingsPanel)
     tabbedPane.addTab("Reversi", ReversiImages.icoReversi, reversiPanel)
-    tabbedPane.addTab("Chess", ChessImages.icoChess, chessPanel)
     tabbedPane.addTab("Renju", RenjuImages.icoReversi, renjuPanel)
 
     frame.isVisible = true
+}
+
+private fun JTabbedPane.addGame(game: Game) {
+    val iconImageFile = game.iconImage
+    val iconImage = ImageIO.read(game.javaClass.getResource("images/$iconImageFile"))
+    val icon = ImageIcon(iconImage.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
+
+    addTab(game.name, icon, GamePanel(game))
 }

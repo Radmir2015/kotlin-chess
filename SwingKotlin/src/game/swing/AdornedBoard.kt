@@ -15,10 +15,10 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
     private var nV: Int = 8
     private var nH: Int = 8
 
-    private var top: BoardAdorns = BoardAdorns(nV, false, false, false)
-    private var left: BoardAdorns = BoardAdorns(nH, true, false, true)
-    private var right: BoardAdorns = BoardAdorns(nH, true, false, true)
-    private var bottom: BoardAdorns = BoardAdorns(nV, false, false, false)
+    private var top: BoardAdorns = BoardAdorns(nV, isVertical = false, isInverted = false, isNumbers = false)
+    private var left: BoardAdorns = BoardAdorns(nH, isVertical = true, isInverted = false, isNumbers = true)
+    private var right: BoardAdorns = BoardAdorns(nH, isVertical = true, isInverted = false, isNumbers = true)
+    private var bottom: BoardAdorns = BoardAdorns(nV, isVertical = false, isInverted = false, isNumbers = false)
 
     init {
         border = LineBorder(Color.BLACK)

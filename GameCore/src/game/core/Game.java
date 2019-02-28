@@ -83,15 +83,48 @@ public class Game {
     abstract
     public void initBoardDefault();
 
+    /**
+     * Выдать карту соответствия фигуры заданного параметром цвета и ее изображения.
+     *
+     * @param color заданный цвет фигуры.
+     * @return карта соответствия.
+     */
     public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
         return null;
     }
 
+    /**
+     * Выдать вид хода для данной игры.
+     *
+     * @return вид хода для данной игры.
+     */
     public MoveKind getMoveKind() {
         return MoveKind.NONE;
     }
 
+    /**
+     * Выдать вид доски для данной игры.
+     * @return вид доски для данной игры.
+     */
     public BoardKind getBoardKind() {
         return BoardKind.PLAIN;
+    }
+
+    /**
+     * Выдать имя файла с изображением для пиктограммы для данной игры.
+     *
+     * @return имя файла
+     */
+    public String getIconImage() {
+        return "";
+    }
+
+    /**
+     * Выдать имя игры для ее пользователя.
+     *
+     * @return имя игры
+     */
+    public String getName() {
+        return "";
     }
 }

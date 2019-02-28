@@ -9,8 +9,7 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-abstract
-public class ChessPiece extends Piece {
+abstract class ChessPiece extends Piece {
     ChessPiece(Square square, PieceColor color) {
         super(square, color);
     }

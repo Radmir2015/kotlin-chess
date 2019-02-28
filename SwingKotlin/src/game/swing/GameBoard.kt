@@ -60,11 +60,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
 
             }
             else -> {
-
             }
-//            MoveKind.NONE -> TODO()
-//            MoveKind.PIECE_PUT -> TODO()
-//            MoveKind.PIECE_TRACK -> TODO()
         }
 
         val ww: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
