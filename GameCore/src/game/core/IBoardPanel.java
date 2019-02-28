@@ -48,7 +48,7 @@ public interface IBoardPanel {
     void pieceToCursor(Piece piece);
 
     /**
-     * Получить фигуру заданного цвета соящую на заданной клетке.
+     * Получить фигуру заданного цвета стоящую на заданной клетке.
      *
      * @param mouseSquare - заданая клетка
      * @param moveColor   -заданный цвет

@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
 import java.awt.event.MouseMotionListener
 import java.util.*
+import javax.imageio.ImageIO
 import javax.swing.JPanel
 
 /**
@@ -22,11 +23,35 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         MouseListener, MouseMotionListener, IBoardPanel, Observer {
     val board: Board
 
+    /**
+     * Изображения белых фигур.
+     */
+    private val whites = HashMap<Class<out Piece>, Image>()
+
+    /**
+     * Изображения черных фигур.
+     */
+    private val blacks = HashMap<Class<out Piece>, Image>()
+
     init {
         addMouseListener(this)
         addMouseMotionListener(this)
 
         board = game.board
+
+        val ww: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
+
+        if (ww != null) {
+            for ((key, value) in ww)
+                whites[key] = ImageIO.read(game.javaClass.getResource("images/$value"))
+        }
+
+        val bb: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.BLACK)
+
+        if (bb != null) {
+            for ((key, value) in bb)
+                blacks[key] = ImageIO.read(game.javaClass.getResource("images/$value"))
+        }
 
         board.addObserver(this)
 
@@ -95,9 +120,12 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
      * - цвет фигуры.
      * @return изображение фигуры.
      */
-    abstract fun getPieceImage(piece: Piece, color: PieceColor): Image?
+    open fun getPieceImage(piece: Piece, color: PieceColor): Image? = when (color) {
+        PieceColor.WHITE -> whites[piece.javaClass]
+        else -> blacks[piece.javaClass]
+    }
 
-    protected abstract fun getImage(piece: Piece): Image?
+    open fun getImage(piece: Piece): Image? = getPieceImage(piece, piece.color)
 
     protected abstract fun drawBack(g: Graphics)
 
@@ -292,7 +320,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Слушатель нажатий кнопок мыши над клетками доски.
      */
-    protected var listener: IGameListener = IGameListener.EMPTY
+    var listener: IGameListener = IGameListener.EMPTY
 
     //
     // Реализация интерфейса MouseListener
@@ -344,7 +372,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Слушатель события перемещения мыши.
      */
-    protected var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
+    var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
 
     //
     // Реализация интерфейса MouseMotionListener

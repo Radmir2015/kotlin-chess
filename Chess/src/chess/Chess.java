@@ -85,7 +85,24 @@ public class Chess extends Game {
 
         Map<Class<? extends Piece>, String> images = new HashMap<>();
 
-        images.put(Pawn.class, "wPawnZurich.gif");
+        switch (color) {
+            case WHITE:
+                images.put(Pawn.class, "wPawnZurich.gif");
+                images.put(Rook.class, "wRookZurich.gif");
+                images.put(Knight.class, "wKnightZurich.gif");
+                images.put(Bishop.class, "wBishopZurich.gif");
+                images.put(Queen.class, "wQueenZurich.gif");
+                images.put(King.class, "wKingZurich.gif");
+                break;
+            case BLACK:
+                images.put(Pawn.class, "bPawnZurich.gif");
+                images.put(Rook.class, "bRookZurich.gif");
+                images.put(Knight.class, "bKnightZurich.gif");
+                images.put(Bishop.class, "bBishopZurich.gif");
+                images.put(Queen.class, "bQueenZurich.gif");
+                images.put(King.class, "bKingZurich.gif");
+                break;
+        }
 
         return images;
     }
