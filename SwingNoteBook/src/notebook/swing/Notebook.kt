@@ -11,8 +11,7 @@ import halma.swing.HalmaGamePanel
 import halma.swing.images.HalmaImages
 import renju.swing.RenjuBoard
 import renju.swing.images.RenjuImages
-import reversi.swing.ReversiGamePanel
-import reversi.swing.images.ReversiImages
+import reversi.Reversi
 import tamerlan.TamerlanChess
 import vikings.Vikings
 import java.awt.BorderLayout
@@ -26,15 +25,17 @@ import javax.swing.JTabbedPane
 
 fun main(args: Array<String>) {
     val frame = JFrame("Games Notebook")
-    frame.iconImage = ImageIcon("vikings/images/GamesNotebook.png").image
+    frame.iconImage = ImageIcon("images/GamesNotebook.png").image
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.size = Dimension(800, 600)
     frame.layout = BorderLayout()
+    frame.isVisible = true
     frame.setLocationRelativeTo(null)
 
     val tabbedPane = JTabbedPane()
     frame.add(tabbedPane, BorderLayout.CENTER)
 
+    tabbedPane.addGame(Reversi(0))
     tabbedPane.addGame(Chess())
     tabbedPane.addGame(Checkers())
     tabbedPane.addGame(TamerlanChess())
@@ -42,16 +43,12 @@ fun main(args: Array<String>) {
     tabbedPane.addGame(Vikings())
 
     val renjuPanel = RenjuBoard()
-    val reversiPanel = ReversiGamePanel()
     val halmaPanel = HalmaGamePanel()
     val goPanel = GoGamePanel()
 
     tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
     tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
-    tabbedPane.addTab("Reversi", ReversiImages.icoReversi, reversiPanel)
     tabbedPane.addTab("Renju", RenjuImages.icoReversi, renjuPanel)
-
-    frame.isVisible = true
 }
 
 private fun JTabbedPane.addGame(game: Game) {

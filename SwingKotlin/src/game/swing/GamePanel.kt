@@ -37,7 +37,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             BoardKind.EUROPE -> {
                 val gameBoard = object : EuropeBoard(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                        return game.getPiece(mouseSquare, moveColor)
                     }
                 }
                 insertSquares(gameBoard)
@@ -45,7 +45,15 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             BoardKind.PLAIN -> {
                 val gameBoard = object : GreenBoard(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                        return game.getPiece(mouseSquare, moveColor)
+                    }
+                }
+                insertSquares(gameBoard)
+            }
+            BoardKind.ASIA -> {
+                val gameBoard = object : AsiaBoard(game) {
+                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                        return game.getPiece(mouseSquare, moveColor)
                     }
                 }
                 insertSquares(gameBoard)
@@ -53,7 +61,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             BoardKind.ASIA_CASTLE_RIVER -> {
                 val gameBoard = object : AsiaBoardWithCastleRiver(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
-                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                        return game.getPiece(mouseSquare, moveColor)
                     }
                 }
                 insertSquares(gameBoard)

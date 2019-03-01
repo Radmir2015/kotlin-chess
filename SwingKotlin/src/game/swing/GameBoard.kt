@@ -1,10 +1,7 @@
 package game.swing
 
 import game.core.*
-import game.core.listeners.IGameListener
-import game.core.listeners.IMouseMoveListener
-import game.core.listeners.MovePieceListener
-import game.core.listeners.MovePiecePromptListener
+import game.core.listeners.*
 import game.core.moves.CompositeMove
 import game.core.moves.ICaptureMove
 import game.core.moves.IPutMove
@@ -59,16 +56,16 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
                 mouseMoveListener = MovePiecePromptListener(this)
 
             }
-//            MoveKind.PIECE_TRACK -> {
-//                listener = TrackPieceListener<Capture>(this)
-//            }
-//            MoveKind.PIECE_TRACK -> {
-//                listener = PutPieceListener(this)
-//
-//                 Слушатель мыши выдающий подсказки для клеток -
-//                 можно ли ставить фигуру на клетку доски.
-//                mouseMoveListener = PutPiecePromptListener(this)
-//            }
+            MoveKind.PIECE_PUT -> {
+                listener = PutPieceListener(this)
+
+                // Слушатель мыши выдающий подсказки для клеток -
+                // можно ли ставить фигуру на клетку доски.
+                mouseMoveListener = PutPiecePromptListener(this)
+            }
+//          MoveKind.PIECE_TRACK -> {
+//              listener = TrackPieceListener<Capture>(this)
+//          }
             else -> {
             }
         }

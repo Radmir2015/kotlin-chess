@@ -114,9 +114,13 @@ public class Game {
     abstract public String getName();
 
     /**
-     * Выдать имя файла с изображением для пиктограммы для данной игры.
+     * Выдать имя файла с изображением пиктограммы для данной игры.
      *
      * @return имя файла
      */
     abstract public String getIconImageFile();
+
+    public Piece getPiece(Square mouseSquare, PieceColor pieceColor) {
+        return null;
+    }
 }

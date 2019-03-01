@@ -7,6 +7,9 @@ import reversi.pieces.Stone;
 import reversi.players.Owl;
 import reversi.players.Tiger;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Игра
  * <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%B8">Реверси</a>
@@ -61,16 +64,37 @@ public class Reversi extends Game {
 
     @Override
     public String getIconImageFile() {
-        return "icoChinaChess.png";
+        return "icoReversi.png";
     }
 
     @Override
     public BoardKind getBoardKind() {
-        return BoardKind.ASIA;
+        return BoardKind.PLAIN;
     }
 
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_PUT;
+    }
+
+    @Override
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(Stone.class, "StoneWhite.png");
+                break;
+            case BLACK:
+                images.put(Stone.class, "StoneBlack.png");
+                break;
+        }
+
+        return images;
+    }
+
+    @Override
+    public Piece getPiece(Square square, PieceColor color) {
+        return new Stone(square, color);
     }
 }

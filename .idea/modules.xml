@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/ChinaChess/ChinaChess.iml" filepath="$PROJECT_DIR$/ChinaChess/ChinaChess.iml" />
       <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reversi/Reversi.iml" filepath="$PROJECT_DIR$/Reversi/Reversi.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" filepath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" filepath="$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" />
