@@ -10,8 +10,7 @@ import game.core.Square;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-abstract
-public class TamerlanPiece extends Piece {
+abstract class TamerlanPiece extends Piece {
     TamerlanPiece(Square square, PieceColor color) {
         super(square, color);
     }

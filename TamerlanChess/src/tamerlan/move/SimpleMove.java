@@ -14,17 +14,17 @@ public class SimpleMove implements ITransferMove {
     /**
      * Какая фигура перемещается.
      */
-    Piece piece;
+    final Piece piece;
 
     /**
      * Откуда перемещается.
      */
-    Square source;
+    final Square source;
 
     /**
      * Куда перемещается.
      */
-    Square target;
+    final Square target;
 
     public SimpleMove(Square[] squares) {
         source = squares[0];

@@ -13,8 +13,7 @@ import java.util.List;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-abstract
-public class TamerlanChessPlayer extends MovePiecePlayer {
+abstract class TamerlanChessPlayer extends MovePiecePlayer {
     /**
      * Максимальное расстояние между клетками доски.
      */

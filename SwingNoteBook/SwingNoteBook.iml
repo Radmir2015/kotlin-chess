@@ -13,5 +13,6 @@
     <orderEntry type="module" module-name="Chess" />
     <orderEntry type="module" module-name="GameCore" />
     <orderEntry type="module" module-name="Checkers" />
+    <orderEntry type="module" module-name="TamerlanChess" />
   </component>
 </module>

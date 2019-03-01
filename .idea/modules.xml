@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" filepath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" filepath="$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" />
     </modules>
   </component>
 </project>
