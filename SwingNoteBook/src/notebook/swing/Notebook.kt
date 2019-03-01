@@ -2,8 +2,7 @@ package notebook.swing
 
 import checkers.Checkers
 import chess.Chess
-import chinachess.swing.ChinaChessGamePanel
-import chinachess.swing.images.ChinaChessImages
+import chinachess.ChinaChess
 import game.core.Game
 import game.swing.GamePanel
 import go.swing.GoGamePanel
@@ -31,8 +30,8 @@ fun main(args: Array<String>) {
     frame.iconImage = ImageIcon("images/GamesNotebook.png").image
     frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
     frame.size = Dimension(800, 600)
-    frame.setLocationRelativeTo(null)
     frame.layout = BorderLayout()
+    frame.setLocationRelativeTo(null)
 
     val tabbedPane = JTabbedPane()
     frame.add(tabbedPane, BorderLayout.CENTER)
@@ -40,15 +39,14 @@ fun main(args: Array<String>) {
     tabbedPane.addGame(Chess())
     tabbedPane.addGame(Checkers())
     tabbedPane.addGame(TamerlanChess())
+    tabbedPane.addGame(ChinaChess())
 
     val renjuPanel = RenjuBoard()
     val reversiPanel = ReversiGamePanel()
     val vikingsPanel = VikingsGamePanel()
     val halmaPanel = HalmaGamePanel()
     val goPanel = GoGamePanel()
-    val chinaChessPanel = ChinaChessGamePanel()
 
-    tabbedPane.addTab("China Chess", ChinaChessImages.icoChinaChess, chinaChessPanel)
     tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
     tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
     tabbedPane.addTab("Vikings", VikingImages.icoVikings, vikingsPanel)

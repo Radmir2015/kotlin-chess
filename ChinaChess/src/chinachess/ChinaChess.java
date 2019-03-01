@@ -6,6 +6,9 @@ import chinachess.players.SunTzu;
 import game.core.*;
 import game.core.players.Neznaika;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Игра <a href=
  * "https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
@@ -25,8 +28,7 @@ public class ChinaChess extends Game {
     public ChinaChess() {
         initBoardDefault();
 
-//		board.setWhitePlayer( IPlayer.HOMO_SAPIENCE );
-        board.setWhitePlayer(new Neznaika());
+        board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
         board.setBlackPlayer(new Neznaika());
     }
 
@@ -89,5 +91,33 @@ public class ChinaChess extends Game {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
+    }
+
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(Pawn.class, "wPawn.png");
+                images.put(Rook.class, "wRook.png");
+                images.put(Knight.class, "wKnight.png");
+                images.put(Bishop.class, "wBishop.png");
+                images.put(King.class, "wKing.png");
+                images.put(Guardian.class, "wGuard.png");
+                images.put(Gun.class, "wGun.png");
+                break;
+            case BLACK:
+                images.put(Pawn.class, "bPawn.png");
+                images.put(Rook.class, "bRook.png");
+                images.put(Knight.class, "bKnight.png");
+                images.put(Bishop.class, "bBishop.png");
+                images.put(King.class, "bKing.png");
+                images.put(Guardian.class, "bGuard.png");
+                images.put(Gun.class, "bGun.png");
+                break;
+        }
+
+        return images;
     }
 }

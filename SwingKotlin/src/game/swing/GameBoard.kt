@@ -76,8 +76,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         val ww: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
 
         if (ww != null) {
-            for ((key, value) in ww)
-                whites[key] = ImageIO.read(game.javaClass.getResource("images/$value"))
+            for ((key, value) in ww) {
+                val resource = game.javaClass.getResource("images/$value")
+                whites[key] = ImageIO.read(resource)
+            }
         }
 
         val bb: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.BLACK)

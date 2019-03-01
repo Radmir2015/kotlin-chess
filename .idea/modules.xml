@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Checkers/Checkers.iml" filepath="$PROJECT_DIR$/Checkers/Checkers.iml" />
       <module fileurl="file://$PROJECT_DIR$/Chess/Chess.iml" filepath="$PROJECT_DIR$/Chess/Chess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChinaChess/ChinaChess.iml" filepath="$PROJECT_DIR$/ChinaChess/ChinaChess.iml" />
       <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" />

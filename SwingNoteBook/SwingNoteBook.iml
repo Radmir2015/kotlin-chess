@@ -14,5 +14,6 @@
     <orderEntry type="module" module-name="GameCore" />
     <orderEntry type="module" module-name="Checkers" />
     <orderEntry type="module" module-name="TamerlanChess" />
+    <orderEntry type="module" module-name="ChinaChess" />
   </component>
 </module>
