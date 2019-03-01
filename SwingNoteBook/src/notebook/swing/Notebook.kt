@@ -22,6 +22,7 @@ import vikings.swing.images.VikingImages
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.Image
+import java.net.URL
 import javax.imageio.ImageIO
 import javax.swing.ImageIcon
 import javax.swing.JFrame
@@ -62,8 +63,8 @@ fun main(args: Array<String>) {
 }
 
 private fun JTabbedPane.addGame(game: Game) {
-    val iconImageFile = game.iconImage
-    val iconImage = ImageIO.read(game.javaClass.getResource("images/$iconImageFile"))
+    val url: URL = game.javaClass.getResource("images/${game.iconImageFile}")
+    val iconImage = ImageIO.read(url)
     val icon = ImageIcon(iconImage.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
 
     addTab(game.name, icon, GamePanel(game))

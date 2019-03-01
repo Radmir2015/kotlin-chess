@@ -115,7 +115,7 @@ public class Game {
      *
      * @return имя файла
      */
-    public String getIconImage() {
+    public String getIconImageFile() {
         return "";
     }
 
