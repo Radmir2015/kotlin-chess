@@ -13,7 +13,7 @@ import javax.swing.ImageIcon
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 object CheckersImages {
-    private val imageCheckers: Image = ImageIO.read(javaClass.getResource("iconCheсkers.png"))
+    private val imageCheckers: Image = ImageIO.read(javaClass.getResource("iconCheckers.png"))
     val icoCheckers = ImageIcon(imageCheckers.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
 
     val imageKingWhite: Image = ImageIO.read(javaClass.getResource("wKing.png"))

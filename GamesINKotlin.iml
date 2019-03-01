@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="SwingKotlin" />
     <orderEntry type="module" module-name="GameCore" />
     <orderEntry type="module" module-name="Chess" />
+    <orderEntry type="module" module-name="Checkers" />
   </component>
 </module>

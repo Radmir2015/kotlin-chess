@@ -59,14 +59,14 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
                 mouseMoveListener = MovePiecePromptListener(this)
 
             }
-            MoveKind.PIECE_TRACK -> {
+//            MoveKind.PIECE_TRACK -> {
 //                listener = TrackPieceListener<Capture>(this)
-            }
+//            }
 //            MoveKind.PIECE_TRACK -> {
 //                listener = PutPieceListener(this)
 //
-//                // Слушатель мыши выдающий подсказки для клеток -
-//                // можно ли ставить фигуру на клетку доски.
+//                 Слушатель мыши выдающий подсказки для клеток -
+//                 можно ли ставить фигуру на клетку доски.
 //                mouseMoveListener = PutPiecePromptListener(this)
 //            }
             else -> {

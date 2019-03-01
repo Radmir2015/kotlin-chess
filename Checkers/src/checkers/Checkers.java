@@ -1,10 +1,10 @@
 package checkers;
 
+import checkers.pieces.King;
 import checkers.pieces.Man;
 import checkers.players.Skuperfield;
 import checkers.players.Spruts;
 import checkers.players.Znaika;
-import chess.pieces.King;
 import game.core.*;
 import game.core.players.Neznaika;
 
@@ -62,7 +62,7 @@ public class Checkers extends Game {
 
     @Override
     public String getIconImageFile() {
-        return "icoRenju.png";
+        return "iconCheckers.png";
     }
 
     @Override
