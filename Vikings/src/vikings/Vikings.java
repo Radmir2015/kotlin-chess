@@ -8,6 +8,9 @@ import vikings.players.Haraldr;
 import vikings.players.Rurik;
 import vikings.players.William;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Игра
  * <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%BD%D0%B5%D1%84%D0%B0%D1%82%D0%B0%D1%84%D0%BB">Викинги (Хнефатафл, Тавлеи) </a>.
@@ -160,5 +163,22 @@ public class Vikings extends Game {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
+    }
+
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(Cyning.class, "wСyning.png");
+                images.put(Viking.class, "wViking.png");
+                break;
+            case BLACK:
+                images.put(Cyning.class, "bСyning.png");
+                images.put(Viking.class, "bViking.png");
+                break;
+        }
+
+        return images;
     }
 }

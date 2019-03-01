@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" filepath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" />
       <module fileurl="file://$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" filepath="$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vikings/Vikings.iml" filepath="$PROJECT_DIR$/Vikings/Vikings.iml" />
     </modules>
   </component>
 </project>

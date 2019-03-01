@@ -42,6 +42,14 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
                 }
                 insertSquares(gameBoard)
             }
+            BoardKind.PLAIN -> {
+                val gameBoard = object : GreenBoard(game) {
+                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                    }
+                }
+                insertSquares(gameBoard)
+            }
             BoardKind.ASIA_CASTLE_RIVER -> {
                 val gameBoard = object : AsiaBoardWithCastleRiver(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
