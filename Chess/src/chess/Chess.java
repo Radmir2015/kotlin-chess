@@ -92,10 +92,12 @@ public class Chess extends Game {
         return images;
     }
 
+    @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
     }
 
+    @Override
     public BoardKind getBoardKind() {
         return BoardKind.EUROPE;
     }

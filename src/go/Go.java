@@ -1,9 +1,6 @@
 package go;
 
-import game.core.BoardKind;
-import game.core.Game;
-import game.core.IPieceProvider;
-import game.core.IPlayer;
+import game.core.*;
 import game.core.players.Vinni;
 import go.pieces.GoPiece;
 
@@ -45,5 +42,10 @@ public class Go extends Game {
     @Override
     public BoardKind getBoardKind() {
         return BoardKind.ASIA;
+    }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_PUT;
     }
 }

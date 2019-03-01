@@ -140,4 +140,9 @@ public class Halma extends Game {
     public BoardKind getBoardKind() {
         return BoardKind.ASIA;
     }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_TRACK;
+    }
 }

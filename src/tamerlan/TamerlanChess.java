@@ -99,4 +99,9 @@ public class TamerlanChess extends Game {
     public BoardKind getBoardKind() {
         return BoardKind.EUROPE;
     }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_MOVE;
+    }
 }

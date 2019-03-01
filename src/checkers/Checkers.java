@@ -70,4 +70,9 @@ public class Checkers extends Game {
     public BoardKind getBoardKind() {
         return BoardKind.EUROPE;
     }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_TRACK;
+    }
 }

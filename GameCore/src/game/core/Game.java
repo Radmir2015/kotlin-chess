@@ -98,9 +98,7 @@ public class Game {
      *
      * @return вид хода для данной игры.
      */
-    public MoveKind getMoveKind() {
-        return MoveKind.NONE;
-    }
+    abstract public MoveKind getMoveKind();
 
     /**
      * Выдать вид доски для данной игры.

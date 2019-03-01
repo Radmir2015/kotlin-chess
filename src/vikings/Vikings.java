@@ -156,4 +156,10 @@ public class Vikings extends Game {
     public BoardKind getBoardKind() {
         return BoardKind.PLAIN;
     }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_MOVE;
+    }
+
 }

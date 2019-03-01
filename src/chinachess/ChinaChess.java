@@ -85,4 +85,9 @@ public class ChinaChess extends Game {
     public BoardKind getBoardKind() {
         return BoardKind.ASIA_CASTLE_RIVER;
     }
+
+    @Override
+    public MoveKind getMoveKind() {
+        return MoveKind.PIECE_MOVE;
+    }
 }
