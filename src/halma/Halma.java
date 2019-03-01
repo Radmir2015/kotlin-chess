@@ -125,4 +125,9 @@ public class Halma extends Game {
         super.initBoard(10, 10);
         initializeParticularBoard(10);
     }
+
+    @Override
+    public String getName() {
+        return "Halma";
+    }
 }

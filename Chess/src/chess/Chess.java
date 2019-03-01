@@ -104,6 +104,7 @@ public class Chess extends Game {
         return BoardKind.EUROPE;
     }
 
+    @Override
     public String getName() {
         return "Chess";
     }

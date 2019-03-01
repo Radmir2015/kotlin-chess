@@ -53,4 +53,9 @@ public class Reversi extends Game {
         new Stone(board.getSquare(3, 4), PieceColor.WHITE);
         new Stone(board.getSquare(4, 3), PieceColor.WHITE);
     }
+
+    @Override
+    public String getName() {
+        return "Reversi";
+    }
 }

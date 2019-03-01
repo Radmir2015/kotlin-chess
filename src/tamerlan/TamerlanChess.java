@@ -87,4 +87,9 @@ public class TamerlanChess extends Game {
         putPieces(board, PieceColor.BLACK);
         putPieces(board, PieceColor.WHITE);
     }
+
+    @Override
+    public String getName() {
+        return "Tamerlan Chess";
+    }
 }

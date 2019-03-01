@@ -124,7 +124,5 @@ public class Game {
      *
      * @return имя игры
      */
-    public String getName() {
-        return "";
-    }
+    public abstract String getName();
 }

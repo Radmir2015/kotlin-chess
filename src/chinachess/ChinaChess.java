@@ -73,4 +73,9 @@ public class ChinaChess extends Game {
         putPieces(board, PieceColor.BLACK);
         putPieces(board, PieceColor.WHITE);
     }
+
+    @Override
+    public String getName() {
+        return "China Chess";
+    }
 }

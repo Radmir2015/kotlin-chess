@@ -141,4 +141,9 @@ public class Vikings extends Game {
         super.initBoard(9, 9);
         initBoard9();
     }
+
+    @Override
+    public String getName() {
+        return "Vikings";
+    }
 }

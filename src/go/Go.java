@@ -30,4 +30,9 @@ public class Go extends Game {
     public void initBoardDefault() {
         super.initBoard(10, 10);
     }
+
+    @Override
+    public String getName() {
+        return "Go";
+    }
 }
