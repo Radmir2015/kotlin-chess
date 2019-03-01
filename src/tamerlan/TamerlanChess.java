@@ -8,6 +8,9 @@ import tamerlan.playres.Nasir;
 import tamerlan.playres.Tamerlan;
 import tamerlan.playres.Tuqtamish;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Расстановка фигур для <a href=
  * "https://ru.wikipedia.org/wiki/%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B8%D0%B5_%D1%88%D0%B0%D1%85%D0%BC%D0%B0%D1%82%D1%8B">
@@ -104,4 +107,37 @@ public class TamerlanChess extends Game {
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
     }
+
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(Vizir.class, "wVizirZurich.gif");
+                images.put(Pawn.class, "wPawnZurich.gif");
+                images.put(Rook.class, "wRookZurich.gif");
+                images.put(Knight.class, "wKnightZurich.gif");
+                images.put(Bishop.class, "wBishopZurich.gif");
+                images.put(Queen.class, "wQueenZurich.gif");
+                images.put(King.class, "wKingZurich.gif");
+                images.put(WarMachine.class, "wWarMachineZurich.gif");
+                images.put(Giraffe.class, "wGiraffeZurich.gif");
+                break;
+            case BLACK:
+                images.put(Vizir.class, "bVizirZurich.gif");
+                images.put(Pawn.class, "bPawnZurich.gif");
+                images.put(Rook.class, "bRookZurich.gif");
+                images.put(Knight.class, "bKnightZurich.gif");
+                images.put(Bishop.class, "bBishopZurich.gif");
+                images.put(Queen.class, "bQueenZurich.gif");
+                images.put(King.class, "bKingZurich.gif");
+                images.put(WarMachine.class, "bWarMachineZurich.gif");
+                images.put(Giraffe.class, "bGiraffeZurich.gif");
+                break;
+        }
+
+        return images;
+    }
+
 }

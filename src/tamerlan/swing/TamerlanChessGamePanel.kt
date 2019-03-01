@@ -19,10 +19,10 @@ import java.util.*
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 class TamerlanChessGamePanel : GamePanel(TamerlanChess()) {
-
-    init {
-        insertSquares(TamerlanChessBoardPanel(game))
-    }
+//
+//    init {
+//        insertSquares(TamerlanChessBoardPanel(game))
+//    }
 }
 
 /**
