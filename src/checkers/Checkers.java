@@ -4,10 +4,7 @@ import checkers.pieces.Man;
 import checkers.players.Skuperfield;
 import checkers.players.Spruts;
 import checkers.players.Znaika;
-import game.core.Board;
-import game.core.Game;
-import game.core.IPlayer;
-import game.core.PieceColor;
+import game.core.*;
 import game.core.players.Neznaika;
 
 /**
@@ -67,5 +64,10 @@ public class Checkers extends Game {
     @Override
     public String getName() {
         return "Checkers";
+    }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.EUROPE;
     }
 }

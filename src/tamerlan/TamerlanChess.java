@@ -1,9 +1,6 @@
 package tamerlan;
 
-import game.core.Board;
-import game.core.Game;
-import game.core.IPlayer;
-import game.core.PieceColor;
+import game.core.*;
 import game.core.players.Neznaika;
 import tamerlan.pieces.*;
 import tamerlan.playres.Bayezid;
@@ -96,5 +93,10 @@ public class TamerlanChess extends Game {
     @Override
     public String getIconImageFile() {
         return "bVizirZurich.gif";
+    }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.EUROPE;
     }
 }

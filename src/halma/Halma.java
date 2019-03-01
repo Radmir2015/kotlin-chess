@@ -135,4 +135,9 @@ public class Halma extends Game {
     public String getName() {
         return "Halma";
     }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.ASIA;
+    }
 }

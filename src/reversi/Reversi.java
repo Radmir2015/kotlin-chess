@@ -63,4 +63,9 @@ public class Reversi extends Game {
     public String getIconImageFile() {
         return "icoChinaChess.png";
     }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.ASIA;
+    }
 }

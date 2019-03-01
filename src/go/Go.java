@@ -1,5 +1,6 @@
 package go;
 
+import game.core.BoardKind;
 import game.core.Game;
 import game.core.IPieceProvider;
 import game.core.IPlayer;
@@ -39,5 +40,10 @@ public class Go extends Game {
     @Override
     public String getName() {
         return "Go";
+    }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.ASIA;
     }
 }

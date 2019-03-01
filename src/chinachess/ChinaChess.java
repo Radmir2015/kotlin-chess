@@ -3,10 +3,7 @@ package chinachess;
 import chinachess.pieces.*;
 import chinachess.players.Confucious;
 import chinachess.players.SunTzu;
-import game.core.Board;
-import game.core.Game;
-import game.core.IPlayer;
-import game.core.PieceColor;
+import game.core.*;
 import game.core.players.Neznaika;
 
 /**
@@ -82,5 +79,10 @@ public class ChinaChess extends Game {
     @Override
     public String getIconImageFile() {
         return "icoChinaChess.png";
+    }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.ASIA_CASTLE_RIVER;
     }
 }

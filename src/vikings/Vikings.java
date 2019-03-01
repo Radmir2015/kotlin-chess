@@ -151,4 +151,9 @@ public class Vikings extends Game {
     public String getIconImageFile() {
         return "icoVikings9.png";
     }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.PLAIN;
+    }
 }

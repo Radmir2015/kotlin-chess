@@ -1,5 +1,6 @@
 package renju;
 
+import game.core.BoardKind;
 import game.core.Game;
 import game.core.IPieceProvider;
 import game.core.IPlayer;
@@ -37,5 +38,10 @@ public class Renju extends Game {
     @Override
     public String getIconImageFile() {
         return "icoRenju.png";
+    }
+
+    @Override
+    public BoardKind getBoardKind() {
+        return BoardKind.ASIA;
     }
 }

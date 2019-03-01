@@ -106,9 +106,7 @@ public class Game {
      * Выдать вид доски для данной игры.
      * @return вид доски для данной игры.
      */
-    public BoardKind getBoardKind() {
-        return BoardKind.PLAIN;
-    }
+    abstract public BoardKind getBoardKind();
 
     /**
      * Выдать имя игры для ее пользователя.
