@@ -161,5 +161,4 @@ public class Vikings extends Game {
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
     }
-
 }
