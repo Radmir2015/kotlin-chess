@@ -78,4 +78,9 @@ public class ChinaChess extends Game {
     public String getName() {
         return "China Chess";
     }
+
+    @Override
+    public String getIconImageFile() {
+        return "icoChinaChess.png";
+    }
 }

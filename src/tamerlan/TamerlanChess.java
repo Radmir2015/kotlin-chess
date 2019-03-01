@@ -92,4 +92,9 @@ public class TamerlanChess extends Game {
     public String getName() {
         return "Tamerlan Chess";
     }
+
+    @Override
+    public String getIconImageFile() {
+        return "bVizirZurich.gif";
+    }
 }

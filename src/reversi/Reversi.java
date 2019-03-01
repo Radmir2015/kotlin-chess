@@ -58,4 +58,9 @@ public class Reversi extends Game {
     public String getName() {
         return "Reversi";
     }
+
+    @Override
+    public String getIconImageFile() {
+        return "icoChinaChess.png";
+    }
 }

@@ -33,4 +33,9 @@ public class Renju extends Game {
     public String getName() {
         return "Renju";
     }
+
+    @Override
+    public String getIconImageFile() {
+        return "icoRenju.png";
+    }
 }

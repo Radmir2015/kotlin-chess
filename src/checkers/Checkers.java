@@ -60,6 +60,11 @@ public class Checkers extends Game {
     }
 
     @Override
+    public String getIconImageFile() {
+        return "icoRenju.png";
+    }
+
+    @Override
     public String getName() {
         return "Checkers";
     }

@@ -127,6 +127,11 @@ public class Halma extends Game {
     }
 
     @Override
+    public String getIconImageFile() {
+        return "icoHalma.png";
+    }
+
+    @Override
     public String getName() {
         return "Halma";
     }

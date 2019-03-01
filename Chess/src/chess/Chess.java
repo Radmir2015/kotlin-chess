@@ -92,10 +92,6 @@ public class Chess extends Game {
         return images;
     }
 
-    public String getIconImage() {
-        return "bKnightZurich.gif";
-    }
-
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_MOVE;
     }
@@ -107,5 +103,10 @@ public class Chess extends Game {
     @Override
     public String getName() {
         return "Chess";
+    }
+
+    @Override
+    public String getIconImageFile() {
+        return "bKnightZurich.gif";
     }
 }

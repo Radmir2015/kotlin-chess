@@ -32,6 +32,11 @@ public class Go extends Game {
     }
 
     @Override
+    public String getIconImageFile() {
+        return "icoGo.png";
+    }
+
+    @Override
     public String getName() {
         return "Go";
     }

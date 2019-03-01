@@ -111,18 +111,16 @@ public class Game {
     }
 
     /**
-     * Выдать имя файла с изображением для пиктограммы для данной игры.
-     *
-     * @return имя файла
-     */
-    public String getIconImageFile() {
-        return "";
-    }
-
-    /**
      * Выдать имя игры для ее пользователя.
      *
      * @return имя игры
      */
-    public abstract String getName();
+    abstract public String getName();
+
+    /**
+     * Выдать имя файла с изображением для пиктограммы для данной игры.
+     *
+     * @return имя файла
+     */
+    abstract public String getIconImageFile();
 }
