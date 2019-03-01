@@ -1,7 +1,7 @@
 /**
  *
  */
-package checkers.swing.images
+package checkers.images
 
 import java.awt.Image
 import javax.imageio.ImageIO

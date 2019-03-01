@@ -4,8 +4,12 @@ import checkers.pieces.Man;
 import checkers.players.Skuperfield;
 import checkers.players.Spruts;
 import checkers.players.Znaika;
+import chess.pieces.King;
 import game.core.*;
 import game.core.players.Neznaika;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Класс представляющий игру шашки.
@@ -74,5 +78,23 @@ public class Checkers extends Game {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_TRACK;
+    }
+
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(King.class, "wKing.png");
+                images.put(Man.class, "wMan.png");
+                break;
+            case BLACK:
+                images.put(King.class, "bKing.png");
+                images.put(Man.class, "bMan.png");
+                break;
+        }
+
+        return images;
     }
 }

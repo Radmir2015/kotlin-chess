@@ -1,7 +1,7 @@
 package notebook.swing
 
+import checkers.images.CheckersImages
 import checkers.swing.CheckersGamePanel
-import checkers.swing.images.CheckersImages
 import chess.Chess
 import chinachess.swing.ChinaChessGamePanel
 import chinachess.swing.images.ChinaChessImages

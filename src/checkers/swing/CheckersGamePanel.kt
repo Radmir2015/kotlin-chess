@@ -1,10 +1,10 @@
 package checkers.swing
 
 import checkers.Checkers
+import checkers.images.CheckersImages
 import checkers.moves.Capture
 import checkers.pieces.King
 import checkers.pieces.Man
-import checkers.swing.images.CheckersImages
 import game.core.Game
 import game.core.Piece
 import game.core.PieceColor
