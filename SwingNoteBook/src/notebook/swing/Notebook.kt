@@ -5,12 +5,7 @@ import chess.Chess
 import chinachess.ChinaChess
 import game.core.Game
 import game.swing.GamePanel
-import go.swing.GoGamePanel
-import go.swing.images.GoImages
-import halma.swing.HalmaGamePanel
-import halma.swing.images.HalmaImages
-import renju.swing.RenjuBoard
-import renju.swing.images.RenjuImages
+import renju.Renju
 import reversi.Reversi
 import tamerlan.TamerlanChess
 import vikings.Vikings
@@ -41,14 +36,13 @@ fun main(args: Array<String>) {
     tabbedPane.addGame(TamerlanChess())
     tabbedPane.addGame(ChinaChess())
     tabbedPane.addGame(Vikings())
+    tabbedPane.addGame(Renju())
 
-    val renjuPanel = RenjuBoard()
-    val halmaPanel = HalmaGamePanel()
-    val goPanel = GoGamePanel()
-
-    tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
-    tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
-    tabbedPane.addTab("Renju", RenjuImages.icoReversi, renjuPanel)
+//    val goPanel = GoGamePanel()
+//    tabbedPane.addTab("Go", GoImages.icoGo, goPanel)
+//
+//    val halmaPanel = HalmaGamePanel()
+//    tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
 }
 
 private fun JTabbedPane.addGame(game: Game) {

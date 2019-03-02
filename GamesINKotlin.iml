@@ -16,5 +16,6 @@
     <orderEntry type="module" module-name="ChinaChess" />
     <orderEntry type="module" module-name="Vikings" />
     <orderEntry type="module" module-name="Reversi" />
+    <orderEntry type="module" module-name="Renju" />
   </component>
 </module>

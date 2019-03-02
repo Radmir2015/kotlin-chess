@@ -54,7 +54,6 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
             MoveKind.PIECE_MOVE -> {
                 listener = MovePieceListener(this)
                 mouseMoveListener = MovePiecePromptListener(this)
-
             }
             MoveKind.PIECE_PUT -> {
                 listener = PutPieceListener(this)
