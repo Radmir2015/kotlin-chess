@@ -36,7 +36,7 @@ public class SimpleMove implements ITransferMove {
      */
     private boolean isPromotion;
 
-    public SimpleMove(boolean isPromotion, Square... squares) {
+    SimpleMove(boolean isPromotion, Square... squares) {
         this.isPromotion = isPromotion;
 
         source = squares[0];

@@ -6,6 +6,9 @@ import game.core.Square;
 import tamerlan.move.Capture;
 import tamerlan.move.SimpleMove;
 
+/**
+ * Giraffe = ладья + слон + конь.
+ */
 public class Giraffe extends TamerlanPiece {
 
     public Giraffe(Square square, PieceColor color) {

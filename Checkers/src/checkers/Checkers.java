@@ -1,11 +1,13 @@
 package checkers;
 
+import checkers.moves.Capture;
 import checkers.pieces.King;
 import checkers.pieces.Man;
 import checkers.players.Skuperfield;
 import checkers.players.Spruts;
 import checkers.players.Znaika;
 import game.core.*;
+import game.core.listeners.TrackPieceListener;
 import game.core.players.Neznaika;
 
 import java.util.HashMap;
@@ -49,7 +51,7 @@ public class Checkers extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(8, 8);
+        super.initBoardPanel(8, 8);
 
         setHorizontal(board, 0, PieceColor.BLACK);
         setHorizontal(board, 1, PieceColor.BLACK);
@@ -58,6 +60,12 @@ public class Checkers extends Game {
         setHorizontal(board, 5, PieceColor.WHITE);
         setHorizontal(board, 6, PieceColor.WHITE);
         setHorizontal(board, 7, PieceColor.WHITE);
+    }
+
+
+    @Override
+    public void initBoardPanel(IBoardPanel board) {
+        board.setMouseClickListener(new TrackPieceListener<Capture>(board));
     }
 
     @Override

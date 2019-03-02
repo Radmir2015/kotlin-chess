@@ -27,7 +27,7 @@ public class Renju extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(15, 15);
+        super.initBoardPanel(15, 15);
     }
 
     @Override

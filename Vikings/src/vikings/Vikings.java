@@ -14,6 +14,9 @@ import java.util.Map;
 /**
  * Игра
  * <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%BD%D0%B5%D1%84%D0%B0%D1%82%D0%B0%D1%84%D0%BB">Викинги (Хнефатафл, Тавлеи) </a>.
+ * <br/>
+ *
+ * <a href="http://celtica.narod.ru/hnef/default.html">Хнефатафл - игра викингов.</a>.
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
@@ -36,14 +39,14 @@ public class Vikings extends Game {
      * @param boardSize - размер доски.
      */
     private Vikings(int boardSize) {
-        super.initBoard(boardSize, boardSize);
+        super.initBoardPanel(boardSize, boardSize);
 
         switch (boardSize) {
             case 9:
-                initBoard(9, 9);
+                initBoardPanel(9, 9);
                 break;
             case 11:
-                initBoard(11, 11);
+                initBoardPanel(11, 11);
                 break;
         }
 
@@ -68,8 +71,8 @@ public class Vikings extends Game {
     }
 
     @Override
-    public void initBoard(int nV, int nH) {
-        super.initBoard(nV, nH);
+    public void initBoardPanel(int nV, int nH) {
+        super.initBoardPanel(nV, nH);
 
         if (nV == 11) {
             center = 5;
@@ -141,7 +144,7 @@ public class Vikings extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(9, 9);
+        super.initBoardPanel(9, 9);
         initBoard9();
     }
 

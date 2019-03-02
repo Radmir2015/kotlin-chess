@@ -31,7 +31,7 @@ public class Chess extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(8, 8);
+        super.initBoardPanel(8, 8);
 
         // Расставляем пешки.
         for (int v = 0; v < board.nV; v++) {

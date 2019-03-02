@@ -21,7 +21,7 @@ import javax.swing.JPanel
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
-    protected var control: GameControlPanel
+    private var control: GameControlPanel
     private var adorned: AdornedBoard = AdornedBoard()
     private var history: MovesHistory = MovesHistory(game.board.history)
 
@@ -36,9 +36,11 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
 
         adorned.resizeBoard(game.board.nV, game.board.nH)
 
+        var gameBoard: GameBoard? = null
+
         when (game.boardKind) {
             BoardKind.EUROPE -> {
-                val gameBoard = object : EuropeBoard(game) {
+                gameBoard = object : EuropeBoard(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
                         return game.getPiece(mouseSquare, moveColor)
                     }
@@ -46,7 +48,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
                 insertSquares(gameBoard)
             }
             BoardKind.PLAIN -> {
-                val gameBoard = object : GreenBoard(game) {
+                gameBoard = object : GreenBoard(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
                         return game.getPiece(mouseSquare, moveColor)
                     }
@@ -54,7 +56,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA -> {
-                val gameBoard = object : AsiaBoard(game) {
+                gameBoard = object : AsiaBoard(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
                         return game.getPiece(mouseSquare, moveColor)
                     }
@@ -62,7 +64,15 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA_CASTLE_RIVER -> {
-                val gameBoard = object : AsiaBoardWithCastleRiver(game) {
+                gameBoard = object : AsiaBoardWithCastleRiver(game) {
+                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                        return game.getPiece(mouseSquare, moveColor)
+                    }
+                }
+                insertSquares(gameBoard)
+            }
+            BoardKind.ASIA_CASTLE -> {
+                gameBoard = object : AsiaBoardWithCastle(game) {
                     override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
                         return game.getPiece(mouseSquare, moveColor)
                     }
@@ -72,6 +82,8 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             else -> {
             }
         }
+
+        gameBoard?.game?.initBoardPanel(gameBoard)
 
         if (game is ISizeable) {
             val bsp = BoardSizePanel(this, game.sizes)
@@ -108,7 +120,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
      */
     open fun resizeBoard(nV: Int, nH: Int) {
         // Новые размеры доски и расстановка фигур.
-        game.initBoard(nV, nH)
+        game.initBoardPanel(nV, nH)
 
         adorned.resizeBoard(nV, nH)
     }

@@ -25,14 +25,22 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     val board: Board
 
     /**
-     * Слушатель нажатий кнопок мыши над клетками доски.
+     * Слушатель события нажатия кнопок мыши над клетками доски.
      */
     var listener: IGameListener = IGameListener.EMPTY
 
     /**
-     * Слушатель события перемещения мыши.
+     * Слушатель события перемещения мыши над клетками доски.
      */
-    var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
+    private var mouseMoveListener: IMouseMoveListener = MovePiecePromptListener(this)
+
+    override fun setMouseClickListener(listener: IGameListener) {
+        this.listener = listener
+    }
+
+    override fun setMouseMoveListener(listener: IMouseMoveListener) {
+        mouseMoveListener = listener
+    }
 
     /**
      * Изображения белых фигур.
@@ -186,7 +194,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Цвет для подсказок правильных ходов.
      */
-    protected var promptColor: Color = Color.GREEN
+    private var promptColor: Color = Color.GREEN
 
     /**
      * Нарисовать подсказку для клеток на которые фигура может сделать очередной ход.

@@ -1,5 +1,10 @@
 package game.core;
 
+import game.core.listeners.MovePieceListener;
+import game.core.listeners.MovePiecePromptListener;
+import game.core.listeners.PutPieceListener;
+import game.core.listeners.PutPiecePromptListener;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +16,7 @@ import java.util.Map;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 abstract
-public class Game {
-
+public class Game implements IScorable {
     /**
      * Карта для регистрации игроков для каждой из игр.
      */
@@ -31,8 +35,8 @@ public class Game {
     /**
      * Добавить игрока для данной игры.
      *
-     * @param game   - игра для которой добавляют игрока.
-     * @param player - игрок (программа или человек).
+     * @param game   игра для которой добавляют игрока.
+     * @param player игрок (программа или человек).
      */
     public static void addPlayer(Class<? extends Game> game, IPlayer player) {
         List<IPlayer> players = allPlayers.get(game);
@@ -49,7 +53,7 @@ public class Game {
     /**
      * Выдать счет для фигур заданного цвета.
      *
-     * @param color - цвет фигур.
+     * @param color цвет фигур.
      * @return счет для заданного цвета фигур.
      */
     public int getScore(PieceColor color) {
@@ -59,7 +63,7 @@ public class Game {
     /**
      * Получить список всех игрокода для заданной игры.
      *
-     * @param game - заданная игра.
+     * @param game заданная игра.
      * @return список игроков для этой игры.
      */
     public List<IPlayer> getPlayers(Class<? extends Game> game) {
@@ -69,29 +73,55 @@ public class Game {
     /**
      * Задать для игры новые размеры доски.
      *
-     * @param nV - количество вертикалей.
-     * @param nH - количество горизонталей.
+     * @param nV количество вертикалей.
+     * @param nH количество горизонталей.
      */
-    public void initBoard(int nV, int nH) {
+    public void initBoardPanel(int nV, int nH) {
         board.reset(nV, nH);
+    }
+
+    /**
+     * Задать для панели, представляющей доску игры,
+     * слушателей нажатия и перемещения мыши.
+     *
+     * @param board панель доски для инициализации
+     */
+    public void initBoardPanel(IBoardPanel board) {
+        switch (getMoveKind()) {
+            case PIECE_MOVE:
+                board.setMouseMoveListener(new MovePiecePromptListener(board));
+                board.setMouseClickListener(new MovePieceListener(board));
+                break;
+
+            case PIECE_PUT:
+                board.setMouseMoveListener(new PutPiecePromptListener(board));
+                board.setMouseClickListener(new PutPieceListener(board));
+                break;
+        }
     }
 
     /**
      * Сделать доску умалчиваемого размера
      * с умалчиваемой расстановкой фигур на доске.
      */
-    abstract
-    public void initBoardDefault();
+    abstract public void initBoardDefault();
 
     /**
-     * Выдать карту соответствия фигуры заданного параметром цвета и ее изображения.
+     * Выдать карту соответствия фигуры заданного параметром цвета.
+     * Файлы с изображениями фигур должны находится в папке images
+     * вложенной в папку где содерижится класс-потомок класса Game.
+     * <pre>
+     *     Chess.java
+     *     images/
+     *          wRook.gif
+     *          bRook.gif
+     *          ...
+     * </pre>
      *
      * @param color заданный цвет фигуры.
-     * @return карта соответствия.
+     * @return карта соответствия: {класс-фигуры, имя-файла-с-изображениием-фигуры}
      */
-    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
-        return null;
-    }
+    abstract public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color);
 
     /**
      * Выдать вид хода для данной игры.
@@ -120,7 +150,14 @@ public class Game {
      */
     abstract public String getIconImageFile();
 
-    public Piece getPiece(Square mouseSquare, PieceColor pieceColor) {
+    /**
+     * Выдать фигуру заданного цвета и поставить ее заданную клетку доски.
+     *
+     * @param square     клетка для фигуры
+     * @param pieceColor цвет фигуры
+     * @return новая фигура на доске.
+     */
+    public Piece getPiece(Square square, PieceColor pieceColor) {
         return null;
     }
 }

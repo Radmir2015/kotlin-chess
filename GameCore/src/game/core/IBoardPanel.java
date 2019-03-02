@@ -1,11 +1,14 @@
 package game.core;
 
+import game.core.listeners.IGameListener;
+import game.core.listeners.IMouseMoveListener;
+
 import java.util.List;
 
 /**
  * Интерфейс панели изображающей доску для настольной игры.
  * Скрывает особености реализации такой панели с помощью
- * различных пакетов: Swing, SWT, JavaFX
+ * различных пакетов: Swing, SWT, JavaFX, ...
  */
 public interface IBoardPanel {
     /**
@@ -31,28 +34,42 @@ public interface IBoardPanel {
     /**
      * Сохранить текущий курсор заменив его на курсор с изображением заданной фигуры.
      *
-     * @param selectedPiece заданая фигура
+     * @param selectedPiece заданная фигура
      */
     void saveCursor(Piece selectedPiece);
 
     /**
-     * Восстановить сохраненый курсор.
+     * Восстановить сохраненный курсор.
      */
     void restoreCursor();
 
     /**
      * Задать изображение курсора как у заданной фигуры.
      *
-     * @param piece - заданая фигура.
+     * @param piece заданная фигура.
      */
     void pieceToCursor(Piece piece);
 
     /**
      * Получить фигуру заданного цвета стоящую на заданной клетке.
      *
-     * @param mouseSquare - заданая клетка
-     * @param moveColor   -заданный цвет
+     * @param mouseSquare заданая клетка
+     * @param moveColor   заданный цвет
      * @return фигура
      */
     Piece getPiece(Square mouseSquare, PieceColor moveColor);
+
+    /**
+     * Задать слушателя нажатий кнопок мыши.
+     *
+     * @param listener слушатель
+     */
+    void setMouseClickListener(IGameListener listener);
+
+    /**
+     * Задать слушателя перемещения мыши.
+     *
+     * @param listener слушатель
+     */
+    void setMouseMoveListener(IMouseMoveListener listener);
 }

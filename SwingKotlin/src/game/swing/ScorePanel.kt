@@ -12,7 +12,7 @@ import javax.swing.border.LineBorder
 import javax.swing.border.TitledBorder
 
 /**
- * Панель для демонстрации количества счета в игре.
+ * Панель для демонстрации текущего счета в игре.
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */

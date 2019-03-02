@@ -5,18 +5,15 @@ import java.awt.Color
 import java.awt.Graphics
 
 /**
- * Класс - утилита для отрисовки маркетов на доске и фигурах.
+ * Класс - утилита для отрисовки маркеров на доске и фигурах.
  */
 object Markers {
     /**
      * Пометить клетку цветным маркером.
      *
-     * @param g
-     * - графический контекст.
-     * @param square
-     * - помечаемая клетка.
-     * @param markColor
-     * - цвет маркера.
+     * @param g графический контекст.
+     * @param square помечаемая клетка.
+     * @param markColor цвет маркера.
      */
     fun markSquare(g: Graphics, square: Square, sw: Int, sh: Int, markColor: Color) {
         val d = 10

@@ -21,15 +21,19 @@ public class Go extends Game {
     }
 
     public Go(int boardSize) {
-        super.initBoard(boardSize, boardSize);
+        super.initBoardPanel(boardSize, boardSize);
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
         board.setBlackPlayer(new Vinni(pieceProvider));
     }
 
+    public Go() {
+        this(10);
+    }
+
     @Override
     public void initBoardDefault() {
-        super.initBoard(10, 10);
+        super.initBoardPanel(10, 10);
     }
 
     @Override

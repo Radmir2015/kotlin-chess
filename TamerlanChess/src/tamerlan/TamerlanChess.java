@@ -30,7 +30,7 @@ public class TamerlanChess extends Game {
     }
 
     public TamerlanChess() {
-        super.initBoard(10, 10);
+        super.initBoardPanel(10, 10);
 
         putPieces(board, PieceColor.BLACK);
         putPieces(board, PieceColor.WHITE);
@@ -82,7 +82,7 @@ public class TamerlanChess extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(10, 10);
+        super.initBoardPanel(10, 10);
 
         putPieces(board, PieceColor.BLACK);
         putPieces(board, PieceColor.WHITE);
@@ -95,7 +95,7 @@ public class TamerlanChess extends Game {
 
     @Override
     public String getIconImageFile() {
-        return "bVizirZurich.gif";
+        return "bGiraffeZurich.gif";
     }
 
     @Override
@@ -109,7 +109,6 @@ public class TamerlanChess extends Game {
     }
 
     public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
-
         Map<Class<? extends Piece>, String> images = new HashMap<>();
 
         switch (color) {
@@ -136,8 +135,6 @@ public class TamerlanChess extends Game {
                 images.put(Giraffe.class, "bGiraffeZurich.gif");
                 break;
         }
-
         return images;
     }
-
 }

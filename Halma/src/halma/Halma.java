@@ -1,7 +1,9 @@
 package halma;
 
 import game.core.*;
+import game.core.listeners.TrackPieceListener;
 import game.core.players.Neznaika;
+import halma.moves.Jump;
 import halma.pieces.Stone;
 import halma.players.Ants;
 import halma.players.Beetles;
@@ -32,11 +34,15 @@ public class Halma extends Game implements ISizeable, IScorable {
      * Creates game board with proper sizes allowable for the Game.
      */
     public Halma(int boardSize) {
-        super.initBoard(boardSize, boardSize);
+        super.initBoardPanel(boardSize, boardSize);
         initializeParticularBoard(boardSize);
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
         board.setBlackPlayer(new Neznaika());
+    }
+
+    public Halma() {
+        this(10);
     }
 
     /**
@@ -79,8 +85,8 @@ public class Halma extends Game implements ISizeable, IScorable {
     }
 
     @Override
-    public void initBoard(int nV, int nH) {
-        super.initBoard(nV, nH);
+    public void initBoardPanel(int nV, int nH) {
+        super.initBoardPanel(nV, nH);
 
         // Initialize board of the proper format
         for (short ind_sz = 0; ind_sz < Halma.allowableBoardSizeNumb; ++ind_sz)
@@ -116,8 +122,13 @@ public class Halma extends Game implements ISizeable, IScorable {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(10, 10);
+        super.initBoardPanel(10, 10);
         initializeParticularBoard(10);
+    }
+
+    @Override
+    public void initBoardPanel(IBoardPanel board) {
+        board.setMouseClickListener(new TrackPieceListener<Jump>(board));
     }
 
     @Override

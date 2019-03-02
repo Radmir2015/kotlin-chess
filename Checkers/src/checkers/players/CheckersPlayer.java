@@ -17,9 +17,7 @@ import java.util.stream.Collectors;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-abstract
-public class CheckersPlayer extends MovePiecePlayer {
-
+abstract class CheckersPlayer extends MovePiecePlayer {
     @Override
     public List<Move> getCorrectMoves(Board board, PieceColor color) {
         List<Move> correctMoves = new ArrayList<>();

@@ -7,9 +7,9 @@ package game.core;
  */
 public interface IScorable {
     /**
-     * Сет для игрока играющего фигурами заданного цвета.
+     * Счет для Ыиграющего фигурами заданного цвета.
      *
-     * @param color - цвет фигур
+     * @param color цвет фигур
      * @return счет игрока
      */
     int getScore(PieceColor color);

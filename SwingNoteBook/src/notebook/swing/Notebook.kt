@@ -21,29 +21,28 @@ import javax.swing.JFrame
 import javax.swing.JTabbedPane
 
 fun main(args: Array<String>) {
-    val frame = JFrame("Games Notebook")
-    frame.iconImage = ImageIcon("images/GamesNotebook.png").image
-    frame.defaultCloseOperation = JFrame.EXIT_ON_CLOSE
-    frame.size = Dimension(800, 600)
-    frame.layout = BorderLayout()
-    frame.isVisible = true
-    frame.setLocationRelativeTo(null)
-
     val tabbedPane = JTabbedPane()
-    frame.add(tabbedPane, BorderLayout.CENTER)
 
-    tabbedPane.addGame(Reversi(0))
+    val frame = JFrame("Games Notebook")
+    with(frame) {
+        iconImage = ImageIcon("images/GamesNotebook.png").image
+        defaultCloseOperation = JFrame.EXIT_ON_CLOSE
+        size = Dimension(800, 600)
+        layout = BorderLayout()
+        setLocationRelativeTo(null)
+        add(tabbedPane, BorderLayout.CENTER)
+        isVisible = true
+    }
+
+    tabbedPane.addGame(Reversi())
     tabbedPane.addGame(Chess())
     tabbedPane.addGame(Checkers())
     tabbedPane.addGame(TamerlanChess())
     tabbedPane.addGame(ChinaChess())
     tabbedPane.addGame(Vikings())
     tabbedPane.addGame(Renju())
-    tabbedPane.addGame(Go(10))
-    tabbedPane.addGame(Halma(10))
-
-//    val halmaPanel = HalmaGamePanel()
-//    tabbedPane.addTab("Halma", HalmaImages.icoHalma, halmaPanel)
+    tabbedPane.addGame(Go())
+    tabbedPane.addGame(Halma())
 }
 
 private fun JTabbedPane.addGame(game: Game) {

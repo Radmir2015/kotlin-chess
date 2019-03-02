@@ -67,7 +67,7 @@ public class ChinaChess extends Game {
 
     @Override
     public void initBoardDefault() {
-        super.initBoard(9, 10);
+        super.initBoardPanel(9, 10);
 
         putPieces(board, PieceColor.BLACK);
         putPieces(board, PieceColor.WHITE);

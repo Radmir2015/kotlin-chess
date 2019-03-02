@@ -16,7 +16,7 @@ import java.util.Map;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class Reversi extends Game {
+public class Reversi extends Game implements IScorable {
     private static IPieceProvider pieceProvider = Stone::new;
 
     static {
@@ -46,9 +46,13 @@ public class Reversi extends Game {
         }
     }
 
+    public Reversi() {
+        this(0);
+    }
+
     @Override
     public void initBoardDefault() {
-        super.initBoard(8, 8);
+        super.initBoardPanel(8, 8);
 
         new Stone(board.getSquare(3, 3), PieceColor.BLACK);
         new Stone(board.getSquare(4, 4), PieceColor.BLACK);

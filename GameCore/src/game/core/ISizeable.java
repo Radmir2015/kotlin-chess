@@ -9,7 +9,7 @@ public interface ISizeable {
     /**
      * Выдать допустимые для данной игры размеры доски.
      *
-     * @return
+     * @return массив пар (ширина, высота) доски.
      */
     int[][] getSizes();
 }
