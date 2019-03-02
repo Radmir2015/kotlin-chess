@@ -4,6 +4,9 @@ import game.core.*;
 import game.core.players.Vinni;
 import go.pieces.GoPiece;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Игра <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE">Го</a>
  *
@@ -47,5 +50,26 @@ public class Go extends Game {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_PUT;
+    }
+
+    @Override
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(GoPiece.class, "wStone.png");
+                break;
+            case BLACK:
+                images.put(GoPiece.class, "bStone.png");
+                break;
+        }
+
+        return images;
+    }
+
+    @Override
+    public Piece getPiece(Square square, PieceColor color) {
+        return new GoPiece(square, color);
     }
 }
