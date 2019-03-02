@@ -19,5 +19,6 @@
     <orderEntry type="module" module-name="Reversi" />
     <orderEntry type="module" module-name="Renju" />
     <orderEntry type="module" module-name="Go" />
+    <orderEntry type="module" module-name="Halma" />
   </component>
 </module>

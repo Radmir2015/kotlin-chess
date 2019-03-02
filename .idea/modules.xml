@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Go/Go.iml" filepath="$PROJECT_DIR$/Go/Go.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Halma/Halma.iml" filepath="$PROJECT_DIR$/Halma/Halma.iml" />
       <module fileurl="file://$PROJECT_DIR$/Renju/Renju.iml" filepath="$PROJECT_DIR$/Renju/Renju.iml" />
       <module fileurl="file://$PROJECT_DIR$/Reversi/Reversi.iml" filepath="$PROJECT_DIR$/Reversi/Reversi.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" filepath="$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml" />

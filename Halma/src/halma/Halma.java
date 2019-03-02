@@ -6,6 +6,9 @@ import halma.pieces.Stone;
 import halma.players.Ants;
 import halma.players.Beetles;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Игра <a href=
  * "https://ru.wikipedia.org/wiki/https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BB%D0%BC%D0%B0">
@@ -135,6 +138,22 @@ public class Halma extends Game implements ISizeable, IScorable {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_TRACK;
+    }
+
+    @Override
+    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
+        Map<Class<? extends Piece>, String> images = new HashMap<>();
+
+        switch (color) {
+            case WHITE:
+                images.put(Stone.class, "wStone.png");
+                break;
+            case BLACK:
+                images.put(Stone.class, "bStone.png");
+                break;
+        }
+
+        return images;
     }
 
     @Override
