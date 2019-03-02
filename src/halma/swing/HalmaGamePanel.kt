@@ -9,15 +9,10 @@ import game.core.PieceColor
 import game.core.Square
 import game.core.listeners.MovePieceListener
 import game.swing.AsiaBoard
-import game.swing.BoardSizePanel
 import game.swing.GamePanel
-import game.swing.ScorePanel
 import game.swing.images.GameImages
 import halma.Halma
-import java.awt.Component
-import java.awt.Dimension
 import java.awt.Image
-import javax.swing.Box
 
 /**
  * Панель для игры в уголки.
@@ -28,25 +23,25 @@ class HalmaGamePanel(boardSize: Int) : GamePanel(Halma(boardSize)) {
     constructor() : this(10)
 
     init {
-        insertSquares(HalmaBoardPanel(game))
+//        insertSquares(HalmaBoardPanel(game))
 
-        val n8x8 = intArrayOf(8, 8)
-        val n10x10 = intArrayOf(10, 10)
-        val n16x16 = intArrayOf(16, 16)
-        val sizes = arrayOf(n8x8, n10x10, n16x16)
+//        val n8x8 = intArrayOf(8, 8)
+//        val n10x10 = intArrayOf(10, 10)
+//        val n16x16 = intArrayOf(16, 16)
+//        val sizes: Array<IntArray> = arrayOf(n8x8, n10x10, n16x16)
+//
+//        val bsp = BoardSizePanel(this, sizes)
+//        bsp.alignmentX = Component.CENTER_ALIGNMENT
+//
+//        control.add(Box.createRigidArea(Dimension(0, 5)))
+//        control.add(bsp)
 
-        val bsp = BoardSizePanel(this, sizes)
-        bsp.alignmentX = Component.CENTER_ALIGNMENT
-
-        control.add(Box.createRigidArea(Dimension(0, 5)))
-        control.add(bsp)
-
-
-        val scorePanel = ScorePanel(game)
-        scorePanel.alignmentX = Component.CENTER_ALIGNMENT
-
-        control.add(Box.createRigidArea(Dimension(0, 5)))
-        control.add(scorePanel)
+//
+//        val scorePanel = ScorePanel(game)
+//        scorePanel.alignmentX = Component.CENTER_ALIGNMENT
+//
+//        control.add(Box.createRigidArea(Dimension(0, 5)))
+//        control.add(scorePanel)
     }
 }
 

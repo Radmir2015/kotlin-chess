@@ -13,7 +13,7 @@ import halma.players.Beetles;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-public class Halma extends Game {
+public class Halma extends Game implements ISizeable, IScorable {
 
     private static final short allowableBoardSizeNumb = 3;
     private static final short[] allowableBoardSize = {8, 10, 16};
@@ -85,15 +85,6 @@ public class Halma extends Game {
                 initializeParticularBoard(allowableBoardSize[ind_sz]);
     }
 
-    public Board getInitBoard1(int boardSize) {
-        // Initialize board of the proper format
-        for (short ind_sz = 0; ind_sz < Halma.allowableBoardSizeNumb; ++ind_sz)
-            if (allowableBoardSize[ind_sz] == boardSize)
-                return initializeParticularBoard(allowableBoardSize[ind_sz]);
-
-        return null;
-    }
-
     private Board initializeParticularBoard(int boardSize) {
         // Add Common Corner
         for (short i = 0; i < 4; ++i) {
@@ -144,5 +135,14 @@ public class Halma extends Game {
     @Override
     public MoveKind getMoveKind() {
         return MoveKind.PIECE_TRACK;
+    }
+
+    @Override
+    public int[][] getSizes() {
+        return new int[][]{
+                {8, 8},
+                {10, 10},
+                {16, 16}
+        };
     }
 }

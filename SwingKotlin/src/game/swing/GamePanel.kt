@@ -2,6 +2,9 @@ package game.swing
 
 import game.core.*
 import java.awt.BorderLayout
+import java.awt.Component
+import java.awt.Dimension
+import javax.swing.Box
 import javax.swing.JPanel
 
 /**
@@ -68,6 +71,22 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             else -> {
             }
+        }
+
+        if (game is ISizeable) {
+            val bsp = BoardSizePanel(this, game.sizes)
+            bsp.alignmentX = Component.CENTER_ALIGNMENT
+
+            control.add(Box.createRigidArea(Dimension(0, 5)))
+            control.add(bsp)
+        }
+
+        if (game is IScorable) {
+            val scorePanel = ScorePanel(game)
+            scorePanel.alignmentX = Component.CENTER_ALIGNMENT
+
+            control.add(Box.createRigidArea(Dimension(0, 5)))
+            control.add(scorePanel)
         }
     }
 
