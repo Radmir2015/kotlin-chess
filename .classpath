@@ -13,6 +13,7 @@
 	<classpathentry kind="src" path="Reversi/src"/>
 	<classpathentry kind="src" path="TamerlanChess/src"/>
 	<classpathentry kind="src" path="Vikings/src"/>
+	<classpathentry kind="src" path="SwingNoteBook/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/KotlinJavaRuntime"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/GameCore"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Checkers"/>
