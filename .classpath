@@ -2,6 +2,27 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="Halma/src"/>
+	<classpathentry kind="src" path="Checkers/src"/>
+	<classpathentry kind="src" path="Chess/src"/>
+	<classpathentry kind="src" path="ChinaChess/src"/>
+	<classpathentry kind="src" path="GameCore/src"/>
+	<classpathentry kind="src" path="SwingKotlin/src"/>
+	<classpathentry kind="src" path="Go/src"/>
+	<classpathentry kind="src" path="Renju/src"/>
+	<classpathentry kind="src" path="Reversi/src"/>
+	<classpathentry kind="src" path="TamerlanChess/src"/>
+	<classpathentry kind="src" path="Vikings/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/KotlinJavaRuntime"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/GameCore"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Checkers"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Chess"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/TamerlanChess"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ChinaChess"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Vikings"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Reversi"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Renju"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Go"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/Halma"/>
+	<classpathentry kind="output" path="out/production/GamesINKotlin"/>
 </classpath>
