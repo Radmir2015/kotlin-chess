@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="KotlinJavaRuntime">
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-test.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk7.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk8.jar" />
+  </library>
+  <library name="KotlinJavaRuntime (3)">
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-test.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk7.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk8.jar" />
+  </library>
+  <library name="KotlinJavaRuntime (4)">
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-test.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk7.jar" />
+    <archive path="C:/Users/Admin/.IntelliJIdea2018.3/config/plugins/Kotlin/kotlinc/lib/kotlin-stdlib-jdk8.jar" />
+  </library>
+</eclipse-userlibraries>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/KotlinJavaRuntime (4)"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GamesINKotlin"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Chess"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GameCore"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Checkers"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/TamerlanChess"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ChinaChess"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Vikings"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Reversi"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Renju"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Go"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Halma"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
