@@ -16,7 +16,7 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
     /**
      * Последовательность простых ходов.
      */
-    private ArrayList<T> moves;
+    private final ArrayList<T> moves;
 
     /**
      * фигура которая делает ход.
@@ -34,7 +34,7 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
         addMove(move);
     }
 
-    public CompositeMove(Piece p) {
+    protected CompositeMove(Piece p) {
         moves = new ArrayList<>();
 
         this.piece = p;

@@ -15,7 +15,7 @@ public class MovePiecePromptListener implements IMouseMoveListener {
     /**
      * Панель, на которой рисуется доска.
      */
-    private IBoardPanel boardPanel;
+    private final IBoardPanel boardPanel;
 
     /**
      * Слушатель MovePiecePromptListener определяет клетки, на которые может

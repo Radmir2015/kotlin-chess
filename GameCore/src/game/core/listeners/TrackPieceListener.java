@@ -24,12 +24,12 @@ public class TrackPieceListener<T extends ITransferMove> implements IGameListene
     /**
      * Доска на которой происходят изменения.
      */
-    private Board board;
+    private final Board board;
 
     /**
      * Панель на которой рисуется доска.
      */
-    private IBoardPanel boardPanel;
+    private final IBoardPanel boardPanel;
 
     private CompositeMove<T> track = null;
 

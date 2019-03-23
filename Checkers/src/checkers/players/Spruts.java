@@ -12,7 +12,7 @@ import java.util.Comparator;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class Spruts extends CheckersPlayer {
-    private Comparator<? super Move> movesSorter
+    private final Comparator<? super Move> movesSorter
             = (m1, m2) -> getWeight(m2) - getWeight(m1);
 
     @Override

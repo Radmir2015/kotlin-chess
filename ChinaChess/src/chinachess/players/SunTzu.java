@@ -20,7 +20,7 @@ public class SunTzu extends ChinaChessPlayer {
     private final Comparator<? super Piece> pieceComparator
             = (p1, p2) -> getWeight(p2) - getWeight(p1);
 
-    private Comparator<? super Move> brain
+    private final Comparator<? super Move> brain
             = (m1, m2) -> getWeight(m2) - getWeight(m1);
 
     @Override

@@ -15,18 +15,18 @@ public class Capture extends GoMove implements ICaptureMove {
     /**
      * Какая клетка ставится.
      */
-    private Piece piece;
+    private final Piece piece;
 
     /**
      * Клетка куда поставлена фигура.
      */
-    private Square target;
+    private final Square target;
 
     /**
      * Клетки на которых стоят захваченные в плен вражеские фигуры.
      * Эти фигуры меняют цвет и воюют на нашей стороне.
      */
-    private List<Square> captured;
+    private final List<Square> captured;
 
 
     /**

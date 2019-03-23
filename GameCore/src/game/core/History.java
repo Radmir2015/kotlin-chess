@@ -17,7 +17,7 @@ public class History {
     /**
      * Список ходов сделанных на доске.
      */
-    private List<Move> moves = new ArrayList<>();
+    private final List<Move> moves = new ArrayList<>();
 
     /**
      * Доска на которой идет игра.
@@ -114,7 +114,7 @@ public class History {
         return board;
     }
 
-    public void setBoard(Board board) {
+    private void setBoard(Board board) {
         this.board = board;
     }
 

@@ -13,7 +13,7 @@ public class NoPromptListener implements IMouseMoveListener {
     /**
      * Панель на которой отрисовывается доска.
      */
-    private IBoardPanel boardPanel;
+    private final IBoardPanel boardPanel;
 
     public NoPromptListener(IBoardPanel boardPanel) {
         this.boardPanel = boardPanel;

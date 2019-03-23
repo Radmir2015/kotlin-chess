@@ -20,13 +20,13 @@ public class Game implements IScorable {
     /**
      * Карта для регистрации игроков для каждой из игр.
      */
-    private static
+    private static final
     Map<Class<? extends Game>, List<IPlayer>> allPlayers = new HashMap<>();
 
     /**
      * Доска на которой происходит игра.
      */
-    public Board board;
+    public final Board board;
 
     protected Game() {
         board = new Board();

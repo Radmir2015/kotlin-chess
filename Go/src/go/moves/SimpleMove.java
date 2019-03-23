@@ -15,7 +15,7 @@ public class SimpleMove extends GoMove implements IPutMove {
     /**
      * Куда поставят фигуру..
      */
-    private Square target;
+    private final Square target;
 
 
     /**

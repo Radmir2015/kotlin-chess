@@ -15,7 +15,7 @@ import java.util.Comparator;
  * праведного человека (Конфуций)</a>
  */
 public class Confucious extends ChinaChessPlayer {
-    private Comparator<? super Move> brain = (m1, m2) -> getWeight(m2) - getWeight(m1);
+    private final Comparator<? super Move> brain = (m1, m2) -> getWeight(m2) - getWeight(m1);
 
     @Override
     public String getName() {

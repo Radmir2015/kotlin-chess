@@ -14,7 +14,7 @@ public class PutPiecePromptListener implements IMouseMoveListener {
     /**
      * Панель на которой отрисовывается доска.
      */
-    private IBoardPanel boardPanel;
+    private final IBoardPanel boardPanel;
 
     /**
      * Создать слушатель событий от перемешения мыши

@@ -33,7 +33,7 @@ public class Halma extends Game implements ISizeable, IScorable {
     /**
      * Creates game board with proper sizes allowable for the Game.
      */
-    public Halma(int boardSize) {
+    private Halma(int boardSize) {
         super.initBoardPanel(boardSize, boardSize);
         initializeParticularBoard(boardSize);
 

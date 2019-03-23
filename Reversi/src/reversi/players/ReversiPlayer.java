@@ -122,5 +122,5 @@ public class ReversiPlayer extends PutPiecePlayer {
         }
     }
 
-    abstract public Comparator<? super Move> getComparator();
+    protected abstract Comparator<? super Move> getComparator();
 }

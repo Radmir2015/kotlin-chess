@@ -19,22 +19,22 @@ public class SimpleMove implements ITransferMove {
     /**
      * Откуда пошла фигура.
      */
-    Square source;
+    final Square source;
     /**
      * Куда пошла фигура.
      */
-    Square target;
+    final Square target;
     /**
      * Какая фигура пошла.
      */
     Piece piece;
 
-    private Map<Piece, Piece> kings = new HashMap<>();
+    private final Map<Piece, Piece> kings = new HashMap<>();
 
     /**
      * Бало ли превращение шащки в дамку?
      */
-    private boolean isPromotion;
+    private final boolean isPromotion;
 
     SimpleMove(boolean isPromotion, Square... squares) {
         this.isPromotion = isPromotion;

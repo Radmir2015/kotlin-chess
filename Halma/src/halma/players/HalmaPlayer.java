@@ -41,9 +41,7 @@ public class HalmaPlayer extends MovePiecePlayer {
 
         Move bestMove = correctMoves
                 .stream()
-                .map(m -> (ITransferMove) m)
-                .sorted(comparator)
-                .findFirst()
+                .map(m -> (ITransferMove) m).min(comparator)
                 .get();
 
         try {

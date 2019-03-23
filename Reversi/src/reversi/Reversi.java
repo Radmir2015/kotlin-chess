@@ -17,7 +17,7 @@ import java.util.Map;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class Reversi extends Game implements IScorable {
-    private static IPieceProvider pieceProvider = Stone::new;
+    private static final IPieceProvider pieceProvider = Stone::new;
 
     static {
         Game.addPlayer(Reversi.class, IPlayer.HOMO_SAPIENCE);
@@ -31,7 +31,7 @@ public class Reversi extends Game implements IScorable {
      *
      * @param nHoles - количество случайно расположенных отверстий.
      */
-    public Reversi(int nHoles) {
+    private Reversi(int nHoles) {
         initBoardDefault();
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);

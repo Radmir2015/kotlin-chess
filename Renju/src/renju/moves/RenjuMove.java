@@ -1,7 +1,6 @@
 package renju.moves;
 
 import game.core.Dirs;
-import game.core.GameOver;
 import game.core.Piece;
 import game.core.Square;
 import game.core.moves.IPutMove;
@@ -12,9 +11,9 @@ public class RenjuMove implements IPutMove {
     /**
      * Куда поставят фигуру..
      */
-    private Square target;
+    private final Square target;
 
-    private Piece piece;
+    private final Piece piece;
 
     /**
      */
@@ -25,7 +24,7 @@ public class RenjuMove implements IPutMove {
     }
 
     @Override
-    public void doMove() throws GameOver {
+    public void doMove() {
         target.setPiece(piece);
 
         checkGameEnd(piece);

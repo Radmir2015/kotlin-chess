@@ -13,14 +13,14 @@ import java.util.Map;
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class Go extends Game {
-    private static IPieceProvider pieceProvider = GoPiece::new;
+    private static final IPieceProvider pieceProvider = GoPiece::new;
 
     static {
         Game.addPlayer(Go.class, IPlayer.HOMO_SAPIENCE);
         Game.addPlayer(Go.class, new Vinni(pieceProvider));
     }
 
-    public Go(int boardSize) {
+    private Go(int boardSize) {
         super.initBoardPanel(boardSize, boardSize);
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);

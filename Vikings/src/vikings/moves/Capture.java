@@ -34,7 +34,7 @@ public class Capture extends SimpleMove implements ICaptureMove {
     /**
      * Захваченные фигуры противника.
      */
-    private List<Piece> captured;
+    private final List<Piece> captured;
 
     public Capture(List<Piece> captured, Square[] squares) {
         super(squares);

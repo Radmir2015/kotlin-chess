@@ -15,9 +15,8 @@ import java.util.List;
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
-abstract
-public class VikingsPlayer extends MovePiecePlayer {
-    private int maxMoves;
+abstract class VikingsPlayer extends MovePiecePlayer {
+    private final int maxMoves;
 
     VikingsPlayer() {
         this(180);

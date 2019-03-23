@@ -11,7 +11,7 @@ import java.util.Map;
  * Игра <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%8D%D0%BD%D0%B4%D0%B7%D1%8E">Рэндзю</a>
  */
 public class Renju extends Game {
-    private static IPieceProvider pieceProvider = RenjuPiece::new;
+    private static final IPieceProvider pieceProvider = RenjuPiece::new;
 
     static {
         Game.addPlayer(Renju.class, IPlayer.HOMO_SAPIENCE);

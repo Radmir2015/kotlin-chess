@@ -17,12 +17,12 @@ public class Capture extends SimpleMove
     /**
      * Захваченая фигура.
      */
-    private Piece captured;
+    private final Piece captured;
 
     /**
      * Клетка где стоит захваченная фигура.
      */
-    private Square capturedSquare;
+    private final Square capturedSquare;
 
     /**
      * Создание хода представляющего взятие одной фигуры.

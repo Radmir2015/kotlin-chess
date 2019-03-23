@@ -16,15 +16,15 @@ public class HalmaMove implements ITransferMove {
     /**
      * Откуда перемещается.
      */
-    Square source;
+    final Square source;
     /**
      * Куда перемещается.
      */
-    Square target;
+    final Square target;
     /**
      * Какая фигура перемещается.
      */
-    private Piece piece;
+    private final Piece piece;
 
     /**
      * Перемешение фигуры через заданные клетки.

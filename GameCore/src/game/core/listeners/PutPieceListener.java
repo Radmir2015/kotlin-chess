@@ -12,12 +12,12 @@ public class PutPieceListener implements IGameListener {
     /**
      * Доска на которой присходят изменения.
      */
-    private Board board;
+    private final Board board;
 
     /**
      * Панель для отрисовки доски.
      */
-    private IBoardPanel boardPanel;
+    private final IBoardPanel boardPanel;
 
     /**
      * Создать слушателя событий от нажатий кнопок мыши

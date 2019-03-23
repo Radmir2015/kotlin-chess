@@ -12,7 +12,7 @@ public class GameOver extends Exception {
      */
     private static final long serialVersionUID = 1L;
 
-    public GameResult result;
+    public final GameResult result;
 
     /**
      * Ситуация с результатом игры.

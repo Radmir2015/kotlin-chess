@@ -86,7 +86,7 @@ public class Rurik extends VikingsPlayer {
             // Поиск ближайшего выхода.
             Square nearsExit = exits
                     .stream()
-                    .min((s1, s2) -> target.distance(s1) - target.distance(s2))
+                    .min(Comparator.comparingInt(target::distance))
                     .get();
 
             // Ход королем к ближайшему выходу получает наибольший приоритет.

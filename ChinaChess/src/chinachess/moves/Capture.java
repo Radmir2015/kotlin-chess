@@ -19,8 +19,8 @@ import java.util.List;
  * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
  */
 public class Capture extends SimpleMove implements ICaptureMove {
-    private Square capturedSquare;
-    private Piece capturedPiece;
+    private final Square capturedSquare;
+    private final Piece capturedPiece;
 
     public Capture(Square[] squares) {
         super(squares);

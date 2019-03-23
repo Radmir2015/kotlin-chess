@@ -22,12 +22,12 @@ public enum KnightDirs {
     /**
      * Смещение по вертикали.
      */
-    public int dv;
+    private final int dv;
 
     /**
      * Смещение по горизонтали.
      */
-    public int dh;
+    private final int dh;
 
     /**
      * @param dv - смещение по вертикали.

@@ -108,7 +108,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
      * @param gameBoard
      * - вставляемая доска с клетками.
      */
-    protected fun insertSquares(gameBoard: GameBoard) = adorned.insertSquares(gameBoard)
+    private fun insertSquares(gameBoard: GameBoard) = adorned.insertSquares(gameBoard)
 
     /**
      * Изменить размеры доски.

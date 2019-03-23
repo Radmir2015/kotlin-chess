@@ -11,12 +11,12 @@ public class Square {
     /**
      * Вертикаль клетки.
      */
-    public int v;
+    public final int v;
 
     /**
      * Горизонталь клетки.
      */
-    public int h;
+    public final int h;
     /**
      * Фигура которая, возможно, стоит на клетке.
      */
@@ -24,7 +24,7 @@ public class Square {
     /**
      * Доска на которой расположена клетка.
      */
-    private Board board;
+    private final Board board;
 
     /**
      * Создать клетку на доске.

@@ -20,8 +20,8 @@ public class Board extends Observable {
     /**
      * История партии (последовательность ходов игры).
      */
-    public History history = new History(this);
-    private Map<PieceColor, IPlayer> players = new HashMap<>();
+    public final History history = new History(this);
+    private final Map<PieceColor, IPlayer> players = new HashMap<>();
     /**
      * Клетки доски.
      */
