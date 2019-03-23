@@ -155,7 +155,7 @@ public class Vikings extends Game {
 
     @Override
     public String getIconImageFile() {
-        return "icoVikings9.png";
+        return "icoVikings.png";
     }
 
     @Override

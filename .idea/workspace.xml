@@ -4,7 +4,11 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="" />
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Vikings/src/vikings/images/icoVikings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="596">
-              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding>
                 <element signature="e#24#485#0" expanded="true" />
               </folding>
@@ -52,13 +56,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
               <folding>
                 <element signature="e#20#168#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/Vikings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -158,13 +174,13 @@
         <option value="$PROJECT_DIR$/GameCore/src/game/core/IScorable.java" />
         <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt" />
         <option value="$PROJECT_DIR$/GameCore/src/game/core/Game.java" />
-        <option value="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" />
         <option value="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" />
         <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" />
+        <option value="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1300" />
@@ -189,6 +205,16 @@
             <path>
               <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
               <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Checkers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="ChinaChess" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
               <item name="SwingKotlin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -203,6 +229,31 @@
               <item name="SwingKotlin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="swing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Vikings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Vikings" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Vikings" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="vikings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="Vikings" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
@@ -231,7 +282,7 @@
     <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551619428143" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553344181353" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -753,7 +804,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="473257000" />
+    <option name="totallyTimeSpent" value="475583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -766,9 +817,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.22334754" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.22334754" />
       <window_info id="Structure" order="1" sideWeight="0.30455637" side_tool="true" weight="0.27427185" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1292,16 +1342,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/Vikings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SwingNoteBook/.project" />
     <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/Game.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1357,7 +1397,7 @@
     <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="596">
-          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
             <element signature="e#24#485#0" expanded="true" />
           </folding>
@@ -1370,6 +1410,16 @@
           <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding>
             <element signature="e#20#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/Vikings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
