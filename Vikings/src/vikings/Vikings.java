@@ -173,11 +173,11 @@ public class Vikings extends Game {
 
         switch (color) {
             case WHITE:
-                images.put(Cyning.class, "wСyning.png");
-                images.put(Viking.class, "wViking.png");
+                images.put(Cyning.class, "wCyning.png");
+                images.put(Viking.class, "bViking.png");
                 break;
             case BLACK:
-                images.put(Cyning.class, "bСyning.png");
+                images.put(Cyning.class, "bCyning.png");
                 images.put(Viking.class, "bViking.png");
                 break;
         }

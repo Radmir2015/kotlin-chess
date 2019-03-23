@@ -39,9 +39,9 @@ fun main(args: Array<String>) {
     tabbedPane.addGame(Checkers())
     tabbedPane.addGame(TamerlanChess())
     tabbedPane.addGame(ChinaChess())
-    tabbedPane.addGame(Vikings())
     tabbedPane.addGame(Renju())
     tabbedPane.addGame(Go())
+    tabbedPane.addGame(Vikings())
     tabbedPane.addGame(Halma())
 }
 

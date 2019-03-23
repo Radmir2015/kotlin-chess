@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Vikings/src/vikings/images/icoVikings.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vikings/src/vikings/images/bСyning.png" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/src/vikings/images/bCyning.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vikings/src/vikings/images/wСyning.png" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/src/vikings/images/wCyning.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="408">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
                 <element signature="e#24#485#0" expanded="true" />
               </folding>
@@ -195,6 +196,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SwingNoteBook" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -264,17 +276,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
-              <item name="SwingNoteBook" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,11 +293,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -456,6 +457,7 @@
       <workItem from="1551616290647" duration="3344000" />
       <workItem from="1552498286597" duration="894000" />
       <workItem from="1553333754798" duration="1779000" />
+      <workItem from="1553345447155" duration="223000" />
     </task>
     <task id="LOCAL-00059" summary="Перемещение изображений шахмат в новую папку">
       <created>1545991231668</created>
@@ -804,7 +806,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475583000" />
+    <option name="totallyTimeSpent" value="475806000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -816,9 +818,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.22334754" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.22547974" />
       <window_info id="Structure" order="1" sideWeight="0.30455637" side_tool="true" weight="0.27427185" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1388,16 +1390,13 @@
     <entry file="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Checkers/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+        <state relative-caret-position="408">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="e#24#485#0" expanded="true" />
           </folding>
@@ -1414,10 +1413,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/Vikings.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+        <state relative-caret-position="188">
+          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
