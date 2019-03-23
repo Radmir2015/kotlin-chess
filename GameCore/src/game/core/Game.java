@@ -97,6 +97,8 @@ public class Game implements IScorable {
                 board.setMouseMoveListener(new PutPiecePromptListener(board));
                 board.setMouseClickListener(new PutPieceListener(board));
                 break;
+            default:
+                break;
         }
     }
 

@@ -162,6 +162,8 @@ public class Halma extends Game implements ISizeable, IScorable {
             case BLACK:
                 images.put(Stone.class, "bStone.png");
                 break;
+            default:
+                break;
         }
 
         return images;

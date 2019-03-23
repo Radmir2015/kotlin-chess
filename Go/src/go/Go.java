@@ -67,6 +67,8 @@ public class Go extends Game {
             case BLACK:
                 images.put(GoPiece.class, "bStone.png");
                 break;
+            default:
+                break;
         }
 
         return images;

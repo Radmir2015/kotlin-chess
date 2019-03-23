@@ -87,6 +87,8 @@ public class Chess extends Game {
                 images.put(Queen.class, "bQueenZurich.gif");
                 images.put(King.class, "bKingZurich.gif");
                 break;
+            default:
+                break;
         }
 
         return images;

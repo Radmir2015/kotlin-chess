@@ -101,6 +101,8 @@ public class Checkers extends Game {
                 images.put(King.class, "bKing.png");
                 images.put(Man.class, "bMan.png");
                 break;
+            default:
+                break;
         }
 
         return images;

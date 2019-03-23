@@ -116,6 +116,8 @@ public class ChinaChess extends Game {
                 images.put(Guardian.class, "bGuard.png");
                 images.put(Gun.class, "bGun.png");
                 break;
+            default:
+                break;
         }
 
         return images;

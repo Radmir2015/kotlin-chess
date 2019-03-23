@@ -134,6 +134,8 @@ public class TamerlanChess extends Game {
                 images.put(WarMachine.class, "bWarMachineZurich.gif");
                 images.put(Giraffe.class, "bGiraffeZurich.gif");
                 break;
+            default:
+                break;
         }
         return images;
     }

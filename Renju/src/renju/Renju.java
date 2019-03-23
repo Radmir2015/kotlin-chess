@@ -61,6 +61,8 @@ public class Renju extends Game {
             case BLACK:
                 images.put(RenjuPiece.class, "StoneBlack.png");
                 break;
+            default:
+                break;
         }
 
         return images;

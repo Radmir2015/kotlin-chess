@@ -180,6 +180,8 @@ public class Vikings extends Game {
                 images.put(Cyning.class, "bCyning.png");
                 images.put(Viking.class, "bViking.png");
                 break;
+            default:
+                break;
         }
 
         return images;

@@ -92,6 +92,8 @@ public class Reversi extends Game implements IScorable {
             case BLACK:
                 images.put(Stone.class, "StoneBlack.png");
                 break;
+            default:
+                break;
         }
 
         return images;
