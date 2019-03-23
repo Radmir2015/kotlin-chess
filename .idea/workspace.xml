@@ -1,0 +1,1464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/GamesINKotlin$games_ui_NotebookKt.ic" NAME="games.ui.NotebookKt Coverage Results" MODIFIED="1544139235878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="175" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DsmViewSettings">
+    <option name="groupCycles" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="GamesINKotlin" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="596">
+              <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+              <folding>
+                <element signature="e#24#485#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <folding>
+                <element signature="e#20#168#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="Kotlin File" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Neznaika</find>
+      <find>addObserver</find>
+      <find>this</find>
+      <find>EUROPE</find>
+      <find>iconCheckers</find>
+    </findStrings>
+    <dirStrings>
+      <dir>C:\Users\Admin\IdeaProjects\GamesINKotlin</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Romanov" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="7bb118b44c975a0a4008af3080847d9901c98302" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt" />
+        <option value="$PROJECT_DIR$/Chess/src/chess/Chess.java" />
+        <option value="$PROJECT_DIR$/src/renju/Renju.java" />
+        <option value="$PROJECT_DIR$/src/go/Go.java" />
+        <option value="$PROJECT_DIR$/src/tamerlan/swing/TamerlanChessGamePanel.kt" />
+        <option value="$PROJECT_DIR$/src/tamerlan/TamerlanChess.java" />
+        <option value="$PROJECT_DIR$/src/checkers/Checkers.java" />
+        <option value="$PROJECT_DIR$/src/swing/CheckersGamePanel.kt" />
+        <option value="$PROJECT_DIR$/src/checkers/swing/images/CheckersImages.kt" />
+        <option value="$PROJECT_DIR$/GameCore/src/game/core/listeners/TrackPieceListener.java" />
+        <option value="$PROJECT_DIR$/TamerlanChess/src/tamerlan/move/Capture.java" />
+        <option value="$PROJECT_DIR$/TamerlanChess/src/tamerlan/move/SimpleMove.java" />
+        <option value="$PROJECT_DIR$/src/chinachess/ChinaChess.java" />
+        <option value="$PROJECT_DIR$/ChinaChess/src/chinachess/players/ChinaChessPlayer.java" />
+        <option value="$PROJECT_DIR$/src/chinachess/swing/images/ChinaChessImages.kt" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastleRiver.kt" />
+        <option value="$PROJECT_DIR$/src/chinachess/swing/ChinaChessGamePanel.kt" />
+        <option value="$PROJECT_DIR$/ChinaChess/src/chinachess/ChinaChess.java" />
+        <option value="$PROJECT_DIR$/src/vikings/Vikings.java" />
+        <option value="$PROJECT_DIR$/src/images/VikingImages.kt" />
+        <option value="$PROJECT_DIR$/src/vikings/swing/VikingsGamePanel.kt" />
+        <option value="$PROJECT_DIR$/src/reversi/Reversi.java" />
+        <option value="$PROJECT_DIR$/src/reversi/swing/images/ReversiImages.kt" />
+        <option value="$PROJECT_DIR$/src/reversi/swing/ReversiGamePanel.kt" />
+        <option value="$PROJECT_DIR$/src/renju/swing/RenjuBoard.kt" />
+        <option value="$PROJECT_DIR$/Renju/src/renju/Renju.java" />
+        <option value="$PROJECT_DIR$/src/go/swing/GoGamePanel.kt" />
+        <option value="$PROJECT_DIR$/GameCore/src/IScorable.java" />
+        <option value="$PROJECT_DIR$/src/halma/Halma.java" />
+        <option value="$PROJECT_DIR$/src/swing/HalmaGamePanel.kt" />
+        <option value="$PROJECT_DIR$/src/halma/swing/HalmaGamePanel.kt" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt" />
+        <option value="$PROJECT_DIR$/Checkers/src/checkers/Checkers.java" />
+        <option value="$PROJECT_DIR$/TamerlanChess/src/tamerlan/pieces/Giraffe.java" />
+        <option value="$PROJECT_DIR$/TamerlanChess/src/tamerlan/TamerlanChess.java" />
+        <option value="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.java" />
+        <option value="$PROJECT_DIR$/GameCore/src/game/core/ISizeable.java" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/images/GameImages.kt" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" />
+        <option value="$PROJECT_DIR$/Checkers/src/checkers/moves/SimpleMove.java" />
+        <option value="$PROJECT_DIR$/Checkers/src/checkers/players/CheckersPlayer.java" />
+        <option value="$PROJECT_DIR$/Reversi/src/reversi/Reversi.java" />
+        <option value="$PROJECT_DIR$/Go/src/go/Go.java" />
+        <option value="$PROJECT_DIR$/Halma/src/halma/Halma.java" />
+        <option value="$PROJECT_DIR$/src/checkers/swing/CheckersGamePanel.kt" />
+        <option value="$PROJECT_DIR$/GameCore/src/game/core/IScorable.java" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt" />
+        <option value="$PROJECT_DIR$/GameCore/src/game/core/Game.java" />
+        <option value="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" />
+        <option value="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" />
+        <option value="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1300" />
+    <option name="height" value="788" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="SwingKotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="SwingKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GamesINKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="SwingKotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
+              <item name="SwingNoteBook" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551619428143" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/renju/swing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="game.swing" />
+      <recent name="game.swing.images" />
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="checkers.players" />
+      <recent name="game.core" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="game.core" />
+      <recent name="game.players" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\renju\swing\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\vikings\swing\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\checkers\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\chess\moves" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Halma\src\halma\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Go\src\go\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Renju\src\renju\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Reversi\src\reversi\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\reversi\images" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="renju.moves" />
+      <recent name="renju.pieces" />
+      <recent name="game.core" />
+      <recent name="renju.swift" />
+    </key>
+    <key name="KotlinExtractSuperclassDialog.RECENT_KEYS">
+      <recent name="games.ui" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Kotlin.notebook.swing.NotebookKt">
+    <configuration name="Unnamed" type="JetRunConfigurationType" factoryName="Kotlin" nameIsGenerated="true">
+      <module name="GamesINKotlin" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="notebook.swing.NotebookKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true">
+      <module name="SwingNoteBook" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="notebook.swing.NotebookKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="notebook.swing.NotebookKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true">
+      <module name="SwingNoteBook" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="notebook.swing.NotebookKt" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Kotlin.Unnamed" />
+      <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="" />
+      <created>1544131472421</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544131472421</updated>
+      <workItem from="1544131477955" duration="108000" />
+      <workItem from="1544131653091" duration="15278000" />
+      <workItem from="1544170519833" duration="8836000" />
+      <workItem from="1544216313110" duration="1571000" />
+      <workItem from="1544256621605" duration="2236000" />
+      <workItem from="1544259133120" duration="3110000" />
+      <workItem from="1544507458459" duration="27661000" />
+      <workItem from="1544539917757" duration="26721000" />
+      <workItem from="1544605083426" duration="1224000" />
+      <workItem from="1544615842589" duration="3204000" />
+      <workItem from="1544697867388" duration="26144000" />
+      <workItem from="1544753512363" duration="20424000" />
+      <workItem from="1544797592670" duration="2918000" />
+      <workItem from="1544820758912" duration="10274000" />
+      <workItem from="1544861202046" duration="7520000" />
+      <workItem from="1544882235313" duration="24722000" />
+      <workItem from="1544910225644" duration="1502000" />
+      <workItem from="1544927572024" duration="35979000" />
+      <workItem from="1545030106168" duration="8413000" />
+      <workItem from="1545372199155" duration="8552000" />
+      <workItem from="1545388567717" duration="12185000" />
+      <workItem from="1545636604315" duration="20695000" />
+      <workItem from="1545719969559" duration="185000" />
+      <workItem from="1545720213398" duration="14208000" />
+      <workItem from="1545853317366" duration="5379000" />
+      <workItem from="1545906621040" duration="2347000" />
+      <workItem from="1545978073072" duration="15193000" />
+      <workItem from="1546018734356" duration="12651000" />
+      <workItem from="1546074300148" duration="6049000" />
+      <workItem from="1546189650990" duration="771000" />
+      <workItem from="1547370879974" duration="1698000" />
+      <workItem from="1550473949484" duration="858000" />
+      <workItem from="1551193995435" duration="13379000" />
+      <workItem from="1551259741489" duration="21601000" />
+      <workItem from="1551343554989" duration="28882000" />
+      <workItem from="1551429742477" duration="30452000" />
+      <workItem from="1551515279508" duration="32806000" />
+      <workItem from="1551601687905" duration="11504000" />
+      <workItem from="1551616290647" duration="3344000" />
+      <workItem from="1552498286597" duration="894000" />
+      <workItem from="1553333754798" duration="1779000" />
+    </task>
+    <task id="LOCAL-00059" summary="Перемещение изображений шахмат в новую папку">
+      <created>1545991231668</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1545991231668</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Go - игра работает">
+      <created>1545991614523</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1545991614523</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Checkers - игра работает">
+      <created>1546024967340</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1546024967340</updated>
+    </task>
+    <task id="LOCAL-00062" summary="ChinaChess - работает">
+      <created>1546029553194</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1546029553194</updated>
+    </task>
+    <task id="LOCAL-00063" summary="TamerlanChess - работает">
+      <created>1546031371966</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1546031371966</updated>
+    </task>
+    <task id="LOCAL-00064" summary="TamerlanChess - работает">
+      <created>1546031544499</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1546031544499</updated>
+    </task>
+    <task id="LOCAL-00065" summary="draft">
+      <created>1546031722819</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1546031722819</updated>
+    </task>
+    <task id="LOCAL-00066" summary="typos inspected">
+      <created>1546075730556</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1546075730556</updated>
+    </task>
+    <task id="LOCAL-00067" summary="draft">
+      <created>1546079787860</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1546079787860</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Выделен модуль GameCore">
+      <created>1551202691242</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1551202691258</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Выделен модуль SwingKotlin">
+      <created>1551207495364</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1551207495364</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Выделен модуль SwingNotebook">
+      <created>1551208016386</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1551208016386</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Поменяли папку для модуля SwingNotebook">
+      <created>1551263615641</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1551263615641</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Выделен модуль Chess (без UI).">
+      <created>1551266467252</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1551266467252</updated>
+    </task>
+    <task id="LOCAL-00073" summary="draft">
+      <created>1551289017433</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1551289017433</updated>
+    </task>
+    <task id="LOCAL-00074" summary="draft Выполняется считывание ресурсов-изображений.">
+      <created>1551298602657</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1551298602657</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Параметр паналей для досок теперь класс Game, а не Board.">
+      <created>1551353191735</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1551353191735</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Для шахмат реализована унифицированная отрисовка фигур">
+      <created>1551369095692</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1551369095692</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Для шахмат удалена доска ChessBoard">
+      <created>1551377653532</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1551377653532</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Интерфейс пользователя шахмат только через модуль SwingKotlin.">
+      <created>1551381922947</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1551381922947</updated>
+    </task>
+    <task id="LOCAL-00079" summary="draft">
+      <created>1551431807564</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1551431807580</updated>
+    </task>
+    <task id="LOCAL-00080" summary="У игр атрибут-имя.">
+      <created>1551433261078</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1551433261078</updated>
+    </task>
+    <task id="LOCAL-00081" summary="У игр реализован метод &#10;String getIconImageFile()">
+      <created>1551441154737</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1551441154737</updated>
+    </task>
+    <task id="LOCAL-00082" summary="У игр реализован метод &#10;BoardKind getBoardKind()">
+      <created>1551441697226</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1551441697226</updated>
+    </task>
+    <task id="LOCAL-00083" summary="У игр реализован метод &#10;MoveKind getMoveKind()">
+      <created>1551443111319</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1551443111319</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Cлушатели мыши задаются в базовом классе GameBoard.">
+      <created>1551444275387</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1551444275387</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Прошла инициализация доски шахмат Тамерлана через новый интерфейс.">
+      <created>1551458035858</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1551458035858</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Прошла инициализация доски шахмат шашек через новый интерфейс.">
+      <created>1551458786905</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1551458786905</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Удалена папка с не используемыми изображениями шахматных фигур.">
+      <created>1551459020764</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1551459020764</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Выделили шашки в отдельный модуль Checkers.">
+      <created>1551462533921</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1551462533921</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Выделили в отдельный модуль TamerlanChess.">
+      <created>1551463824389</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1551463824389</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Выделили в отдельный модуль ChinaChess.">
+      <created>1551468140671</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1551468140671</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Выделили в отдельный модуль Vikings.">
+      <created>1551470067734</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1551470067734</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Выделили в отдельный модуль Reversi.">
+      <created>1551474099418</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1551474099418</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Выделили в отдельный модуль Renju.">
+      <created>1551523178801</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1551523178816</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Выделили в отдельный модуль Go.">
+      <created>1551527433022</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1551527433022</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Реализованы интерфейсы ISizable и IScorable">
+      <created>1551535726440</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1551535726440</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Вынесена в отдельный модуль Halma">
+      <created>1551537277505</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1551537277505</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Все игры вынесены в модули.">
+      <created>1551556559623</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1551556559623</updated>
+    </task>
+    <task id="LOCAL-00098" summary="draft">
+      <created>1551557200442</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1551557200442</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Удалены лишние KotlinRuntime">
+      <created>1551557473354</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1551557473354</updated>
+    </task>
+    <task id="LOCAL-00100" summary="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list">
+      <created>1551603129570</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1551603129571</updated>
+    </task>
+    <task id="LOCAL-00101" summary="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list">
+      <created>1551603489119</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1551603489119</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Блокнот игр вновь заработал">
+      <created>1551607101355</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1551607101355</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Блокнот игр вновь заработал">
+      <created>1551612202243</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1551612202243</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Добавлена совместимость вложенных модулей с Eclipse">
+      <created>1551612687411</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1551612687412</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Добавлена совместимость вложенных модулей с Eclipse">
+      <created>1551616635908</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1551616635911</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Добавлена совместимость вложенных модулей с Eclipse">
+      <created>1551616859061</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1551616859061</updated>
+    </task>
+    <task id="LOCAL-00107" summary=".gitignore для каждого проекта - игры в Eclipse">
+      <created>1551617832739</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1551617832739</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="473257000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.22334754" />
+      <window_info id="Structure" order="1" sideWeight="0.30455637" side_tool="true" weight="0.27427185" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.41966426" side_tool="true" weight="0.27669904" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919093" weight="0.32475883" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49676377" weight="0.41800642" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49838188" weight="0.3762058" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32741934" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919093" weight="0.32583067" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50586355" side_tool="true" weight="0.49303323" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4946695" weight="0.40407288" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" sideWeight="0.4984375" weight="0.34726688" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49413645" weight="0.49303323" />
+      <window_info active="true" anchor="bottom" id="Dependency Viewer" order="13" visible="true" weight="0.43729904" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Duplicate detector" order="15" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32928804" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32928804" />
+      <window_info anchor="right" x="92" y="92" width="1096" height="554" id="DSM" order="10" type="FLOATING" />
+      <window_info anchor="right" id="Maven" order="11" />
+      <window_info anchor="right" id="Module Dependencies" order="12" visible="true" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.58033574" visible="true" weight="0.34708738" />
+      <window_info id="Structure" order="1" sideWeight="0.30455637" side_tool="true" weight="0.27427185" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.41966426" side_tool="true" weight="0.27669904" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919093" weight="0.3252818" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49676377" visible="true" weight="0.4057971" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49838188" weight="0.30917874" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32741934" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919093" weight="0.3268921" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5040453" side_tool="true" weight="0.30273753" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4959547" weight="0.21095008" />
+      <window_info anchor="bottom" id="Inspection Results" order="11" sideWeight="0.4984375" weight="0.3483871" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49514562" weight="0.26247987" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.4380032" />
+      <window_info anchor="bottom" id="Docker" order="14" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.32928804" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32928804" />
+      <window_info anchor="right" x="92" y="92" width="1096" height="554" id="DSM" order="10" type="FLOATING" />
+      <window_info anchor="right" id="Maven" order="11" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Интерфейс пользователя шахмат только через модуль SwingKotlin." />
+    <MESSAGE value="У игр атрибут-имя." />
+    <MESSAGE value="У игр реализован метод &#10;String getIconImageFile()" />
+    <MESSAGE value="У игр реализован метод &#10;BoardKind getBoardKind()" />
+    <MESSAGE value="У игр реализован метод &#10;MoveKind getMoveKind()" />
+    <MESSAGE value="Cлушатели мыши задаются в базовом классе GameBoard." />
+    <MESSAGE value="Прошла инициализация доски шахмат Тамерлана через новый интерфейс." />
+    <MESSAGE value="Прошла инициализация доски шахмат шашек через новый интерфейс." />
+    <MESSAGE value="Удалена папка с не используемыми изображениями шахматных фигур." />
+    <MESSAGE value="Выделили шашки в отдельный модуль Checkers." />
+    <MESSAGE value="Выделили в отдельный модуль TamerlanChess." />
+    <MESSAGE value="Выделили в отдельный модуль ChinaChess." />
+    <MESSAGE value="Выделили в отдельный модуль Vikings." />
+    <MESSAGE value="Выделили в отдельный модуль Reversi." />
+    <MESSAGE value="Выделили в отдельный модуль Renju." />
+    <MESSAGE value="Выделили в отдельный модуль Go." />
+    <MESSAGE value="Реализованы интерфейсы ISizable и IScorable" />
+    <MESSAGE value="Вынесена в отдельный модуль Halma" />
+    <MESSAGE value="Все игры вынесены в модули." />
+    <MESSAGE value="draft" />
+    <MESSAGE value="Удалены лишние KotlinRuntime" />
+    <MESSAGE value="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list" />
+    <MESSAGE value="Блокнот игр вновь заработал" />
+    <MESSAGE value="Добавлена совместимость вложенных модулей с Eclipse" />
+    <MESSAGE value=".gitignore для каждого проекта - игры в Eclipse" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore для каждого проекта - игры в Eclipse" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/util/Observable.java</url>
+          <line>158</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/images/GamePanel.kt</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/images/GamePanel.kt</url>
+          <line>57</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/chinachess/swing/images/ChinaChessImages.kt</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/GamesNotepad/src/notebook/swing/Notebook.kt</url>
+          <line>2</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog>
+          <selected-grouping-rules>
+            <grouping-rule id="XBreakpointGroupingByPackageRule" />
+          </selected-grouping-rules>
+        </breakpoints-dialog>
+      </breakpoints-dialog>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>resource == null</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>movesPanel.components</expression-string>
+        <language-id>kotlin</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/players/Rurik.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vikings/swing/VikingsGamePanel.kt" />
+    <entry file="file://$PROJECT_DIR$/src/reversi/swing/images/ReversiImages.kt" />
+    <entry file="file://$PROJECT_DIR$/src/reversi/swing/ReversiGamePanel.kt" />
+    <entry file="file://$PROJECT_DIR$/src/renju/swing/RenjuBoard.kt" />
+    <entry file="file://$PROJECT_DIR$/src/renju/swing/images/RenjuImages.kt" />
+    <entry file="file://$PROJECT_DIR$/Renju/src/renju/pieces/RenjuPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/go/swing/GoGamePanel.kt" />
+    <entry file="file://$PROJECT_DIR$/src/go/swing/images/GoImages.kt" />
+    <entry file="file://$PROJECT_DIR$/src/halma/swing/HalmaGamePanel.kt" />
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/ITrackPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Chess/src/chess/Chess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePiecePromptListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#796#797#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPiecePromptListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="65" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="65" />
+          <folding>
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePieceListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/pieces/Vizir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/pieces/Giraffe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#277#278#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/pieces/WarMachine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/TamerlanChess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1073">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checkers/src/checkers/Checkers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1139">
+          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/DiagDirs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/ISizeable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/KnightDirs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/images/GameImages.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="197" column="6" selection-start-line="197" selection-start-column="6" selection-end-line="197" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc;n#GameBoard#0" />
+            <element signature="n#!!doc;n#whites#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#blacks#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#updateBoard#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#update#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#paint#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#drawPiece#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#getPieceImage#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#getSquareHeight#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#getSquareWidth#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#lastMoveColor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#lastCaptureColor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#promptColor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#drawSquaresPrompt#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#drawSquaresPrompt#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#markLastTransferMove#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#markLastTransferMove#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#markLastTransferMove#1;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#markLastPutMove#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#markLastPutMove#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#getSquare#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#getSquare#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#savedCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#saveCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#saveCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#restoreCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#restoreCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#imageToCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#imageToCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#pieceToCursor#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mouseClicked#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mousePressed#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mouseReleased#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mouseEntered#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mouseExited#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!doc;n#prompted#0;n#!!block;n#GameBoard#0" />
+            <element signature="n#!!block;n#mouseDragged#0;n#!!block;n#GameBoard#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checkers/src/checkers/players/CheckersPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checkers/src/checkers/moves/SimpleMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Reversi/src/reversi/Reversi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="49" selection-start-line="47" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1958#1959#0" expanded="true" />
+            <element signature="e#2049#2050#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#2709#2710#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Halma/src/halma/Halma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+          <folding>
+            <element signature="e#2071#2072#0" expanded="true" />
+            <element signature="e#2398#2399#0" expanded="true" />
+            <element signature="e#4176#4177#0" expanded="true" />
+            <element signature="e#4251#4252#0" expanded="true" />
+            <element signature="e#4341#4342#0" expanded="true" />
+            <element signature="e#4435#4436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Go/src/go/Go.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/checkers/swing/CheckersGamePanel.kt" />
+    <entry file="file://$PROJECT_DIR$/src/checkers/swing/images/CheckersImages.kt" />
+    <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.settings/org.jetbrains.kotlin.core.prefs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/IScorable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vikings/src/vikings/Vikings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingNoteBook/.project" />
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="85" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Renju/src/renju/Renju.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <element signature="e#1637#1638#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastle.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#20#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Checkers/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="42" column="31" lean-forward="true" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding>
+            <element signature="e#24#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#20#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Detection</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>GamesINKotlin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>KotlinJavaRuntime</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
