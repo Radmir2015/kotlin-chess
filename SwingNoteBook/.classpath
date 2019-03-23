@@ -3,7 +3,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/KotlinJavaRuntime (4)"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/GamesINKotlin"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Chess"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/GameCore"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Checkers"/>
@@ -15,5 +14,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Go"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Halma"/>
 	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/gamesinkotlin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
