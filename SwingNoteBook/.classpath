@@ -13,7 +13,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/Renju"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Go"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Halma"/>
-	<classpathentry kind="con" path="org.jetbrains.kotlin.core.KOTLIN_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/gamesinkotlin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

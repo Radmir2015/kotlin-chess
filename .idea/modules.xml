@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Chess/Chess.iml" filepath="$PROJECT_DIR$/Chess/Chess.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChinaChess/ChinaChess.iml" filepath="$PROJECT_DIR$/ChinaChess/ChinaChess.iml" />
       <module fileurl="file://$PROJECT_DIR$/GameCore/GameCore.iml" filepath="$PROJECT_DIR$/GameCore/GameCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GameGWTJava/GameGWTJava.iml" filepath="$PROJECT_DIR$/GameGWTJava/GameGWTJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/GamesINKotlin.iml" filepath="$PROJECT_DIR$/GamesINKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/Go/Go.iml" filepath="$PROJECT_DIR$/Go/Go.iml" />
       <module fileurl="file://$PROJECT_DIR$/Halma/Halma.iml" filepath="$PROJECT_DIR$/Halma/Halma.iml" />
