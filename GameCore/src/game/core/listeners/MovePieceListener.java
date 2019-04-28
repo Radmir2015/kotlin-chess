@@ -3,7 +3,8 @@ package game.core.listeners;
 import game.core.*;
 
 /**
- * Слушатель постановки перемещения фигуры на доске.
+ * Слушатель перемещения фигуры на доске.
+ * И, возможно, при этом постановки новой фигуры на доску.
  *
  * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
  */
@@ -54,7 +55,7 @@ public class MovePieceListener implements IGameListener {
         selectedSquare.removePiece();
         boardPanel.saveCursor(selectedPiece);
 
-        // Перерисуем изображение доски с временно снятой фигурой.
+        // Перерисуем изображение доски с временно снятой с доски фигурой.
         boardPanel.updateBoard();
         board.setBoardChanged();
     }
@@ -84,7 +85,7 @@ public class MovePieceListener implements IGameListener {
                 selectedPiece = null;
                 selectedSquare = null;
 
-                // Восстановим курсор (с изображением стрелки).
+                // Восстановим курсор (с изображением-стрелкой).
                 boardPanel.restoreCursor();
 
                 // Пусть слушатели изменений на доске
@@ -95,10 +96,10 @@ public class MovePieceListener implements IGameListener {
 
             boardPanel.restoreCursor();
 
-            // Сохраним экземпляр кода и истории партии.
+            // Сохраним экземпляр хода в истории партии.
             board.history.addMove(move);
 
-            // TODO Реализовать запрос фигуры для превращения пешки.
+            // TODO Реализовать запрос у пользователя фигуры для превращения пешки в эту фигуру.
 
             // Теперь ходить должен противник.
             board.changeMoveColor();
@@ -108,7 +109,7 @@ public class MovePieceListener implements IGameListener {
         selectedPiece = null;
         selectedSquare = null;
 
-        // Восстановим курсор (с изображением стрелки).
+        // Восстановим курсор (с изображением-стрелкой).
         boardPanel.restoreCursor();
 
         // Пусть слушатели изменений на доске
