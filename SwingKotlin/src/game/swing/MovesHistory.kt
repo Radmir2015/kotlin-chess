@@ -97,7 +97,7 @@ class MovesHistory
             val isOdd = kMove % 2 == 0
             val number = if (!isOdd) "" else """${1 + kMove / 2}. """
 
-            horizontalAlignment = JLabel.LEFT
+            horizontalAlignment = LEFT
             text = """$number$move"""
             repaint()
         }

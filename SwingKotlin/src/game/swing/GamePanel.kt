@@ -93,13 +93,11 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             control.add(bsp)
         }
 
-        if (game is IScorable) {
-            val scorePanel = ScorePanel(game)
-            scorePanel.alignmentX = Component.CENTER_ALIGNMENT
+        val scorePanel = ScorePanel(game)
+        scorePanel.alignmentX = Component.CENTER_ALIGNMENT
 
-            control.add(Box.createRigidArea(Dimension(0, 5)))
-            control.add(scorePanel)
-        }
+        control.add(Box.createRigidArea(Dimension(0, 5)))
+        control.add(scorePanel)
     }
 
     /**
