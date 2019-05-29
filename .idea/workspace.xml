@@ -4,10 +4,8 @@
     <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="Создали модуль Idea (проект Eclipse) - GameGWTJava.">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +35,7 @@
     <select />
   </component>
   <component name="DsmViewSettings">
+    <option name="flattenPackages" value="true" />
     <option name="groupCycles" value="true" />
   </component>
   <component name="FavoritesManager">
@@ -45,83 +44,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding>
-                <element signature="n#!!doc;n#GameBoard#0" />
-                <element signature="n#!!doc;n#whites#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#blacks#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#updateBoard#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#update#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#paint#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#drawPiece#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#getPieceImage#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#getSquareHeight#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#getSquareWidth#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#lastMoveColor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#lastCaptureColor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#promptColor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#drawSquaresPrompt#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#drawSquaresPrompt#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#markLastTransferMove#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#markLastTransferMove#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#markLastTransferMove#1;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#markLastPutMove#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#markLastPutMove#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#getSquare#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#getSquare#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#savedCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#saveCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#saveCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#restoreCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#restoreCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#imageToCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#imageToCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#pieceToCursor#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mouseClicked#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mousePressed#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mouseReleased#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mouseEntered#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mouseExited#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!doc;n#prompted#0;n#!!block;n#GameBoard#0" />
-                <element signature="n#!!block;n#mouseDragged#0;n#!!block;n#GameBoard#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameControlPanel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-              <folding>
-                <element signature="e#24#485#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+            <state relative-caret-position="192">
+              <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
               <folding>
                 <element signature="n#!!doc;n#GamePanel#0" />
-                <element signature="e#1063#1382#0" />
-                <element signature="e#1120#1327#0" />
                 <element signature="e#1217#1309#0" />
                 <element signature="e#1414#1732#0" />
                 <element signature="e#1470#1677#0" />
@@ -145,40 +73,387 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        <entry file="uml://MODULES/mdl-Chess">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>MODULES</ID>
+              <OriginalElement>mdl-Chess</OriginalElement>
+              <nodes>
+                <node x="0.0" y="79.0">mdl-GameCore</node>
+                <node x="12.5" y="0.0">mdl-Chess</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="mdl-Chess" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-471.5" y="-15.0" />
+              <SelectedNodes>
+                <node>mdl-Chess</node>
+              </SelectedNodes>
+              <Categories />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <entry file="uml://JAVA/chess">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>chess</OriginalElement>
+              <nodes>
+                <node x="339.5" y="83.5">game.core.Game</node>
+                <node x="-10.5" y="385.5">chess.moves.EnPassant</node>
+                <node x="426.0" y="552.5">chess.moves.Promotion</node>
+                <node x="184.5" y="363.5">chess.moves.Capture</node>
+                <node x="-18.5" y="745.5">chess.images</node>
+                <node x="-6.5" y="505.5">chess.moves.ICapture</node>
+                <node x="152.0" y="105.5">checkers.Checkers</node>
+                <node x="480.5" y="-14.5">chess.Chess</node>
+                <node x="448.5" y="352.5">chess.moves.SimpleMove</node>
+                <node x="478.5" y="225.5">java.lang.Object</node>
+                <node x="264.0" y="225.5">chess.pieces</node>
+                <node x="676.0" y="363.5">chess.moves.Castling</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="chess.moves.EnPassant" target="chess.moves.Capture">
+                  <point x="50.5" y="-0.0" />
+                  <point x="-95.5" y="-0.0" />
+                </edge>
+                <edge source="chess.pieces" target="java.lang.Object">
+                  <point x="56.0" y="-0.0" />
+                  <point x="-41.5" y="-0.0" />
+                </edge>
+                <edge source="chess.moves.Capture" target="chess.moves.ICapture">
+                  <point x="0.0" y="36.5" />
+                  <point x="280.0" y="520.0" />
+                  <point x="46.5" y="-0.0" />
+                </edge>
+                <edge source="checkers.Checkers" target="game.core.Game">
+                  <point x="48.0" y="-0.0" />
+                  <point x="-180.5" y="-0.0" />
+                </edge>
+                <edge source="chess.moves.EnPassant" target="chess.moves.ICapture">
+                  <point x="0.0" y="14.5" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="chess.moves.SimpleMove" target="java.lang.Object">
+                  <point x="0.0" y="-47.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="chess.Chess" target="game.core.Game">
+                  <point x="0.0" y="14.5" />
+                  <point x="0.0" y="-36.5" />
+                </edge>
+                <edge source="game.core.Game" target="java.lang.Object">
+                  <point x="0.0" y="36.5" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="chess.moves.Promotion" target="chess.moves.SimpleMove">
+                  <point x="0.0" y="-47.5" />
+                  <point x="0.0" y="47.5" />
+                </edge>
+                <edge source="chess.moves.Castling" target="chess.moves.SimpleMove">
+                  <point x="-84.0" y="-0.0" />
+                  <point x="71.5" y="-0.0" />
+                </edge>
+                <edge source="chess.moves.Capture" target="chess.moves.SimpleMove">
+                  <point x="95.5" y="-0.0" />
+                  <point x="-71.5" y="-0.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-90.0" y="161.5" />
+              <SelectedNodes>
+                <node>game.core.Game</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Fields</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="99" column="34" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
-              <folding>
-                <element signature="e#942#1362#0" />
-              </folding>
+        <entry file="uml://JAVA/game.swing">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>game.swing</OriginalElement>
+              <nodes>
+                <node x="0.0" y="385.0">game.swing.AdornedBoard</node>
+                <node x="13.0" y="158.0">game.swing.AsiaBoardWithCastle</node>
+                <node x="339.0" y="311.0">game.swing.BoardSizePanel</node>
+                <node x="266.5" y="79.0">game.swing.GreenBoard</node>
+                <node x="304.0" y="385.0">game.swing.PlayersPanel</node>
+                <node x="137.0" y="459.0">game.swing.ScorePanel</node>
+                <node x="177.0" y="311.0">game.swing.images</node>
+                <node x="149.5" y="0.0">game.swing.GameBoard</node>
+                <node x="0.0" y="311.0">game.swing.GameControlPanel</node>
+                <node x="272.0" y="459.0">game.swing.Markers</node>
+                <node x="0.0" y="237.0">game.swing.AsiaBoardWithCastleRiver</node>
+                <node x="154.0" y="385.0">game.swing.MovesHistory</node>
+                <node x="41.5" y="79.0">game.swing.AsiaBoard</node>
+                <node x="146.5" y="79.0">game.swing.EuropeBoard</node>
+                <node x="0.0" y="459.0">game.swing.GamePanel</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="game.swing.GreenBoard" target="game.swing.GameBoard">
+                  <point x="0.0" y="-14.5" />
+                  <point x="313.5" y="54.0" />
+                  <point x="227.83333333333331" y="54.0" />
+                  <point x="31.333333333333314" y="14.5" />
+                </edge>
+                <edge source="game.swing.AsiaBoardWithCastleRiver" target="game.swing.AsiaBoardWithCastle">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="game.swing.EuropeBoard" target="game.swing.GameBoard">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="game.swing.AsiaBoardWithCastle" target="game.swing.AsiaBoard">
+                  <point x="0.0" y="-14.5" />
+                  <point x="0.0" y="14.5" />
+                </edge>
+                <edge source="game.swing.AsiaBoard" target="game.swing.GameBoard">
+                  <point x="0.0" y="-14.5" />
+                  <point x="84.0" y="54.0" />
+                  <point x="165.16666666666666" y="54.0" />
+                  <point x="-31.333333333333343" y="14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-315.0" y="198.0" />
+              <SelectedNodes>
+                <node>game.swing.AsiaBoard</node>
+              </SelectedNodes>
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt">
+        <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/Piece.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+            <state relative-caret-position="452">
+              <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/move/Capture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://MODULES/mdl-GamesINKotlin">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>MODULES</ID>
+              <OriginalElement>mdl-GamesINKotlin</OriginalElement>
+              <nodes>
+                <node x="328.0" y="109.0">mdl-TamerlanChess</node>
+                <node x="947.0" y="109.0">mdl-Go</node>
+                <node x="1203.0" y="109.0">mdl-Checkers</node>
+                <node x="1064.0" y="109.0">mdl-Reversi</node>
+                <node x="865.7692307692308" y="218.0">mdl-GameCore</node>
+                <node x="1353.0" y="109.0">mdl-Halma</node>
+                <node x="815.0" y="109.0">mdl-Renju</node>
+                <node x="651.0" y="109.0">mdl-ChinaChess</node>
+                <node x="790.5" y="0.0">mdl-GamesINKotlin</node>
+                <node x="195.0" y="109.0">mdl-Chess</node>
+                <node x="511.0" y="109.0">mdl-Vikings</node>
+                <node x="0.0" y="109.0">lib-KotlinJavaRuntime</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="mdl-Halma" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="1411.5" y="188.0" />
+                  <point x="983.0692307692308" y="188.0" />
+                  <point x="48.299999999999955" y="-14.5" />
+                </edge>
+                <edge source="mdl-ChinaChess" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="723.0" y="168.0" />
+                  <point x="914.0692307692308" y="168.0" />
+                  <point x="-20.700000000000045" y="-14.5" />
+                </edge>
+                <edge source="mdl-TamerlanChess" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="409.5" y="188.0" />
+                  <point x="886.4692307692309" y="188.0" />
+                  <point x="-48.299999999999955" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="lib-KotlinJavaRuntime">
+                  <point x="-73.18181818181824" y="14.5" />
+                  <point x="797.8181818181818" y="49.0" />
+                  <point x="87.5" y="49.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Vikings">
+                  <point x="-29.272727272727252" y="14.5" />
+                  <point x="841.7272727272727" y="79.0" />
+                  <point x="571.0" y="79.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-Vikings" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="571.0" y="178.0" />
+                  <point x="900.2692307692308" y="178.0" />
+                  <point x="-34.5" y="-14.5" />
+                </edge>
+                <edge source="mdl-Go" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="995.5" y="158.0" />
+                  <point x="941.6692307692308" y="158.0" />
+                  <point x="6.899999999999977" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Reversi">
+                  <point x="29.272727272727252" y="14.5" />
+                  <point x="900.2727272727273" y="79.0" />
+                  <point x="1123.5" y="79.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Go">
+                  <point x="14.636363636363626" y="14.5" />
+                  <point x="885.6363636363636" y="89.0" />
+                  <point x="995.5" y="89.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-Chess" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="251.5" y="198.0" />
+                  <point x="872.6692307692308" y="198.0" />
+                  <point x="-62.10000000000002" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Halma">
+                  <point x="58.545454545454504" y="14.5" />
+                  <point x="929.5454545454545" y="59.0" />
+                  <point x="1411.5" y="59.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-ChinaChess">
+                  <point x="-14.636363636363626" y="14.5" />
+                  <point x="856.3636363636364" y="89.0" />
+                  <point x="723.0" y="89.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-Reversi" target="mdl-GameCore">
+                  <point x="5.6843418860808015E-14" y="14.5" />
+                  <point x="1123.5" y="168.0" />
+                  <point x="955.4692307692309" y="168.0" />
+                  <point x="20.700000000000045" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Chess">
+                  <point x="-58.545454545454504" y="14.5" />
+                  <point x="812.4545454545455" y="59.0" />
+                  <point x="251.5" y="59.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-Checkers" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="1268.0" y="178.0" />
+                  <point x="969.2692307692308" y="178.0" />
+                  <point x="34.5" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-TamerlanChess">
+                  <point x="-43.90909090909088" y="14.5" />
+                  <point x="827.0909090909091" y="69.0" />
+                  <point x="409.5" y="69.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Checkers">
+                  <point x="43.90909090909088" y="14.5" />
+                  <point x="914.9090909090909" y="69.0" />
+                  <point x="1268.0" y="69.0" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-GameCore">
+                  <point x="73.18181818181824" y="14.5" />
+                  <point x="944.1818181818182" y="49.0" />
+                  <point x="1480.5" y="49.0" />
+                  <point x="1480.5" y="198.0" />
+                  <point x="996.8692307692309" y="198.0" />
+                  <point x="62.10000000000002" y="-14.5" />
+                </edge>
+                <edge source="mdl-GamesINKotlin" target="mdl-Renju">
+                  <point x="0.0" y="14.5" />
+                  <point x="0.0" y="-14.5" />
+                </edge>
+                <edge source="mdl-Renju" target="mdl-GameCore">
+                  <point x="0.0" y="14.5" />
+                  <point x="871.0" y="158.0" />
+                  <point x="927.8692307692309" y="158.0" />
+                  <point x="-6.899999999999977" y="-14.5" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="102.5" y="17.5" />
+              <SelectedNodes>
+                <node>mdl-Chess</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Libraries</Category>
+              </Categories>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="uml://JAVA/go">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement>go</OriginalElement>
+              <nodes>
+                <node x="11.18247563377259" y="328.8332964468065">go.Go</node>
+                <node x="14.573023843791674" y="21.0">go.moves</node>
+                <node x="0.0" y="186.93299755442558">go.pieces</node>
+                <node x="194.57302384379167" y="0.0">go.images</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="go.pieces" target="go.moves">
+                  <point x="-4.978124250768943" y="-0.4672033218055649" />
+                  <point x="-4.978124250768943" y="-0.467203321805556" />
+                </edge>
+                <edge source="go.moves" target="go.pieces">
+                  <point x="5.021971879496256" y="0.0" />
+                  <point x="5.021971879496254" y="0.0" />
+                </edge>
+                <edge source="go.Go" target="go.pieces">
+                  <point x="5.021971879496256" y="0.0" />
+                  <point x="5.021971879496255" y="-0.0" />
+                </edge>
+                <edge source="go.moves" target="go.moves">
+                  <point x="28.5" y="-14.5" />
+                  <point x="100.07302384379167" y="6.0" />
+                  <point x="106.07302384379167" y="0.0" />
+                  <point x="143.57302384379167" y="0.0" />
+                  <point x="149.57302384379167" y="6.0" />
+                  <point x="149.57302384379167" y="22.25" />
+                  <point x="143.57302384379167" y="28.25" />
+                  <point x="57.0" y="-7.25" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="1.0" x="-383.5" y="-7.5" />
+              <SelectedNodes />
+              <Categories />
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -311,6 +586,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="GameCore" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="Go" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -341,38 +631,20 @@
           <expand>
             <path>
               <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Chess" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
+              <item name="GamesINKotlin" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
+              <item name="GamesINKotlin" type="616d4139:PackageViewModuleNode" />
+              <item name="go" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="GamesINKotlin" type="58d84e3e:PackageViewProjectNode" />
               <item name="SwingNoteBook" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GamesINKotlin" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GamesINKotlin" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="SwingKotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="GamesINKotlin" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="SwingKotlin" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="SwingNoteBook" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="GamesINKotlin" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="SwingNoteBook" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -385,13 +657,13 @@
     <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557057556827" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559154109107" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/renju/swing" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Vikings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -569,14 +841,8 @@
       <workItem from="1556441745113" duration="1201000" />
       <workItem from="1556445037539" duration="4937000" />
       <workItem from="1557057388896" duration="744000" />
-      <workItem from="1558632415959" duration="1417000" />
-    </task>
-    <task id="LOCAL-00064" summary="TamerlanChess - работает">
-      <created>1546031544499</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1546031544499</updated>
+      <workItem from="1558632415959" duration="1642000" />
+      <workItem from="1559150848313" duration="3171000" />
     </task>
     <task id="LOCAL-00065" summary="draft">
       <created>1546031722819</created>
@@ -914,11 +1180,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556446937590</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="clear code.">
+      <created>1558634027288</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1558634027289</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493990000" />
+    <option name="totallyTimeSpent" value="497386000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -932,7 +1205,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.57847536" visible="true" weight="0.1663113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.57847536" visible="true" weight="0.16791044" />
       <window_info id="Structure" order="1" sideWeight="0.30455637" side_tool="true" weight="0.27427185" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -940,7 +1213,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" sideWeight="0.42152467" side_tool="true" weight="0.16311301" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919093" weight="0.32475883" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919093" visible="true" weight="0.32475883" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49676377" weight="0.41800642" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49838188" weight="0.3762058" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -949,7 +1222,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49919093" weight="0.32583067" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50586355" side_tool="true" weight="0.49303323" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4946695" visible="true" weight="0.2829582" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4946695" weight="0.20364416" />
       <window_info active="true" anchor="bottom" id="Inspection Results" order="11" sideWeight="0.4984375" visible="true" weight="0.34726688" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49413645" weight="0.49303323" />
       <window_info active="true" anchor="bottom" id="Dependency Viewer" order="13" visible="true" weight="0.43729904" />
@@ -965,7 +1238,7 @@
       <window_info anchor="right" id="Database" order="7" weight="0.32928804" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32928804" />
-      <window_info anchor="right" x="92" y="92" width="1096" height="554" id="DSM" order="10" type="FLOATING" />
+      <window_info anchor="right" x="85" y="84" width="1096" height="554" id="DSM" order="10" type="FLOATING" />
       <window_info anchor="right" id="Maven" order="11" />
       <window_info anchor="right" id="Module Dependencies" order="12" visible="true" weight="0.32995737" />
     </layout>
@@ -1010,6 +1283,7 @@
     <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.History.Properties">
+    <option name="SHOW_OTHER_BRANCHES" value="true" />
     <option name="COLUMN_ORDER">
       <list>
         <option value="0" />
@@ -1087,7 +1361,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cлушатели мыши задаются в базовом классе GameBoard." />
     <MESSAGE value="Прошла инициализация доски шахмат Тамерлана через новый интерфейс." />
     <MESSAGE value="Прошла инициализация доски шахмат шашек через новый интерфейс." />
     <MESSAGE value="Удалена папка с не используемыми изображениями шахматных фигур." />
@@ -1112,7 +1385,8 @@
     <MESSAGE value="Refactor for Vikings" />
     <MESSAGE value="Создали модуль Idea (проект Eclipse) - GameGWTJava." />
     <MESSAGE value="Draft. Исправлены комментарии." />
-    <option name="LAST_COMMIT_MESSAGE" value="Draft. Исправлены комментарии." />
+    <MESSAGE value="clear code." />
+    <option name="LAST_COMMIT_MESSAGE" value="clear code." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1177,44 +1451,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.settings/org.jetbrains.kotlin.core.prefs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/IScorable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingNoteBook/.project" />
-    <entry file="file://$PROJECT_DIR$/Renju/src/renju/Renju.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="69" column="17" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
-          <folding>
-            <element signature="e#1637#1638#0" expanded="true" />
-            <element signature="e#1689#1690#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/SwingKotlin.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Checkers/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChinaChess/src/chinachess/ChinaChess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1493,6 +1729,72 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/src.zip!/java/awt/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="971" column="16" selection-start-line="971" selection-start-column="16" selection-end-line="971" selection-end-column="16" />
+          <folding>
+            <element signature="e#37566#37567#0" expanded="true" />
+            <element signature="e#37612#37613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameControlPanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="99" column="34" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
+          <folding>
+            <element signature="e#942#1362#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GreenBoard.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1500,14 +1802,311 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://MODULES/mdl-Chess">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-Chess</OriginalElement>
+          <nodes>
+            <node x="0.0" y="79.0">mdl-GameCore</node>
+            <node x="12.5" y="0.0">mdl-Chess</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="mdl-Chess" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-471.5" y="-15.0" />
+          <SelectedNodes>
+            <node>mdl-Chess</node>
+          </SelectedNodes>
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/chess">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>chess</OriginalElement>
+          <nodes>
+            <node x="339.5" y="83.5">game.core.Game</node>
+            <node x="-10.5" y="385.5">chess.moves.EnPassant</node>
+            <node x="426.0" y="552.5">chess.moves.Promotion</node>
+            <node x="184.5" y="363.5">chess.moves.Capture</node>
+            <node x="-18.5" y="745.5">chess.images</node>
+            <node x="-6.5" y="505.5">chess.moves.ICapture</node>
+            <node x="152.0" y="105.5">checkers.Checkers</node>
+            <node x="480.5" y="-14.5">chess.Chess</node>
+            <node x="448.5" y="352.5">chess.moves.SimpleMove</node>
+            <node x="478.5" y="225.5">java.lang.Object</node>
+            <node x="264.0" y="225.5">chess.pieces</node>
+            <node x="676.0" y="363.5">chess.moves.Castling</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="chess.moves.EnPassant" target="chess.moves.Capture">
+              <point x="50.5" y="-0.0" />
+              <point x="-95.5" y="-0.0" />
+            </edge>
+            <edge source="chess.pieces" target="java.lang.Object">
+              <point x="56.0" y="-0.0" />
+              <point x="-41.5" y="-0.0" />
+            </edge>
+            <edge source="chess.moves.Capture" target="chess.moves.ICapture">
+              <point x="0.0" y="36.5" />
+              <point x="280.0" y="520.0" />
+              <point x="46.5" y="-0.0" />
+            </edge>
+            <edge source="checkers.Checkers" target="game.core.Game">
+              <point x="48.0" y="-0.0" />
+              <point x="-180.5" y="-0.0" />
+            </edge>
+            <edge source="chess.moves.EnPassant" target="chess.moves.ICapture">
+              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="chess.moves.SimpleMove" target="java.lang.Object">
+              <point x="0.0" y="-47.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="chess.Chess" target="game.core.Game">
+              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-36.5" />
+            </edge>
+            <edge source="game.core.Game" target="java.lang.Object">
+              <point x="0.0" y="36.5" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="chess.moves.Promotion" target="chess.moves.SimpleMove">
+              <point x="0.0" y="-47.5" />
+              <point x="0.0" y="47.5" />
+            </edge>
+            <edge source="chess.moves.Castling" target="chess.moves.SimpleMove">
+              <point x="-84.0" y="-0.0" />
+              <point x="71.5" y="-0.0" />
+            </edge>
+            <edge source="chess.moves.Capture" target="chess.moves.SimpleMove">
+              <point x="95.5" y="-0.0" />
+              <point x="-71.5" y="-0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-90.0" y="161.5" />
+          <SelectedNodes>
+            <node>game.core.Game</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-GamesINKotlin">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-GamesINKotlin</OriginalElement>
+          <nodes>
+            <node x="328.0" y="109.0">mdl-TamerlanChess</node>
+            <node x="947.0" y="109.0">mdl-Go</node>
+            <node x="1203.0" y="109.0">mdl-Checkers</node>
+            <node x="1064.0" y="109.0">mdl-Reversi</node>
+            <node x="865.7692307692308" y="218.0">mdl-GameCore</node>
+            <node x="1353.0" y="109.0">mdl-Halma</node>
+            <node x="815.0" y="109.0">mdl-Renju</node>
+            <node x="651.0" y="109.0">mdl-ChinaChess</node>
+            <node x="790.5" y="0.0">mdl-GamesINKotlin</node>
+            <node x="195.0" y="109.0">mdl-Chess</node>
+            <node x="511.0" y="109.0">mdl-Vikings</node>
+            <node x="0.0" y="109.0">lib-KotlinJavaRuntime</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="mdl-Halma" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="1411.5" y="188.0" />
+              <point x="983.0692307692308" y="188.0" />
+              <point x="48.299999999999955" y="-14.5" />
+            </edge>
+            <edge source="mdl-ChinaChess" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="723.0" y="168.0" />
+              <point x="914.0692307692308" y="168.0" />
+              <point x="-20.700000000000045" y="-14.5" />
+            </edge>
+            <edge source="mdl-TamerlanChess" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="409.5" y="188.0" />
+              <point x="886.4692307692309" y="188.0" />
+              <point x="-48.299999999999955" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="lib-KotlinJavaRuntime">
+              <point x="-73.18181818181824" y="14.5" />
+              <point x="797.8181818181818" y="49.0" />
+              <point x="87.5" y="49.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Vikings">
+              <point x="-29.272727272727252" y="14.5" />
+              <point x="841.7272727272727" y="79.0" />
+              <point x="571.0" y="79.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-Vikings" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="571.0" y="178.0" />
+              <point x="900.2692307692308" y="178.0" />
+              <point x="-34.5" y="-14.5" />
+            </edge>
+            <edge source="mdl-Go" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="995.5" y="158.0" />
+              <point x="941.6692307692308" y="158.0" />
+              <point x="6.899999999999977" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Reversi">
+              <point x="29.272727272727252" y="14.5" />
+              <point x="900.2727272727273" y="79.0" />
+              <point x="1123.5" y="79.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Go">
+              <point x="14.636363636363626" y="14.5" />
+              <point x="885.6363636363636" y="89.0" />
+              <point x="995.5" y="89.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-Chess" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="251.5" y="198.0" />
+              <point x="872.6692307692308" y="198.0" />
+              <point x="-62.10000000000002" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Halma">
+              <point x="58.545454545454504" y="14.5" />
+              <point x="929.5454545454545" y="59.0" />
+              <point x="1411.5" y="59.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-ChinaChess">
+              <point x="-14.636363636363626" y="14.5" />
+              <point x="856.3636363636364" y="89.0" />
+              <point x="723.0" y="89.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-Reversi" target="mdl-GameCore">
+              <point x="5.6843418860808015E-14" y="14.5" />
+              <point x="1123.5" y="168.0" />
+              <point x="955.4692307692309" y="168.0" />
+              <point x="20.700000000000045" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Chess">
+              <point x="-58.545454545454504" y="14.5" />
+              <point x="812.4545454545455" y="59.0" />
+              <point x="251.5" y="59.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-Checkers" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="1268.0" y="178.0" />
+              <point x="969.2692307692308" y="178.0" />
+              <point x="34.5" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-TamerlanChess">
+              <point x="-43.90909090909088" y="14.5" />
+              <point x="827.0909090909091" y="69.0" />
+              <point x="409.5" y="69.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Checkers">
+              <point x="43.90909090909088" y="14.5" />
+              <point x="914.9090909090909" y="69.0" />
+              <point x="1268.0" y="69.0" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-GameCore">
+              <point x="73.18181818181824" y="14.5" />
+              <point x="944.1818181818182" y="49.0" />
+              <point x="1480.5" y="49.0" />
+              <point x="1480.5" y="198.0" />
+              <point x="996.8692307692309" y="198.0" />
+              <point x="62.10000000000002" y="-14.5" />
+            </edge>
+            <edge source="mdl-GamesINKotlin" target="mdl-Renju">
+              <point x="0.0" y="14.5" />
+              <point x="0.0" y="-14.5" />
+            </edge>
+            <edge source="mdl-Renju" target="mdl-GameCore">
+              <point x="0.0" y="14.5" />
+              <point x="871.0" y="158.0" />
+              <point x="927.8692307692309" y="158.0" />
+              <point x="-6.899999999999977" y="-14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="102.5" y="17.5" />
+          <SelectedNodes>
+            <node>mdl-Chess</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Libraries</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/go">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>go</OriginalElement>
+          <nodes>
+            <node x="11.18247563377259" y="328.8332964468065">go.Go</node>
+            <node x="14.573023843791674" y="21.0">go.moves</node>
+            <node x="0.0" y="186.93299755442558">go.pieces</node>
+            <node x="194.57302384379167" y="0.0">go.images</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="go.pieces" target="go.moves">
+              <point x="-4.978124250768943" y="-0.4672033218055649" />
+              <point x="-4.978124250768943" y="-0.467203321805556" />
+            </edge>
+            <edge source="go.moves" target="go.pieces">
+              <point x="5.021971879496256" y="0.0" />
+              <point x="5.021971879496254" y="0.0" />
+            </edge>
+            <edge source="go.Go" target="go.pieces">
+              <point x="5.021971879496256" y="0.0" />
+              <point x="5.021971879496255" y="-0.0" />
+            </edge>
+            <edge source="go.moves" target="go.moves">
+              <point x="28.5" y="-14.5" />
+              <point x="100.07302384379167" y="6.0" />
+              <point x="106.07302384379167" y="0.0" />
+              <point x="143.57302384379167" y="0.0" />
+              <point x="149.57302384379167" y="6.0" />
+              <point x="149.57302384379167" y="22.25" />
+              <point x="143.57302384379167" y="28.25" />
+              <point x="57.0" y="-7.25" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-383.5" y="-7.5" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="72" column="13" lean-forward="true" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        <state relative-caret-position="192">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
           <folding>
             <element signature="n#!!doc;n#GamePanel#0" />
-            <element signature="e#1063#1382#0" />
-            <element signature="e#1120#1327#0" />
             <element signature="e#1217#1309#0" />
             <element signature="e#1414#1732#0" />
             <element signature="e#1470#1677#0" />
@@ -1529,58 +2128,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+    <entry file="uml://JAVA/game.swing">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>game.swing</OriginalElement>
+          <nodes>
+            <node x="0.0" y="385.0">game.swing.AdornedBoard</node>
+            <node x="13.0" y="158.0">game.swing.AsiaBoardWithCastle</node>
+            <node x="339.0" y="311.0">game.swing.BoardSizePanel</node>
+            <node x="266.5" y="79.0">game.swing.GreenBoard</node>
+            <node x="304.0" y="385.0">game.swing.PlayersPanel</node>
+            <node x="137.0" y="459.0">game.swing.ScorePanel</node>
+            <node x="177.0" y="311.0">game.swing.images</node>
+            <node x="149.5" y="0.0">game.swing.GameBoard</node>
+            <node x="0.0" y="311.0">game.swing.GameControlPanel</node>
+            <node x="272.0" y="459.0">game.swing.Markers</node>
+            <node x="0.0" y="237.0">game.swing.AsiaBoardWithCastleRiver</node>
+            <node x="154.0" y="385.0">game.swing.MovesHistory</node>
+            <node x="41.5" y="79.0">game.swing.AsiaBoard</node>
+            <node x="146.5" y="79.0">game.swing.EuropeBoard</node>
+            <node x="0.0" y="459.0">game.swing.GamePanel</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="game.swing.GreenBoard" target="game.swing.GameBoard">
+              <point x="0.0" y="-14.5" />
+              <point x="313.5" y="54.0" />
+              <point x="227.83333333333331" y="54.0" />
+              <point x="31.333333333333314" y="14.5" />
+            </edge>
+            <edge source="game.swing.AsiaBoardWithCastleRiver" target="game.swing.AsiaBoardWithCastle">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="game.swing.EuropeBoard" target="game.swing.GameBoard">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="game.swing.AsiaBoardWithCastle" target="game.swing.AsiaBoard">
+              <point x="0.0" y="-14.5" />
+              <point x="0.0" y="14.5" />
+            </edge>
+            <edge source="game.swing.AsiaBoard" target="game.swing.GameBoard">
+              <point x="0.0" y="-14.5" />
+              <point x="84.0" y="54.0" />
+              <point x="165.16666666666666" y="54.0" />
+              <point x="-31.333333333333343" y="14.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-315.0" y="198.0" />
+          <SelectedNodes>
+            <node>game.swing.AsiaBoard</node>
+          </SelectedNodes>
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt">
+    <entry file="file://$PROJECT_DIR$/GameCore/src/game/core/Piece.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        <state relative-caret-position="452">
+          <caret line="209" column="20" selection-start-line="209" selection-start-column="20" selection-end-line="209" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt">
+    <entry file="file://$PROJECT_DIR$/TamerlanChess/src/tamerlan/move/Capture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="99" column="34" selection-start-line="99" selection-start-column="34" selection-end-line="99" selection-end-column="34" />
-          <folding>
-            <element signature="e#942#1362#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GreenBoard.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameControlPanel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="42" column="28" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="e#24#485#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
         </state>
       </provider>
     </entry>
