@@ -176,4 +176,9 @@ public class Halma extends Game implements ISizeable, IScorable {
                 {16, 16}
         };
     }
+
+    @Override
+    public Piece getPiece(Square square, PieceColor pieceColor) {
+        return null;
+    }
 }

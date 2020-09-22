@@ -32,7 +32,7 @@ class PutPiecePromptListener(
 
         // Получим фигуру НЕ стоящую на клетке.
         val moveColor = board.moveColor
-        val piece = boardPanel.getPiece(squareUnderMouse, moveColor) ?: return
+        val piece = boardPanel.getPiece(squareUnderMouse, moveColor)
         piece.remove() // Уберем фигуру с доски.
 
         // Зададим изображение курсора такое как избражение у фигуры.

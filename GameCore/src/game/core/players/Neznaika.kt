@@ -17,6 +17,8 @@ class Neznaika @JvmOverloads constructor(private val maxMoves: Int = 80) : MoveP
     override val authorName: String
         get() = "Романов В.Ю."
 
+    override fun toString(): String = name
+
     @Throws(GameOver::class)
     override fun doMove(board: Board, color: PieceColor) {
         val correctMoves = getCorrectMoves(board, color)
@@ -58,6 +60,4 @@ class Neznaika @JvmOverloads constructor(private val maxMoves: Int = 80) : MoveP
             throw GameOver(GameResult.DRAWN)
         }
     }
-
-    override fun toString(): String = name
 }

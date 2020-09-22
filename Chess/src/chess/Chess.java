@@ -113,4 +113,9 @@ public class Chess extends Game {
     public String getIconImageFile() {
         return "bKnightZurich.gif";
     }
+
+    @Override
+    public Piece getPiece(Square square, PieceColor pieceColor) {
+        return null;
+    }
 }

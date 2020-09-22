@@ -134,7 +134,7 @@ abstract class Piece protected constructor(@JvmField var square: Square, var col
      * @param squares - последтвательность клеток через которые перемещается фигура.
      * @return корректен ход или нет.
      */
-    abstract fun isCorrectMove(vararg squares: Square?): Boolean
+    abstract fun isCorrectMove(vararg squares: Square): Boolean
 
     /**
      * Сделать ход фигурой для заданой последовательности клеток
@@ -143,5 +143,5 @@ abstract class Piece protected constructor(@JvmField var square: Square, var col
      * @param squares - последтвательность клеток через которые перемещается фигура.
      * @return экжемпляр класса реализующего интерфейс **Move**.
      */
-    abstract fun makeMove(vararg squares: Square?): Move?
+    abstract fun makeMove(vararg squares: Square): Move
 }

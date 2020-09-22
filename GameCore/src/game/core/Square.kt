@@ -36,9 +36,9 @@ class Square(
      *
      * @return - доска на которой находится клетка
      */
-    private fun setPiece(piece: Piece?, square: Square) {
+    private fun setPiece(piece: Piece, square: Square) {
         this.piece = piece
-        piece!!.square = square
+        piece.square = square
     }
 
     /**

@@ -1,7 +1,5 @@
 package game.core
 
-import java.util.*
-
 /**
  * История игры (список ходов сделанных фигурами на доске).
  *
@@ -22,7 +20,7 @@ class History internal constructor(
     /**
      * Список ходов сделанных на доске.
      */
-    val moves: MutableList<Move> = ArrayList()
+    val moves: MutableList<Move> = mutableListOf()
 
     /**
      * Результат игры.
@@ -44,11 +42,6 @@ class History internal constructor(
         moves.add(move)
         curMoveNumber++
     }
-
-    /**
-     * @return Вернуть ходы сделанные в игре.
-     */
-//    fun getMoves(): List<Move> = moves
 
     /**
      * @return Вернуть текущий ход.
@@ -97,10 +90,6 @@ class History internal constructor(
     fun toPrevMove() {
         if (curMoveNumber >= 0) moves[curMoveNumber--].undoMove()
     }
-
-//    private fun setBoard(board: Board) {
-//        this.board = board
-//    }
 
     /**
      * @return Вернуть последний ход.

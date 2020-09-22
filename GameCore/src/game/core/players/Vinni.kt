@@ -9,13 +9,20 @@ import game.core.*
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 class Vinni : PutPiecePlayer {
+    override val name: String
+        get() = "Винни"
+    override val authorName: String
+        get() = "Романов В.Ю."
+
+    override fun toString(): String = name
+
     private var maxMoves = 80
 
     /**
      * Винни - простой игрок для игр в которых ставятся фигуры на доску.
      * Он случайным образом выбирает клетку на которую можно поставить фигуру.
      */
-    constructor(pieceProvider: IPieceProvider?, maxMoves: Int) : super(pieceProvider!!) {
+    constructor(pieceProvider: IPieceProvider, maxMoves: Int) : super(pieceProvider) {
         this.pieceProvider = pieceProvider
         this.maxMoves = maxMoves
     }
@@ -24,14 +31,9 @@ class Vinni : PutPiecePlayer {
      * Винни - простой игрок для игр в которых ставятся фигуры на доску.
      * Он случайным образом выбирает клетку на которую можно поставить фигуру.
      */
-    constructor(pieceProvider: IPieceProvider?) : super(pieceProvider!!) {
+    constructor(pieceProvider: IPieceProvider) : super(pieceProvider) {
         this.pieceProvider = pieceProvider
     }
-
-    override val name: String
-        get() = "Винни"
-    override val authorName: String
-        get() = "Романов В.Ю."
 
     @Throws(GameOver::class)
     override fun doMove(board: Board, color: PieceColor) {

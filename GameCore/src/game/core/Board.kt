@@ -2,10 +2,6 @@ package game.core
 
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.List
-import kotlin.collections.MutableList
-import kotlin.collections.MutableMap
-import kotlin.collections.mutableMapOf
 import kotlin.collections.set
 
 /**
@@ -103,6 +99,7 @@ class Board(
         while (true) {
             val player = players[moveColor]
             if (player === IPlayer.HOMO_SAPIENCE) break // Ход сделает человек.
+
             try {
                 player!!.doMove(this, moveColor)
             } catch (e: GameOver) {
@@ -128,9 +125,10 @@ class Board(
      * @param h - горизонталь клетки
      * @return есть ли клетка с такими координатами на доске.
      */
-    fun onBoard(v: Int, h: Int): Boolean {
-        if (v < 0) return false
-        return if (h < 0) false else h <= nH - 1 && v <= nV - 1
+    fun onBoard(v: Int, h: Int): Boolean = when {
+        v < 0 -> false
+        h < 0 -> false
+        else -> h <= nH - 1 && v <= nV - 1
     }
 
     /**
@@ -167,13 +165,14 @@ class Board(
      * @return - список фигур.
      */
     fun getPieces(color: PieceColor): List<Piece> {
-        val pieces: MutableList<Piece> = ArrayList()
-        for (v in 0 until nV) for (h in 0 until nH) {
-            val s = getSquare(v, h)
-            val p = s!!.getPiece() ?: continue
-            if (p.color != color) continue
-            pieces.add(p)
-        }
+        val pieces: MutableList<Piece> = mutableListOf()
+        for (v in 0 until nV)
+            for (h in 0 until nH) {
+                val s = getSquare(v, h)
+                val p = s!!.getPiece() ?: continue
+                if (p.color != color) continue
+                pieces.add(p)
+            }
         return pieces
     }
 
@@ -182,13 +181,14 @@ class Board(
      *
      * @return - список всех клеток доски.
      */
-    val emptySquares: List<Square?>
+    val emptySquares: List<Square>
         get() {
-            val emptySquares: MutableList<Square?> = ArrayList()
-            for (v in 0 until nV) for (h in 0 until nH) {
-                val square = getSquare(v, h)
-                if (square!!.isEmpty) emptySquares.add(square)
-            }
+            val emptySquares: MutableList<Square> = mutableListOf()
+            for (v in 0 until nV)
+                for (h in 0 until nH) {
+                    val square = getSquare(v, h)
+                    if (square!!.isEmpty) emptySquares.add(square)
+                }
             return emptySquares
         }
 
@@ -199,12 +199,13 @@ class Board(
      * @param piece - проверяемая фигура.
      * @return список допустимых для хода клеток.
      */
-    fun getPieceTargets(piece: Piece): List<Square?> {
-        val targets: MutableList<Square?> = ArrayList()
-        for (v in 0 until nV) for (h in 0 until nH) {
-            val target = getSquare(v, h)
-            if (piece.isCorrectMove(target)) targets.add(target)
-        }
+    fun getPieceTargets(piece: Piece): List<Square> {
+        val targets: MutableList<Square> = mutableListOf()
+        for (v in 0 until nV)
+            for (h in 0 until nH) {
+                val target = getSquare(v, h)
+                if (piece.isCorrectMove(target!!)) targets.add(target)
+            }
         return targets
     }
 
@@ -236,9 +237,8 @@ class Board(
          * @return противоположный цвет фигур.
          */
         @JvmStatic
-        fun getOpponentColor(color: PieceColor): PieceColor {
-            return if (color == PieceColor.WHITE) PieceColor.BLACK else PieceColor.WHITE
-        }
+        fun getOpponentColor(color: PieceColor): PieceColor =
+                if (color == PieceColor.WHITE) PieceColor.BLACK else PieceColor.WHITE
     }
 
     init {
@@ -247,5 +247,4 @@ class Board(
         blackPlayer = IPlayer.HOMO_SAPIENCE
         reset(0, 0)
     }
-
 }

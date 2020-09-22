@@ -13,5 +13,5 @@ interface IPieceProvider {
      * @param color  - цвет фигуры.
      * @return - преставляемая фигура.
      */
-    fun getPiece(square: Square, color: PieceColor): Piece?
+    fun getPiece(square: Square, color: PieceColor): Piece
 }

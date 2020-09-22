@@ -37,15 +37,15 @@ abstract class PutPiecePlayer protected constructor(
 
         // Получим НЕ стоящую на клетке фигуру заданного цвета.
         val square = emptySquares[0]
-        val piece = pieceProvider.getPiece(square!!, moveColor)
-        piece!!.remove() // Уберем фигуру с клетки доски.
+        val piece = pieceProvider.getPiece(square, moveColor)
+        piece.remove() // Уберем фигуру с клетки доски.
 
         // Соберем пустые клетки, на которые можно поставить
         // новую фигуру заданного цвета.
         for (emptySquare in emptySquares)
             if (piece.isCorrectMove(emptySquare)) {
                 val m = piece.makeMove(emptySquare)
-                m?.let { allCorrectMoves.add(it) }
+                m.let { allCorrectMoves.add(it) }
             }
         return allCorrectMoves
     }

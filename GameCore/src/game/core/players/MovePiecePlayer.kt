@@ -1,8 +1,9 @@
 package game.core.players
 
-import game.core.*
-import java.util.*
-import java.util.stream.Collectors
+import game.core.Board
+import game.core.IPlayer
+import game.core.Move
+import game.core.PieceColor
 
 /**
  * Базовый класс для программ-игроков передвигающих фигуры на доске.
@@ -19,17 +20,17 @@ abstract class MovePiecePlayer : IPlayer {
      * @return список допустимых ходов.
      */
     open fun getCorrectMoves(board: Board, color: PieceColor): MutableList<Move> {
-        val correctMoves: MutableList<Move> = ArrayList()
+        val correctMoves: MutableList<Move> = mutableListOf()
+
         for (p in board.getPieces(color)) {
             // Собрали все клетки-цели на которые допустим ход фигуры р.
-            val targets = board.getSquares()
-                    .stream()
-                    .filter { squares: Square? -> p.isCorrectMove(squares) }
-                    .collect(Collectors.toList())
+            val targets = board
+                    .getSquares()
+                    .filter { p.isCorrectMove(it) }
             for (target in targets) {
                 val source = p.square
                 val correctMove = p.makeMove(source, target)
-                correctMove?.let { correctMoves.add(it) }
+                correctMove.let { correctMoves.add(it) }
             }
         }
         return correctMoves

@@ -27,14 +27,14 @@ class PutPieceListener(private val boardPanel: IBoardPanel) : IGameListener {
 
         // Получим фигуру НЕ стоящую на клетке.
         val moveColor = board.moveColor
-        val piece = boardPanel.getPiece(s, moveColor) ?: return
+        val piece = boardPanel.getPiece(s, moveColor)
         piece.remove()
         if (!piece.isCorrectMove(s)) return  // На эту клетку ставить нельзя.
 
         // Постановка фигуры на заданную клетку правильная.
         // Создадим экземпляр хода и выполним его.
         val move = piece.makeMove(s)
-        board.history.addMove(move!!)
+        board.history.addMove(move)
         try {
             move.doMove()
         } catch (e: GameOver) {
@@ -46,7 +46,7 @@ class PutPieceListener(private val boardPanel: IBoardPanel) : IGameListener {
             board.changeMoveColor()
 
             // Получим новую фигуру НЕ стоящую на клетке.
-            val p = boardPanel.getPiece(s, board.moveColor) ?: return
+            val p = boardPanel.getPiece(s, board.moveColor)
             p.remove()
 
             // Зададим изображение курсора такое как избражение у новой фигуры.

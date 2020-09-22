@@ -117,18 +117,21 @@ abstract class Game protected constructor() : IScorable {
 
     /**
      * Выдать фигуру заданного цвета и поставить ее заданную клетку доски.
+     * Например, для шахмат выдать фигуру для превращения пешки.
+     * Для шашек выдать дамку.
+     * Для реверси и рендзю выдать камень для постановки его на доску.
      *
      * @param square     клетка для фигуры
      * @param pieceColor цвет фигуры
      * @return новая фигура на доске.
      */
-    open fun getPiece(square: Square?, pieceColor: PieceColor?): Piece? = null
+    abstract fun getPiece(square: Square, pieceColor: PieceColor): Piece
 
     companion object {
         /**
          * Карта для регистрации игроков для каждой из игр.
          */
-        private val allPlayers: MutableMap<Class<out Game?>, MutableList<IPlayer>> = HashMap()
+        private val allPlayers: MutableMap<Class<out Game>, MutableList<IPlayer>> = mutableMapOf()
 
         /**
          * Добавить игрока для данной игры.
@@ -137,7 +140,7 @@ abstract class Game protected constructor() : IScorable {
          * @param player игрок (программа или человек).
          */
         @JvmStatic
-        fun addPlayer(game: Class<out Game?>, player: IPlayer) {
+        fun addPlayer(game: Class<out Game>, player: IPlayer) {
             var players = allPlayers[game]
             if (players == null) {
                 // Игроков для данной игры еще не добавляли.

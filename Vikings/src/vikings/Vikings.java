@@ -186,4 +186,9 @@ public class Vikings extends Game {
 
         return images;
     }
+
+    @Override
+    public Piece getPiece(Square square, PieceColor pieceColor) {
+        return null;
+    }
 }

@@ -56,12 +56,12 @@ class MovePieceListener(private val boardPanel: IBoardPanel) : IGameListener {
         if (selectedPiece!!.isCorrectMove(s)) {
             // Ход на заданную клетку правильный.
             // Создадим экземпляр хода и выполним его.
-            val move = selectedPiece!!.makeMove(selectedSquare, s)
+            val move = selectedPiece!!.makeMove(selectedSquare!!, s)
             try {
-                move!!.doMove()
+                move.doMove()
             } catch (e: GameOver) {
                 // Сохраним экземпляр хода в истории партии.
-                board.history.addMove(move!!)
+                board.history.addMove(move)
                 board.history.result = e.result
                 selectedPiece = null
                 selectedSquare = null

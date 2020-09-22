@@ -30,10 +30,10 @@ class TrackPieceListener<T : ITransferMove>(private val boardPanel: IBoardPanel)
 
     override fun mouseDown(s: Square, button: Int) {
         if (s.isEmpty) return
-        val moveColor = board.moveColor
+        selectedPiece = s.getPiece()
 
         // Выберем для перемещения фигуру нужного цвета.
-        selectedPiece = s.getPiece()
+        val moveColor = board.moveColor
         if (selectedPiece!!.color !== moveColor) return
 
         // На время перемещения фигуры мышкой
@@ -48,6 +48,7 @@ class TrackPieceListener<T : ITransferMove>(private val boardPanel: IBoardPanel)
     }
 
     override fun mouseUp(s: Square, button: Int) {
+        if (selectedPiece == null) return
         if (selectedSquare == null) return
 
         // Возвращаем фигуру на начальную клетку.
@@ -70,10 +71,11 @@ class TrackPieceListener<T : ITransferMove>(private val boardPanel: IBoardPanel)
 
     private fun doMove(mouseSquare: Square) {
         if (selectedPiece == null) return
+        if (selectedSquare == null) return
 
         // Ход на заданную клетку допустим.
         // Создадим экземпляр хода и выполним его.
-        val move = selectedPiece!!.makeMove(selectedSquare, mouseSquare) as T?
+        val move = selectedPiece!!.makeMove(selectedSquare!!, mouseSquare) as T?
         if (move !is ITrackMove) {
             // Простой ход.
             try {

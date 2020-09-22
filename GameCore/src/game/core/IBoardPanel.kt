@@ -55,7 +55,7 @@ interface IBoardPanel {
      * @param moveColor   заданный цвет
      * @return фигура
      */
-    fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece?
+    fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece
 
     /**
      * Задать слушателя нажатий кнопок мыши.
