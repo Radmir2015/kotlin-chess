@@ -1,10 +1,10 @@
-package game.core;
+package game.core
 
 /**
  * Цвета фигур для 4-х игроков.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public enum PieceColor {
+enum class PieceColor {
     BLACK, WHITE, GREEN, BLUE
 }

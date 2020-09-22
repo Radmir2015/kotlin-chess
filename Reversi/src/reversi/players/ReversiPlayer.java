@@ -65,7 +65,7 @@ public class ReversiPlayer extends PutPiecePlayer {
             throw new GameOver(GameResult.win(color));
         }
 
-        List<Move> correctMoves = getCorrectMoves(board, color);
+        List<Move> correctMoves = getCorrectMoves(board);
 
         if (correctMoves.isEmpty()) {
             // Пропускаем ход.

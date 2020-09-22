@@ -14,7 +14,7 @@ import java.util.List;
  * @author <a href="mailto:vla	dimir.romanov@gmail.com">Romanov V.Y.</a>
  */
 public class Capture extends SimpleMove
-        implements ICaptureMove, ICapture {
+        implements ICaptureMove {
     private Piece capturedPiece;
     private Square capturedSquare;
 
@@ -67,18 +67,6 @@ public class Capture extends SimpleMove
         super.undoMove();
         capturedSquare.setPiece(capturedPiece);
     }
-
-    @Override
-    public void removePiece() {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public void restorePiece() {
-        // TODO Auto-generated method stub
-
-    }
-
 
     @Override
     public String toString() {

@@ -1,54 +1,39 @@
-package game.core.listeners;
+package game.core.listeners
 
-import game.core.Board;
-import game.core.IBoardPanel;
-import game.core.Piece;
-import game.core.Square;
+import game.core.IBoardPanel
+import game.core.Square
 
 /**
  * Слушатель MovePiecePromptListener определяет клетки, на которые может пойти
  * фигура находящаяся под мышкой.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class MovePiecePromptListener implements IMouseMoveListener {
-    /**
-     * Панель, на которой рисуется доска.
-     */
-    private final IBoardPanel boardPanel;
-
-    /**
-     * Слушатель MovePiecePromptListener определяет клетки, на которые может
-     * пойти фигура находящаяся под мышкой.
-     *
-     * @param boardPanel - панель для отрисовки доски.
-     */
-    public MovePiecePromptListener(IBoardPanel boardPanel) {
-        this.boardPanel = boardPanel;
-    }
-
-    @Override
-    public void mouseMove(Square underMouse) {
-        boardPanel.getPrompted().clear();
-
-        Piece underMousePiece = underMouse.getPiece();
+class MovePiecePromptListener(
+        /**
+         * Панель, на которой рисуется доска.
+         */
+        private val boardPanel: IBoardPanel,
+)
+    : IMouseMoveListener {
+    override fun mouseMove(squareUnderMouse: Square) {
+        boardPanel.prompted.clear()
+        val underMousePiece = squareUnderMouse.getPiece()
         if (underMousePiece == null) {
             // Под мышкой фигуры нет, клетка пустая.
             // Перерисуем панель доски без подсказок.
-            boardPanel.updateBoard();
-            return;
+            boardPanel.updateBoard()
+            return
         }
 
         // Доска на которой расположены фигуры.
-        Board board = boardPanel.getPanelBoard();
-
-        for (Square s : board.getSquares())
+        val board = boardPanel.board
+        for (s in board.getSquares())
             if (underMousePiece.isCorrectMove(s))
-                boardPanel.getPrompted().add(s);
+                boardPanel.prompted.add(s)
 
         // Перерисуем панель доски c маркерами-подсказками
         // для клеток на которые допустим ход фигуры.
-        if (!boardPanel.getPrompted().isEmpty())
-            boardPanel.updateBoard();
+        if (boardPanel.prompted.isNotEmpty()) boardPanel.updateBoard()
     }
 }

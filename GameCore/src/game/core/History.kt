@@ -1,42 +1,38 @@
-package game.core;
+package game.core
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*
 
 /**
  * История игры (список ходов сделанных фигурами на доске).
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class History {
+class History internal constructor(
+        /**
+         * Доска на которой идет игра.
+         */
+        val board: Board,
+) {
     /**
      * Номер текущего хода на доске.
      */
-    private int curMove = -1;
+    var curMoveNumber = -1
+        private set
 
     /**
      * Список ходов сделанных на доске.
      */
-    private final List<Move> moves = new ArrayList<>();
-
-    /**
-     * Доска на которой идет игра.
-     */
-    private Board board;
+    val moves: MutableList<Move> = ArrayList()
 
     /**
      * Результат игры.
      */
-    private GameResult result = GameResult.UNKNOWN;
+    var result = GameResult.UNKNOWN
 
-    History(Board board) {
-        setBoard(board);
-    }
-
-    void clear() {
-        curMove = -1;
-        moves.clear();
-        result = GameResult.UNKNOWN;
+    fun clear() {
+        curMoveNumber = -1
+        moves.clear()
+        result = GameResult.UNKNOWN
     }
 
     /**
@@ -44,141 +40,99 @@ public class History {
      *
      * @param move - ход игры
      */
-    public void addMove(Move move) {
-        moves.add(move);
-        curMove++;
+    fun addMove(move: Move) {
+        moves.add(move)
+        curMoveNumber++
     }
 
     /**
      * @return Вернуть ходы сделанные в игре.
      */
-    public List<Move> getMoves() {
-        return moves;
-    }
-
-    /**
-     * @return Вернуть номер текущего хода.
-     */
-    public int getCurMoveNumber() {
-        return curMove;
-    }
+//    fun getMoves(): List<Move> = moves
 
     /**
      * @return Вернуть текущий ход.
      */
-    public Move getCurMove() {
-        return curMove == -1 ? null : moves.get(curMove);
-    }
+    val curMove: Move?
+        get() = if (curMoveNumber == -1) null else moves[curMoveNumber]
 
     /**
      * Сместиться на первый ход.
      */
-    public void toFirstMove() {
-        for (; curMove >= 1; curMove--)
-            moves.get(curMove).undoMove();
+    fun toFirstMove() {
+        while (curMoveNumber >= 1) {
+            moves[curMoveNumber].undoMove()
+            curMoveNumber--
+        }
     }
 
     /**
      * Сместиться на последний ход.
      */
-    public void toLastMove() {
-        for (; curMove < moves.size() - 1; curMove++)
+    fun toLastMove() {
+        while (curMoveNumber < moves.size - 1) {
             try {
-                moves.get(curMove).doMove();
-            } catch (GameOver e) {
-                setResult(e.result);
+                moves[curMoveNumber].doMove()
+            } catch (e: GameOver) {
+                result = e.result
             }
+            curMoveNumber++
+        }
     }
 
     /**
      * Сместиться на следующий ход.
      */
-    public void toNextMove() {
-        if (curMove < moves.size() - 1)
-            try {
-                moves.get(++curMove).doMove();
-            } catch (GameOver e) {
-                setResult(e.result);
-            }
+    fun toNextMove() {
+        if (curMoveNumber < moves.size - 1) try {
+            moves[++curMoveNumber].doMove()
+        } catch (e: GameOver) {
+            result = e.result
+        }
     }
 
     /**
      * Сместиться на предыдущий ход.
      */
-    public void toPrevMove() {
-        if (curMove >= 0)
-            moves.get(curMove--).undoMove();
+    fun toPrevMove() {
+        if (curMoveNumber >= 0) moves[curMoveNumber--].undoMove()
     }
 
-    public Board getBoard() {
-        return board;
-    }
-
-    private void setBoard(Board board) {
-        this.board = board;
-    }
+//    private fun setBoard(board: Board) {
+//        this.board = board
+//    }
 
     /**
      * @return Вернуть последний ход.
      */
-    public Move getLastMove() {
-        if (moves.isEmpty()) return null;
-
-        return moves.get(moves.size() - 1);
-    }
+    val lastMove: Move?
+        get() = if (moves.isEmpty()) null else moves[moves.size - 1]
 
     /**
      * Выдать номер хода.
      *
      * @param move - для какого хода выдается номер.
      */
-    public int getMoveNumber(Move move) {
-        return moves.indexOf(move);
-    }
+    fun getMoveNumber(move: Move): Int = moves.indexOf(move)
 
     /**
-     * Сместиться на ход с номером <b>n</b>.
+     * Сместиться на ход с номером **n**.
      *
      * @param n - номер хода
      */
-    public void toMove(int n) {
-        if (n < curMove)
-            while (n < curMove)
-                toPrevMove();
-
-        if (curMove < n)
-            while (curMove < n)
-                toNextMove();
+    fun toMove(n: Int) {
+        if (n < curMoveNumber) while (n < curMoveNumber) toPrevMove()
+        if (curMoveNumber < n) while (curMoveNumber < n) toNextMove()
     }
 
-    /**
-     * @return Получить результат игры.
-     */
-    public GameResult getResult() {
-        return result;
-    }
-
-    /**
-     * @param result Задать результат игры.
-     */
-    public void setResult(GameResult result) {
-        this.result = result;
-    }
-
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-
-        int k = 0;
-
-        for (Move m : moves) {
-            boolean odd = ((k % 2) == 0);
-            String number = (!odd ? "" : "" + (1 + k / 2) + ". ");
-            String nl = (!odd ? "\n" : "");
-
-            s.append(String.format("%s%s %s", number, m, nl));
-            k++;
+    override fun toString(): String {
+        val s = StringBuilder()
+        for ((k, m) in moves.withIndex()) {
+            val odd = k % 2 == 0
+            val number = if (!odd) "" else "${1 + k / 2}. "
+            val nl = if (!odd) "\n" else ""
+            s.append("$number$m $nl")
         }
-
-        return s.toString();
+        return s.toString()
     }
 }

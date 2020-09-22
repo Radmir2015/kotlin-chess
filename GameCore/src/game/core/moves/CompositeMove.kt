@@ -1,50 +1,44 @@
-package game.core.moves;
+package game.core.moves
 
-import game.core.GameOver;
-import game.core.Move;
-import game.core.Piece;
-import game.core.Square;
-
-import java.util.ArrayList;
+import game.core.GameOver
+import game.core.Piece
+import game.core.Square
+import java.util.*
 
 /**
  * Составной ход - последовательность простых ходов фигурой одного цвета.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class CompositeMove<T extends ITransferMove> implements ITransferMove {
+open class CompositeMove<T : ITransferMove> : ITransferMove {
     /**
      * Последовательность простых ходов.
      */
-    private final ArrayList<T> moves;
+    val moves: ArrayList<T> = ArrayList()
+
+    override val source: Square
+        get() = moves[0].source
+
+    override val target: Square
+        get() = moves[moves.size - 1].target
 
     /**
      * фигура которая делает ход.
      */
-    private Piece piece;
+    final override var piece: Piece? = null
 
-    private CompositeMove() {
-        moves = new ArrayList<>();
+    constructor(move: CompositeMove<T>) {
+        piece = move.piece
+        moves.addAll(move.moves)
     }
 
-    public CompositeMove(T move) {
-        moves = new ArrayList<>();
-
-        this.piece = move.getPiece();
-        addMove(move);
+    constructor(move: T) {
+        piece = move.piece
+        addMove(move)
     }
 
-    protected CompositeMove(Piece p) {
-        moves = new ArrayList<>();
-
-        this.piece = p;
-    }
-
-    /**
-     * @return Вернуть последовательность простых ходов.
-     */
-    public ArrayList<T> getMoves() {
-        return moves;
+    protected constructor(p: Piece) {
+        piece = p
     }
 
     /**
@@ -52,75 +46,45 @@ public class CompositeMove<T extends ITransferMove> implements ITransferMove {
      *
      * @param move - простой ход фигурой
      */
-    public void addMove(T move) {
-        moves.add(move);
+    fun addMove(move: T) {
+        moves.add(move)
     }
 
-    @Override
-    public void doMove() throws GameOver {
-        for (Move move : moves)
-            try {
-                move.doMove();
-            } catch (GameOver e) {
-                throw new GameOver(e.result);
-            }
+    @Throws(GameOver::class)
+    override fun doMove() {
+        for (move in moves) try {
+            move.doMove()
+        } catch (e: GameOver) {
+            throw GameOver(e.result)
+        }
     }
 
-    @Override
-    public void undoMove() {
-        for (int k = moves.size() - 1; k >= 0; k--)
-            moves.get(k).undoMove();
+    override fun undoMove() {
+        for (k in moves.indices.reversed()) moves[k].undoMove()
     }
 
-    @Override
-    public Piece getPiece() {
-        return piece;
-    }
+    val clone: CompositeMove<T>
+        get() = CompositeMove(this)
 
-    @Override
-    public Square getSource() {
-        return moves.get(0).getSource();
-    }
-
-    @Override
-    public Square getTarget() {
-        return moves.get(moves.size() - 1).getSource();
-    }
-
-    public CompositeMove<T> getClone() {
-        CompositeMove<T> clone = new CompositeMove<>();
-        clone.piece = piece;
-
-        clone.moves.addAll(moves);
-
-        return clone;
-    }
-
-    public boolean isEmpty() {
-        return moves.isEmpty();
-    }
+    val isEmpty: Boolean
+        get() = moves.isEmpty()
 
     /**
      * @param square - проверяемая клетка.
      * @return Допустим ли ход на клетку square.
      */
-    public boolean isAcceptable(Square square) {
+    fun isAcceptable(square: Square): Boolean {
         // Если фигура уже была на этой клетке, то ход недопустим.
         return moves
                 .stream()
-                .noneMatch(move -> move.getSource() == square);
+                .noneMatch { move: T -> move.source == square }
     }
 
-    @Override
-    public String toString() {
-        if (moves.isEmpty())
-            return "????";
+    override fun toString(): String {
+        if (moves.isEmpty()) return "????"
 
-        StringBuilder s = new StringBuilder("" + moves.get(0).getSource());
-
-        for (T c : moves)
-            s.append("x").append(c.getTarget());
-
-        return s.toString();
+        val s = StringBuilder("$source")
+        for (m in moves) s.append("x").append(m.target)
+        return s.toString()
     }
 }

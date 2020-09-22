@@ -1,49 +1,24 @@
-package game.core;
+package game.core
 
 /**
  * Интерфейс для игроков (программ и человека).
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface IPlayer {
-    /**
-     * Простейшая реализация игрока.
-     * Все действия на доске делает человек.
-     */
-    IPlayer HOMO_SAPIENCE = new IPlayer() {
-        @Override
-        public String getName() {
-            return "Homo sapience";
-        }
-
-        @Override
-        public String getAuthorName() {
-            return "Это я";
-        }
-
-        @Override
-        public void doMove(Board board, PieceColor color) {
-        }
-
-        @Override
-        public String toString() {
-            return getName();
-        }
-    };
-
+interface IPlayer {
     /**
      * Выдать имя игрока для отображения имени на панели игры.
      *
      * @return имя игрока.
      */
-    String getName();
+    val name: String
 
     /**
      * Выдать имя автора программы для отображения имени на панели игры.
      *
      * @return имя автора программы.
      */
-    String getAuthorName();
+    val authorName: String
 
     /**
      * Сделать ход на доске фигурой заданного цвета.
@@ -53,5 +28,23 @@ public interface IPlayer {
      * @throws GameOver во время выполнения хода может возникнуть ситуация GameOver.
      * @see GameResult
      */
-    void doMove(Board board, PieceColor color) throws GameOver;
+    @Throws(GameOver::class)
+    fun doMove(board: Board, color: PieceColor)
+
+    companion object {
+        /**
+         * Простейшая реализация игрока.
+         * Все действия на доске делает человек.
+         */
+        @JvmField
+        val HOMO_SAPIENCE: IPlayer = object : IPlayer {
+            override val name: String
+                get() = "Homo sapience"
+            override val authorName: String
+                get() = "Это я"
+
+            override fun doMove(board: Board, color: PieceColor) {}
+            override fun toString(): String = name
+        }
+    }
 }

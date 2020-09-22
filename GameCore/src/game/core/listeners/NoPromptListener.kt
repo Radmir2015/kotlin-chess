@@ -1,39 +1,30 @@
-package game.core.listeners;
+package game.core.listeners
 
-
-import game.core.*;
+import game.core.IBoardPanel
+import game.core.Square
 
 /**
  * Слушатель для игр в которых фигуры ставятся на доску.
  * Слушатель PutPiecePromptListener определяет клетки на которые можно поставить фигуру.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class NoPromptListener implements IMouseMoveListener {
-    /**
-     * Панель на которой отрисовывается доска.
-     */
-    private final IBoardPanel boardPanel;
-
-    public NoPromptListener(IBoardPanel boardPanel) {
-        this.boardPanel = boardPanel;
-    }
-
-    @Override
-    public void mouseMove(Square mouseSquare) {
+class NoPromptListener(
+        /**
+         * Панель на которой отрисовывается доска.
+         */
+        private val boardPanel: IBoardPanel,
+) : IMouseMoveListener {
+    override fun mouseMove(squareUnderMouse: Square) {
         // Доска на которой расположены фигуры.
-        Board board = boardPanel.getPanelBoard();
+        val board = boardPanel.board
 
         // Получим фигуру НЕ стоящую на клетке.
-        PieceColor moveColor = board.getMoveColor();
-        Piece piece = boardPanel.getPiece(mouseSquare, moveColor);
-
-        if (piece == null)
-            return;
-
-        piece.remove(); // Уберем фигуру с доски.
+        val moveColor = board.moveColor
+        val piece = boardPanel.getPiece(squareUnderMouse, moveColor) ?: return
+        piece.remove() // Уберем фигуру с доски.
 
         // Зададим изображение курсора такое как избражение у фигуры.
-        boardPanel.pieceToCursor(piece);
+        boardPanel.pieceToCursor(piece)
     }
 }

@@ -1,186 +1,157 @@
-package game.core.listeners;
+package game.core.listeners
 
-import game.core.*;
-import game.core.moves.CompositeMove;
-import game.core.moves.ITrackMove;
-import game.core.moves.ITransferMove;
+import game.core.*
+import game.core.moves.CompositeMove
+import game.core.moves.ITrackMove
+import game.core.moves.ITransferMove
 
 /**
  * Слушатель постановки перемещения фигуры на доске.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class TrackPieceListener<T extends ITransferMove> implements IGameListener {
+class TrackPieceListener<T : ITransferMove>(private val boardPanel: IBoardPanel) : IGameListener {
     /**
      * Выбранная для перемещения фигура.
      */
-    private Piece selectedPiece;
+    private var selectedPiece: Piece? = null
 
     /**
      * Клетка на которой стоит выбранная для перемещений фигура.
      */
-    private Square selectedSquare;
+    private var selectedSquare: Square? = null
 
     /**
      * Доска на которой происходят изменения.
      */
-    private final Board board;
+    private val board: Board = boardPanel.board
 
-    /**
-     * Панель на которой рисуется доска.
-     */
-    private final IBoardPanel boardPanel;
+    private var track: CompositeMove<T>? = null
 
-    private CompositeMove<T> track = null;
-
-    /**
-     * Создать слушателя мыши для панели доски на которой перемещяются фигуры.
-     */
-    public TrackPieceListener(IBoardPanel boardPanel) {
-        this.board = boardPanel.getPanelBoard();
-        this.boardPanel = boardPanel;
-    }
-
-    @Override
-    public void mouseDown(Square mouseSquare, int button) {
-        if (mouseSquare.isEmpty())
-            return;
-
-        PieceColor moveColor = board.getMoveColor();
+    override fun mouseDown(s: Square, button: Int) {
+        if (s.isEmpty) return
+        val moveColor = board.moveColor
 
         // Выберем для перемещения фигуру нужного цвета.
-        selectedPiece = mouseSquare.getPiece();
-        if (selectedPiece.getColor() != moveColor)
-            return;
+        selectedPiece = s.getPiece()
+        if (selectedPiece!!.color !== moveColor) return
 
         // На время перемещения фигуры мышкой
         // снимем ее с доски.
-        selectedSquare = mouseSquare;
-        selectedSquare.removePiece();
-
-        boardPanel.saveCursor(selectedPiece);
+        selectedSquare = s
+        selectedSquare!!.removePiece()
+        selectedPiece?.let { boardPanel.saveCursor(it) }
 
         // Перерисуем изображение доски с временно снятой фигурой.
-        board.setBoardChanged();
-        boardPanel.updateBoard();
+        board.setBoardChanged()
+        boardPanel.updateBoard()
     }
 
-    @Override
-    public void mouseUp(Square mouseSquare, int button) {
-        if (selectedSquare == null)
-            return;
+    override fun mouseUp(s: Square, button: Int) {
+        if (selectedSquare == null) return
 
         // Возвращаем фигуру на начальную клетку.
         // Теперь знаем куда эта фигура пойдет.
         // Все изменения на доске, связанные с этим ходом,
         // будут сделаны классом реализующим интерфейс Move.
-        selectedSquare.setPiece(selectedPiece);
-
-        if (selectedPiece.isCorrectMove(mouseSquare))
-            doMove(mouseSquare);
-
-        selectedPiece = null;
-        selectedSquare = null;
+        selectedSquare!!.setPiece(selectedPiece!!)
+        if (selectedPiece!!.isCorrectMove(s)) doMove(s)
+        selectedPiece = null
+        selectedSquare = null
 
         // Восстановим курсор (с изображением стрелки).
-        boardPanel.restoreCursor();
+        boardPanel.restoreCursor()
 
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
-        board.setBoardChanged();
-        boardPanel.updateBoard();
+        board.setBoardChanged()
+        boardPanel.updateBoard()
     }
 
-    private void doMove(Square mouseSquare) {
+    private fun doMove(mouseSquare: Square) {
+        if (selectedPiece == null) return
+
         // Ход на заданную клетку допустим.
         // Создадим экземпляр хода и выполним его.
-        @SuppressWarnings("unchecked")
-        T move = (T) selectedPiece.makeMove(selectedSquare, mouseSquare);
-
-        if (!(move instanceof ITrackMove)) {
+        val move = selectedPiece!!.makeMove(selectedSquare, mouseSquare) as T?
+        if (move !is ITrackMove) {
             // Простой ход.
             try {
-                move.doMove();
-            } catch (GameOver e) {
+                move!!.doMove()
+            } catch (e: GameOver) {
                 // Сохраним экземпляр хода в истории игры.
-                board.history.addMove(move);
-                board.history.setResult(e.result);
-
-                selectedPiece = null;
-                selectedSquare = null;
+                move?.let { board.history.addMove(it) }
+                board.history.result = e.result
+                selectedPiece = null
+                selectedSquare = null
 
                 // Восстановим курсор (с изображением стрелки).
-                boardPanel.restoreCursor();
+                boardPanel.restoreCursor()
 
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
-                board.setBoardChanged();
-                boardPanel.updateBoard();
+                board.setBoardChanged()
+                boardPanel.updateBoard()
             }
 
             // Сохраним ход в истории игры.
-            board.history.addMove(move);
+            move?.let { board.history.addMove(it) }
 
             // Теперь ходить должен противник.
-            board.changeMoveColor();
+            board.changeMoveColor()
 
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
-            board.setBoardChanged();
+            board.setBoardChanged()
         } else {
             // Простой ход фигурой - часть составного хода фигурой
             // (последовательности простых ходов той же фигурой).
-            ITrackMove trackMove = (ITrackMove) move;
             if (track == null) {
                 // Первый ход в серии ходов.
-                track = new CompositeMove<>(move);
-            } else if (!track.isAcceptable(mouseSquare))
-                // На эту клетку уже ходили.
+                track = CompositeMove(move)
+            } else
+                if (!track!!.isAcceptable(mouseSquare)) // На эту клетку уже ходили.
                 // Избегаем хождения фигурой по кругу.
-                return;
-            else {
-                // Добавим простой ход в серию ходов.
-                track.undoMove();
-                track.addMove(move);
-            }
+                    return
+                else {
+                    // Добавим простой ход в серию ходов.
+                    track!!.undoMove()
+                    track!!.addMove(move)
+                }
 
             // Делаем последовательность простых ходов.
             try {
-                track.doMove();
-            } catch (GameOver e) {
+                track!!.doMove()
+            } catch (e: GameOver) {
                 // Конец игры.
                 // Сохраним экземпляр хода в истории игры.
-                board.history.addMove(track);
-                board.history.setResult(e.result);
-
-                selectedPiece = null;
-                selectedSquare = null;
+                board.history.addMove(track!!)
+                board.history.result = e.result
+                selectedPiece = null
+                selectedSquare = null
 
                 // Восстановим курсор (с изображением стрелки).
-                boardPanel.restoreCursor();
+                boardPanel.restoreCursor()
 
                 // Пусть слушатели изменений на доске
                 // нарисуют новое состояние доски.
-                board.setBoardChanged();
+                board.setBoardChanged()
             }
 
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
-            board.setBoardChanged();
-
-            if (trackMove.hasNext())
-                return;
+            board.setBoardChanged()
+            if (move.hasNext()) return
 
             //
             // Последний простой ход в последовательности ходов.
             //
             // Сохраним экземпляр хода в истории игры.
-            board.history.addMove(track);
+            board.history.addMove(track!!)
 
             // Теперь ходить должен противник.
-            board.changeMoveColor();
-
-            track = null;
+            board.changeMoveColor()
+            track = null
         }
     }
 }

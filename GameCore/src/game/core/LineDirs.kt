@@ -1,38 +1,26 @@
-package game.core;
+package game.core
 
 /**
  * 4-направления по вертикали и горизонали.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public enum LineDirs {
-    UP(+0, -1),
-    LEFT(-1, +0), RIGHT(+1, +0),
-    DOWN(+0, +1);
+enum class LineDirs(
+        /**
+         * Смещение по вертикали.
+         */
+        @JvmField
+        val dv: Int,
+        /**
+         * Смещение по горизонтали.
+         */
+        @JvmField
+        val dh: Int,
+) {
+    UP(+0, -1), LEFT(-1, +0), RIGHT(+1, +0), DOWN(+0, +1);
 
-    public static final
-    LineDirs[] ALL = {
-            UP,
-            LEFT, RIGHT,
-            DOWN
-    };
-
-    /**
-     * Смещение по вертикали.
-     */
-    public final int dv;
-
-    /**
-     * Смещение по горизонтали.
-     */
-    public final int dh;
-
-    /**
-     * @param dv - смещение по вертикали.
-     * @param dh - смещение по горизонтали.
-     */
-    LineDirs(int dv, int dh) {
-        this.dv = dv;
-        this.dh = dh;
+    companion object {
+        @JvmField
+        val ALL = arrayOf(UP, LEFT, RIGHT, DOWN)
     }
 }

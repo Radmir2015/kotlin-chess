@@ -1,21 +1,21 @@
-package game.core.moves;
+package game.core.moves
 
-import game.core.Move;
-import game.core.Square;
+import game.core.Move
+import game.core.Square
 
 /**
  * Интерфейс для игр на которых фигура передвигается на доске.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface ITransferMove extends Move {
+interface ITransferMove : Move {
     /**
      * Вернуть клетку откуда пошла фигура.
      */
-    Square getSource();
+    val source: Square
 
     /**
      * Вернуть клетку куда пошла фигура.
      */
-    Square getTarget();
+    val target: Square
 }

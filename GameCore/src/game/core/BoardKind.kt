@@ -1,9 +1,9 @@
-package game.core;
+package game.core
 
 /**
  * Какая доска.
  */
-public enum BoardKind {
+enum class BoardKind {
     /**
      * Одноцветная доска с фигурами в центре клетки
      */

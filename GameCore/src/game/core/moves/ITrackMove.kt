@@ -1,17 +1,17 @@
-package game.core.moves;
+package game.core.moves
 
 /**
  * Ход, который может быть частью длинного хода (track) состоящего
  * из нескольких ходов одной фигурой.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface ITrackMove extends ITransferMove {
+interface ITrackMove : ITransferMove {
     /**
      * Существует ли у этого хода продолжение
      * - допустимый ход той же фигурой.
      *
      * @return есть ли у хода продолжение.
      */
-    boolean hasNext();
+    operator fun hasNext(): Boolean
 }

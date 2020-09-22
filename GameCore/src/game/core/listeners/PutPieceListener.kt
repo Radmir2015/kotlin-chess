@@ -1,92 +1,71 @@
-package game.core.listeners;
+package game.core.listeners
 
-import game.core.*;
+import game.core.Board
+import game.core.GameOver
+import game.core.IBoardPanel
+import game.core.Square
 
 /**
  * Слушатель событий о нажатии кнопок мыши используемых
  * для постановки новой фигуры на доску.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class PutPieceListener implements IGameListener {
+class PutPieceListener(private val boardPanel: IBoardPanel) : IGameListener {
     /**
      * Доска на которой присходят изменения.
      */
-    private final Board board;
+    private val board: Board = boardPanel.board
 
     /**
      * Панель для отрисовки доски.
      */
-    private final IBoardPanel boardPanel;
+    override fun mouseUp(s: Square, button: Int) {}
 
-    /**
-     * Создать слушателя событий от нажатий кнопок мыши
-     * используемых для постановки новой фигуры на доску.
-     *
-     * @param boardPanel - панель доски на которую ставятся фигуры.
-     */
-    public PutPieceListener(IBoardPanel boardPanel) {
-        this.board = boardPanel.getPanelBoard();
-        this.boardPanel = boardPanel;
-    }
-
-    @Override
-    public void mouseUp(Square s, int button) {
-    }
-
-    @Override
-    public void mouseDown(Square mouseSquare, int button) {
-        if (!mouseSquare.isEmpty())
-            return;
+    override fun mouseDown(s: Square, button: Int) {
+        if (!s.isEmpty) return
 
         // Получим фигуру НЕ стоящую на клетке.
-        PieceColor moveColor = board.getMoveColor();
-        Piece piece = boardPanel.getPiece(mouseSquare, moveColor);
-        if (piece == null)
-            return;
-
-        piece.remove();
-
-        if (!piece.isCorrectMove(mouseSquare)) return; // На эту клетку ставить нельзя.
+        val moveColor = board.moveColor
+        val piece = boardPanel.getPiece(s, moveColor) ?: return
+        piece.remove()
+        if (!piece.isCorrectMove(s)) return  // На эту клетку ставить нельзя.
 
         // Постановка фигуры на заданную клетку правильная.
         // Создадим экземпляр хода и выполним его.
-        Move move = piece.makeMove(mouseSquare);
-        board.history.addMove(move);
+        val move = piece.makeMove(s)
+        board.history.addMove(move!!)
         try {
-            move.doMove();
-        } catch (GameOver e) {
+            move.doMove()
+        } catch (e: GameOver) {
             // Сохраним экземпляр кода и истории партии.
-            board.history.addMove(move);
-            board.history.setResult(e.result);
+            board.history.addMove(move)
+            board.history.result = e.result
 
             // Теперь ходить должен противник.
-            board.changeMoveColor();
+            board.changeMoveColor()
 
             // Получим новую фигуру НЕ стоящую на клетке.
-            Piece p = boardPanel.getPiece(mouseSquare, board.getMoveColor());
-            if (p == null)
-                return;
-
-            p.remove();
+            val p = boardPanel.getPiece(s, board.moveColor) ?: return
+            p.remove()
 
             // Зададим изображение курсора такое как избражение у новой фигуры.
-            boardPanel.pieceToCursor(p);
+            boardPanel.pieceToCursor(p)
 
             // Пусть слушатели изменений на доске
             // нарисуют новое состояние доски.
-            board.setBoardChanged();
-            return;
+            board.setBoardChanged()
+            return
         }
 
         // Теперь ходить должен противник.
-        board.changeMoveColor();
+        board.changeMoveColor()
 
         // Зададим изображение курсора такое как избражение у фигуры.
-        boardPanel.pieceToCursor(piece);
+        boardPanel.pieceToCursor(piece)
 
         // Пусть слушатели изменений на доске
         // нарисуют новое состояние доски.
-        board.setBoardChanged();
+        board.setBoardChanged()
     }
 }

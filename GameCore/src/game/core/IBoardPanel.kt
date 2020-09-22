@@ -1,22 +1,20 @@
-package game.core;
+package game.core
 
-import game.core.listeners.IGameListener;
-import game.core.listeners.IMouseMoveListener;
-
-import java.util.List;
+import game.core.listeners.IGameListener
+import game.core.listeners.IMouseMoveListener
 
 /**
  * Интерфейс панели изображающей доску для настольной игры.
  * Скрывает особености реализации такой панели с помощью
  * различных пакетов: Swing, SWT, JavaFX, ...
  */
-public interface IBoardPanel {
+interface IBoardPanel {
     /**
      * Выдать изображаемую доску для игры.
      *
      * @return доска игры изображаемая на этой панели.
      */
-    Board getPanelBoard();
+    val board: Board
 
     /**
      * Выдать список клеток для подсказки клеток
@@ -24,31 +22,31 @@ public interface IBoardPanel {
      *
      * @return список клеток
      */
-    List<Square> getPrompted();
+    val prompted: MutableList<Square>
 
     /**
      * Обновить изображение для сделаных изменений на доске.
      */
-    void updateBoard();
+    fun updateBoard()
 
     /**
      * Сохранить текущий курсор заменив его на курсор с изображением заданной фигуры.
      *
      * @param selectedPiece заданная фигура
      */
-    void saveCursor(Piece selectedPiece);
+    fun saveCursor(selectedPiece: Piece)
 
     /**
      * Восстановить сохраненный курсор.
      */
-    void restoreCursor();
+    fun restoreCursor()
 
     /**
      * Задать изображение курсора как у заданной фигуры.
      *
      * @param piece заданная фигура.
      */
-    void pieceToCursor(Piece piece);
+    fun pieceToCursor(piece: Piece)
 
     /**
      * Получить фигуру заданного цвета стоящую на заданной клетке.
@@ -57,19 +55,19 @@ public interface IBoardPanel {
      * @param moveColor   заданный цвет
      * @return фигура
      */
-    Piece getPiece(Square mouseSquare, PieceColor moveColor);
+    fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece?
 
     /**
      * Задать слушателя нажатий кнопок мыши.
      *
      * @param listener слушатель
      */
-    void setMouseClickListener(IGameListener listener);
+    fun setMouseClickListener(listener: IGameListener)
 
     /**
      * Задать слушателя перемещения мыши.
      *
      * @param listener слушатель
      */
-    void setMouseMoveListener(IMouseMoveListener listener);
+    fun setMouseMoveListener(listener: IMouseMoveListener)
 }

@@ -1,16 +1,16 @@
-package game.core;
+package game.core
 
 /**
  * Фигура, которая может делать последовательность коротких ходов.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface ITrackPiece {
+interface ITrackPiece {
     /**
      * Есть ли правильный ход из клетки square.
      *
      * @param square - проверяемая клетка
      * @return есть ли правильных ход из клетки.
      */
-    boolean hasCorrectMoveFrom(Square square);
+    fun hasCorrectMoveFrom(square: Square?): Boolean
 }

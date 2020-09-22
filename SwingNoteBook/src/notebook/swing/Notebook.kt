@@ -20,7 +20,7 @@ import javax.swing.ImageIcon
 import javax.swing.JFrame
 import javax.swing.JTabbedPane
 
-fun main(args: Array<String>) {
+fun main() {
     val tabbedPane = JTabbedPane()
 
     val frame = JFrame("Games Notebook")

@@ -1,31 +1,20 @@
-package game.core.moves;
+package game.core.moves
 
-import game.core.Move;
-import game.core.Piece;
+import game.core.Move
+import game.core.Piece
 
 /**
  * Простейший ход.
  * Пропуск хода - ничего не делаем.
  * Пусть ходит противник.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class PassMove implements Move {
-    @Override
-    public void doMove() {
-    }
+class PassMove : Move {
+    override fun doMove() {}
+    override fun undoMove() {}
+    override fun toString(): String = "Pass"
 
-    @Override
-    public void undoMove() {
-    }
-
-    @Override
-    public String toString() {
-        return "Pass";
-    }
-
-    @Override
-    public Piece getPiece() {
-        return null;
-    }
+    override val piece: Piece?
+        get() = null
 }

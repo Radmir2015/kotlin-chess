@@ -41,7 +41,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
         when (game.boardKind) {
             BoardKind.EUROPE -> {
                 gameBoard = object : EuropeBoard(game) {
-                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece? {
                         return game.getPiece(mouseSquare, moveColor)
                     }
                 }
@@ -49,7 +49,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             BoardKind.PLAIN -> {
                 gameBoard = object : GreenBoard(game) {
-                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece? {
                         return game.getPiece(mouseSquare, moveColor)
                     }
                 }
@@ -57,7 +57,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             BoardKind.ASIA -> {
                 gameBoard = object : AsiaBoard(game) {
-                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece? {
                         return game.getPiece(mouseSquare, moveColor)
                     }
                 }
@@ -65,7 +65,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             BoardKind.ASIA_CASTLE_RIVER -> {
                 gameBoard = object : AsiaBoardWithCastleRiver(game) {
-                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece? {
                         return game.getPiece(mouseSquare, moveColor)
                     }
                 }
@@ -73,7 +73,7 @@ open class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             BoardKind.ASIA_CASTLE -> {
                 gameBoard = object : AsiaBoardWithCastle(game) {
-                    override fun getPiece(mouseSquare: Square?, moveColor: PieceColor?): Piece {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece? {
                         return game.getPiece(mouseSquare, moveColor)
                     }
                 }

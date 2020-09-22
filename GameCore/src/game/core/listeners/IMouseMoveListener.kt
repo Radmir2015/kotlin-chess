@@ -1,25 +1,28 @@
-package game.core.listeners;
+package game.core.listeners
 
-import game.core.Square;
+import game.core.Square
 
 /**
  * Интерфейс слушателя перемещения мыши над клеткой.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface IMouseMoveListener {
-    /**
-     * Простейшая реализация интерфейса без реализации
-     * реакции на перемещения мыши.
-     */
-    IMouseMoveListener EMPTY = s -> {
-    };
-
+interface IMouseMoveListener {
     /**
      * Действия, которые необходимо выполнить при перемещении
      * мыши над клеткой.
      *
      * @param squareUnderMouse - клетка под мышкой.
      */
-    void mouseMove(Square squareUnderMouse);
+    fun mouseMove(squareUnderMouse: Square)
+
+    companion object {
+        /**
+         * Простейшая реализация интерфейса без реализации
+         * реакции на перемещения мыши.
+         */
+        val EMPTY = object : IMouseMoveListener {
+            override fun mouseMove(squareUnderMouse: Square) = Unit
+        }
+    }
 }

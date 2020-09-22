@@ -45,7 +45,7 @@ class PlayersPanel
 
         val panel = JPanel()
         panel.layout = BoxLayout(panel, BoxLayout.Y_AXIS)
-        panel.alignmentX = JPanel.CENTER_ALIGNMENT
+        panel.alignmentX = CENTER_ALIGNMENT
         panel.background = BACK_COLOR
         panel.isOpaque = false
         add(panel)
@@ -64,7 +64,7 @@ class PlayersPanel
 
         // Кнопка запуска игры.
         val start = JButton("Старт")
-        start.alignmentX = JPanel.CENTER_ALIGNMENT
+        start.alignmentX = CENTER_ALIGNMENT
         start.addActionListener { board.startGame() }
         add(start)
     }

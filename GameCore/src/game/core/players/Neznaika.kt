@@ -1,86 +1,63 @@
-package game.core.players;
+package game.core.players
 
-import game.core.*;
-
-import java.util.Collections;
-import java.util.List;
+import game.core.Board
+import game.core.GameOver
+import game.core.GameResult
+import game.core.PieceColor
 
 /**
  * Незнайка - простой игрок для игр в которых передвигают фигуры.
  * Он случайным образом выбирает ход из всех допустимых ходов.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Neznaika extends MovePiecePlayer {
-    private final int maxMoves;
+class Neznaika @JvmOverloads constructor(private val maxMoves: Int = 80) : MovePiecePlayer() {
+    override val name: String
+        get() = "Незнайка"
+    override val authorName: String
+        get() = "Романов В.Ю."
 
-    public Neznaika() {
-        this(80);
-    }
-
-    public Neznaika(int maxMoves) {
-        this.maxMoves = maxMoves;
-    }
-
-    @Override
-    public String getName() {
-        return "Незнайка";
-    }
-
-    @Override
-    public String getAuthorName() {
-        return "Романов В.Ю.";
-    }
-
-    @Override
-    public void doMove(Board board, PieceColor color) throws GameOver {
-        List<Move> correctMoves = getCorrectMoves(board, color);
-
-        if (correctMoves.isEmpty())
-            return;
+    @Throws(GameOver::class)
+    override fun doMove(board: Board, color: PieceColor) {
+        val correctMoves = getCorrectMoves(board, color)
+        if (correctMoves.isEmpty()) return
 
         // Незнайка делает случайный ход.
-        Collections.shuffle(correctMoves);
-        Move randomMove = correctMoves.get(0);
+        correctMoves.shuffle()
+        val randomMove = correctMoves[0]
 
         try {
-            randomMove.doMove();
-        } catch (GameOver e) {
+            randomMove.doMove()
+        } catch (e: GameOver) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.addMove(randomMove);
-            board.history.setResult(e.result);
+            board.history.addMove(randomMove)
+            board.history.result = e.result
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-
-            throw new GameOver(e.result);
+            board.setBoardChanged()
+            throw GameOver(e.result)
         }
 
         // Сохраняем ход в истории игры.
-        board.history.addMove(randomMove);
+        board.history.addMove(randomMove)
 
         // Просим обозревателей доски показать
         // положение на доске, сделанный ход и
         // результат игры.
-        board.setBoardChanged();
+        board.setBoardChanged()
 
         // Для отладки ограничим количество ходов в игре.
         // После этого результат игры ничья.
-        if (board.history.getMoves().size() > maxMoves) {
+        if (board.history.moves.size > maxMoves) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.setResult(GameResult.DRAWN);
-
-            // Сообщаем что игра закончилась ничьей.
-            throw new GameOver(GameResult.DRAWN);
+            board.history.result = GameResult.DRAWN
+            throw GameOver(GameResult.DRAWN)
         }
     }
 
-    @Override
-    public String toString() {
-        return getName();
-    }
+    override fun toString(): String = name
 }

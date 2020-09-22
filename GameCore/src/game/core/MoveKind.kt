@@ -1,6 +1,6 @@
-package game.core;
+package game.core
 
-public enum MoveKind {
+enum class MoveKind {
     /**
      * Не определен.
      */
@@ -17,7 +17,6 @@ public enum MoveKind {
      * Пример - шахматыю
      */
     PIECE_MOVE,
-
 
     /**
      * Фигура перемещается через последовательность клеток.

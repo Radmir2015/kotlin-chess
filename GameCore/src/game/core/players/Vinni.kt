@@ -1,92 +1,77 @@
-package game.core.players;
+package game.core.players
 
-import game.core.*;
-
-import java.util.Collections;
-import java.util.List;
+import game.core.*
 
 /**
  * Винни - простой игрок для игр в которых ставятся фигуры на доску.
  * Он случайным образом выбирает ход из всех допустимых ходов.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Vinni extends PutPiecePlayer {
-    private int maxMoves = 80;
+class Vinni : PutPiecePlayer {
+    private var maxMoves = 80
 
     /**
      * Винни - простой игрок для игр в которых ставятся фигуры на доску.
      * Он случайным образом выбирает клетку на которую можно поставить фигуру.
      */
-    public Vinni(IPieceProvider pieceProvider, int maxMoves) {
-        super(pieceProvider);
-        this.pieceProvider = pieceProvider;
-        this.maxMoves = maxMoves;
+    constructor(pieceProvider: IPieceProvider?, maxMoves: Int) : super(pieceProvider!!) {
+        this.pieceProvider = pieceProvider
+        this.maxMoves = maxMoves
     }
 
     /**
      * Винни - простой игрок для игр в которых ставятся фигуры на доску.
      * Он случайным образом выбирает клетку на которую можно поставить фигуру.
      */
-    public Vinni(IPieceProvider pieceProvider) {
-        super(pieceProvider);
-        this.pieceProvider = pieceProvider;
+    constructor(pieceProvider: IPieceProvider?) : super(pieceProvider!!) {
+        this.pieceProvider = pieceProvider
     }
 
-    @Override
-    public String getName() {
-        return "Винни";
-    }
+    override val name: String
+        get() = "Винни"
+    override val authorName: String
+        get() = "Романов В.Ю."
 
-    @Override
-    public String getAuthorName() {
-        return "Романов В.Ю.";
-    }
-
-    @Override
-    public void doMove(Board board, PieceColor color) throws GameOver {
-        List<Move> correctMoves = getCorrectMoves(board, color);
-
-        if (correctMoves.isEmpty())
-            return;
+    @Throws(GameOver::class)
+    override fun doMove(board: Board, color: PieceColor) {
+        val correctMoves = getCorrectMoves(board)
+        if (correctMoves.isEmpty()) return
 
         // Винни делает случайный ход.
-        Collections.shuffle(correctMoves);
-        Move randomMove = correctMoves.get(0);
+        correctMoves.shuffle()
+        val randomMove = correctMoves[0]
 
         try {
-            randomMove.doMove();
-        } catch (GameOver e) {
+            randomMove.doMove()
+        } catch (e: GameOver) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.addMove(randomMove);
-            board.history.setResult(e.result);
+            board.history.addMove(randomMove)
+            board.history.result = e.result
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-
-            throw new GameOver(GameResult.DRAWN);
+            board.setBoardChanged()
+            throw GameOver(GameResult.DRAWN)
         }
 
         // Сохраняем ход в истории игры.
-        board.history.addMove(randomMove);
+        board.history.addMove(randomMove)
 
         // Просим обозревателей доски показать
         // положение на доске, сделанный ход и
         // результат игры.
-        board.setBoardChanged();
+        board.setBoardChanged()
 
         // Для отладки ограничим количество ходов в игре.
         // После этого результат игры ничья.
-        if (board.history.getMoves().size() > maxMoves) {
+        if (board.history.moves.size > maxMoves) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.setResult(GameResult.DRAWN);
-
-            // Сообщаем что игра закончилась ничьей.
-            throw new GameOver(GameResult.DRAWN);
+            board.history.result = GameResult.DRAWN
+            throw GameOver(GameResult.DRAWN)
         }
     }
 }

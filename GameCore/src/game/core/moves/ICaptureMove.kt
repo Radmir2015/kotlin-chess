@@ -1,18 +1,16 @@
-package game.core.moves;
+package game.core.moves
 
-import game.core.Move;
-import game.core.Square;
-
-import java.util.List;
+import game.core.Move
+import game.core.Square
 
 /**
  * Интерфейс для игр на которых фигура может захватывать фигуры противника.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface ICaptureMove extends Move {
+interface ICaptureMove : Move {
     /**
      * Вернуть клетки на которых стоят захваченные фигуры.
      */
-    List<Square> getCaptured();
+    val captured: List<Square>
 }

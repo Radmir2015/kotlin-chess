@@ -1,11 +1,11 @@
-package game.core;
+package game.core
 
 /**
  * Интерфейс для игр на которые ставятся фигуры.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface IPieceProvider {
+interface IPieceProvider {
     /**
      * Предоставить фигуру заданного цвета стоящую на заданной клетке.
      *
@@ -13,5 +13,5 @@ public interface IPieceProvider {
      * @param color  - цвет фигуры.
      * @return - преставляемая фигура.
      */
-    Piece getPiece(Square square, PieceColor color);
+    fun getPiece(square: Square, color: PieceColor): Piece?
 }

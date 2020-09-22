@@ -1,12 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="4" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/DiagDirs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/Dirs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/GameOver.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/GameResult.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/KnightDirs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/LineDirs.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/PieceColor.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/Square.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/IGameListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/IMouseMoveListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePiecePromptListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/NoPromptListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPiecePromptListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/CompositeMove.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/IPutMove.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/PassMove.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/MovePiecePlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Neznaika.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/PutPiecePlayer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Checkers/Checkers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Checkers/Checkers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/Chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Chess.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/Capture.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/moves/Capture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/EnPassant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/moves/EnPassant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/ICapture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChinaChess/ChinaChess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChinaChess/ChinaChess.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/GameCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/GameCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Board.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/BoardKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/BoardKind.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/DiagDirs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Dirs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/GameOver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/GameResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/History.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IPieceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IPieceProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IPlayer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IScorable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IScorable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/ISizeable.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/ISizeable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/ITrackPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/ITrackPiece.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/KnightDirs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/LineDirs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Move.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/MoveKind.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/MoveKind.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Piece.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/PieceColor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Square.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/IGameListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/IMouseMoveListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePieceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePieceListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePiecePromptListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/NoPromptListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPieceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPieceListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPiecePromptListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/TrackPieceListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/TrackPieceListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/CompositeMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/ICaptureMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/ICaptureMove.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/IPutMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/ITrackMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/ITrackMove.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/ITransferMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/ITransferMove.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/PassMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/MovePiecePlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Neznaika.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/PutPiecePlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.java" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameGWTJava/GameGWTJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameGWTJava/GameGWTJava.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GamesINKotlin.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GamesINKotlin.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Go/Go.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Go/Go.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Halma/Halma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Halma/Halma.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Halma/src/halma/Halma.java" beforeDir="false" afterPath="$PROJECT_DIR$/Halma/src/halma/Halma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renju/Renju.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Renju/Renju.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reversi/Reversi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Reversi/Reversi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reversi/src/reversi/players/ReversiPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Reversi/src/reversi/players/ReversiPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TamerlanChess/TamerlanChess.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vikings/Vikings.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/Vikings.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +144,6 @@
     <option name="flattenPackages" value="true" />
     <option name="groupCycles" value="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="GamesINKotlin" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -77,12 +174,12 @@
         <option value="Romanov" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GamesInKotlin.0.9.2" />
+        <entry key="$PROJECT_DIR$" value="GamesInKotlin.0.9.3" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -97,6 +194,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -117,11 +215,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -651,6 +749,9 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.facetType" implementationName="Osmorc" />
+  </component>
   <component name="Vcs.Log.History.Properties">
     <option name="SHOW_OTHER_BRANCHES" value="true" />
     <option name="COLUMN_ORDER">
@@ -733,42 +834,74 @@
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1876" height="323" key="GridCell.Tab.0.bottom" timestamp="1599887477332">
+    <state x="440" y="98" key="#Project_Structure" timestamp="1600721871595">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599887477332" />
-    <state width="1876" height="323" key="GridCell.Tab.0.center" timestamp="1599887477332">
+    <state x="440" y="98" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1600721871595" />
+    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1600782690076">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599887477332" />
-    <state width="1876" height="323" key="GridCell.Tab.0.left" timestamp="1599887477331">
+    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600782690076" />
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600784399049">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599887477331" />
-    <state width="1876" height="323" key="GridCell.Tab.0.right" timestamp="1599887477332">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600784399049" />
+    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600784899548">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599887477332" />
-    <state width="1876" height="323" key="GridCell.Tab.1.bottom" timestamp="1599887503356">
+    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1600784899548" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1600721745571">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1599887503356" />
-    <state width="1876" height="323" key="GridCell.Tab.1.center" timestamp="1599887503356">
+    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1600721745571" />
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom" timestamp="1600784106326">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1599887503356" />
-    <state width="1876" height="323" key="GridCell.Tab.1.left" timestamp="1599887503355">
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1600784106326" />
+    <state width="1876" height="280" key="GridCell.Tab.0.center" timestamp="1600784106326">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1599887503355" />
-    <state width="1876" height="323" key="GridCell.Tab.1.right" timestamp="1599887503356">
+    <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1600784106326" />
+    <state width="1876" height="280" key="GridCell.Tab.0.left" timestamp="1600784106326">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="323" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1599887503356" />
+    <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1600784106326" />
+    <state width="1876" height="280" key="GridCell.Tab.0.right" timestamp="1600784106326">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1600784106326" />
+    <state width="1876" height="346" key="GridCell.Tab.1.bottom" timestamp="1600762122426">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
+    <state width="1876" height="346" key="GridCell.Tab.1.center" timestamp="1600762122426">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="346" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
+    <state width="1876" height="346" key="GridCell.Tab.1.left" timestamp="1600762122426">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="346" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
+    <state width="1876" height="346" key="GridCell.Tab.1.right" timestamp="1600762122426">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="346" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
+    <state x="461" y="155" key="SettingsEditor" timestamp="1600722119829">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1600722119829" />
     <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1599887670530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1599887670530" />
+    <state width="857" height="685" key="javadoc.popup.new" timestamp="1600715064982">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="857" height="685" key="javadoc.popup.new/0.0.1920.1050@0.0.1920.1050" timestamp="1600715064982" />
+    <state x="616" y="237" key="run.anything.popup" timestamp="1600719843348">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="237" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1600719843348" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -777,11 +910,6 @@
           <url>jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_112/src.zip!/java/util/Observable.java</url>
           <line>158</line>
           <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt</url>
-          <line>348</line>
-          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -808,91 +936,5 @@
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Detection</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>GameGWTJava</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>KotlinJavaRuntime (3)</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

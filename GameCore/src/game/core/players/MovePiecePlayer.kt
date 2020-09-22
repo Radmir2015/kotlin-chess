@@ -1,18 +1,15 @@
-package game.core.players;
+package game.core.players
 
-import game.core.*;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import game.core.*
+import java.util.*
+import java.util.stream.Collectors
 
 /**
  * Базовый класс для программ-игроков передвигающих фигуры на доске.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract
-public class MovePiecePlayer implements IPlayer {
+abstract class MovePiecePlayer : IPlayer {
     /**
      * Фигура перемещается по доске.
      * Выдать все корректные ходы на доске фигурой заданного цвета.
@@ -21,23 +18,20 @@ public class MovePiecePlayer implements IPlayer {
      * @param color - цвет фигуры которая должна сделать ход.
      * @return список допустимых ходов.
      */
-    public List<Move> getCorrectMoves(Board board, PieceColor color) {
-        List<Move> correctMoves = new ArrayList<>();
-
-        for (Piece p : board.getPieces(color)) {
+    open fun getCorrectMoves(board: Board, color: PieceColor): MutableList<Move> {
+        val correctMoves: MutableList<Move> = ArrayList()
+        for (p in board.getPieces(color)) {
             // Собрали все клетки-цели на которые допустим ход фигуры р.
-            List<Square> targets = board.getSquares()
+            val targets = board.getSquares()
                     .stream()
-                    .filter(p::isCorrectMove)
-                    .collect(Collectors.toList());
-
-            for (Square target : targets) {
-                Square source = p.square;
-                Move correctMove = p.makeMove(source, target);
-                correctMoves.add(correctMove);
+                    .filter { squares: Square? -> p.isCorrectMove(squares) }
+                    .collect(Collectors.toList())
+            for (target in targets) {
+                val source = p.square
+                val correctMove = p.makeMove(source, target)
+                correctMove?.let { correctMoves.add(it) }
             }
         }
-
-        return correctMoves;
+        return correctMoves
     }
 }

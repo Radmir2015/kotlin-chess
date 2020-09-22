@@ -1,54 +1,22 @@
-package game.core;
+package game.core
 
-import game.core.listeners.MovePieceListener;
-import game.core.listeners.MovePiecePromptListener;
-import game.core.listeners.PutPieceListener;
-import game.core.listeners.PutPiecePromptListener;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import game.core.listeners.MovePieceListener
+import game.core.listeners.MovePiecePromptListener
+import game.core.listeners.PutPieceListener
+import game.core.listeners.PutPiecePromptListener
+import java.util.*
 
 /**
  * Общий предок всех игр.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract
-public class Game implements IScorable {
-    /**
-     * Карта для регистрации игроков для каждой из игр.
-     */
-    private static final
-    Map<Class<? extends Game>, List<IPlayer>> allPlayers = new HashMap<>();
-
+abstract class Game protected constructor() : IScorable {
     /**
      * Доска на которой происходит игра.
      */
-    public final Board board;
-
-    protected Game() {
-        board = new Board();
-    }
-
-    /**
-     * Добавить игрока для данной игры.
-     *
-     * @param game   игра для которой добавляют игрока.
-     * @param player игрок (программа или человек).
-     */
-    public static void addPlayer(Class<? extends Game> game, IPlayer player) {
-        List<IPlayer> players = allPlayers.get(game);
-
-        if (players == null) {
-            // Игроков для данной игры еще не добавляли.
-            players = new ArrayList<>();
-            allPlayers.put(game, players);
-        }
-
-        players.add(player);
-    }
+    @JvmField
+    val board: Board = Board(0, 0)
 
     /**
      * Выдать счет для фигур заданного цвета.
@@ -56,9 +24,7 @@ public class Game implements IScorable {
      * @param color цвет фигур.
      * @return счет для заданного цвета фигур.
      */
-    public int getScore(PieceColor color) {
-        return board.getPieces(color).size();
-    }
+    override fun getScore(color: PieceColor): Int = board.getPieces(color).size
 
     /**
      * Получить список всех игрокода для заданной игры.
@@ -66,9 +32,7 @@ public class Game implements IScorable {
      * @param game заданная игра.
      * @return список игроков для этой игры.
      */
-    public List<IPlayer> getPlayers(Class<? extends Game> game) {
-        return allPlayers.get(game);
-    }
+    fun getPlayers(game: Class<out Game?>): List<IPlayer> = allPlayers[game]!!
 
     /**
      * Задать для игры новые размеры доски.
@@ -76,8 +40,8 @@ public class Game implements IScorable {
      * @param nV количество вертикалей.
      * @param nH количество горизонталей.
      */
-    public void initBoardPanel(int nV, int nH) {
-        board.reset(nV, nH);
+    open fun initBoardPanel(nV: Int, nH: Int) {
+        board.reset(nV, nH)
     }
 
     /**
@@ -86,19 +50,18 @@ public class Game implements IScorable {
      *
      * @param board панель доски для инициализации
      */
-    public void initBoardPanel(IBoardPanel board) {
-        switch (getMoveKind()) {
-            case PIECE_MOVE:
-                board.setMouseMoveListener(new MovePiecePromptListener(board));
-                board.setMouseClickListener(new MovePieceListener(board));
-                break;
-
-            case PIECE_PUT:
-                board.setMouseMoveListener(new PutPiecePromptListener(board));
-                board.setMouseClickListener(new PutPieceListener(board));
-                break;
-            default:
-                break;
+    open fun initBoardPanel(board: IBoardPanel) {
+        when (moveKind) {
+            MoveKind.PIECE_MOVE -> {
+                board.setMouseMoveListener(MovePiecePromptListener(board))
+                board.setMouseClickListener(MovePieceListener(board))
+            }
+            MoveKind.PIECE_PUT -> {
+                board.setMouseMoveListener(PutPiecePromptListener(board))
+                board.setMouseClickListener(PutPieceListener(board))
+            }
+            else -> {
+            }
         }
     }
 
@@ -106,51 +69,51 @@ public class Game implements IScorable {
      * Сделать доску умалчиваемого размера
      * с умалчиваемой расстановкой фигур на доске.
      */
-    abstract public void initBoardDefault();
+    abstract fun initBoardDefault()
 
     /**
      * Выдать карту соответствия фигуры заданного параметром цвета.
      * Файлы с изображениями фигур должны находится в папке images
      * вложенной в папку где содерижится класс-потомок класса Game.
      * <pre>
-     *     Chess.java
-     *     images/
-     *          wRook.gif
-     *          bRook.gif
-     *          ...
-     * </pre>
+     * Chess.java
+     * images/
+     * wRook.gif
+     * bRook.gif
+     * ...
+    </pre> *
      *
      * @param color заданный цвет фигуры.
      * @return карта соответствия: {класс-фигуры, имя-файла-с-изображениием-фигуры}
      */
-    abstract public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color);
+    abstract fun getPieceImages(color: PieceColor): MutableMap<Class<out Piece>, String>
 
     /**
      * Выдать вид хода для данной игры.
      *
      * @return вид хода для данной игры.
      */
-    abstract public MoveKind getMoveKind();
+    abstract val moveKind: MoveKind
 
     /**
      * Выдать вид доски для данной игры.
      * @return вид доски для данной игры.
      */
-    abstract public BoardKind getBoardKind();
+    abstract val boardKind: BoardKind
 
     /**
      * Выдать имя игры для ее пользователя.
      *
      * @return имя игры
      */
-    abstract public String getName();
+    abstract val name: String
 
     /**
      * Выдать имя файла с изображением пиктограммы для данной игры.
      *
      * @return имя файла
      */
-    abstract public String getIconImageFile();
+    abstract val iconImageFile: String?
 
     /**
      * Выдать фигуру заданного цвета и поставить ее заданную клетку доски.
@@ -159,7 +122,29 @@ public class Game implements IScorable {
      * @param pieceColor цвет фигуры
      * @return новая фигура на доске.
      */
-    public Piece getPiece(Square square, PieceColor pieceColor) {
-        return null;
+    open fun getPiece(square: Square?, pieceColor: PieceColor?): Piece? = null
+
+    companion object {
+        /**
+         * Карта для регистрации игроков для каждой из игр.
+         */
+        private val allPlayers: MutableMap<Class<out Game?>, MutableList<IPlayer>> = HashMap()
+
+        /**
+         * Добавить игрока для данной игры.
+         *
+         * @param game   игра для которой добавляют игрока.
+         * @param player игрок (программа или человек).
+         */
+        @JvmStatic
+        fun addPlayer(game: Class<out Game?>, player: IPlayer) {
+            var players = allPlayers[game]
+            if (players == null) {
+                // Игроков для данной игры еще не добавляли.
+                players = ArrayList()
+                allPlayers[game] = players
+            }
+            players.add(player)
+        }
     }
 }

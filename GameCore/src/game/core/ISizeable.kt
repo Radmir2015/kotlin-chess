@@ -1,15 +1,15 @@
-package game.core;
+package game.core
 
 /**
  * Доска игры может быть разных рамеров.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface ISizeable {
+interface ISizeable {
     /**
      * Выдать допустимые для данной игры размеры доски.
      *
      * @return массив пар (ширина, высота) доски.
      */
-    int[][] getSizes();
+    val sizes: Array<IntArray>
 }

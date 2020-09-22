@@ -22,7 +22,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Изображаемая доска с фигурами.
      */
-    val board: Board
+    override val board: Board = game.board
 
     /**
      * Слушатель события нажатия кнопок мыши над клетками доски.
@@ -56,8 +56,6 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         addMouseListener(this)
         addMouseMotionListener(this)
 
-        board = game.board
-
         when (game.moveKind) {
             MoveKind.PIECE_MOVE -> {
                 listener = MovePieceListener(this)
@@ -77,21 +75,17 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
             }
         }
 
-        val ww: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.WHITE)
+        val ww: MutableMap<Class<out Piece>, String> = game.getPieceImages(PieceColor.WHITE)
 
-        if (ww != null) {
-            for ((key, value) in ww) {
-                val resource = game.javaClass.getResource("images/$value")
-                whites[key] = ImageIO.read(resource)
-            }
+        for ((key, value) in ww) {
+            val resource = game.javaClass.getResource("images/$value")
+            whites[key] = ImageIO.read(resource)
         }
 
-        val bb: MutableMap<Class<out Piece>, String>? = game.getPieceImages(PieceColor.BLACK)
+        val bb: MutableMap<Class<out Piece>, String> = game.getPieceImages(PieceColor.BLACK)
 
-        if (bb != null) {
-            for ((key, value) in bb)
-                blacks[key] = ImageIO.read(game.javaClass.getResource("images/$value"))
-        }
+        for ((key, value) in bb)
+            blacks[key] = ImageIO.read(game.javaClass.getResource("images/$value"))
 
         board.addObserver(this)
 
@@ -109,7 +103,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         }
     }
 
-    override fun getPanelBoard(): Board = board
+//    override fun getPanelBoard(): Board = board
 
     override fun updateBoard() {
         validate()
@@ -142,7 +136,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     }
 
     private fun drawPiece(g: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
-        val piece = board.getSquare(v, h).piece ?: return
+        val piece = board.getSquare(v, h)?.piece ?: return
 
         val sx = v * sw
         val sy = h * sh
@@ -316,14 +310,14 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Сохранить текущий курсор заменив его на курсор с изображением заданной фигуры.
      */
-    override fun saveCursor(piece: Piece) {
+    override fun saveCursor(selectedPiece: Piece) {
         // Сохраним курсор для его восстановления
         // после перемещения фигуры мышкой.
         savedCursor = cursor
 
         // Зададим изображение курсора такое же
         // как избражение у перемещаемой фигуры.
-        pieceToCursor(piece)
+        pieceToCursor(selectedPiece)
     }
 
     /**
@@ -400,9 +394,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
      * Используются для отрисовки на доске подсказок
      * для всех допустимых ходов этой фигуры.
      */
-    private var prompted: List<Square> = ArrayList()
-
-    override fun getPrompted(): List<Square> = prompted
+    override var prompted: MutableList<Square> = ArrayList()
 
     //
     // Реализация интерфейса MouseMotionListener

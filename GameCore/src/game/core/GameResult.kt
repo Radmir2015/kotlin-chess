@@ -1,45 +1,31 @@
-package game.core;
+package game.core
 
 /**
  * Возможные результаты игры.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public enum GameResult {
+enum class GameResult {
     WHITE_WIN, BLACK_WIN, DRAWN, UNKNOWN;
 
-    static
-    public GameResult lost(PieceColor color) {
-        return color == PieceColor.WHITE ? BLACK_WIN : WHITE_WIN;
+    override fun toString(): String = when (this) {
+        WHITE_WIN -> "1-0"
+        BLACK_WIN -> "0-1"
+        DRAWN -> "1/2-1/2"
+        UNKNOWN -> "*"
     }
 
-    static
-    public GameResult win(PieceColor color) {
-        return color == PieceColor.BLACK ? BLACK_WIN : WHITE_WIN;
-    }
+    companion object {
+        @JvmStatic
+        fun lost(color: PieceColor): GameResult = if (color === PieceColor.WHITE) BLACK_WIN else WHITE_WIN
 
-    static
-    public GameResult win(Piece piece) {
-        return win(piece.getColor());
-    }
+        @JvmStatic
+        fun win(color: PieceColor): GameResult = if (color === PieceColor.BLACK) BLACK_WIN else WHITE_WIN
 
-    static
-    public GameResult lost(Piece piece) {
-        return lost(piece.getColor());
-    }
+        @JvmStatic
+        fun win(piece: Piece): GameResult = win(piece.color)
 
-    @Override
-    public String toString() {
-        switch (this) {
-            case WHITE_WIN:
-                return "1-0";
-            case BLACK_WIN:
-                return "0-1";
-            case DRAWN:
-                return "1/2-1/2";
-            case UNKNOWN:
-                return "*";
-        }
-        return "";
+        @JvmStatic
+        fun lost(piece: Piece): GameResult = lost(piece.color)
     }
 }

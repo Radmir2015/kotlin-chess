@@ -94,7 +94,7 @@ public class Halma extends Game implements ISizeable, IScorable {
                 initializeParticularBoard(allowableBoardSize[ind_sz]);
     }
 
-    private Board initializeParticularBoard(int boardSize) {
+    private void initializeParticularBoard(int boardSize) {
         // Add Common Corner
         for (short i = 0; i < 4; ++i) {
             for (short j = 0; j < 4 - i; ++j) {
@@ -117,7 +117,6 @@ public class Halma extends Game implements ISizeable, IScorable {
             }
         }
 
-        return board;
     }
 
     @Override

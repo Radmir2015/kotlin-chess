@@ -1,39 +1,36 @@
-package game.core.listeners;
+package game.core.listeners
 
-import game.core.Square;
+import game.core.Square
 
 /**
  * Слушатель событий на доске.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public interface IGameListener {
+interface IGameListener {
     /**
-     * Единственный экземпляр пустой реализации слушателя доски.
-     */
-    IGameListener EMPTY = new IGameListener() {
-        @Override
-        public void mouseDown(Square s, int button) {
-        }
-
-        @Override
-        public void mouseUp(Square s, int button) {
-        }
-    };
-
-    /**
-     * Нажата кнопка мыши над клеткой <b>s</b> доски.
+     * Нажата кнопка мыши над клеткой **s** доски.
      *
      * @param s      - клеткой доски.
      * @param button - номер кнопки.
      */
-    void mouseDown(Square s, int button);
+    fun mouseDown(s: Square, button: Int)
 
     /**
-     * Отпущена кнопка мыши над клеткой <b>s</b> доски.
+     * Отпущена кнопка мыши над клеткой **s** доски.
      *
      * @param s      - клеткой доски.
      * @param button - номер кнопки.
      */
-    void mouseUp(Square s, int button);
+    fun mouseUp(s: Square, button: Int)
+
+    companion object {
+        /**
+         * Единственный экземпляр пустой реализации слушателя доски.
+         */
+        val EMPTY: IGameListener = object : IGameListener {
+            override fun mouseDown(s: Square, button: Int) {}
+            override fun mouseUp(s: Square, button: Int) {}
+        }
+    }
 }
