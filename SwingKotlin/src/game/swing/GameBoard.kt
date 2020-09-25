@@ -22,7 +22,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Изображаемая доска с фигурами.
      */
-    override val board: Board = game.board
+    final override val board: Board = game.board
 
     /**
      * Слушатель события нажатия кнопок мыши над клетками доски.

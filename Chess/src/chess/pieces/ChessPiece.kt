@@ -1,28 +1,21 @@
-package chess.pieces;
+package chess.pieces
 
-import game.core.Piece;
-import game.core.PieceColor;
-import game.core.Square;
+import game.core.Piece
+import game.core.PieceColor
+import game.core.Square
 
 /**
  * Базовый класс для всех шахматных фигур.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class ChessPiece extends Piece {
-    ChessPiece(Square square, PieceColor color) {
-        super(square, color);
-    }
-
-    @Override
-    public boolean isCorrectMove(Square... squares) {
-        Square target = squares[0];
-
-        if (target.isEmpty())
-            return true;
-
+abstract class ChessPiece(square: Square, color: PieceColor) : Piece(square, color) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
         // Если идем на клетку, занятую фигурой
         // того же цвета, то ход не корректен.
-        return getColor() != target.getPiece().getColor();
+        val target = squares[0]
+        val piece = target.getPiece() ?: return true
+
+        return color !== piece.color
     }
 }

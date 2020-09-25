@@ -1,99 +1,61 @@
-package chess.pieces;
+package chess.pieces
 
-import chess.moves.Capture;
-import chess.moves.Castling;
-import chess.moves.SimpleMove;
-import game.core.*;
+import chess.moves.Capture
+import chess.moves.Castling
+import chess.moves.SimpleMove
+import game.core.Move
+import game.core.PieceColor
+import game.core.Square
+import kotlin.math.abs
 
 /**
  * Класс представляет шахматного короля.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class King extends ChessPiece {
-    public King(Square square, PieceColor color) {
-        super(square, color);
-    }
-
-    @Override
-    public boolean isCorrectMove(Square... squares) {
+class King(square: Square, color: PieceColor) : ChessPiece(square, color) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
         // Пока используем только умалчиваемую проверку
         // выполняемую в базовом классе.
-        if (!super.isCorrectMove(squares))
-            return false;
+        if (!super.isCorrectMove(*squares)) return false
 
-        Square target = squares[0];
-
-        int kingV = square.v;
-        int kingH = square.h;
-
-        int dv = target.v - kingV;
-        int dh = target.h - kingH;
-
+        val target = squares[0]
+        val kingV = square.v
+        val kingH = square.h
+        val dv = target.v - kingV
+        val dh = target.h - kingH
         if (dv == 2) { // Ход вправо.
             //
             // Возможно короткая рокировка
             //
-
-            if (outStartPosition())
-                return false; // Ход не с начальной позиции.
-
-            if (dh != 0)
-                return false; // Ход не по горизонтали.
-
-            Board board = square.getBoard();
-
-            if (!board.isEmpty(kingV + 1, kingH))
-                return false; // Между королем и ладьей фигура.
-
-            if (!board.isEmpty(kingV + 2, kingH))
-                return false; // Между королем и ладьей фигура.
-
-            if (board.isEmpty(kingV + 3, kingH))
-                return false; // Ладьи нет.
-
-            Piece pieceH = board.getSquare(kingV + 3, kingH).getPiece();
-            if (!(pieceH instanceof Rook))
-                return false; // На вертикали H не ладья.
+            if (outStartPosition()) return false // Ход не с начальной позиции.
+            if (dh != 0) return false // Ход не по горизонтали.
+            val board = square.board
+            if (!board.isEmpty(kingV + 1, kingH)) return false // Между королем и ладьей фигура.
+            if (!board.isEmpty(kingV + 2, kingH)) return false // Между королем и ладьей фигура.
+            if (board.isEmpty(kingV + 3, kingH)) return false // Ладьи нет.
+            val pieceH = board.getSquare(kingV + 3, kingH)!!.getPiece()
+            return if (pieceH !is Rook) false else pieceH.color === color // На вертикали H не ладья.
 
             // На вертикали H ладья противника.
-            return pieceH.getColor() == getColor();
         }
-
         if (dv == -2) { // Ход влево.
             //
             // Возможно длинная рокировка
             //
-
-            if (outStartPosition())
-                return false; // Ход не с начальной позиции.
-
-            if (dh != 0)
-                return false; // Ход не по горизонтали.
-
-            Board board = square.getBoard();
-
-            if (!board.isEmpty(kingV - 1, kingH))
-                return false; // Между королем и ладьей фигура.
-
-            if (!board.isEmpty(kingV - 2, kingH))
-                return false; // Между королем и ладьей фигура.
-
-            if (!board.isEmpty(kingV - 3, kingH))
-                return false; // Между королем и ладьей фигура.
-
-            if (board.isEmpty(kingV - 4, kingH))
-                return false; // Ладьи нет.
-
-            Piece pieceA = board.getSquare(kingV - 4, kingH).getPiece();
-            if (!(pieceA instanceof Rook))
-                return false; // На вертикали A не ладья.
+            if (outStartPosition()) return false // Ход не с начальной позиции.
+            if (dh != 0) return false // Ход не по горизонтали.
+            val board = square.board
+            if (!board.isEmpty(kingV - 1, kingH)) return false // Между королем и ладьей фигура.
+            if (!board.isEmpty(kingV - 2, kingH)) return false // Между королем и ладьей фигура.
+            if (!board.isEmpty(kingV - 3, kingH)) return false // Между королем и ладьей фигура.
+            if (board.isEmpty(kingV - 4, kingH)) return false // Ладьи нет.
+            val pieceA = board.getSquare(kingV - 4, kingH)!!.getPiece()
+            return if (pieceA !is Rook) false else pieceA.color === color // На вертикали A не ладья.
 
             // На вертикали A ладья противника.
-            return pieceA.getColor() == getColor();
         }
-
-        return square.isNear(target);
+        return square.isNear(target)
     }
 
     /**
@@ -101,37 +63,23 @@ public class King extends ChessPiece {
      *
      * @return начальная позиция?
      */
-    private boolean outStartPosition() {
-        int kingV = square.v;
-        int kingH = square.h;
+    private fun outStartPosition(): Boolean {
+        if (square.v != 4) return true
 
-        if (kingV != 4) return true;
-
-        final PieceColor color = getColor();
-
-        if ((color == PieceColor.BLACK) && (kingH == 0))
-            return false;
-
-        return (color != PieceColor.WHITE) || (kingH != 7);
+        return when (color) {
+            PieceColor.BLACK -> square.h != 0
+            PieceColor.WHITE -> square.h != 7
+            else -> false
+        }
     }
 
-    @Override
-    public Move makeMove(Square... squares) {
-        Square source = squares[0];
-        Square target = squares[1];
-
-        int dv = Math.abs(target.v - source.v);
-        if (dv > 1)
-            return new Castling(squares);
-
-        if (!target.isEmpty())
-            return new Capture(squares);
-
-        return new SimpleMove(squares);
+    override fun makeMove(vararg squares: Square): Move {
+        val source = squares[0]
+        val target = squares[1]
+        val dv = abs(target.v - source.v)
+        if (dv > 1) return Castling(source, target)
+        return if (!target.isEmpty) Capture(source, target) else SimpleMove(source, target)
     }
 
-    @Override
-    public String toString() {
-        return "K";
-    }
+    override fun toString(): String = "K"
 }

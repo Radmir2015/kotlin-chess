@@ -1,48 +1,30 @@
-package chess.pieces;
+package chess.pieces
 
-import chess.moves.Capture;
-import chess.moves.SimpleMove;
-import game.core.Move;
-import game.core.PieceColor;
-import game.core.Square;
+import chess.moves.Capture
+import chess.moves.SimpleMove
+import game.core.Move
+import game.core.PieceColor
+import game.core.Square
 
 /**
  * Класс представляет шахматную ладью.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Rook extends ChessPiece {
-    public Rook(Square square, PieceColor color) {
-        super(square, color);
-    }
-
-    @Override
-    public boolean isCorrectMove(Square... squares) {
-        // Пока используем только умалчиваемую проверку
+class Rook(square: Square?, color: PieceColor?) : ChessPiece(square!!, color!!) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
+        // Bспользуем умалчиваемую проверку
         // выполняемую в базовом классе.
-        if (!super.isCorrectMove(squares))
-            return false;
+        if (!super.isCorrectMove(*squares)) return false
 
-        Square target = squares[0];
-
-        if (square.isEmptyVertical(target))
-            return true;
-
-        return square.isEmptyHorizontal(target);
+        val target = squares[0]
+        return if (square.isEmptyVertical(target)) true else square.isEmptyHorizontal(target)
     }
 
-    @Override
-    public Move makeMove(Square... squares) {
-        Square target = squares[1];
-
-        if (!target.isEmpty())
-            return new Capture(squares);
-
-        return new SimpleMove(squares);
+    override fun makeMove(vararg squares: Square): Move {
+        val target = squares[1]
+        return if (!target.isEmpty) Capture(square, target) else SimpleMove(square, target)
     }
 
-    @Override
-    public String toString() {
-        return "R";
-    }
+    override fun toString(): String = "R"
 }

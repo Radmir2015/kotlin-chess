@@ -1,53 +1,44 @@
-package chess.moves;
+package chess.moves
 
-import game.core.Board;
-import game.core.Square;
+import game.core.Square
 
 /**
  * Ход европейских шахмат - рокировка.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Castling extends SimpleMove {
-    private final Square rookSource;
-    private final Square rookTarget;
+class Castling(source: Square, target: Square) : SimpleMove(source, target) {
+    private var rookSource: Square
+    private var rookTarget: Square
 
-    public Castling(Square[] squares) {
-        super(squares);
+    override fun toString(): String = if (source.v < target.v) "O-O" else "O-O-O"
 
-        Board board = source.getBoard();
-
+    init {
+        val board = source.board
         if (source.v < target.v) {
             // Короткая рокировка.
-            rookSource = board.getSquare(source.v + 3, source.h);
-            rookTarget = board.getSquare(source.v + 1, source.h);
+            rookSource = board.getSquare(source.v + 3, source.h)!!
+            rookTarget = board.getSquare(source.v + 1, source.h)!!
         } else {
             // Длинная рокировка.
-            rookSource = board.getSquare(source.v - 4, source.h);
-            rookTarget = board.getSquare(source.v - 1, source.h);
+            rookSource = board.getSquare(source.v - 4, source.h)!!
+            rookTarget = board.getSquare(source.v - 1, source.h)!!
         }
     }
 
     /*
      * Переставить короля и ладью.
      */
-    @Override
-    public void doMove() {
-        rookSource.movePieceTo(rookTarget);
-        super.doMove();
+    override fun doMove() {
+        rookSource.movePieceTo(rookTarget)
+        super.doMove()
     }
 
     /*
      * Вернуть короля и ладью в исходной состояние.
      */
-    @Override
-    public void undoMove() {
-        rookTarget.movePieceTo(rookSource);
-        super.undoMove();
-    }
-
-    @Override
-    public String toString() {
-        return source.v < target.v ? "O-O" : "O-O-O";
+    override fun undoMove() {
+        rookTarget.movePieceTo(rookSource)
+        super.undoMove()
     }
 }

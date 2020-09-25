@@ -1,51 +1,31 @@
-package chess.pieces;
+package chess.pieces
 
-import chess.moves.Capture;
-import chess.moves.SimpleMove;
-import game.core.Move;
-import game.core.PieceColor;
-import game.core.Square;
+import chess.moves.Capture
+import chess.moves.SimpleMove
+import game.core.Move
+import game.core.PieceColor
+import game.core.Square
 
 /**
  * Класс представляет шахматного короля.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Queen extends ChessPiece {
-    public Queen(Square square, PieceColor color) {
-        super(square, color);
+class Queen(square: Square?, color: PieceColor?) : ChessPiece(square!!, color!!) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
+        // Используем умалчиваемую проверку выполняемую в базовом классе.
+        if (!super.isCorrectMove(*squares)) return false
+
+        val target = squares[0]
+        if (square.isEmptyVertical(target)) return true
+        if (square.isEmptyHorizontal(target)) return true
+        return square.isEmptyDiagonal(target)
     }
 
-    @Override
-    public boolean isCorrectMove(Square... squares) {
-        // Пока используем только умалчиваемую проверку
-        // выполняемую в базовом классе.
-        if (!super.isCorrectMove(squares))
-            return false;
-
-        Square target = squares[0];
-
-        if (square.isEmptyVertical(target))
-            return true;
-
-        if (square.isEmptyHorizontal(target))
-            return true;
-
-        return square.isEmptyDiagonal(target);
+    override fun makeMove(vararg squares: Square): Move {
+        val target = squares[1]
+        return if (!target.isEmpty) Capture(square, target) else SimpleMove(square, target)
     }
 
-    @Override
-    public Move makeMove(Square... squares) {
-        Square target = squares[1];
-
-        if (!target.isEmpty())
-            return new Capture(squares);
-
-        return new SimpleMove(squares);
-    }
-
-    @Override
-    public String toString() {
-        return "Q";
-    }
+    override fun toString(): String = "Q"
 }

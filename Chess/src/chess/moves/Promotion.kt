@@ -1,71 +1,52 @@
-package chess.moves;
+package chess.moves
 
-import chess.pieces.Queen;
-import game.core.Piece;
-import game.core.Square;
-import game.core.moves.ICaptureMove;
-
-import java.util.Collections;
-import java.util.List;
+import chess.pieces.Queen
+import game.core.Piece
+import game.core.Square
+import game.core.moves.ICaptureMove
 
 /**
  * Ход европейских шахмат - преврашение пешки на последней горизонтали
  * в новую фигуру с возможным взятием фигуры противника.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Promotion extends SimpleMove implements ICaptureMove {
-    private final Piece pawn;
-    private Piece capturedPiece;
-    private Queen promotedPiece;
+class Promotion(source: Square, target: Square) : SimpleMove(source, target), ICaptureMove {
+    private val pawn: Piece = source.piece!!
+    private var capturedPiece: Piece? = null
+    private var promotedPiece: Piece? = null
 
-    public Promotion(Square[] squares) {
-        super(squares);
-
-        pawn = source.getPiece();
-
-        if (source.v != target.v)
-            // Ход по диагонали со взятием фигуры.
-            capturedPiece = target.getPiece();
-    }
-
-    @Override
-    public List<Square> getCaptured() {
-        return capturedPiece == null
-                ? Collections.emptyList() : Collections.singletonList(target);
-    }
+    override val captured: List<Square>
+        get() = if (capturedPiece == null) emptyList() else listOf(target)
 
     /*
      * Удалить пешку, поставить фигуру.
      */
-    @Override
-    public void doMove() {
-        if (capturedPiece != null)
-            target.removePiece();
+    override fun doMove() {
+        source.removePiece()
+        if (capturedPiece != null) target.removePiece()
 
-        source.removePiece();
-        promotedPiece = new Queen(target, pawn.getColor());
-
-        target.setPiece(promotedPiece);
+        promotedPiece = Queen(target, pawn.color)
+        target.setPiece(promotedPiece!!)
     }
 
     /*
      * Удалить фигуру, поставить пешку.
      */
-    @Override
-    public void undoMove() {
-        target.removePiece();
-        source.setPiece(piece);
-
-        if (capturedPiece != null)
-            target.setPiece(capturedPiece);
+    override fun undoMove() {
+        target.removePiece()
+        piece?.let { source.setPiece(it) }
+        if (capturedPiece != null) target.setPiece(capturedPiece!!)
     }
 
-    @Override
-    public String toString() {
-        String moveKind = (capturedPiece == null) ? "-" : "x";
-        String pieceKind = promotedPiece.toString();
+    override fun toString(): String {
+        val moveKind = if (capturedPiece == null) "-" else "x"
+        val pieceKind = promotedPiece.toString()
+        return "$piece$source$moveKind$target$pieceKind"
+    }
 
-        return "" + piece + source + moveKind + target + pieceKind;
+    init {
+        if (source.v != target.v) // Ход по диагонали со взятием фигуры.
+            capturedPiece = target.getPiece()
     }
 }

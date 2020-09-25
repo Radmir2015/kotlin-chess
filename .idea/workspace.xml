@@ -22,33 +22,32 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="Типы с ненулевыми значениями в ядре всех игр.">
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/moves/Capture.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/moves/EnPassant.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/moves/Promotion.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/moves/SimpleMove.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/Bishop.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/ChessPiece.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/King.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/Knight.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/Pawn.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/Queen.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Chess/src/chess/pieces/Rook.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Checkers/src/checkers/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Checkers/src/checkers/Checkers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChinaChess/src/chinachess/ChinaChess.java" beforeDir="false" afterPath="$PROJECT_DIR$/ChinaChess/src/chinachess/ChinaChess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IPieceProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IPieceProvider.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IScorable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IScorable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Piece.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Piece.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Square.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Square.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePieceListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePieceListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePiecePromptListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/MovePiecePromptListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/NoPromptListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/NoPromptListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPieceListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPieceListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPiecePromptListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/PutPiecePromptListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/listeners/TrackPieceListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/listeners/TrackPieceListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/MovePiecePlayer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/MovePiecePlayer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Neznaika.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Neznaika.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/PutPiecePlayer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/PutPiecePlayer.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Halma/src/halma/Halma.java" beforeDir="false" afterPath="$PROJECT_DIR$/Halma/src/halma/Halma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TamerlanChess/src/tamerlan/TamerlanChess.java" beforeDir="false" afterPath="$PROJECT_DIR$/TamerlanChess/src/tamerlan/TamerlanChess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Vikings/src/vikings/Vikings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/Capture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/Castling.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/moves/Castling.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/EnPassant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/Promotion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/moves/SimpleMove.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/Bishop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/ChessPiece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/King.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/Knight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/Pawn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/Queen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/pieces/Rook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -332,13 +331,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00067" summary="draft">
-      <created>1546079787860</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1546079787860</updated>
     </task>
     <task id="LOCAL-00068" summary="Выделен модуль GameCore">
       <created>1551202691242</created>
@@ -676,7 +668,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600785204073</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Типы с ненулевыми значениями в ядре всех игр.">
+      <created>1600799670296</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1600799670296</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -745,7 +744,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Прошла инициализация доски шахмат шашек через новый интерфейс." />
     <MESSAGE value="Удалена папка с не используемыми изображениями шахматных фигур." />
     <MESSAGE value="Выделили шашки в отдельный модуль Checkers." />
     <MESSAGE value="Выделили в отдельный модуль TamerlanChess." />
@@ -770,7 +768,8 @@
     <MESSAGE value="Draft. Исправлены комментарии." />
     <MESSAGE value="clear code." />
     <MESSAGE value="Ядро всех игр теперь на Kotlin-e." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ядро всех игр теперь на Kotlin-e." />
+    <MESSAGE value="Типы с ненулевыми значениями в ядре всех игр." />
+    <option name="LAST_COMMIT_MESSAGE" value="Типы с ненулевыми значениями в ядре всех игр." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -784,58 +783,70 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600797788001" />
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600784399049">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601032611621">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1600784399049" />
-    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600795688942">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1601032611621" />
+    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1601036039748">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1600795688942" />
-    <state x="568" y="110" key="CommitChangelistDialog2" timestamp="1600785178655">
+    <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1601036039748" />
+    <state x="568" y="110" key="CommitChangelistDialog2" timestamp="1601031935589">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="568" y="110" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1600785178655" />
-    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1600721745571">
+    <state x="568" y="110" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1601031935589" />
+    <state width="417" height="466" key="DebuggerActiveHint" timestamp="1601035545389">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1600721745571" />
-    <state width="1876" height="280" key="GridCell.Tab.0.bottom" timestamp="1600797359840">
+    <state width="417" height="466" key="DebuggerActiveHint/0.0.1920.1050@0.0.1920.1050" timestamp="1601035545389" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1601038159326">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1600797359840" />
-    <state width="1876" height="280" key="GridCell.Tab.0.center" timestamp="1600797359839">
+    <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1601038159326" />
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom" timestamp="1601038385778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1600797359839" />
-    <state width="1876" height="280" key="GridCell.Tab.0.left" timestamp="1600797359839">
+    <state width="1876" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1601038385778" />
+    <state width="1876" height="280" key="GridCell.Tab.0.center" timestamp="1601038385777">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1600797359839" />
-    <state width="1876" height="280" key="GridCell.Tab.0.right" timestamp="1600797359840">
+    <state width="1876" height="280" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1601038385777" />
+    <state width="1876" height="280" key="GridCell.Tab.0.left" timestamp="1601038385777">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1600797359840" />
-    <state width="1876" height="346" key="GridCell.Tab.1.bottom" timestamp="1600762122426">
+    <state width="1876" height="280" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1601038385777" />
+    <state width="1876" height="280" key="GridCell.Tab.0.right" timestamp="1601038385778">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
-    <state width="1876" height="346" key="GridCell.Tab.1.center" timestamp="1600762122426">
+    <state width="1876" height="280" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1601038385778" />
+    <state width="1876" height="346" key="GridCell.Tab.1.bottom" timestamp="1601037263659">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
-    <state width="1876" height="346" key="GridCell.Tab.1.left" timestamp="1600762122426">
+    <state width="1876" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1601037263659" />
+    <state width="1876" height="346" key="GridCell.Tab.1.center" timestamp="1601037263659">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
-    <state width="1876" height="346" key="GridCell.Tab.1.right" timestamp="1600762122426">
+    <state width="1876" height="346" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1601037263659" />
+    <state width="1876" height="346" key="GridCell.Tab.1.left" timestamp="1601037263658">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1600762122426" />
+    <state width="1876" height="346" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1601037263658" />
+    <state width="1876" height="346" key="GridCell.Tab.1.right" timestamp="1601037263659">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1876" height="346" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1601037263659" />
+    <state x="689" y="225" key="RollbackChangesDialog" timestamp="1601031907162">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="689" y="225" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1601031907162" />
     <state x="461" y="155" key="SettingsEditor" timestamp="1600722119829">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="155" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1600722119829" />
+    <state x="756" y="437" key="VCS.ChangelistChooser" timestamp="1601034231524">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="756" y="437" key="VCS.ChangelistChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1601034231524" />
     <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1599887670530">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -844,10 +855,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="857" height="685" key="javadoc.popup.new/0.0.1920.1050@0.0.1920.1050" timestamp="1600715064982" />
-    <state x="616" y="237" key="run.anything.popup" timestamp="1600719843348">
+    <state x="616" y="237" width="672" height="677" key="run.anything.popup" timestamp="1601031209884">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="616" y="237" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1600719843348" />
+    <state x="616" y="237" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1601031209884" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -856,6 +867,11 @@
           <url>jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_112/src.zip!/java/util/Observable.java</url>
           <line>158</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/Chess/src/chess/pieces/Pawn.kt</url>
+          <line>119</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>

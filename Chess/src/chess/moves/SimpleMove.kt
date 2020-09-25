@@ -1,64 +1,40 @@
-package chess.moves;
+package chess.moves
 
-import game.core.Piece;
-import game.core.Square;
-import game.core.moves.ITransferMove;
+import game.core.Piece
+import game.core.Square
+import game.core.moves.ITransferMove
 
 /**
  * Простой ход европейских шахмат - перемещение фигуры на пустую клетку.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class SimpleMove implements ITransferMove {
+open class SimpleMove(
+        /**
+         * Откуда перемещается.
+         */
+        override val source: Square,
+        /**
+         * Куда перемещается.
+         */
+        override val target: Square,
+) : ITransferMove {
     /**
      * Какая фигура перемещается.
      */
-    final Piece piece;
+    override var piece: Piece? = null
 
-    /**
-     * Откуда перемещается.
-     */
-    final Square source;
-
-    /**
-     * Куда перемещается.
-     */
-    final Square target;
-
-    public SimpleMove(Square[] squares) {
-        source = squares[0];
-        target = squares[1];
-
-        piece = source.getPiece();
+    init {
+        piece = source.getPiece()!!
     }
 
-    @Override
-    public Square getTarget() {
-        return target;
+    override fun doMove() {
+        piece?.moveTo(target)
     }
 
-    @Override
-    public Square getSource() {
-        return source;
+    override fun undoMove() {
+        piece?.moveTo(source)
     }
 
-    @Override
-    public void doMove() {
-        piece.moveTo(target);
-    }
-
-    @Override
-    public void undoMove() {
-        piece.moveTo(source);
-    }
-
-    @Override
-    public String toString() {
-        return "" + piece + source + "-" + target;
-    }
-
-    @Override
-    public Piece getPiece() {
-        return piece;
-    }
+    override fun toString(): String = "$piece$source-$target"
 }
