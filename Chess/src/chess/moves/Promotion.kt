@@ -36,7 +36,7 @@ class Promotion(source: Square, target: Square) : SimpleMove(source, target), IC
     override fun undoMove() {
         target.removePiece()
         piece?.let { source.setPiece(it) }
-        if (capturedPiece != null) target.setPiece(capturedPiece!!)
+        capturedPiece?.let { target.setPiece(it) }
     }
 
     override fun toString(): String {
