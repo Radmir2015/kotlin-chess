@@ -11,7 +11,7 @@ import game.core.Board.Companion.getOpponentColor
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract class Piece protected constructor(@JvmField var square: Square, var color: PieceColor) {
+abstract class Piece(@JvmField var square: Square, var color: PieceColor) {
     init {
         square.setPiece(this)
     }

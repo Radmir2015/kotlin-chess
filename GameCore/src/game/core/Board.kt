@@ -125,11 +125,7 @@ class Board(
      * @param h - горизонталь клетки
      * @return есть ли клетка с такими координатами на доске.
      */
-    fun onBoard(v: Int, h: Int): Boolean = when {
-        v < 0 -> false
-        h < 0 -> false
-        else -> h <= nH - 1 && v <= nV - 1
-    }
+    fun onBoard(v: Int, h: Int): Boolean = (v in 0 until nV) && h in (0 until nH)
 
     /**
      * @param v - вертикаль
@@ -221,6 +217,11 @@ class Board(
                 getSquare(v, h)?.let { allSquares.add(it) }
         return allSquares
     }
+
+    operator fun contains(square: Square) =
+            (square.v in 0..nV - 1) && (square.h in 0..nH - 1)
+
+    operator fun get(v: Int, h: Int) = squares[v][h]
 
     /**
      * Максимальное расстояние между клетками доски.

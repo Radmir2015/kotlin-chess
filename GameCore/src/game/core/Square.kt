@@ -18,12 +18,12 @@ class Square(
          * Вертикаль клетки.
          */
         @kotlin.jvm.JvmField
-        var v: Int,
+        val v: Int,
         /**
          * Горизонталь клетки.
          */
         @kotlin.jvm.JvmField
-        var h: Int,
+        val h: Int,
 ) {
     /**
      * Фигура которая, возможно, стоит на клетке.

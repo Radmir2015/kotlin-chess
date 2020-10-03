@@ -52,15 +52,17 @@ open class CompositeMove<T : ITransferMove> : ITransferMove {
 
     @Throws(GameOver::class)
     override fun doMove() {
-        for (move in moves) try {
-            move.doMove()
-        } catch (e: GameOver) {
-            throw GameOver(e.result)
+        moves.forEach {
+            try {
+                it.doMove()
+            } catch (e: GameOver) {
+                throw GameOver(e.result)
+            }
         }
     }
 
     override fun undoMove() {
-        for (k in moves.indices.reversed()) moves[k].undoMove()
+        moves.indices.reversed().forEach { moves[it].undoMove() }
     }
 
     val clone: CompositeMove<T>
