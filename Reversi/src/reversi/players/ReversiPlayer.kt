@@ -1,126 +1,108 @@
-package reversi.players;
+package reversi.players
 
-import game.core.*;
-import game.core.moves.PassMove;
-import game.core.players.PutPiecePlayer;
-
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import game.core.*
+import game.core.Board.Companion.getOpponentColor
+import game.core.GameResult.Companion.win
+import game.core.moves.PassMove
+import game.core.players.PutPiecePlayer
+import java.util.*
 
 /**
  * Базовый класс для всех игроков в реверси.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract
-public class ReversiPlayer extends PutPiecePlayer {
-
-    ReversiPlayer(IPieceProvider pieceProvider) {
-        super(pieceProvider);
-    }
-
+abstract class ReversiPlayer(pieceProvider: IPieceProvider) : PutPiecePlayer(pieceProvider) {
     /**
      * @param s - проверяемая клетка.
      * @return Находится ли клетка на границе доски.
      */
-    boolean isBorder(Square s) {
-        Board b = s.getBoard();
-
-        return (s.v == 0) ||
-                (s.h == 0) ||
-                (s.v == b.nV - 1) ||
-                (s.h == b.nH - 1);
+    fun isBorder(s: Square): Boolean {
+        val b = s.board
+        return s.v == 0 ||
+                s.h == 0 ||
+                s.v == b.nV - 1 ||
+                s.h == b.nH - 1
     }
 
     /**
      * @param s - проверяемая клетка.
      * @return Находится ли клетка в углу доски.
      */
-    boolean isCorner(Square s) {
-        Board b = s.getBoard();
-
-        if ((s.v == 0) && (s.h == 0)) return true;
-        if ((s.v == 0) && (s.h == b.nH - 1)) return true;
-        if ((s.v == b.nV - 1) && (s.h == 0)) return true;
-        return (s.v == b.nV - 1) && (s.h == b.nH - 1);
+    fun isCorner(s: Square): Boolean {
+        val b = s.board
+        if (s.v == 0 && s.h == 0) return true
+        if (s.v == 0 && s.h == b.nH - 1) return true
+        return if (s.v == b.nV - 1 && s.h == 0) true else s.v == b.nV - 1 && s.h == b.nH - 1
     }
 
-    @Override
-    public void doMove(Board board, PieceColor color) throws GameOver {
-        PieceColor enemyColor = Board.getOpponentColor(color);
-        List<Piece> enemies = board.getPieces(enemyColor);
-
+    @Throws(GameOver::class)
+    override fun doMove(board: Board, color: PieceColor) {
+        val enemyColor = getOpponentColor(color)
+        val enemies = board.getPieces(enemyColor)
         if (enemies.isEmpty()) {
             // Врагов уже нет. Мы выиграли.
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.setResult(GameResult.win(color));
+            board.history.result = win(color)
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-
-            throw new GameOver(GameResult.win(color));
+            board.setBoardChanged()
+            throw GameOver(win(color))
         }
 
-        List<Move> correctMoves = getCorrectMoves(board);
-
+        val correctMoves = getCorrectMoves(board)
         if (correctMoves.isEmpty()) {
             // Пропускаем ход.
-            Move bestMove = new PassMove();
+            val bestMove: Move = PassMove()
 
             // Сохраняем ход в истории игры.
-            board.history.addMove(bestMove);
+            board.history.addMove(bestMove)
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-            return;
+            board.setBoardChanged()
+            return
         }
-
-        Collections.shuffle(correctMoves);
-
-        correctMoves.sort(getComparator());
-        Move bestMove = correctMoves.get(0);
+        correctMoves.shuffle()
+        correctMoves.sortWith(comparator)
+        val bestMove = correctMoves[0]
 
         try {
-            bestMove.doMove();
-        } catch (GameOver e) {
+            bestMove.doMove()
+        } catch (e: GameOver) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.addMove(bestMove);
-            board.history.setResult(e.result);
+            board.history.addMove(bestMove)
+            board.history.result = e.result
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-
-            throw new GameOver(GameResult.DRAWN);
+            board.setBoardChanged()
+            throw GameOver(GameResult.DRAWN)
         }
 
         // Сохраняем ход в истории игры.
-        board.history.addMove(bestMove);
+        board.history.addMove(bestMove)
 
         // Просим обозревателей доски показать
         // положение на доске, сделанный ход и
         // результат игры.
-        board.setBoardChanged();
+        board.setBoardChanged()
 
         // Для отладки ограничим количество ходов в игре.
         // После этого результат игры ничья.
-        if (board.history.getMoves().size() > 80) {
+        if (board.history.moves.size > 80) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.setResult(GameResult.DRAWN);
-
-            // Сообщаем что игра закончилась ничьей.
-            throw new GameOver(GameResult.DRAWN);
+            board.history.result = GameResult.DRAWN
+            throw GameOver(GameResult.DRAWN)
         }
     }
 
-    protected abstract Comparator<? super Move> getComparator();
+    protected abstract val comparator: Comparator<in Move>
 }

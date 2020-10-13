@@ -1,106 +1,73 @@
-package reversi;
+package reversi
 
-import game.core.*;
-import game.core.players.Vinni;
-import reversi.pieces.Hole;
-import reversi.pieces.Stone;
-import reversi.players.Owl;
-import reversi.players.Tiger;
-
-import java.util.HashMap;
-import java.util.Map;
+import game.core.*
+import game.core.players.Vinni
+import reversi.pieces.Hole
+import reversi.pieces.Stone
+import reversi.players.Owl
+import reversi.players.Tiger
+import java.util.*
 
 /**
  * Игра
- * <a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%B8">Реверси</a>
+ * [Реверси](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%B8)
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class Reversi extends Game implements IScorable {
-    private static final IPieceProvider pieceProvider = Stone::new;
+class Reversi private constructor(nHoles: Int) : Game(), IScorable {
+    companion object {
+        private val pieceProvider: IPieceProvider = object : IPieceProvider {
+            override fun getPiece(square: Square, color: PieceColor): Piece = Stone(square, color)
+        }
 
-    static {
-        Game.addPlayer(Reversi.class, IPlayer.HOMO_SAPIENCE);
-        Game.addPlayer(Reversi.class, new Vinni(pieceProvider));
-        Game.addPlayer(Reversi.class, new Owl(pieceProvider));
-        Game.addPlayer(Reversi.class, new Tiger(pieceProvider));
+        init {
+            addPlayer(Reversi::class.java, IPlayer.HOMO_SAPIENCE)
+            addPlayer(Reversi::class.java, Vinni(pieceProvider))
+            addPlayer(Reversi::class.java, Owl(pieceProvider))
+            addPlayer(Reversi::class.java, Tiger(pieceProvider))
+        }
     }
+
+    constructor() : this(0) {}
+
+    override fun initBoardDefault() {
+        super.initBoardPanel(8, 8)
+        Stone(board.getSquare(3, 3)!!, PieceColor.BLACK)
+        Stone(board.getSquare(4, 4)!!, PieceColor.BLACK)
+        Stone(board.getSquare(3, 4)!!, PieceColor.WHITE)
+        Stone(board.getSquare(4, 3)!!, PieceColor.WHITE)
+    }
+
+    override val name: String = "Reversi"
+    override val iconImageFile: String = "icoReversi.png"
+    override val boardKind: BoardKind = BoardKind.PLAIN
+    override val moveKind: MoveKind = MoveKind.PIECE_PUT
+
+    override fun getPieceImages(color: PieceColor): MutableMap<Class<out Piece>, String> {
+        val images: MutableMap<Class<out Piece>, String> = HashMap()
+        when (color) {
+            PieceColor.WHITE -> images[Stone::class.java] = "StoneWhite.png"
+            PieceColor.BLACK -> images[Stone::class.java] = "StoneBlack.png"
+            else -> {
+            }
+        }
+        return images
+    }
+
+    override fun getPiece(square: Square, pieceColor: PieceColor): Piece = Stone(square, pieceColor)
 
     /**
      * Вернуть инициализированную доску для игры в реверси.
-     *
-     * @param nHoles - количество случайно расположенных отверстий.
      */
-    private Reversi(int nHoles) {
-        initBoardDefault();
-
-        board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
-        board.setBlackPlayer(new Vinni(pieceProvider));
-
+    init {
+        initBoardDefault()
+        board.whitePlayer = IPlayer.HOMO_SAPIENCE
+        board.blackPlayer = Vinni(pieceProvider)
         if (nHoles != 0) {
-            int randomV = (int) (8 * Math.random());
-            int randomH = (int) (8 * Math.random());
-
-            Square randomSquare = board.getSquare(randomV, randomH);
-            new Hole(randomSquare, PieceColor.BLACK);
+            val randomV = (8 * Math.random()).toInt()
+            val randomH = (8 * Math.random()).toInt()
+            val randomSquare = board.getSquare(randomV, randomH)
+            Hole(randomSquare!!, PieceColor.BLACK)
         }
-    }
-
-    public Reversi() {
-        this(0);
-    }
-
-    @Override
-    public void initBoardDefault() {
-        super.initBoardPanel(8, 8);
-
-        new Stone(board.getSquare(3, 3), PieceColor.BLACK);
-        new Stone(board.getSquare(4, 4), PieceColor.BLACK);
-
-        new Stone(board.getSquare(3, 4), PieceColor.WHITE);
-        new Stone(board.getSquare(4, 3), PieceColor.WHITE);
-    }
-
-    @Override
-    public String getName() {
-        return "Reversi";
-    }
-
-    @Override
-    public String getIconImageFile() {
-        return "icoReversi.png";
-    }
-
-    @Override
-    public BoardKind getBoardKind() {
-        return BoardKind.PLAIN;
-    }
-
-    @Override
-    public MoveKind getMoveKind() {
-        return MoveKind.PIECE_PUT;
-    }
-
-    @Override
-    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
-        Map<Class<? extends Piece>, String> images = new HashMap<>();
-
-        switch (color) {
-            case WHITE:
-                images.put(Stone.class, "StoneWhite.png");
-                break;
-            case BLACK:
-                images.put(Stone.class, "StoneBlack.png");
-                break;
-            default:
-                break;
-        }
-
-        return images;
-    }
-
-    @Override
-    public Piece getPiece(Square square, PieceColor color) {
-        return new Stone(square, color);
     }
 }

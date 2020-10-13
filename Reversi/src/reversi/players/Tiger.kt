@@ -1,49 +1,27 @@
-package reversi.players;
+package reversi.players
 
-import game.core.IPieceProvider;
-import game.core.Move;
-import game.core.Square;
-import game.core.moves.ICaptureMove;
-import game.core.moves.IPutMove;
-
-import java.util.Comparator;
+import game.core.IPieceProvider
+import game.core.Move
+import game.core.Square
+import game.core.moves.ICaptureMove
+import game.core.moves.IPutMove
+import java.util.*
 
 /**
- * Тигра - игрок в реверси:<br>
- * <ul>
- * <li> Знает что фигуры в углах доски окружить невозможно.</li>
- * <li> Знает что фигуры на краях окружить сложнее чем в центре доски.</li>
- * <li> Выбирает ход с захватом максимального количества фигур врага.</li>
- * </ul>
+ * Тигра - игрок в реверси:<br></br>
+ *
+ *  *  Знает что фигуры в углах доски окружить невозможно.
+ *  *  Знает что фигуры на краях окружить сложнее чем в центре доски.
+ *  *  Выбирает ход с захватом максимального количества фигур врага.
+ *
  *
  * @author Екатерина Козак
  */
-public class Tiger extends ReversiPlayer {
-    private final Comparator<? super Move> brain
-            = (m1, m2) -> getMoveWeight(m2) - getMoveWeight(m1);
+class Tiger(pieceProvider: IPieceProvider) : ReversiPlayer(pieceProvider) {
+    override val comparator: Comparator<in Move> = Comparator { m1: Move, m2: Move -> getMoveWeight(m2) - getMoveWeight(m1) }
 
-    /**
-     * Тигра - игрок в реверси.
-     */
-    public Tiger(IPieceProvider pieceProvider) {
-        super(pieceProvider);
-        this.pieceProvider = pieceProvider;
-    }
-
-    @Override
-    public String getName() {
-        return "Тигра";
-    }
-
-    @Override
-    public String getAuthorName() {
-        return "Екатерина Козак";
-    }
-
-    @Override
-    public Comparator<? super Move> getComparator() {
-        return brain;
-    }
+    override val name: String = "Тигра"
+    override val authorName: String = "Екатерина Козак"
 
     /**
      * Определить стоимость хода.
@@ -51,47 +29,34 @@ public class Tiger extends ReversiPlayer {
      * @param move - ход который оцениваем.
      * @return стоимость хода.
      */
-    private int getMoveWeight(Move move) {
-        IPutMove putMove = (IPutMove) move;
-
-        Square target = putMove.getTarget();
-
-        if (isCorner(target))
-            return 1000; // Встали в угол.
-
-        if (isBorder(target))
-            return 900; // Встали на край доски.
-
-        if (isBigCross(target))
-            return 800;
-
-        if (isSquareX(target))
-            return -900;
-
-        if (isSquareC(target))
-            return -800;
-
-        if (move instanceof ICaptureMove) {
+    private fun getMoveWeight(move: Move): Int {
+        val putMove = move as IPutMove
+        val target = putMove.target
+        if (isCorner(target)) return 1000 // Встали в угол.
+        if (isBorder(target)) return 900 // Встали на край доски.
+        if (isBigCross(target)) return 800
+        if (isSquareX(target)) return -900
+        if (isSquareC(target)) return -800
+        if (move is ICaptureMove) {
             // Ход - взятие фигур врага.
-            ICaptureMove capture = (ICaptureMove) move;
+            val capture = move as ICaptureMove
 
             // Правило реверси - брать меньше фигур!
             // В результате - больший выбор ходов потом.
             // Фигуры противника заберем в конце игры.
-            return 64 - capture.getCaptured().size();
+            return 64 - capture.captured.size
         }
-
-        return 0;
+        return 0
     }
 
     /**
      * @param target - проверяемая клетка.
      * @return Если вы сыграете на это поле, ваш противник легко займет угол.
      */
-    private boolean isSquareX(Square target) {
+    private fun isSquareX(target: Square): Boolean {
         // TODO Козак
         // http://othello.gomel.by/stepanov/x-pole/
-        return false;
+        return false
     }
 
     /**
@@ -102,10 +67,10 @@ public class Tiger extends ReversiPlayer {
      * @param target - проверяемая клетка.
      * @return это плохое C-поле.
      */
-    private boolean isSquareC(Square target) {
+    private fun isSquareC(target: Square): Boolean {
         // TODO Козак
         // http://othello.gomel.by/stepanov/c-pole/
-        return false;
+        return false
     }
 
     /**
@@ -118,9 +83,16 @@ public class Tiger extends ReversiPlayer {
      * @param target - проверяемая клетка.
      * @return Эта клетка на большом кресте?
      */
-    private boolean isBigCross(Square target) {
+    private fun isBigCross(target: Square): Boolean {
         // TODO Козак
         // http://othello.gomel.by/stepanov/bolwoy-krest/
-        return false;
+        return false
+    }
+
+    /**
+     * Тигра - игрок в реверси.
+     */
+    init {
+        this.pieceProvider = pieceProvider!!
     }
 }
