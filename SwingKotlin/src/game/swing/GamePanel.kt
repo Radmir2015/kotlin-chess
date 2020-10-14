@@ -10,13 +10,12 @@ import javax.swing.JPanel
 /**
  * Составная панель для настольной игры:
  *
- * * доска с клетками
- * * панель истории партии (список ходов)
- * * управляющая панель
- *   * выбор игроков,
- *   * размера доски,
- *   * счет,
- *   * ...)
+ * + доска с клетками
+ * + панель истории партии (список ходов)
+ * + управляющая панель
+ *     + размера доски,
+ *     + счет,
+ *     + ...)
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
@@ -41,41 +40,31 @@ class GamePanel(val game: Game) : JPanel(BorderLayout()) {
         when (game.boardKind) {
             BoardKind.EUROPE -> {
                 gameBoard = object : EuropeBoard(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece {
-                        return game.getPiece(mouseSquare, moveColor)
-                    }
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
             BoardKind.PLAIN -> {
                 gameBoard = object : GreenBoard(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece {
-                        return game.getPiece(mouseSquare, moveColor)
-                    }
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA -> {
                 gameBoard = object : AsiaBoard(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece {
-                        return game.getPiece(mouseSquare, moveColor)
-                    }
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA_CASTLE_RIVER -> {
                 gameBoard = object : AsiaBoardWithCastleRiver(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece {
-                        return game.getPiece(mouseSquare, moveColor)
-                    }
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA_CASTLE -> {
                 gameBoard = object : AsiaBoardWithCastle(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece {
-                        return game.getPiece(mouseSquare, moveColor)
-                    }
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
@@ -101,21 +90,18 @@ class GamePanel(val game: Game) : JPanel(BorderLayout()) {
     /**
      * Вставить в панель игры доску с клетками.
      *
-     * @param gameBoard
-     * - вставляемая доска с клетками.
+     * @param gameBoard вставляемая доска с клетками.
      */
     private fun insertSquares(gameBoard: GameBoard) = adorned.insertSquares(gameBoard)
 
     /**
      * Изменить размеры доски.
      *
-     * @param nV
-     * - количество вертикалей.
-     * @param nH
-     * - количество горизонталей.
+     * @param nV количество вертикалей.
+     * @param nH количество горизонталей.
      */
     fun resizeBoard(nV: Int, nH: Int) {
-        // Новые размеры доски и расстановка фигур.
+        // Новые размеры доски и возможно новая расстановка фигур.
         game.initBoardPanel(nV, nH)
 
         adorned.resizeBoard(nV, nH)

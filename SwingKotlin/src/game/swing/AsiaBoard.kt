@@ -6,7 +6,7 @@ import java.awt.Color
 import java.awt.Graphics
 
 /**
- *
+ * Азиатская доска с пересечениями линий в середине клетки.
  */
 abstract class AsiaBoard(game: Game) : GameBoard(game) {
     override fun drawBack(g: Graphics) {

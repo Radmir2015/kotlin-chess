@@ -17,8 +17,8 @@ import javax.swing.JPanel
 /**
  * Панель для изображения доски настольной игры и расположенных на ней фигур.
  */
-abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
-        MouseListener, MouseMotionListener, IBoardPanel, Observer {
+abstract class GameBoard(val game: Game)
+    : JPanel(BorderLayout()), MouseListener, MouseMotionListener, IBoardPanel, Observer {
     /**
      * Изображаемая доска с фигурами.
      */
@@ -103,8 +103,6 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         }
     }
 
-//    override fun getPanelBoard(): Board = board
-
     override fun updateBoard() {
         validate()
         repaint()
@@ -148,10 +146,8 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Выдать изображение фигуры заданного цвета.
      *
-     * @param piece
-     * - фигура для которой выдается изображение.
-     * @param color
-     * - цвет фигуры.
+     * @param piece фигура для которой выдается изображение.
+     * @param color цвет фигуры.
      * @return изображение фигуры.
      */
     open fun getPieceImage(piece: Piece, color: PieceColor): Image? = when (color) {
@@ -193,12 +189,9 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Нарисовать подсказку для клеток на которые фигура может сделать очередной ход.
      *
-     * @param g
-     * - графический контекст для отрисовки подсказки.
-     * @param sw
-     * - ширина клетки.
-     * @param sh
-     * - высота клетки.
+     * @param g графический контекст для отрисовки подсказки.
+     * @param sw ширина клетки.
+     * @param sh высота клетки.
      */
     private fun drawSquaresPrompt(g: Graphics, sw: Int, sh: Int) {
         if (prompted.isEmpty())
@@ -211,11 +204,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     }
 
     /**
-     * Пометить на доске маркером последний ход для игр с перемещаемыми
-     * фигурами.
+     * Пометить на доске маркером последний ход
+     * для игр с перемещаемыми фигурами.
      *
-     * @param g
-     * - графический контекст для отрисовки маркера.
+     * @param g графический контекст для отрисовки маркера.
      */
     private fun markLastTransferMove(g: Graphics) {
         val moves = board.history.moves
@@ -249,11 +241,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     }
 
     /**
-     * Пометить на доске маркером последний ход для игр с фигурами которые
-     * ставятся на доску.
+     * Пометить на доске маркером последний ход
+     * для игр с фигурами которые ставятся на доску.
      *
-     * @param g
-     * - графический контекст для отрисовки маркера.
+     * @param g графический контекст для отрисовки маркера.
      */
     private fun markLastPutMove(g: Graphics, sw: Int, sh: Int) {
         val moves = board.history.moves
@@ -280,13 +271,11 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     // ------------------------------------------------------
     /**
      * Выдать клетку над которой было произошло событие мыши.
-     *
-     * @param e
-     * - событие от мыши.
-     * @return клетка под мышкой
+     * @param e событие от мыши.
+     * @return клетка под мышкой или null
      */
     private fun getSquare(e: MouseEvent?): Square? {
-        if (e == null) return null
+        e ?: return null
 
         val squareW = getSquareWidth()
         val squareH = getSquareHeight()
@@ -294,7 +283,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
         val selectedV = e.x / squareW
         val selectedH = e.y / squareH
 
-        return if (!board.onBoard(selectedV, selectedH)) null else board.getSquare(selectedV, selectedH)
+        if (!board.onBoard(selectedV, selectedH))
+            return null
+
+        return board.getSquare(selectedV, selectedH)
     }
 
     // --------------------------------------
@@ -330,8 +322,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Сделать заданное изображение изображением курсора.
      *
-     * @param image
-     * - новое изображение курсора.
+     * @param image новое изображение курсора.
      */
     private fun imageToCursor(image: Image?) {
         val sw = getSquareWidth()
@@ -346,8 +337,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     /**
      * Сделать изображение фигуры изображением курсора.
      *
-     * @param piece
-     * - фигура изображение которой "перемешается" в курсор.
+     * @param piece фигура изображение которой "перемешается" в курсор.
      */
     override fun pieceToCursor(piece: Piece) = imageToCursor(getImage(piece))
 
@@ -360,21 +350,19 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     }
 
     override fun mousePressed(e: MouseEvent?) {
-        if (e == null) return
+        e ?: return
 
-        val s = getSquare(e)
+        val s = getSquare(e) ?: return
 
-        if (s != null)
-            listener.mouseDown(s, e.button)
+        listener.mouseDown(s, e.button)
     }
 
     override fun mouseReleased(e: MouseEvent?) {
-        if (e == null) return
+        e ?: return
 
-        val s = getSquare(e)
+        val s = getSquare(e) ?: return
 
-        if (s != null)
-            listener.mouseUp(s, e.button)
+        listener.mouseUp(s, e.button)
     }
 
     override fun mouseEntered(e: MouseEvent?) {
@@ -405,8 +393,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()),
     }
 
     override fun mouseMoved(e: MouseEvent?) {
-        val s = getSquare(e)
+        e ?: return
 
-        if (s != null) mouseMoveListener.mouseMove(s)
+        val s = getSquare(e) ?: return
+
+        mouseMoveListener.mouseMove(s)
     }
 }

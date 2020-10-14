@@ -15,19 +15,11 @@ import javax.swing.ScrollPaneConstants
 import javax.swing.border.LineBorder
 
 /**
- * Журнал для хранения истории ходов игры.
+ * Журнал для хранения истории ходов игры. История игры.
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-class MovesHistory
-/**
- * @param history - история игры.
- */
-(
-        /**
-         * История игры.
-         */
-        private val history: History) : JPanel(BorderLayout()), Observer {
+class MovesHistory(private val history: History) : JPanel(BorderLayout()), Observer {
     /**
      * Панель для имен игроков
      */
@@ -58,16 +50,15 @@ class MovesHistory
 
     /**
      * Класс для представлени текста хода в истории игры.
-     *
-     * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
      */
     private inner class MoveLabel
+
     /**
      * Управляющий элемент представляющий
      * ход в игре и номер этого хода.
      *
-     * @param kMove - номер хода.
-     * @param move - ход в игре.
+     * @param kMove номер хода.
+     * @param move ход в игре.
      */
     (kMove: Int, private val move: Move) : JLabel() {
         private var oldCursor: Cursor = cursor
@@ -95,10 +86,10 @@ class MovesHistory
             addMouseListener(mListener)
 
             val isOdd = kMove % 2 == 0
-            val number = if (!isOdd) "" else """${1 + kMove / 2}. """
+            val number = if (!isOdd) "" else "${1 + kMove / 2}. "
 
             horizontalAlignment = LEFT
-            text = """$number$move"""
+            text = "$number$move"
             repaint()
         }
     }
@@ -168,7 +159,7 @@ class MovesHistory
     private fun setResultText(board: Board) {
         val white = board.whitePlayer.name
         val black = board.blackPlayer.name
-        val text = """${history.result}"""
+        val text = "${history.result}"
         val title = " $white - $black $text"
 
         resultPanel.text = text
@@ -196,7 +187,9 @@ class MovesHistory
         paintSelection()
 
         // Возможно игра закончилась. Покажем результат.
-        resultPanel.text = """${history.result}"""
+        resultPanel.text = "${history.result}"
+
+        setHeaderText(history.board)
 
         validate()
         repaint()

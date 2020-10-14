@@ -31,25 +31,23 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
 
     /**
      * Нумерация вертикалей и горизонталей доски.
-     *
      * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
-     */
-    private inner class BoardAdorns
-    /**
+     *
      * Поле с обозначениями (номер или буква)
      * для горизонталей и вертикалей доски
      *
-     * @param n
-     * сколько колонок или строк
-     * @param isVertical
-     * вертикально или горизотельно расположены надписи?
-     * @param isInverted
-     * в порядке убывания или возрастания идут обозначения?
-     * @param isNumbers
-     * обозначения цифры или буквы?
+     * @param n сколько колонок или строк
+     * @param isVertical вертикально или горизотельно расположены надписи?
+     * @param isInverted в порядке убывания или возрастания идут обозначения?
+     * @param isNumbers обозначения цифры или буквы?
      */
-    (n: Int, private val isVertical: Boolean,
-     private val isInverted: Boolean, private val isNumbers: Boolean) : JPanel(true) {
+    private inner class BoardAdorns
+    (
+            n: Int,
+            private val isVertical: Boolean,
+            private val isInverted: Boolean,
+            private val isNumbers: Boolean,
+    ) : JPanel(true) {
 
         init {
             isOpaque = false
@@ -61,8 +59,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
          * Добавить к доске с новыми размерами номера горизонталей
          * или имена вертикалей (буквы).
          *
-         * @param n
-         * - новые размеры доски.
+         * @param n новые размеры доски.
          */
         fun resize(n: Int) {
             removeAll()
@@ -97,8 +94,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
      * Встроить доску с клетками в доску с нумераций
      * вертикалей и горизонталей доски.
      *
-     * @param boardPanel
-     * - встраиваемая доска.
+     * @param boardPanel встраиваемая доска.
      */
     fun insertSquares(boardPanel: GameBoard) {
         nV = boardPanel.board.nV
@@ -107,7 +103,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
     }
 
     /**
-     * @param adornedControl
+     * @param adornedControl вставляемый элемент
      */
     private fun initMainPanel(adornedControl: GameBoard) {
         // Сетевая планировка доски 3х3 ячейки.
@@ -164,13 +160,11 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
     }
 
     /**
-     * Изменить надписи на доске на нового размера доски: <br></br>
+     * Изменить надписи на доске на нового размера доски:
      * номера горизонталей и имена вертикалей.
      *
-     * @param nV
-     * - количество вертикалей.
-     * @param nH
-     * - количество горизонталей.
+     * @param nV количество вертикалей.
+     * @param nH количество горизонталей.
      */
     fun resizeBoard(nV: Int, nH: Int) {
         left.resize(nH)

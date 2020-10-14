@@ -23,23 +23,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/doc/KotlinGamesNotebook.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/02-game-core.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/03-game-moves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/04-game-players.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/05-game-chess-dependency.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/06-chess-pieces.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/07-chess-moves.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/08-game-boards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/img/09-game-observers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/help/IntelliJIDEA_ReferenceCard.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/Squares.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Samples.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Piece.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Piece.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Square.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Square.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/moves/CompositeMove.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/moves/CompositeMove.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastleRiver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AsiaBoardWithCastleRiver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/BoardSizePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/BoardSizePanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameControlPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameControlPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/Markers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/MovesHistory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/PlayersPanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/ScorePanel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,9 +81,9 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Arquillian JUnit Test Class" />
-        <option value="Kotlin File" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
@@ -109,7 +108,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="v0.0.1_core" />
+        <entry key="$PROJECT_DIR$" value="notebook-2020-10-03" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -149,7 +148,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -324,34 +323,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00070" summary="Выделен модуль SwingNotebook">
-      <created>1551208016386</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1551208016386</updated>
-    </task>
-    <task id="LOCAL-00071" summary="Поменяли папку для модуля SwingNotebook">
-      <created>1551263615641</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1551263615641</updated>
-    </task>
-    <task id="LOCAL-00072" summary="Выделен модуль Chess (без UI).">
-      <created>1551266467252</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1551266467252</updated>
-    </task>
-    <task id="LOCAL-00073" summary="draft">
-      <created>1551289017433</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1551289017433</updated>
     </task>
     <task id="LOCAL-00074" summary="draft Выполняется считывание ресурсов-изображений.">
       <created>1551298602657</created>
@@ -668,7 +639,35 @@
       <option name="project" value="LOCAL" />
       <updated>1601098990336</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="Описание программы в формате markdown">
+      <created>1601712218029</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1601712218030</updated>
+    </task>
+    <task id="LOCAL-00120" summary="Реверси теперь на Kotlin-e">
+      <created>1602617874012</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1602617874012</updated>
+    </task>
+    <task id="LOCAL-00121" summary="Китайские шахматы теперь на Kotlin-e">
+      <created>1602670589965</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1602670589965</updated>
+    </task>
+    <task id="LOCAL-00122" summary="Рендзю шахматы теперь на Kotlin-e">
+      <created>1602670670725</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1602670670726</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -738,10 +737,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Выделили шашки в отдельный модуль Checkers." />
-    <MESSAGE value="Выделили в отдельный модуль TamerlanChess." />
-    <MESSAGE value="Выделили в отдельный модуль ChinaChess." />
-    <MESSAGE value="Выделили в отдельный модуль Vikings." />
     <MESSAGE value="Выделили в отдельный модуль Reversi." />
     <MESSAGE value="Выделили в отдельный модуль Renju." />
     <MESSAGE value="Выделили в отдельный модуль Go." />
@@ -763,20 +758,24 @@
     <MESSAGE value="Типы с ненулевыми значениями в ядре всех игр." />
     <MESSAGE value="Шахматы теперь на Котлине." />
     <MESSAGE value="draft" />
-    <option name="LAST_COMMIT_MESSAGE" value="draft" />
+    <MESSAGE value="Описание программы в формате markdown" />
+    <MESSAGE value="Реверси теперь на Kotlin-e" />
+    <MESSAGE value="Китайские шахматы теперь на Kotlin-e" />
+    <MESSAGE value="Рендзю шахматы теперь на Kotlin-e" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рендзю шахматы теперь на Kotlin-e" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="98" key="#Project_Structure" timestamp="1600721871595">
+    <state x="440" y="98" key="#Project_Structure" timestamp="1602317049208">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="440" y="98" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1600721871595" />
-    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1600797788001">
+    <state x="440" y="98" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1602317049208" />
+    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1602306987292">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1600797788001" />
+    <state x="751" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1602306987292" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601032611621">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -785,10 +784,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="368" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1601036039748" />
-    <state x="568" y="110" key="CommitChangelistDialog2" timestamp="1601098986430">
+    <state x="568" y="110" width="933" height="829" key="CommitChangelistDialog2" timestamp="1602670668434">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="568" y="110" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1601098986430" />
+    <state x="568" y="110" width="933" height="829" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1602670668434" />
     <state width="417" height="466" key="DebuggerActiveHint" timestamp="1601035545389">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -797,38 +796,38 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="740" y="278" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1601038159326" />
-    <state width="1860" height="274" key="GridCell.Tab.0.bottom" timestamp="1601664162915">
+    <state width="1860" height="339" key="GridCell.Tab.0.bottom" timestamp="1602682199859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1601664162915" />
-    <state width="1860" height="274" key="GridCell.Tab.0.center" timestamp="1601664162915">
+    <state width="1860" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199859" />
+    <state width="1860" height="339" key="GridCell.Tab.0.center" timestamp="1602682199859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="274" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1601664162915" />
-    <state width="1860" height="274" key="GridCell.Tab.0.left" timestamp="1601664162915">
+    <state width="1860" height="339" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199859" />
+    <state width="1860" height="339" key="GridCell.Tab.0.left" timestamp="1602682199859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="274" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1601664162915" />
-    <state width="1860" height="274" key="GridCell.Tab.0.right" timestamp="1601664162915">
+    <state width="1860" height="339" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199859" />
+    <state width="1860" height="339" key="GridCell.Tab.0.right" timestamp="1602682199859">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1860" height="274" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1601664162915" />
-    <state width="1876" height="346" key="GridCell.Tab.1.bottom" timestamp="1601048713218">
+    <state width="1860" height="339" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199859" />
+    <state width="1860" height="339" key="GridCell.Tab.1.bottom" timestamp="1602682199860">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1601048713218" />
-    <state width="1876" height="346" key="GridCell.Tab.1.center" timestamp="1601048713218">
+    <state width="1860" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199860" />
+    <state width="1860" height="339" key="GridCell.Tab.1.center" timestamp="1602682199860">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1601048713218" />
-    <state width="1876" height="346" key="GridCell.Tab.1.left" timestamp="1601048713218">
+    <state width="1860" height="339" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199860" />
+    <state width="1860" height="339" key="GridCell.Tab.1.left" timestamp="1602682199860">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1601048713218" />
-    <state width="1876" height="346" key="GridCell.Tab.1.right" timestamp="1601048713218">
+    <state width="1860" height="339" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199860" />
+    <state width="1860" height="339" key="GridCell.Tab.1.right" timestamp="1602682199860">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1876" height="346" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1601048713218" />
+    <state width="1860" height="339" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1602682199860" />
     <state x="689" y="225" key="RollbackChangesDialog" timestamp="1601031907162">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -841,18 +840,22 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="756" y="437" key="VCS.ChangelistChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1601034231524" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1601099065269">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1601712254238">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1601099065269" />
-    <state width="857" height="685" key="javadoc.popup.new" timestamp="1600715064982">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1601712254238" />
+    <state width="857" height="685" key="javadoc.popup.new" timestamp="1602684619310">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="857" height="685" key="javadoc.popup.new/0.0.1920.1050@0.0.1920.1050" timestamp="1600715064982" />
+    <state width="857" height="685" key="javadoc.popup.new/0.0.1920.1050@0.0.1920.1050" timestamp="1602684619310" />
     <state x="616" y="237" width="672" height="677" key="run.anything.popup" timestamp="1601031209884">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="237" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1601031209884" />
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup" timestamp="1602668760174">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="231" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1602668760174" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,6 +3,12 @@ package game.swing
 import game.core.Game
 import java.awt.Graphics
 
+/**
+ * Азиатская доска в крепостью у каждого из противников
+ * и рекой между территориями противников.
+ *
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
+ */
 abstract class AsiaBoardWithCastleRiver(game: Game) : AsiaBoardWithCastle(game) {
 
     override fun drawSquare(g: Graphics, v: Int, h: Int, sw: Int, sh: Int) {
@@ -26,5 +32,4 @@ abstract class AsiaBoardWithCastleRiver(game: Game) : AsiaBoardWithCastle(game) 
         // Обычные клетки азиатской доски с двумя крепостями.
             super.drawSquare(g, v, h, sw, sh)
     }
-
 }

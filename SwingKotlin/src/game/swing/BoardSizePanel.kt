@@ -12,17 +12,13 @@ import javax.swing.border.TitledBorder
 
 /**
  * Панель выбора размеров доски для игры.
- *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
- */
-class BoardSizePanel
-/**
- * Создать панель для выбора размеров доски.
  *
- * @param gamePanel - панель игры.
- * @param sizes - допустимые размеры доски.
+ * @param gamePanel панель игры.
+ * @param sizes допустимые размеры доски.
  */
-(gamePanel: GamePanel, sizes: Array<IntArray>) : JPanel(true) {
+class BoardSizePanel(gamePanel: GamePanel, sizes: Array<IntArray>)
+    : JPanel(true) {
 
     init {
         layout = BoxLayout(this, BoxLayout.Y_AXIS)

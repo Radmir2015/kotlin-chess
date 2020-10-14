@@ -18,8 +18,7 @@ class Board(
          * Количество горизонталей на доске.
          */
         @JvmField var nH: Int = 0,
-)
-    : Observable() {
+) : Observable() {
     /**
      * История партии (последовательность ходов игры).
      */
@@ -80,10 +79,13 @@ class Board(
     fun changeMoveColor() {
         while (true) {
             moveColor = getOpponentColor(moveColor)
-            val player = players[moveColor]
-            if (player === IPlayer.HOMO_SAPIENCE) break // Ход сделает человек мышкой.
+            val player = players[moveColor] ?: return
+
+            if (player === IPlayer.HOMO_SAPIENCE)
+                break // Ход сделает человек.
+
             try {
-                player!!.doMove(this, moveColor)
+                player.doMove(this, moveColor)
             } catch (e: GameOver) {
                 break
             }
@@ -97,11 +99,13 @@ class Board(
      */
     fun startGame() {
         while (true) {
-            val player = players[moveColor]
-            if (player === IPlayer.HOMO_SAPIENCE) break // Ход сделает человек.
+            val player = players[moveColor] ?: return
+
+            if (player === IPlayer.HOMO_SAPIENCE)
+                break // Ход сделает человек.
 
             try {
-                player!!.doMove(this, moveColor)
+                player.doMove(this, moveColor)
             } catch (e: GameOver) {
                 break
             }
@@ -164,10 +168,11 @@ class Board(
         val pieces: MutableList<Piece> = mutableListOf()
         for (v in 0 until nV)
             for (h in 0 until nH) {
-                val s = getSquare(v, h)
-                val p = s!!.getPiece() ?: continue
-                if (p.color != color) continue
-                pieces.add(p)
+                val s = getSquare(v, h) ?: continue
+                val p = s.getPiece() ?: continue
+
+                if (p.color == color)
+                    pieces.add(p)
             }
         return pieces
     }
@@ -182,8 +187,9 @@ class Board(
             val emptySquares: MutableList<Square> = mutableListOf()
             for (v in 0 until nV)
                 for (h in 0 until nH) {
-                    val square = getSquare(v, h)
-                    if (square!!.isEmpty) emptySquares.add(square)
+                    val square = getSquare(v, h) ?: continue
+                    if (square.isEmpty)
+                        emptySquares.add(square)
                 }
             return emptySquares
         }
@@ -199,8 +205,9 @@ class Board(
         val targets: MutableList<Square> = mutableListOf()
         for (v in 0 until nV)
             for (h in 0 until nH) {
-                val target = getSquare(v, h)
-                if (piece.isCorrectMove(target!!)) targets.add(target)
+                val target = getSquare(v, h) ?: continue
+                if (piece.isCorrectMove(target))
+                    targets.add(target)
             }
         return targets
     }
@@ -219,7 +226,7 @@ class Board(
     }
 
     operator fun contains(square: Square) =
-            (square.v in 0..nV - 1) && (square.h in 0..nH - 1)
+            (square.v in 0 until nV) && (square.h in 0 until nH)
 
     operator fun get(v: Int, h: Int) = squares[v][h]
 
@@ -228,7 +235,7 @@ class Board(
      *
      * @return расстояние между клетками
      */
-    fun maxDistance(): Int = nH + nV
+    fun maxDistance() = nH + nV
 
     companion object {
         /**

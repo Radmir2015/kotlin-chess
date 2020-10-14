@@ -13,15 +13,12 @@ import javax.swing.event.ListSelectionEvent
 
 /**
  * Панель выбора игроков для игры.
- *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
- */
-class PlayersPanel
-/**
+ *
  * Создание панели выбора игроков для игры.
- * @param game
+ * @param game игра для игроков.
  */
-(game: Game) : JPanel(true) {
+class PlayersPanel(game: Game) : JPanel(true) {
     /**
      * Список игроков для заданной игры.
      */
@@ -74,8 +71,7 @@ class PlayersPanel
     /**
      * Выдать игрока выбранного в списке игроков.
      *
-     * @param e
-     * - событие выбора в списке.
+     * @param e событие выбора в списке.
      * @return выбраный из списка игрок.
      */
     private fun getSelectedPlayer(e: ListSelectionEvent): IPlayer {
@@ -86,19 +82,16 @@ class PlayersPanel
     /**
      * Выдать управляющий элемент - список игроков.
      *
-     * @param playerNumber
-     * - номер выделенного в списке игрока.
-     * @param titleText
-     * - текст заголовка списка.
-     * @param titleColor
-     *
-     * @return управляющий элемент - список игроков.
+     * @param playerNumber номер выделенного в списке игрока.
+     * @param titleText текст заголовка списка.
+     * @param titleColor цвет текста
+     * @return управляющий элемент список игроков.
      */
     private fun getPlayersList(
             panel: JPanel,
             playerNumber: Int,
             titleText: String,
-            titleColor: Color
+            titleColor: Color,
     ): JList<String> {
         val title = JLabel(titleText)
         title.foreground = titleColor
@@ -124,11 +117,8 @@ class PlayersPanel
     /**
      * Найти номер игрока в списке игроков.
      *
-     * @param player
-     * - заданный игрок.
-     * @param players
-     * - список игроков.
-     *
+     * @param player заданный игрок.
+     * @param players список игроков.
      * @return номер найденного игрока.
      */
     private fun getPlayerIndex(player: IPlayer, players: List<IPlayer>): Int {

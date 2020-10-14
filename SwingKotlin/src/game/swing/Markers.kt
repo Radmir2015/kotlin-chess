@@ -32,14 +32,10 @@ object Markers {
     /**
      * Соединить линией центры двух клеток.
      *
-     * @param g
-     * - графический контекст.
-     * @param source
-     * - откуда линия.
-     * @param target
-     * - куда линия.
-     * @param color
-     * - цвет линии.
+     * @param g графический контекст.
+     * @param source откуда линия.
+     * @param target куда линия.
+     * @param color цвет линии.
      */
     fun markLine(g: Graphics, source: Square, target: Square, sw: Int, sh: Int, color: Color) {
         val v1 = sw * source.v + sw / 2
@@ -55,12 +51,9 @@ object Markers {
     /**
      * Нарисовать на клетке перекрестье.
      *
-     * @param g
-     * - графический контекст.
-     * @param where
-     * - откуда линия.
-     * @param color
-     * - цвет линии.
+     * @param g графический контекст.
+     * @param where откуда линия.
+     * @param color цвет линии.
      */
     fun markCross(g: Graphics, where: Square, sw: Int, sh: Int, color: Color) {
         val v1 = sw * where.v
@@ -78,14 +71,10 @@ object Markers {
     /**
      * Пометить две клетки рамками заданного цвета.
      *
-     * @param g
-     * - графический конеткст для рисования.
-     * @param source
-     * - клетка откуда идет фигура.
-     * @param target
-     * - клетка куда идет фигура.
-     * @param color
-     * - цвет рамки.
+     * @param g графический конеткст для рисования.
+     * @param source клетка откуда идет фигура.
+     * @param target клетка куда идет фигура.
+     * @param color цвет рамки.
      */
     fun markSquares(g: Graphics, source: Square, target: Square, sw: Int, sh: Int, color: Color) {
         val v1 = sw * source.v + sw / 2
