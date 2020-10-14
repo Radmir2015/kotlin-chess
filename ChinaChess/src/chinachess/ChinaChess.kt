@@ -1,130 +1,110 @@
-package chinachess;
+package chinachess
 
-import chinachess.pieces.*;
-import chinachess.players.Confucious;
-import chinachess.players.SunTzu;
-import game.core.*;
-import game.core.players.Neznaika;
-
-import java.util.HashMap;
-import java.util.Map;
+import chinachess.pieces.*
+import chinachess.players.Confucious
+import chinachess.players.SunTzu
+import game.core.*
+import game.core.players.Neznaika
+import java.util.*
 
 /**
- * Игра <a href=
- * "https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
+ * Игра [Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
  *
- * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
+ * @author [Dmitriv Y.](mailto:y.o.dmitriv@gmail.com)
  */
-public class ChinaChess extends Game {
+class ChinaChess : Game() {
+    companion object {
+        private fun putPieces(board: Board, color: PieceColor) {
+            val hPiece = if (color === PieceColor.BLACK) 0 else board.nH - 1
+            val hGun = if (color === PieceColor.BLACK) 2 else board.nH - 3
+            val hPawn = if (color === PieceColor.BLACK) 3 else board.nH - 4
 
-    static {
-        addPlayer(ChinaChess.class, IPlayer.HOMO_SAPIENCE);
-        addPlayer(ChinaChess.class, new Neznaika());
-        addPlayer(ChinaChess.class, new SunTzu());
-        addPlayer(ChinaChess.class, new Confucious());
-    }
+            // Расставляем пешки через одну, на все четные линии
+            var v = 0
+            while (v < board.nV) {
+                Pawn(board.getSquare(v, hPawn)!!, color)
+                v += 2
+            }
 
-    public ChinaChess() {
-        initBoardDefault();
+            // Guns on positions
+            Gun(board.getSquare(1, hGun)!!, color)
+            Gun(board.getSquare(7, hGun)!!, color)
 
-        board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
-        board.setBlackPlayer(new Neznaika());
-    }
+            // Kings in the castle
+            King(board.getSquare(4, hPiece)!!, color)
 
-    private static void putPieces(Board board, PieceColor color) {
-        int hPiece = (color == PieceColor.BLACK ? 0 : board.nH - 1);
-        int hGun = (color == PieceColor.BLACK ? 2 : board.nH - 3);
-        int hPawn = (color == PieceColor.BLACK ? 3 : board.nH - 4);
+            // Guardians with it's king
+            Guardian(board.getSquare(3, hPiece)!!, color)
+            Guardian(board.getSquare(5, hPiece)!!, color)
 
-        // Расставляем пешки через одну, на все четные линии
-        for (int v = 0; v < board.nV; v += 2)
-            new Pawn(board.getSquare(v, hPawn), color);
+            // Bishops in positions
+            Bishop(board.getSquare(2, hPiece)!!, color)
+            Bishop(board.getSquare(6, hPiece)!!, color)
 
-        // Guns on positions
-        new Gun(board.getSquare(1, hGun), color);
-        new Gun(board.getSquare(7, hGun), color);
+            // Knights on positions
+            Knight(board.getSquare(7, hPiece)!!, color)
+            Knight(board.getSquare(1, hPiece)!!, color)
 
-        // Kings in the castle
-        new King(board.getSquare(4, hPiece), color);
-
-        // Guardians with it's king
-        new Guardian(board.getSquare(3, hPiece), color);
-        new Guardian(board.getSquare(5, hPiece), color);
-
-        // Bishops in positions
-        new Bishop(board.getSquare(2, hPiece), color);
-        new Bishop(board.getSquare(6, hPiece), color);
-
-        // Knights on positions
-        new Knight(board.getSquare(7, hPiece), color);
-        new Knight(board.getSquare(1, hPiece), color);
-
-        // Rooks in positions
-        new Rook(board.getSquare(0, hPiece), color);
-        new Rook(board.getSquare(8, hPiece), color);
-    }
-
-    @Override
-    public void initBoardDefault() {
-        super.initBoardPanel(9, 10);
-
-        putPieces(board, PieceColor.BLACK);
-        putPieces(board, PieceColor.WHITE);
-    }
-
-    @Override
-    public String getName() {
-        return "China Chess";
-    }
-
-    @Override
-    public String getIconImageFile() {
-        return "icoChinaChess.png";
-    }
-
-    @Override
-    public BoardKind getBoardKind() {
-        return BoardKind.ASIA_CASTLE_RIVER;
-    }
-
-    @Override
-    public MoveKind getMoveKind() {
-        return MoveKind.PIECE_MOVE;
-    }
-
-    public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
-
-        Map<Class<? extends Piece>, String> images = new HashMap<>();
-
-        switch (color) {
-            case WHITE:
-                images.put(Pawn.class, "wPawn.png");
-                images.put(Rook.class, "wRook.png");
-                images.put(Knight.class, "wKnight.png");
-                images.put(Bishop.class, "wBishop.png");
-                images.put(King.class, "wKing.png");
-                images.put(Guardian.class, "wGuard.png");
-                images.put(Gun.class, "wGun.png");
-                break;
-            case BLACK:
-                images.put(Pawn.class, "bPawn.png");
-                images.put(Rook.class, "bRook.png");
-                images.put(Knight.class, "bKnight.png");
-                images.put(Bishop.class, "bBishop.png");
-                images.put(King.class, "bKing.png");
-                images.put(Guardian.class, "bGuard.png");
-                images.put(Gun.class, "bGun.png");
-                break;
-            default:
-                break;
+            // Rooks in positions
+            Rook(board.getSquare(0, hPiece)!!, color)
+            Rook(board.getSquare(8, hPiece)!!, color)
         }
 
-        return images;
+        init {
+            addPlayer(ChinaChess::class.java, IPlayer.HOMO_SAPIENCE)
+            addPlayer(ChinaChess::class.java, Neznaika())
+            addPlayer(ChinaChess::class.java, SunTzu())
+            addPlayer(ChinaChess::class.java, Confucious())
+        }
     }
 
-    @Override
-    public Piece getPiece(Square square, PieceColor pieceColor) {
-        return null;
+    override fun initBoardDefault() {
+        super.initBoardPanel(9, 10)
+        putPieces(board, PieceColor.BLACK)
+        putPieces(board, PieceColor.WHITE)
+    }
+
+    override val name: String
+        get() = "China Chess"
+    override val iconImageFile: String
+        get() = "icoChinaChess.png"
+    override val boardKind: BoardKind
+        get() = BoardKind.ASIA_CASTLE_RIVER
+    override val moveKind: MoveKind
+        get() = MoveKind.PIECE_MOVE
+
+    override fun getPieceImages(color: PieceColor): MutableMap<Class<out Piece>, String> {
+        val images: MutableMap<Class<out Piece>, String> = HashMap()
+        when (color) {
+            PieceColor.WHITE -> {
+                images[Pawn::class.java] = "wPawn.png"
+                images[Rook::class.java] = "wRook.png"
+                images[Knight::class.java] = "wKnight.png"
+                images[Bishop::class.java] = "wBishop.png"
+                images[King::class.java] = "wKing.png"
+                images[Guardian::class.java] = "wGuard.png"
+                images[Gun::class.java] = "wGun.png"
+            }
+            PieceColor.BLACK -> {
+                images[Pawn::class.java] = "bPawn.png"
+                images[Rook::class.java] = "bRook.png"
+                images[Knight::class.java] = "bKnight.png"
+                images[Bishop::class.java] = "bBishop.png"
+                images[King::class.java] = "bKing.png"
+                images[Guardian::class.java] = "bGuard.png"
+                images[Gun::class.java] = "bGun.png"
+            }
+            else -> {
+            }
+        }
+        return images
+    }
+
+    override fun getPiece(square: Square, pieceColor: PieceColor): Piece = King(square, pieceColor)
+
+    init {
+        initBoardDefault()
+        board.whitePlayer = IPlayer.HOMO_SAPIENCE
+        board.blackPlayer = Neznaika()
     }
 }

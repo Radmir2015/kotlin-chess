@@ -1,68 +1,50 @@
-package chinachess.moves;
+package chinachess.moves
 
-import game.core.GameOver;
-import game.core.Piece;
-import game.core.Square;
-import game.core.moves.ITransferMove;
+import game.core.GameOver
+import game.core.Piece
+import game.core.Square
+import game.core.moves.ITransferMove
 
 /**
  * Простой ход китайских шахмат - перемещение фигуры на пустую клетку.
- * <p>
- * Игра <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ *
+ * Игра [
+ * Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
+ *
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-public class SimpleMove implements ITransferMove {
+open class SimpleMove(vararg squares: Square) : ITransferMove {
     /**
      * Какая фигура перемещается.
      */
-    final Piece piece;
+//    @JvmField
+    override val piece: Piece?
 
     /**
      * Откуда перемещается.
      */
-    final Square source;
+//    @JvmField
+    override val source: Square = squares[0]
 
     /**
      * Куда перемещается.
      */
-    final Square target;
+//    @JvmField
+    final override val target: Square = squares[1]
 
-    public SimpleMove(Square[] squares) {
-        source = squares[0];
-        target = squares[1];
-
-        piece = source.getPiece();
+    init {
+        piece = source.getPiece()
     }
 
-    @Override
-    public void doMove() throws GameOver {
-        piece.moveTo(target);
+    @Throws(GameOver::class)
+    override fun doMove() {
+        piece!!.moveTo(target)
     }
 
-    @Override
-    public void undoMove() {
-        piece.moveTo(source);
+    override fun undoMove() {
+        piece!!.moveTo(source)
     }
 
-    @Override
-    public String toString() {
-        return "" + piece + source + "-" + target;
-    }
-
-    @Override
-    public Square getSource() {
-        return source;
-    }
-
-    @Override
-    public Square getTarget() {
-        return target;
-    }
-
-    @Override
-    public Piece getPiece() {
-        return piece;
-    }
+    override fun toString(): String = "$piece$source-$target"
 }

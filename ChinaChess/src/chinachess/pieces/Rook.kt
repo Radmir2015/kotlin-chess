@@ -1,51 +1,33 @@
-package chinachess.pieces;
+package chinachess.pieces
 
-import chinachess.moves.Capture;
-import chinachess.moves.SimpleMove;
-import game.core.Move;
-import game.core.PieceColor;
-import game.core.Square;
+import chinachess.moves.Capture
+import chinachess.moves.SimpleMove
+import game.core.Move
+import game.core.PieceColor
+import game.core.Square
 
 /**
- * Ладья (колесница) в игре <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
+ * Ладья (колесница) в игре [Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
  *
- * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
+ * @author [Dmitriv Y.](mailto:y.o.dmitriv@gmail.com)
  */
-public class Rook extends ChinaChessPiece {
-    public Rook(Square square, PieceColor color) {
-        super(square, color);
-    }
-
-    @Override
-    public boolean isCorrectMove(Square... squares) {
+class Rook(square: Square, color: PieceColor) : ChinaChessPiece(square, color) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
         // Пока используем только умалчиваемую проверку
         // выполняемую в базовом классе.
-        if (!super.isCorrectMove(squares))
-            return false;
+        if (!super.isCorrectMove(*squares)) return false
 
-        Square rook = square;
-        Square target = squares[0];
+        val rook = square
+        val target = squares[0]
 
         // По пустым вертикалям и горизонталям ходит как ладья.
-        if (rook.isEmptyHorizontal(target))
-            return true;
-
-        return rook.isEmptyVertical(target);
+        return rook.isEmptyHorizontal(target) || rook.isEmptyVertical(target)
     }
 
-    @Override
-    public Move makeMove(Square... squares) {
-        Square target = squares[1];
-
-        if (!target.isEmpty())
-            return new Capture(squares);
-
-        return new SimpleMove(squares);
+    override fun makeMove(vararg squares: Square): Move {
+        val target = squares[1]
+        return if (target.isEmpty) SimpleMove(*squares) else Capture(*squares)
     }
 
-    @Override
-    public String toString() {
-        return "R";
-    }
+    override fun toString() = "R"
 }

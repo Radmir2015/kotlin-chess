@@ -1,67 +1,55 @@
-package chinachess.pieces;
+package chinachess.pieces
 
-import game.core.Board;
-import game.core.Piece;
-import game.core.PieceColor;
-import game.core.Square;
+import game.core.Piece
+import game.core.PieceColor
+import game.core.Square
 
 /**
- * Фигура в игре <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
+ * Фигура в игре [
+ * Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
  *
- * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
+ * @author [Dmitriv Y.](mailto:y.o.dmitriv@gmail.com)
  */
-abstract
-public class ChinaChessPiece extends Piece {
-    ChinaChessPiece(Square square, PieceColor color) {
-        super(square, color);
+abstract class ChinaChessPiece(square: Square, color: PieceColor) : Piece(square, color) {
+    // Если идем на клетку, занятую фигурой
+    // того же цвета, то ход не корректен.
+    override fun isCorrectMove(vararg squares: Square): Boolean {
+        val target = squares[0]
+        val piece: Piece = target.getPiece() ?: return true
+        return isEnemy(piece)
     }
 
-    @Override
-    public boolean isCorrectMove(Square... squares) {
-        Square target = squares[0];
-
-        if (target.isEmpty())
-            return true;
-
-        // Если идем на клетку, занятую фигурой
-        // того же цвета, то ход не корректен.
-        return getColor() != target.getPiece().getColor();
-    }
 
     /**
-     * Находится ли клетка <b>square</b> внутри крепости для фигур цвета
-     * <b>color</b>?
+     * Находится ли клетка **square** внутри крепости для фигур цвета
+     * **color**?
      *
      * @param color  - цвет крепости.
      * @param square - проверяемая клетка.
      * @return внутри крепости или нет.
      */
-    boolean outCastle(PieceColor color, Square square) {
-        int minV = 3;
-        int maxV = minV + 2;
-
-        int minH = (color == PieceColor.BLACK ? 0 : 6);
-        int maxH = (color == PieceColor.BLACK ? 2 : 8);
-
-        return (minV > square.v) || (square.v > maxV)
+    fun outCastle(color: PieceColor, square: Square): Boolean {
+        val minV = 3
+        val maxV = minV + 2
+        val minH = if (color === PieceColor.BLACK) 0 else 6
+        val maxH = if (color === PieceColor.BLACK) 2 else 8
+        return (minV > square.v || square.v > maxV
                 ||
-                (minH > square.h) || (square.h > maxH);
+                minH > square.h || square.h > maxH)
     }
 
     /**
-     * Пошла ли фигура цвета <b>color</b> на клетку <b>target</b> расположенную
+     * Пошла ли фигура цвета **color** на клетку **target** расположенную
      * на вражеской территории.
      *
-     * @param color  - цвет фигуры которая пошла на поле <b>target</b>.
+     * @param color  - цвет фигуры которая пошла на поле **target**.
      * @param square - проверяемая клетка.
-     * @return клетка <b>target</b> на вражеской территории или нет
+     * @return клетка **target** на вражеской территории или нет
      */
-    boolean isEnemyPart(PieceColor color, Square square) {
-        Board board = square.getBoard();
-
-        boolean whiteInBlacks = square.h >= board.nH / 2;
-        boolean blackInWhites = square.h < board.nH / 2;
-        return color == PieceColor.BLACK ? whiteInBlacks : blackInWhites;
+    fun isEnemyPart(color: PieceColor, square: Square): Boolean {
+        val board = square.board
+        val whiteInBlacks = square.h >= board.nH / 2
+        val blackInWhites = square.h < board.nH / 2
+        return if (color === PieceColor.BLACK) whiteInBlacks else blackInWhites
     }
 }

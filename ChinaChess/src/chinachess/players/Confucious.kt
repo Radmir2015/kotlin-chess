@@ -1,41 +1,21 @@
-package chinachess.players;
+package chinachess.players
 
-import chinachess.pieces.King;
-import game.core.Move;
-import game.core.Piece;
-import game.core.Square;
-import game.core.moves.ICaptureMove;
-import game.core.moves.ITransferMove;
-
-import java.util.Comparator;
+import chinachess.pieces.King
+import game.core.Move
+import game.core.moves.ICaptureMove
+import game.core.moves.ITransferMove
+import java.util.*
 
 /**
- * Сунь-Цзы - первый профессиональный педагог Поднебесной.<br>
- * <a href="https://ok.ru/tantra.yoga/topic/65490423540658"> Пять постоянств
- * праведного человека (Конфуций)</a>
+ * Конфуций - первый профессиональный педагог Поднебесной.<br></br>
+ * [ Пять постоянств праведного человека (Конфуций)](https://ok.ru/tantra.yoga/topic/65490423540658)
  */
-public class Confucious extends ChinaChessPlayer {
-    private final Comparator<? super Move> brain = (m1, m2) -> getWeight(m2) - getWeight(m1);
+class Confucious : ChinaChessPlayer() {
+    override val comparator: Comparator<in Move> = Comparator { m1: Move, m2: Move -> getWeight(m2) - getWeight(m1) }
+    override val name = "Конфуций"
+    override val authorName = "Осинцев Александр"
 
-    @Override
-    public String getName() {
-        return "Конфуций";
-    }
-
-    @Override
-    public String getAuthorName() {
-        return "Осинцев Александр";
-    }
-
-    @Override
-    public String toString() {
-        return getName();
-    }
-
-    @Override
-    Comparator<? super Move> getComparator() {
-        return brain;
-    }
+    override fun toString() = name
 
     /**
      * Задать вес для хода.
@@ -43,32 +23,27 @@ public class Confucious extends ChinaChessPlayer {
      * @param move - ход
      * @return оценка хода.
      */
-    private int getWeight(Move move) {
-        ITransferMove transfer = (ITransferMove) move;
+    private fun getWeight(move: Move): Int {
+        val transfer = move as ITransferMove
+        val source = transfer.source
+        val target = transfer.target
+        val thePiece = source.getPiece() ?: return 0
 
-        Square source = transfer.getSource();
-        Square target = transfer.getTarget();
-        Piece thePiece = source.getPiece();
-
-        if (move instanceof ICaptureMove) {
+        if (move is ICaptureMove) {
             // Ход - взятие фигуры врага.
-            ICaptureMove capture = (ICaptureMove) move;
-
-            Square capturedSquare = capture.getCaptured().get(0);
-            Piece capturedPiece = capturedSquare.getPiece();
+            val capture = move as ICaptureMove
+            val capturedSquare = capture.captured[0]
+            val capturedPiece = capturedSquare.getPiece()
 
             // У захвата короля врага наивысший приоритет.
-            if (capturedPiece instanceof King)
-                return 1000;
+            return if (capturedPiece is King) 1000 else 999
 
             // Пока берем любую фигуру.
-            return 999;
         }
 
         // Из всех ходов без взятия фигуры врага лучший ход
         // который максимально приближает к королю врага.
-        King enemyKing = getEnemyKing(thePiece);
-
-        return MAX_DISTANCE - target.distance(enemyKing.square);
+        val enemyKing = getEnemyKing(thePiece) ?: return 0
+        return MAX_DISTANCE - target.distance(enemyKing.square)
     }
 }

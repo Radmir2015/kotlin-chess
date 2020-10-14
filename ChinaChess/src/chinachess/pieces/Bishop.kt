@@ -1,59 +1,37 @@
-package chinachess.pieces;
+package chinachess.pieces
 
-import chinachess.moves.Capture;
-import chinachess.moves.SimpleMove;
-import game.core.Move;
-import game.core.PieceColor;
-import game.core.Square;
+import chinachess.moves.Capture
+import chinachess.moves.SimpleMove
+import game.core.Move
+import game.core.PieceColor
+import game.core.Square
+import kotlin.math.abs
 
 /**
- * Слон в игре <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
+ * Слон в игре [Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
  *
- * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
+ * @author [Dmitriv Y.](mailto:y.o.dmitriv@gmail.com)
  */
-public class Bishop extends ChinaChessPiece {
-
-    public Bishop(Square square, PieceColor color) {
-        super(square, color);
-    }
-
-    @Override
-    public boolean isCorrectMove(Square... squares) {
+class Bishop(square: Square, color: PieceColor) : ChinaChessPiece(square, color) {
+    override fun isCorrectMove(vararg squares: Square): Boolean {
         // Пока используем только умалчиваемую проверку
         // выполняемую в базовом классе.
-        if (!super.isCorrectMove(squares))
-            return false;
+        if (!super.isCorrectMove(*squares)) return false
 
-        Square target = squares[0];
-
-        int dh = Math.abs(target.h - square.h);
-        int dv = Math.abs(target.v - square.v);
-
-        if (dh != dv)
-            return false; // Это не диагональ.
+        val target = squares[0]
+        if (!square.isDiagonal(target)) return false
 
         // Слон не может пойти на вражескую территорию.
-        if (isEnemyPart(getColor(), target))
-            return false;
+        if (isEnemyPart(color, target)) return false
 
-        //Если dv должно быть равно dh,
-        //то справедливо что любое из них не должно быть больше 2
-        return dh <= 2;
+        // Слон ходит не дальше 2-х клеток.
+        return abs(target.h - square.h) <= 2
     }
 
-    @Override
-    public Move makeMove(Square... squares) {
-        Square target = squares[1];
-
-        if (!target.isEmpty())
-            return new Capture(squares);
-
-        return new SimpleMove(squares);
+    override fun makeMove(vararg squares: Square): Move {
+        val target = squares[1]
+        return if (target.isEmpty) SimpleMove(*squares) else Capture(*squares)
     }
 
-    @Override
-    public String toString() {
-        return "E";
-    }
+    override fun toString() = "E"
 }

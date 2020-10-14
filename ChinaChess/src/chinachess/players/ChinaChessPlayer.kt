@@ -1,92 +1,56 @@
-package chinachess.players;
+package chinachess.players
 
-import chinachess.pieces.*;
-import game.core.*;
-import game.core.players.MovePiecePlayer;
+import chinachess.pieces.*
+import game.core.*
+import game.core.players.MovePiecePlayer
+import java.security.Guard
+import kotlin.math.abs
 
-import java.security.Guard;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+//import java.util.*
 
 /**
  * Базовый класс для всех игроков в китайские шахматы.
  *
- * @author <a href="mailto:vladimir.romanov@gmail.com">Romanov V.Y.</a>
+ * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
-abstract
-public class ChinaChessPlayer extends MovePiecePlayer {
-    /**
-     * Максимальное расстояние между клетками доски:
-     * ширина доски + длина доски.
-     */
-    static final int MAX_DISTANCE = 9 + 10;
-    private static final int maxMoves = 180;
-
-    /**
-     * Ценность (вес) поля на доске.
-     * Чем ближе поле к центру, тем оно лучше.
-     *
-     * @param s - поле
-     * @return вес поля.
-     */
-    static public int getSquareWeight(final Square s) {
-        Board board = s.getBoard();
-        final int tv = s.v;
-        final int th = s.h;
-
-        final double dv = Math.abs(tv - 0.5 * (board.nV - 1));
-        final double dh = Math.abs(th - 0.5 * (board.nH - 1));
-        int distance = (int) (dv + dh);
-
-        return MAX_DISTANCE - distance;
-    }
-
-    @Override
-    public void doMove(Board board, PieceColor color) throws GameOver {
-        List<Move> correctMoves = getCorrectMoves(board, color);
-
-        if (correctMoves.isEmpty())
-            return;
-
-        Collections.shuffle(correctMoves);
-
-        correctMoves.sort(getComparator());
-        Move bestMove = correctMoves.get(0);
-
+abstract class ChinaChessPlayer : MovePiecePlayer() {
+    @Throws(GameOver::class)
+    override fun doMove(board: Board, color: PieceColor) {
+        val correctMoves = getCorrectMoves(board, color)
+        if (correctMoves.isEmpty()) return
+        correctMoves.shuffle()
+        correctMoves.sortWith(comparator)
+        val bestMove = correctMoves[0]
         try {
-            bestMove.doMove();
-        } catch (GameOver e) {
+            bestMove.doMove()
+        } catch (e: GameOver) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.addMove(bestMove);
-            board.history.setResult(e.result);
+            board.history.addMove(bestMove)
+            board.history.result = e.result
 
             // Просим обозревателей доски показать
             // положение на доске, сделанный ход и
             // результат игры.
-            board.setBoardChanged();
-
-            throw new GameOver(e.result);
+            board.setBoardChanged()
+            throw GameOver(e.result)
         }
 
         // Сохраняем ход в истории игры.
-        board.history.addMove(bestMove);
+        board.history.addMove(bestMove)
 
         // Просим обозревателей доски показать
         // положение на доске, сделанный ход и
         // результат игры.
-        board.setBoardChanged();
+        board.setBoardChanged()
 
         // Для отладки ограничим количество ходов в игре.
         // После этого результат игры ничья.
-        if (board.history.getMoves().size() > maxMoves) {
+        if (board.history.moves.size > maxMoves) {
             // Сохраняем в истории игры последний сделанный ход
             // и результат игры.
-            board.history.setResult(GameResult.DRAWN);
-
-            // Сообщаем что игра закончилась ничьей.
-            throw new GameOver(GameResult.DRAWN);
+            board.history.result = GameResult.DRAWN
+            throw GameOver(GameResult.DRAWN)
         }
     }
 
@@ -96,7 +60,7 @@ public class ChinaChessPlayer extends MovePiecePlayer {
      *
      * @return - алгоритм сравнения ходов.
      */
-    abstract Comparator<? super Move> getComparator();
+    abstract val comparator: Comparator<in Move>
 
     /**
      * Найти короля у фигур - врагов для фигуры piece.
@@ -104,13 +68,13 @@ public class ChinaChessPlayer extends MovePiecePlayer {
      * @param piece - фигура для которой ищем врага-короля.
      * @return вражеский король.
      */
-    King getEnemyKing(Piece piece) {
-        return piece.getEnemies()
+    fun getEnemyKing(piece: Piece): King? {
+        return piece.enemies
                 .stream()
-                .filter(enemy -> enemy instanceof King)
-                .map(enemy -> (King) enemy)
+                .filter { enemy: Piece -> enemy is King }
+                .map { enemy: Piece -> enemy as King }
                 .findFirst()
-                .get();
+                .orElse(null)
     }
 
     /**
@@ -119,15 +83,39 @@ public class ChinaChessPlayer extends MovePiecePlayer {
      * @param p - измеряемая фигура.
      * @return ценность фигуры.
      */
-    int getWeight(Piece p) {
-        if (p instanceof King) return 1000;
-        if (p instanceof Guard) return 900;
-        if (p instanceof Gun) return 800;
-        if (p instanceof Rook) return 700;
-        if (p instanceof Bishop) return 600;
-        if (p instanceof Knight) return 500;
-        if (p instanceof Pawn) return 400;
+    fun getWeight(p: Piece): Int {
+        if (p is King) return 1000
+        if (p is Guard) return 900
+        if (p is Gun) return 800
+        if (p is Rook) return 700
+        if (p is Bishop) return 600
+        if (p is Knight) return 500
+        return if (p is Pawn) 400 else 0
+    }
 
-        return 0;
+    companion object {
+        /**
+         * Максимальное расстояние между клетками доски:
+         * ширина доски + длина доски.
+         */
+        const val MAX_DISTANCE = 9 + 10
+        private const val maxMoves = 180
+
+        /**
+         * Ценность (вес) поля на доске.
+         * Чем ближе поле к центру, тем оно лучше.
+         *
+         * @param s - поле
+         * @return вес поля.
+         */
+        fun getSquareWeight(s: Square): Int {
+            val board = s.board
+            val tv = s.v
+            val th = s.h
+            val dv = abs(tv - 0.5 * (board.nV - 1))
+            val dh = abs(th - 0.5 * (board.nH - 1))
+            val distance = (dv + dh).toInt()
+            return MAX_DISTANCE - distance
+        }
     }
 }

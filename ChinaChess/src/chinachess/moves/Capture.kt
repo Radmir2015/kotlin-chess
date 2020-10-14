@@ -1,56 +1,41 @@
-package chinachess.moves;
+package chinachess.moves
 
-import chinachess.pieces.King;
-import game.core.GameOver;
-import game.core.GameResult;
-import game.core.Piece;
-import game.core.Square;
-import game.core.moves.ICaptureMove;
-
-import java.util.Collections;
-import java.util.List;
+import chinachess.pieces.King
+import game.core.GameOver
+import game.core.GameResult.Companion.lost
+import game.core.Piece
+import game.core.Square
+import game.core.moves.ICaptureMove
 
 /**
  * Ход китайских шахматах - перемещение фигуры на клетку
  * с захватом фигуры противника.
- * Игра <a href="https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8">
- * Китайские шахматы</a>
+ * Игра [
+ * Китайские шахматы](https://ru.wikipedia.org/wiki/%D0%A1%D1%8F%D0%BD%D1%86%D0%B8)
  *
- * @author <a href="mailto:y.o.dmitriv@gmail.com">Dmitriv Y.</a>
+ * @author [Dmitriv Y.](mailto:y.o.dmitriv@gmail.com)
  */
-public class Capture extends SimpleMove implements ICaptureMove {
-    private final Square capturedSquare;
-    private final Piece capturedPiece;
+class Capture(vararg squares: Square) : SimpleMove(*squares), ICaptureMove {
+    private val capturedSquare: Square = squares[1]
+    private val capturedPiece: Piece?
 
-    public Capture(Square[] squares) {
-        super(squares);
-
-        capturedSquare = squares[1];
-        capturedPiece = capturedSquare.getPiece();
+    @Throws(GameOver::class)
+    override fun doMove() {
+        capturedPiece!!.remove()
+        super.doMove()
+        if (capturedPiece is King) throw GameOver(lost(capturedPiece))
     }
 
-    @Override
-    public void doMove() throws GameOver {
-        capturedPiece.remove();
-        super.doMove();
-
-        if (capturedPiece instanceof King)
-            throw new GameOver(GameResult.lost(capturedPiece));
+    override fun undoMove() {
+        super.undoMove()
+        capturedSquare.setPiece(capturedPiece!!)
     }
 
-    @Override
-    public void undoMove() {
-        super.undoMove();
-        capturedSquare.setPiece(capturedPiece);
-    }
+    override fun toString() = "$piece${source}x$target"
 
-    @Override
-    public String toString() {
-        return "" + piece + source + "x" + target;
-    }
+    override val captured: List<Square> = listOf(capturedSquare)
 
-    @Override
-    public List<Square> getCaptured() {
-        return Collections.singletonList(capturedSquare);
+    init {
+        capturedPiece = capturedSquare.getPiece()
     }
 }
