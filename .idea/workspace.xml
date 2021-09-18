@@ -22,11 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="draft">
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamesINKotlin.eml" beforeDir="false" afterPath="$PROJECT_DIR$/GamesINKotlin.eml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/AdornedBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,10 +94,15 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notebook-2020-10-14" />
+        <entry key="$PROJECT_DIR$" value="notebook-2020-10-17" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="GameGWTJava/invalid/OSGi" />
+    </ignored-facets>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -118,6 +121,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
+    <property name="ToolWindowStructure.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559154447143" />
@@ -183,7 +187,7 @@
       <recent name="games.ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.notebook.swing.NotebookKt">
+  <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -191,12 +195,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="JetRunConfigurationType" nameIsGenerated="true">
-      <module name="GamesINKotlin" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,13 +291,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00074" summary="draft Выполняется считывание ресурсов-изображений.">
-      <created>1551298602657</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1551298602657</updated>
     </task>
     <task id="LOCAL-00075" summary="Параметр паналей для досок теперь класс Game, а не Board.">
       <created>1551353191735</created>
@@ -637,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602670670726</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Новая ветка для курса Kotlin">
+      <created>1631952739518</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1631952739518</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -683,7 +681,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/notebook-2020-10-17" />
+                        <option value="notebook-2021-09-18" />
                       </list>
                     </value>
                   </entry>
@@ -718,7 +716,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Выделили в отдельный модуль Reversi." />
     <MESSAGE value="Выделили в отдельный модуль Renju." />
     <MESSAGE value="Выделили в отдельный модуль Go." />
     <MESSAGE value="Реализованы интерфейсы ISizable и IScorable" />
@@ -743,7 +740,8 @@
     <MESSAGE value="Реверси теперь на Kotlin-e" />
     <MESSAGE value="Китайские шахматы теперь на Kotlin-e" />
     <MESSAGE value="Рендзю шахматы теперь на Kotlin-e" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рендзю шахматы теперь на Kotlin-e" />
+    <MESSAGE value="Новая ветка для курса Kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Новая ветка для курса Kotlin" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

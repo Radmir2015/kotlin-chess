@@ -324,12 +324,12 @@ abstract class GameBoard(val game: Game)
      *
      * @param image новое изображение курсора.
      */
-    private fun imageToCursor(image: Image?) {
+    private fun imageToCursor(image: Image) {
         val sw = getSquareWidth()
         val sh = getSquareHeight()
 
         val toolkit = Toolkit.getDefaultToolkit()
-        val cursorImage: Image = image!!.getScaledInstance(sw, sh, Image.SCALE_DEFAULT)
+        val cursorImage: Image = image // image!!.getScaledInstance(sw, sh, Image.SCALE_DEFAULT)
         val hotSpot = Point(sw / 2, sh / 2)
         cursor = toolkit.createCustomCursor(cursorImage, hotSpot, "customCursor")
     }
@@ -339,7 +339,7 @@ abstract class GameBoard(val game: Game)
      *
      * @param piece фигура изображение которой "перемешается" в курсор.
      */
-    override fun pieceToCursor(piece: Piece) = imageToCursor(getImage(piece))
+    override fun pieceToCursor(piece: Piece): Unit = getImage(piece)?.let { imageToCursor(it) }!!
 
     //
     // Реализация интерфейса MouseListener
