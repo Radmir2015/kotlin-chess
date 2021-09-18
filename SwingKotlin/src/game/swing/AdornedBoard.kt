@@ -76,7 +76,7 @@ open class AdornedBoard : JPanel(GridBagLayout()) {
                 val delta = if (isInverted) -1 else 1
 
                 val i = start + delta * k
-                val text = " ${if (isNumbers) """$i""" else alphabet.substring(i - 1, i)} "
+                val text = " ${if (isNumbers) """$i""" else alphabet.subSequence(i - 1, i)} "
 
                 val adorn = JLabel(text)
                 adorn.font = font
