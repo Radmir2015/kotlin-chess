@@ -23,9 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/News.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notebook-2020-10-17" />
+        <entry key="$PROJECT_DIR$" value="notebook-2021-09-18" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -294,13 +292,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00075" summary="Параметр паналей для досок теперь класс Game, а не Board.">
-      <created>1551353191735</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1551353191735</updated>
     </task>
     <task id="LOCAL-00076" summary="Для шахмат реализована унифицированная отрисовка фигур">
       <created>1551369095692</created>
@@ -638,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631952739518</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="Список участников практикума по языку Kotlin">
+      <created>1633284490787</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1633284490787</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -684,10 +682,17 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="notebook-2021-09-18" />
+                        <option value="notebook-2021-10-03" />
                       </list>
                     </value>
                   </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="94" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="76" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="76" />
                 </map>
               </option>
             </State>
@@ -719,7 +724,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Выделили в отдельный модуль Renju." />
     <MESSAGE value="Выделили в отдельный модуль Go." />
     <MESSAGE value="Реализованы интерфейсы ISizable и IScorable" />
     <MESSAGE value="Вынесена в отдельный модуль Halma" />
@@ -744,7 +748,8 @@
     <MESSAGE value="Китайские шахматы теперь на Kotlin-e" />
     <MESSAGE value="Рендзю шахматы теперь на Kotlin-e" />
     <MESSAGE value="Новая ветка для курса Kotlin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Новая ветка для курса Kotlin" />
+    <MESSAGE value="Список участников практикума по языку Kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Список участников практикума по языку Kotlin" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
