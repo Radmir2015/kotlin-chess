@@ -9,8 +9,7 @@ import game.core.*
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 class Vinni : PutPiecePlayer {
-    override val name: String
-        get() = "Винни"
+    override val name = "Винни"
     override val authorName: String
         get() = "Романов В.Ю."
 

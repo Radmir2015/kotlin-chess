@@ -23,8 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/Vinni.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +120,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="getInsets&#9;null&#9;null&#10;Neznika&#9;null&#9;null&#10;HOMO_SAPIENCE&#9;PSI&#9;JAVA://game.players.IPlayer#HOMO_SAPIENCE&#10;rook.&#9;FILE&#9;file://C:/Users/Admin/IdeaProjects/GamesINKotlin/src/chess/pieces/Rook.java" />
     <property name="ToolWindowStructure.ShowToolbar" value="false" />
@@ -215,6 +217,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
         <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
         <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
       </list>
