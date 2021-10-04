@@ -23,7 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/News.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,13 +292,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00076" summary="Для шахмат реализована унифицированная отрисовка фигур">
-      <created>1551369095692</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1551369095692</updated>
     </task>
     <task id="LOCAL-00077" summary="Для шахмат удалена доска ChessBoard">
       <created>1551377653532</created>
@@ -636,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633284490787</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="Создан файл для записи новостей.">
+      <created>1633284596238</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1633284596238</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -724,7 +724,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Выделили в отдельный модуль Go." />
     <MESSAGE value="Реализованы интерфейсы ISizable и IScorable" />
     <MESSAGE value="Вынесена в отдельный модуль Halma" />
     <MESSAGE value="Все игры вынесены в модули." />
@@ -749,7 +748,8 @@
     <MESSAGE value="Рендзю шахматы теперь на Kotlin-e" />
     <MESSAGE value="Новая ветка для курса Kotlin" />
     <MESSAGE value="Список участников практикума по языку Kotlin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Список участников практикума по языку Kotlin" />
+    <MESSAGE value="Создан файл для записи новостей." />
+    <option name="LAST_COMMIT_MESSAGE" value="Создан файл для записи новостей." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
