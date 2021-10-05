@@ -22,15 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/images/bStone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/images/wStone.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NineMensMorris/NineMensMorris.iml" beforeDir="false" afterPath="$PROJECT_DIR$/NineMensMorris/NineMensMorris.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NineMensMorris/src/nmm/NineMensMorris.kt" beforeDir="false" afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NineMensMorris.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Reversi/Reversi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Reversi/Reversi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
-    </list>
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -298,13 +290,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00079" summary="draft">
-      <created>1551431807564</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1551431807580</updated>
     </task>
     <task id="LOCAL-00080" summary="У игр атрибут-имя.">
       <created>1551433261078</created>
@@ -642,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633446255305</updated>
     </task>
-    <option name="localTasksCounter" value="128" />
+    <task id="LOCAL-00128" summary="draft">
+      <created>1633447747449</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1633447747449</updated>
+    </task>
+    <option name="localTasksCounter" value="129" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -777,6 +769,11 @@
           <url>file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt</url>
           <line>51</line>
           <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt</url>
+          <line>81</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
