@@ -48,9 +48,9 @@ fun main() {
 }
 
 private fun JTabbedPane.addGame(game: Game) {
-    val url: URL = game.javaClass.getResource("images/${game.iconImageFile}")
+    val img = "images/${game.iconImageFile}"
+    val url: URL = game.javaClass.getResource(img)
     val iconImage = ImageIO.read(url)
     val icon = ImageIcon(iconImage.getScaledInstance(20, 20, Image.SCALE_DEFAULT))
-
     addTab(game.name, icon, GamePanel(game))
 }
