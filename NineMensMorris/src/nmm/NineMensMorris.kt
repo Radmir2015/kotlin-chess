@@ -4,12 +4,13 @@ import game.core.*
 import game.core.players.Vinni
 
 /**
- *
+ * Девять пляшущий человечков.
+ * [Правила](https://archive.akopyan.ru/page.php?id=3603)
  */
-class NineMensMorris() : Game() {
-    override val iconImageFile = "icoNMM.png"
+class NineMensMorris : Game() {
     override val name = "NineMensMorris"
-    override val boardKind = BoardKind.ASIA
+    override val iconImageFile = "icoNMM.png"
+    override val boardKind = BoardKind.NINE_MANS
     override val moveKind = MoveKind.PIECE_PUT
 
     override fun initBoardDefault() {

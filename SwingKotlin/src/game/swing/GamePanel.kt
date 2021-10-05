@@ -58,13 +58,22 @@ class GamePanel(val game: Game) : JPanel(BorderLayout()) {
             }
             BoardKind.ASIA_CASTLE_RIVER -> {
                 gameBoard = object : AsiaBoardWithCastleRiver(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece =
+                        game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }
             BoardKind.ASIA_CASTLE -> {
                 gameBoard = object : AsiaBoardWithCastle(game) {
-                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece = game.getPiece(mouseSquare, moveColor)
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece =
+                        game.getPiece(mouseSquare, moveColor)
+                }
+                insertSquares(gameBoard)
+            }
+            BoardKind.NINE_MANS -> {
+                gameBoard = object : NineMansBoard(game) {
+                    override fun getPiece(mouseSquare: Square, moveColor: PieceColor): Piece =
+                        game.getPiece(mouseSquare, moveColor)
                 }
                 insertSquares(gameBoard)
             }

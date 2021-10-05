@@ -5,12 +5,13 @@ import game.core.Square
 import game.core.moves.IPutMove
 
 /**
+ *
  */
 class NMMMove(piece: Piece, vararg squares: Square) : IPutMove {
     /**
      * Куда поставят фигуру..
      */
-    override val target: Square = squares[0]
+    override val target = squares[0]
     override val piece: Piece = piece
 
     override fun doMove() {
