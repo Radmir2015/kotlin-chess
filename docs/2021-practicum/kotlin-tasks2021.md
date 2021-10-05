@@ -2,8 +2,12 @@
 
 1. Корнюхина Софья
 
+
 2. Мизаушев Адам
 
-3. Татьяна Клименко
 
-~~~~
+3. Татьяна Клименко  
+   Nine men's morris: [link](Tasks4Kotlin/Task01-NineMensMorris.md)
+
+
+

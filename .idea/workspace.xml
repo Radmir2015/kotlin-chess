@@ -22,8 +22,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="Дополнен список участников практикума по языку Kotlin">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NineMensMorris/NineMensMorris.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NMMMove.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NMMPiece.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NineMensMorris.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/images/icoNMM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/2021-practicum/Tasks4Kotlin/Task01-NineMensMorris.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/2021-practicum/Tasks4Kotlin/img/nmm-01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +77,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Arquillian JUnit Test Class" />
         <option value="Class" />
         <option value="Interface" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -93,7 +106,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notebook-2021-09-18" />
+        <entry key="$PROJECT_DIR$" value="notebook-2021-10-04" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -130,7 +143,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/renju/swing" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/NineMensMorris/src/nmm/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -147,21 +160,21 @@
     <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="game.swing" />
-      <recent name="game.swing.images" />
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="checkers.players" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="renju.moves" />
+      <recent name="renju.pieces" />
       <recent name="game.core" />
+      <recent name="renju.swift" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\IdeaProjects\kotlingamesnotebook\NineMensMorris\src\nmm\images" />
+      <recent name="C:\__git-jetbrain\kotlingamesnotebook\doc\img" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Halma\src\halma\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Go\src\go\images" />
+      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Renju\src\renju\images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="game.core" />
-      <recent name="game.players" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\__git-jetbrain\kotlingamesnotebook\help" />
@@ -170,18 +183,18 @@
       <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\checkers\images" />
       <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\chess\moves" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\__git-jetbrain\kotlingamesnotebook\doc\img" />
-      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Halma\src\halma\images" />
-      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Go\src\go\images" />
-      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Renju\src\renju\images" />
-      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Reversi\src\reversi\images" />
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="game.swing" />
+      <recent name="game.swing.images" />
+      <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="renju.moves" />
-      <recent name="renju.pieces" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="game.core" />
-      <recent name="renju.swift" />
+      <recent name="game.players" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="checkers.players" />
+      <recent name="game.core" />
     </key>
     <key name="KotlinExtractSuperclassDialog.RECENT_KEYS">
       <recent name="games.ui" />
@@ -292,13 +305,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00077" summary="Для шахмат удалена доска ChessBoard">
-      <created>1551377653532</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1551377653532</updated>
     </task>
     <task id="LOCAL-00078" summary="Интерфейс пользователя шахмат только через модуль SwingKotlin.">
       <created>1551381922947</created>
@@ -636,7 +642,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633284596238</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Дополнен список участников практикума по языку Kotlin">
+      <created>1633343325965</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1633343325966</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -682,7 +695,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="notebook-2021-10-03" />
+                        <option value="notebook-2021-10-04" />
                       </list>
                     </value>
                   </entry>
@@ -724,7 +737,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Реализованы интерфейсы ISizable и IScorable" />
     <MESSAGE value="Вынесена в отдельный модуль Halma" />
     <MESSAGE value="Все игры вынесены в модули." />
     <MESSAGE value="Удалены лишние KotlinRuntime" />
@@ -749,7 +761,8 @@
     <MESSAGE value="Новая ветка для курса Kotlin" />
     <MESSAGE value="Список участников практикума по языку Kotlin" />
     <MESSAGE value="Создан файл для записи новостей." />
-    <option name="LAST_COMMIT_MESSAGE" value="Создан файл для записи новостей." />
+    <MESSAGE value="Дополнен список участников практикума по языку Kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Дополнен список участников практикума по языку Kotlin" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -767,6 +780,16 @@
           <line>119</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt</url>
+          <line>50</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt</url>
+          <line>51</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog>
@@ -776,6 +799,12 @@
         </breakpoints-dialog>
       </breakpoints-dialog>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="game.iconImageFile" />
+        <watch expression="&quot;images/${game.iconImageFile}&quot;" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">

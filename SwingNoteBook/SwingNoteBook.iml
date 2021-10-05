@@ -19,5 +19,6 @@
     <orderEntry type="module" module-name="Renju" />
     <orderEntry type="module" module-name="Go" />
     <orderEntry type="module" module-name="Halma" />
+    <orderEntry type="module" module-name="NineMensMorris" />
   </component>
 </module>
