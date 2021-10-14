@@ -23,12 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/NineMansBoard.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/BoardKind.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/BoardKind.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NineMensMorris/src/nmm/NMMMove.kt" beforeDir="false" afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NMMMove.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NineMensMorris/src/nmm/NineMensMorris.kt" beforeDir="false" afterPath="$PROJECT_DIR$/NineMensMorris/src/nmm/NineMensMorris.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +94,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notebook-2021-10-04" />
+        <entry key="$PROJECT_DIR$" value="notebook-2021-10-05" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -690,7 +686,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="notebook-2021-10-04" />
+                        <option value="2021-10-14" />
                       </list>
                     </value>
                   </entry>
