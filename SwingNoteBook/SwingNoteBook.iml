@@ -20,5 +20,6 @@
     <orderEntry type="module" module-name="Go" />
     <orderEntry type="module" module-name="Halma" />
     <orderEntry type="module" module-name="NineMensMorris" />
+    <orderEntry type="module" module-name="JapanChess" />
   </component>
 </module>

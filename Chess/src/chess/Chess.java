@@ -68,6 +68,7 @@ public class Chess extends Game {
 
     public Map<Class<? extends Piece>, String> getPieceImages(PieceColor color) {
 
+
         Map<Class<? extends Piece>, String> images = new HashMap<>();
 
         switch (color) {

@@ -7,6 +7,7 @@ import game.core.Game
 import game.swing.GamePanel
 import go.Go
 import halma.Halma
+import japanchess.JapanChess
 import nmm.NineMensMorris
 import renju.Renju
 import reversi.Reversi
@@ -35,6 +36,7 @@ fun main() {
         isVisible = true
     }
 
+    tabbedPane.addGame(JapanChess())
     tabbedPane.addGame(NineMensMorris())
     tabbedPane.addGame(Reversi())
     tabbedPane.addGame(Chess())

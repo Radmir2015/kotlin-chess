@@ -23,8 +23,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime__5_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/JapanChess.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/JapanChess.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiBishop.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiBishop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiGeneralGold.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiGeneralSilver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiKing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiKnight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiLance.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiPawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiRook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiTransformedLance.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiTransformedPawn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/dragon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/dragon_wall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/icoShogi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_down.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_down_m.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_medium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_up_m.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/News.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/News.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +120,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="notebook-2021-10-05" />
+        <entry key="$PROJECT_DIR$" value="2021-10-14" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -131,7 +157,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/renju/swing" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/NineMensMorris/src/nmm/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JapanChess/src/japanchess/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -155,11 +181,11 @@
       <recent name="renju.swift" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\IdeaProjects\kotlingamesnotebook\JapanChess\src\japanchess\images" />
       <recent name="C:\Users\Dell\IdeaProjects\kotlingamesnotebook\NineMensMorris\src\nmm\images" />
       <recent name="C:\__git-jetbrain\kotlingamesnotebook\doc\img" />
       <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Halma\src\halma\images" />
       <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Go\src\go\images" />
-      <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\Renju\src\renju\images" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -172,9 +198,11 @@
       <recent name="C:\Users\Admin\IdeaProjects\GamesINKotlin\src\chess\moves" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="notebook.swing" />
       <recent name="game.swing" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="japanchess" />
       <recent name="game.swing" />
       <recent name="game.swing.images" />
       <recent name="" />
@@ -296,13 +324,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00081" summary="У игр реализован метод &#10;String getIconImageFile()">
-      <created>1551441154737</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1551441154737</updated>
     </task>
     <task id="LOCAL-00082" summary="У игр реализован метод &#10;BoardKind getBoardKind()">
       <created>1551441697226</created>
@@ -640,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633448219817</updated>
     </task>
-    <option name="localTasksCounter" value="130" />
+    <task id="LOCAL-00130" summary="Обновлен список задач практикума.">
+      <created>1634199980149</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1634199980149</updated>
+    </task>
+    <option name="localTasksCounter" value="131" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -728,7 +756,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Вынесена в отдельный модуль Halma" />
     <MESSAGE value="Все игры вынесены в модули." />
     <MESSAGE value="Удалены лишние KotlinRuntime" />
     <MESSAGE value="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list" />
@@ -753,7 +780,8 @@
     <MESSAGE value="Создан файл для записи новостей." />
     <MESSAGE value="Дополнен список участников практикума по языку Kotlin" />
     <MESSAGE value="draft" />
-    <option name="LAST_COMMIT_MESSAGE" value="draft" />
+    <MESSAGE value="Обновлен список задач практикума." />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлен список задач практикума." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -770,11 +798,6 @@
           <url>file://$PROJECT_DIR$/Chess/src/chess/pieces/Pawn.kt</url>
           <line>119</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt</url>
-          <line>51</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
