@@ -1,7 +1,6 @@
 package game.core
 
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.collections.set
 
 /**
@@ -102,6 +101,7 @@ class Board(
             val player = players[moveColor] ?: return
 
             if (player === IPlayer.HOMO_SAPIENCE)
+                // TODO Акжигитов реализовать алгоритм получения хода от удаленного игрока.
                 break // Ход сделает человек.
 
             try {

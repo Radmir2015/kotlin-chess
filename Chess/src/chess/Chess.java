@@ -15,6 +15,8 @@ import java.util.Map;
 public class Chess extends Game {
 
     static {
+        // TODO Акжигитов Реализация алгоритма игры двух человек
+        // addPlayer(Chess.class, new ManPlayer());
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
     }

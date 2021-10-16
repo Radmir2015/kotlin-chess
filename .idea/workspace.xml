@@ -22,9 +22,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="TODO Голяков, Корнюхина">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +95,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="2021-10-14" />
+        <entry key="$PROJECT_DIR$" value="2021-10-16" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -298,13 +299,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00083" summary="У игр реализован метод &#10;MoveKind getMoveKind()">
-      <created>1551443111319</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1551443111319</updated>
     </task>
     <task id="LOCAL-00084" summary="Cлушатели мыши задаются в базовом классе GameBoard.">
       <created>1551444275387</created>
@@ -642,7 +636,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634205937789</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Обновлен список двух человек.  &#10;Игра двух человек в шахматы.  &#10;Акжигитов Радмир">
+      <created>1634380007540</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1634380007540</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -730,7 +731,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Удалены лишние KotlinRuntime" />
     <MESSAGE value="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list" />
     <MESSAGE value="Блокнот игр вновь заработал" />
     <MESSAGE value="Добавлена совместимость вложенных модулей с Eclipse" />
@@ -755,7 +755,8 @@
     <MESSAGE value="draft" />
     <MESSAGE value="Обновлен список задач практикума." />
     <MESSAGE value="TODO Голяков, Корнюхина" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO Голяков, Корнюхина" />
+    <MESSAGE value="Обновлен список двух человек.  &#10;Игра двух человек в шахматы.  &#10;Акжигитов Радмир" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлен список двух человек.  &#10;Игра двух человек в шахматы.  &#10;Акжигитов Радмир" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
