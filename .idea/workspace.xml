@@ -22,35 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime__5_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/JapanChess.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/JapanChess.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiBishop.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiBishop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiGeneralGold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiGeneralSilver.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiKing.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiKnight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiLance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiPawn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiRook.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiTransformedLance.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/ShogiTransformedPawn.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/dragon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/dragon_wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/icoShogi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_down_m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_medium.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_up.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JapanChess/src/japanchess/images/wood_up_m.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="TODO Голяков, Корнюхина">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/SwingNoteBook.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/News.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/News.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/2021-practicum/kotlin-tasks2021.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,13 +298,6 @@
       <workItem from="1591347724726" duration="655000" />
       <workItem from="1599842649945" duration="97000" />
       <workItem from="1599886177855" duration="1312000" />
-    </task>
-    <task id="LOCAL-00082" summary="У игр реализован метод &#10;BoardKind getBoardKind()">
-      <created>1551441697226</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1551441697226</updated>
     </task>
     <task id="LOCAL-00083" summary="У игр реализован метод &#10;MoveKind getMoveKind()">
       <created>1551443111319</created>
@@ -668,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634199980149</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="TODO Голяков, Корнюхина">
+      <created>1634205937789</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1634205937789</updated>
+    </task>
+    <option name="localTasksCounter" value="132" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -714,7 +688,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="2021-10-14" />
+                        <option value="2021-10-16" />
                       </list>
                     </value>
                   </entry>
@@ -756,7 +730,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Все игры вынесены в модули." />
     <MESSAGE value="Удалены лишние KotlinRuntime" />
     <MESSAGE value="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list" />
     <MESSAGE value="Блокнот игр вновь заработал" />
@@ -781,7 +754,8 @@
     <MESSAGE value="Дополнен список участников практикума по языку Kotlin" />
     <MESSAGE value="draft" />
     <MESSAGE value="Обновлен список задач практикума." />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновлен список задач практикума." />
+    <MESSAGE value="TODO Голяков, Корнюхина" />
+    <option name="LAST_COMMIT_MESSAGE" value="TODO Голяков, Корнюхина" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
