@@ -55,6 +55,7 @@ abstract class Game protected constructor() : IScorable {
             MoveKind.PIECE_MOVE -> {
                 board.setMouseMoveListener(MovePiecePromptListener(board))
                 board.setMouseClickListener(MovePieceListener(board))
+//                board.setRemoteListener(MovePieceListener(board))
             }
             MoveKind.PIECE_PUT -> {
                 board.setMouseMoveListener(PutPiecePromptListener(board))

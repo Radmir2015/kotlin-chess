@@ -94,6 +94,12 @@ class GamePanel(val game: Game) : JPanel(BorderLayout()) {
 
         control.add(Box.createRigidArea(Dimension(0, 5)))
         control.add(scorePanel)
+
+        val gameRoomPanel = GameRoomPanel(game)
+        gameRoomPanel.alignmentX = Component.CENTER_ALIGNMENT
+
+        control.add(Box.createRigidArea(Dimension(0, 5)))
+        control.add(gameRoomPanel)
     }
 
     /**

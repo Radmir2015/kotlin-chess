@@ -36,10 +36,10 @@ fun main() {
         isVisible = true
     }
 
+    tabbedPane.addGame(Chess())
     tabbedPane.addGame(JapanChess())
     tabbedPane.addGame(NineMensMorris())
     tabbedPane.addGame(Reversi())
-    tabbedPane.addGame(Chess())
     tabbedPane.addGame(Checkers())
     tabbedPane.addGame(TamerlanChess())
     tabbedPane.addGame(ChinaChess())

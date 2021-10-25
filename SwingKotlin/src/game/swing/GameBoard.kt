@@ -1,5 +1,9 @@
 package game.swing
 
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import game.core.*
 import game.core.listeners.*
 import game.core.moves.CompositeMove
@@ -55,6 +59,35 @@ abstract class GameBoard(val game: Game)
     init {
         addMouseListener(this)
         addMouseMotionListener(this)
+
+        val ref = FirebaseDatabase.getInstance().getReference("game")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                println(dataSnapshot.child("black").value)
+                val startSquare = Square(board, 7, 4)
+                val finishSquare = Square(board, 5, 4)
+                val selectedPiece = startSquare.getPiece()
+                val move = selectedPiece!!.makeMove(startSquare, finishSquare)
+                println(startSquare)
+                println(finishSquare)
+                println(selectedPiece)
+                println(move)
+                try {
+                    move.doMove()
+                } catch (e: GameOver) {
+                    board.history.addMove(move)
+                    board.history.result = e.result
+
+                    board.setBoardChanged()
+                    return
+                }
+
+                board.history.addMove(move)
+                board.changeMoveColor()
+                board.setBoardChanged()
+            }
+            override fun onCancelled(databaseError: DatabaseError) {}
+        })
 
         when (game.moveKind) {
             MoveKind.PIECE_MOVE -> {

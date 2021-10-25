@@ -4,8 +4,16 @@ import chess.pieces.*;
 import game.core.*;
 import game.core.players.Neznaika;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
+import com.google.auth.oauth2.GoogleCredentials;
+import game.core.players.RemotePlayer;
 
 /**
  * Класс представляющий игру шахматы.
@@ -19,16 +27,40 @@ public class Chess extends Game {
         // addPlayer(Chess.class, new ManPlayer());
         addPlayer(Chess.class, IPlayer.HOMO_SAPIENCE);
         addPlayer(Chess.class, new Neznaika());
+        addPlayer(Chess.class, new RemotePlayer());
     }
 
     /**
      * Расстановка шахматных фигур в начальную позицию.
      */
     public Chess() {
+        initDbConnection();
         initBoardDefault();
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
         board.setBlackPlayer(new Neznaika());
+    }
+
+    public void initDbConnection() {
+        FileInputStream serviceAccount =
+                null;
+        try {
+            serviceAccount = new FileInputStream("Chess/src/chess/chess-notebook-firebase-adminsdk-yimvv-8c036f7e0f.json");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        FirebaseOptions options = null;
+        try {
+            options = new FirebaseOptions.Builder()
+                    .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                    .setDatabaseUrl("https://chess-notebook-default-rtdb.europe-west1.firebasedatabase.app")
+                    .build();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        FirebaseApp.initializeApp(options);
     }
 
     @Override
