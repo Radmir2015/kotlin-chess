@@ -1,14 +1,16 @@
 package game.core
 
+import com.google.firebase.database.FirebaseDatabase
+
 /**
  * История игры (список ходов сделанных фигурами на доске).
  *
  * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
  */
 class History internal constructor(
-        /**
-         * Доска на которой идет игра.
-         */
+    /**
+     * Доска на которой идет игра.
+     */
         val board: Board,
 ) {
     /**
@@ -41,7 +43,25 @@ class History internal constructor(
     fun addMove(move: Move) {
         moves.add(move)
         curMoveNumber++
+
+//        println("A move $silent")
+        val newMove = mutableMapOf("history" to moves.toString()).toMap()
+//        println(newMove)
+        val ref = FirebaseDatabase.getInstance().getReference("game")
+//        move.piece?.color?.name
+        ref.updateChildren(newMove) { _, _ ->
+//            println(ref)
+            println("New move added!")
+        }
     }
+
+    fun addMoveSilently(move: Move) {
+        moves.add(move)
+        curMoveNumber++
+
+//        println("A move $silent")
+    }
+
 
     /**
      * @return Вернуть текущий ход.

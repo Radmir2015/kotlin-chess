@@ -21,8 +21,8 @@ import javax.swing.JPanel
 /**
  * Панель для изображения доски настольной игры и расположенных на ней фигур.
  */
-abstract class GameBoard(val game: Game)
-    : JPanel(BorderLayout()), MouseListener, MouseMotionListener, IBoardPanel, Observer {
+abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener, MouseMotionListener, IBoardPanel,
+    Observer {
     /**
      * Изображаемая доска с фигурами.
      */
@@ -60,32 +60,65 @@ abstract class GameBoard(val game: Game)
         addMouseListener(this)
         addMouseMotionListener(this)
 
-        val ref = FirebaseDatabase.getInstance().getReference("game")
+        val ref = FirebaseDatabase.getInstance().getReference("game/history")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                println(dataSnapshot.child("black").value)
-                val startSquare = Square(board, 7, 4)
-                val finishSquare = Square(board, 5, 4)
-                val selectedPiece = startSquare.getPiece()
-                val move = selectedPiece!!.makeMove(startSquare, finishSquare)
-                println(startSquare)
-                println(finishSquare)
-                println(selectedPiece)
-                println(move)
-                try {
-                    move.doMove()
-                } catch (e: GameOver) {
-                    board.history.addMove(move)
-                    board.history.result = e.result
+                val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+                fun makeLocalMove(sv: Int, sh: Int, fv: Int, fh: Int): Move {
+                    val startSquare = board.getSquare(sv, sh)
+                    val finishSquare = board.getSquare(fv, fh)
+                    val selectedPiece = startSquare?.getPiece()
+                    val move = selectedPiece!!.makeMove(startSquare, finishSquare!!)
 
-                    board.setBoardChanged()
-                    return
+                    try {
+                        move.doMove()
+                    } catch (e: GameOver) {
+                        board.history.addMove(move)
+                        board.history.result = e.result
+
+                        board.setBoardChanged()
+//                        return
+                    }
+
+                    return move
                 }
 
-                board.history.addMove(move)
-                board.changeMoveColor()
-                board.setBoardChanged()
+                fun updateBoard(move: Move) {
+                    board.history.addMoveSilently(move)
+                    board.changeMoveColor()
+                    board.setBoardChanged()
+                }
+
+//                board.history.clear()
+//                board.setBoardChanged()
+
+                println(
+                    "Moves came " + dataSnapshot.value.toString().replace("[", "")
+                        .replace("]", "")
+                )
+                dataSnapshot.value.toString()
+                    .replace("[", "")
+                    .replace("]", "")
+                    .replace("x", "-")
+                    .split(", ")
+                    .takeLast(1)
+                    .forEach { move ->
+                        val squares = move.split("-").map { it.replace("[A-Z]+".toRegex(), "") }
+//                        if (squares[1])
+                        println("move ${squares.toString()}")
+                        updateBoard(
+                            makeLocalMove(
+                                ALPHABET.indexOf(squares[0][0]), 8 - squares[0][1].toString().toInt(),
+                                ALPHABET.indexOf(squares[1][0]), 8 - squares[1][1].toString().toInt()
+                            )
+                        )
+                    }
+                //                val startSquare = Square(board, 4, 6)
+//                val finishSquare = Square(board, 4, 4)
+//                println("History " + board.history.toString())
+
             }
+
             override fun onCancelled(databaseError: DatabaseError) {}
         })
 

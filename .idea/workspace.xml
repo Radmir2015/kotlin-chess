@@ -26,111 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="TODO Голяков, Корнюхина">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/firebase_admin_8_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/firebase_admin_8_1_0__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_api_client_1_32_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_auth_library_credentials_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_auth_library_credentials_1_2_1__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_auth_library_oauth2_http_1_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_http_client_1_40_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_http_client_gson_1_40_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/guava_31_0_1_jre.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/netty_all_4_1_68_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chess/src/chess/chess-notebook-firebase-adminsdk-yimvv-8c036f7e0f.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/RemotePlayer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameRoomPanel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/animal-sniffer-annotations-1.20.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/annotations-13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/annotations-4.1.1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/api-common-1.10.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/auto-value-annotations-1.8.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/checker-compat-qual-2.5.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/commons-codec-1.15.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/commons-logging-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/conscrypt-openjdk-uber-2.5.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/error_prone_annotations-2.7.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/failureaccess-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/firebase-admin-8.1.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/gax-1.66.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/gax-grpc-1.66.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/gax-httpjson-0.83.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-api-client-1.32.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-api-client-gson-1.32.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-api-services-storage-v1-rev20210127-1.32.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-auth-library-credentials-0.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-auth-library-oauth2-http-0.26.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-cloud-core-1.95.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-cloud-core-grpc-1.95.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-cloud-core-http-1.95.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-cloud-firestore-2.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-cloud-storage-1.118.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-http-client-1.39.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-http-client-apache-v2-1.39.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-http-client-appengine-1.39.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-http-client-gson-1.39.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-http-client-jackson2-1.39.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/google-oauth-client-1.31.5.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-alts-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-api-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-auth-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-context-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-core-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-grpclb-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-netty-shaded-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-protobuf-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-protobuf-lite-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/grpc-stub-1.39.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/gson-2.8.7.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/guava-30.1.1-android.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/httpclient-4.5.13.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/httpcore-4.4.14.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/j2objc-annotations-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/jackson-core-2.12.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/javax.annotation-api-1.3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/jsr305-3.0.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/junit-4.12.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-stdlib-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-stdlib-common-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-stdlib-jdk7-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-stdlib-jdk8-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-test-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/kotlin-test-junit-1.5.10.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-buffer-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-codec-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-codec-http-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-common-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-handler-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-resolver-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/netty-transport-4.1.67.Final.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/opencensus-api-0.28.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/opencensus-contrib-grpc-util-0.28.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/opencensus-contrib-http-util-0.28.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/perfmark-api-0.23.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/proto-google-cloud-firestore-bundle-v1-2.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/proto-google-cloud-firestore-v1-2.6.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/proto-google-common-protos-2.3.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/proto-google-iam-v1-1.0.14.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/protobuf-java-3.17.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/protobuf-java-util-3.17.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/slf4j-api-1.7.32.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/slf4j-simple-1.7.32.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/threetenbp-1.5.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021,_21_46_[Default_Changelist]/firebase-admin-8.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021,_21_46_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021__21_46__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/Chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/Chess.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Board.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GamesINKotlin.eml" beforeDir="false" afterPath="$PROJECT_DIR$/GamesINKotlin.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/GameCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/GameCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/RemotePlayer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/RemotePlayer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GamePanel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +104,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="2021-10-16" />
+        <entry key="$PROJECT_DIR$" value="man-vs-man" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -232,6 +136,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -322,9 +227,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="notebook.swing.NotebookKt" type="JetRunConfigurationType" temporary="true">
+    <configuration name="notebook.swing.NotebookKt" type="JetRunConfigurationType" singleton="false" temporary="true">
       <option name="MAIN_CLASS_NAME" value="notebook.swing.NotebookKt" />
       <module name="SwingNoteBook" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -338,6 +244,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
+        <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
         <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
         <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
         <item itemvalue="Kotlin.notebook.swing.NotebookKt" />
@@ -782,12 +690,12 @@
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="SHOW_OTHER_BRANCHES" value="true" />
-    <option name="COLUMN_ORDER">
+    <option name="COLUMN_ID_ORDER">
       <list>
-        <option value="0" />
-        <option value="2" />
-        <option value="3" />
-        <option value="1" />
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
       </list>
     </option>
   </component>
@@ -888,15 +796,6 @@
           <line>158</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/Chess/src/chess/pieces/Pawn.kt</url>
-          <line>119</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="27" />
-        </breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog>

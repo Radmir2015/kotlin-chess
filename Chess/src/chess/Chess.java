@@ -1,19 +1,18 @@
 package chess;
 
 import chess.pieces.*;
+import com.google.auth.oauth2.GoogleCredentials;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import game.core.*;
 import game.core.players.Neznaika;
+import game.core.players.RemotePlayer;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.auth.oauth2.GoogleCredentials;
-import game.core.players.RemotePlayer;
 
 /**
  * Класс представляющий игру шахматы.
@@ -38,7 +37,9 @@ public class Chess extends Game {
         initBoardDefault();
 
         board.setWhitePlayer(IPlayer.HOMO_SAPIENCE);
-        board.setBlackPlayer(new Neznaika());
+        board.setBlackPlayer(IPlayer.HOMO_SAPIENCE);
+//        board.setBlackPlayer(new RemotePlayer());
+
     }
 
     public void initDbConnection() {
