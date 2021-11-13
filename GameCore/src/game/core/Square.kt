@@ -213,5 +213,15 @@ class Square(
 
     companion object {
         private const val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+
+        fun parseSquaresFromMovesString(moves: String, board: Board): Pair<Square?, Square?> {
+            val squares = moves.split("-")
+                .map { it.replace("[A-Z]+".toRegex(), "") }
+
+            return Pair(
+                board.getSquare(ALPHABET.indexOf(squares[0][0]), 8 - squares[0][1].toString().toInt()),
+                board.getSquare(ALPHABET.indexOf(squares[1][0]), 8 - squares[1][1].toString().toInt())
+            )
+        }
     }
 }

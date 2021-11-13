@@ -63,10 +63,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
         val ref = FirebaseDatabase.getInstance().getReference("game/history")
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
-                fun makeLocalMove(sv: Int, sh: Int, fv: Int, fh: Int): Move {
-                    val startSquare = board.getSquare(sv, sh)
-                    val finishSquare = board.getSquare(fv, fh)
+                fun makeLocalMove(startSquare: Square?, finishSquare: Square?): Move {
                     val selectedPiece = startSquare?.getPiece()
                     val move = selectedPiece!!.makeMove(startSquare, finishSquare!!)
 
@@ -93,30 +90,20 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
 //                board.setBoardChanged()
 
                 println(
-                    "Moves came " + dataSnapshot.value.toString().replace("[", "")
+                    "Moves came " + dataSnapshot.value.toString()
+                        .replace("[", "")
                         .replace("]", "")
                 )
-                dataSnapshot.value.toString()
-                    .replace("[", "")
-                    .replace("]", "")
-                    .replace("x", "-")
+
+                History.clearHistoryString(dataSnapshot.value.toString())
                     .split(", ")
                     .takeLast(1)
                     .forEach { move ->
-                        val squares = move.split("-").map { it.replace("[A-Z]+".toRegex(), "") }
-//                        if (squares[1])
-                        println("move ${squares.toString()}")
-                        updateBoard(
-                            makeLocalMove(
-                                ALPHABET.indexOf(squares[0][0]), 8 - squares[0][1].toString().toInt(),
-                                ALPHABET.indexOf(squares[1][0]), 8 - squares[1][1].toString().toInt()
-                            )
-                        )
-                    }
-                //                val startSquare = Square(board, 4, 6)
-//                val finishSquare = Square(board, 4, 4)
-//                println("History " + board.history.toString())
+                        val (startSquare, finishSquare) = Square.parseSquaresFromMovesString(move, board)
+                        println("New move from remote player: $move")
 
+                        updateBoard(makeLocalMove(startSquare, finishSquare))
+                    }
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
