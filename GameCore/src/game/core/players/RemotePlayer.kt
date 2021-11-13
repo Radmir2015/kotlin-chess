@@ -4,10 +4,7 @@ import game.core.Board
 import game.core.PieceColor
 
 /**
- * Незнайка - простой игрок для игр в которых передвигают фигуры.
- * Он случайным образом выбирает ход из всех допустимых ходов.
- *
- * @author [Romanov V.Y.](mailto:vladimir.romanov@gmail.com)
+ * Виртуальный игрок для возможности игры по сети
  */
 class RemotePlayer @JvmOverloads constructor(private val maxMoves: Int = 80) : MovePiecePlayer() {
     override val name: String
