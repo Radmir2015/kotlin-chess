@@ -61,9 +61,10 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
         addMouseListener(this)
         addMouseMotionListener(this)
 
+        val db = FirebaseDatabase.getInstance()
+
         fun setMoveEventListener(gameId: String) {
-            FirebaseDatabase
-                .getInstance()
+            db
                 .getReference("games/$gameId/history")
                 .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -117,7 +118,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
         }
 
         // Получение всех игровых комнат
-        FirebaseDatabase.getInstance().getReference("games")
+        db.getReference("games")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     val generateUUID = {
@@ -134,7 +135,9 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
                     // Предпочтительно ищем комнату, в которой уже есть игрок
                     if (games != null) {
                         for (game in games as HashMap<*, HashMap<*, *>>) {
-                            if (game.value["activePlayers"].toString() == "1") {
+                            if (game.value["activePlayers"].toString() == "1" &&
+                                (game.value["history"] == null || game.value["history"].toString().isEmpty())
+                            ) {
                                 gameId = game.key.toString()
                                 activePlayers = 2
 
@@ -145,7 +148,7 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
                     println("Connected to game room: $gameId\nAll rooms: $dataSnapshot")
 
                     // Обновление кол-ва игроков в комнате в БД
-                    FirebaseDatabase.getInstance().getReference("games").child(gameId).updateChildren(
+                    db.getReference("games").child(gameId).updateChildren(
                         mutableMapOf(
                             "activePlayers" to activePlayers
                         ) as Map<String, Any>
@@ -156,6 +159,23 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
 
                     // Начинаем слушать ходы из выбранной комнаты
                     setMoveEventListener(gameId)
+
+                    // При закрытии программы удалить комнату, если в ней не осталось игроков
+                    db.getReference("games/${gameId}/activePlayers").addValueEventListener(object : ValueEventListener {
+                        override fun onDataChange(activePlayersSnapshot: DataSnapshot) {
+                            // Отменить предыдущие слушатели закрытия подключения
+                            db.getReference("games/${gameId}").onDisconnect().cancel { _, _ -> null }
+
+                            // В комнате один игрок - удалить комнату, если больше, уменьшить кол-во игроков в БД
+                            if (activePlayersSnapshot.value.toString() == "1")
+                                db.getReference("games/${gameId}").onDisconnect().removeValue { _, _ -> null }
+                            else
+                                db.getReference("games/${gameId}/activePlayers").onDisconnect()
+                                    .setValue(activePlayersSnapshot.value.toString().toInt() - 1) { _, _ -> null }
+                        }
+
+                        override fun onCancelled(databaseError: DatabaseError) {}
+                    })
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {}

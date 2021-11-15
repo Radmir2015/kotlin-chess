@@ -21,5 +21,6 @@
     <orderEntry type="module" module-name="Halma" />
     <orderEntry type="module" module-name="NineMensMorris" />
     <orderEntry type="module" module-name="JapanChess" />
+    <orderEntry type="library" name="libs" level="project" />
   </component>
 </module>
