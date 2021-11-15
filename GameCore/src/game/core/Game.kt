@@ -4,7 +4,6 @@ import game.core.listeners.MovePieceListener
 import game.core.listeners.MovePiecePromptListener
 import game.core.listeners.PutPieceListener
 import game.core.listeners.PutPiecePromptListener
-import java.util.*
 
 /**
  * Общий предок всех игр.
@@ -55,7 +54,6 @@ abstract class Game protected constructor() : IScorable {
             MoveKind.PIECE_MOVE -> {
                 board.setMouseMoveListener(MovePiecePromptListener(board))
                 board.setMouseClickListener(MovePieceListener(board))
-//                board.setRemoteListener(MovePieceListener(board))
             }
             MoveKind.PIECE_PUT -> {
                 board.setMouseMoveListener(PutPiecePromptListener(board))
@@ -150,5 +148,7 @@ abstract class Game protected constructor() : IScorable {
             }
             players.add(player)
         }
+
+        var remoteGameId = ""
     }
 }

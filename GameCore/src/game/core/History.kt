@@ -44,13 +44,18 @@ class History internal constructor(
         moves.add(move)
         curMoveNumber++
 
+        // Добавляем сделанный ход (обновляем историю) в комнате, в которой находится текущий игрок
         val newMove = mutableMapOf("history" to moves.toString()).toMap()
-        val ref = FirebaseDatabase.getInstance().getReference("game")
-        ref.updateChildren(newMove) { _, _ ->
+        FirebaseDatabase.getInstance().getReference("games/${Game.remoteGameId}").updateChildren(newMove) { _, _ ->
             println("New move added!")
         }
     }
 
+    /**
+     * Добавить ход в историю игры без записи в базу данных.
+     * Необходимо для локального добавления полученного хода от "удаленного" игрока
+     * без повторной записи в базу данных (без задваивания)
+     */
     fun addMoveSilently(move: Move) {
         moves.add(move)
         curMoveNumber++

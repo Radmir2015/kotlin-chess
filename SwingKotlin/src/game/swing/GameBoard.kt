@@ -5,6 +5,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import game.core.*
+import game.core.Game.Companion.remoteGameId
 import game.core.listeners.*
 import game.core.moves.CompositeMove
 import game.core.moves.ICaptureMove
@@ -60,54 +61,105 @@ abstract class GameBoard(val game: Game) : JPanel(BorderLayout()), MouseListener
         addMouseListener(this)
         addMouseMotionListener(this)
 
-        val ref = FirebaseDatabase.getInstance().getReference("game/history")
-        ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                fun makeLocalMove(startSquare: Square?, finishSquare: Square?): Move {
-                    val selectedPiece = startSquare?.getPiece()
-                    val move = selectedPiece!!.makeMove(startSquare, finishSquare!!)
+        fun setMoveEventListener(gameId: String) {
+            FirebaseDatabase
+                .getInstance()
+                .getReference("games/$gameId/history")
+                .addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        fun makeLocalMove(startSquare: Square?, finishSquare: Square?): Move {
+                            val selectedPiece = startSquare?.getPiece()
+                            val move = selectedPiece!!.makeMove(startSquare, finishSquare!!)
 
-                    try {
-                        move.doMove()
-                    } catch (e: GameOver) {
-                        board.history.addMove(move)
-                        board.history.result = e.result
+                            try {
+                                move.doMove()
+                            } catch (e: GameOver) {
+                                board.history.addMove(move)
+                                board.history.result = e.result
 
-                        board.setBoardChanged()
-//                        return
-                    }
+                                board.setBoardChanged()
+                            }
 
-                    return move
-                }
+                            return move
+                        }
 
-                fun updateBoard(move: Move) {
-                    board.history.addMoveSilently(move)
-                    board.changeMoveColor()
-                    board.setBoardChanged()
-                }
+                        fun updateBoard(move: Move) {
+                            board.history.addMoveSilently(move)
+                            board.changeMoveColor()
+                            board.setBoardChanged()
+                        }
 
 //                board.history.clear()
 //                board.setBoardChanged()
 
-                println(
-                    "Moves came " + dataSnapshot.value.toString()
-                        .replace("[", "")
-                        .replace("]", "")
-                )
+                        println(
+                            "Moves came " + dataSnapshot.value.toString()
+                                .replace("[", "")
+                                .replace("]", "")
+                        )
 
-                History.clearHistoryString(dataSnapshot.value.toString())
-                    .split(", ")
-                    .takeLast(1)
-                    .forEach { move ->
-                        val (startSquare, finishSquare) = Square.parseSquaresFromMovesString(move, board)
-                        println("New move from remote player: $move")
+                        // Получаем историю ходов из БД и берем новый (последний) ход
+                        History.clearHistoryString(dataSnapshot.value.toString())
+                            .split(", ")
+                            .takeLast(1)
+                            .forEach { move ->
+                                // Из строкового формата хода получаем начальную и конечную клеточки
+                                val (startSquare, finishSquare) = Square.parseSquaresFromMovesString(move, board)
+                                println("New move from remote player: $move")
 
-                        updateBoard(makeLocalMove(startSquare, finishSquare))
+                                // Добавляем полученынй ход в локальную историю
+                                updateBoard(makeLocalMove(startSquare, finishSquare))
+                            }
                     }
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {}
-        })
+                    override fun onCancelled(databaseError: DatabaseError) {}
+                })
+        }
+
+        // Получение всех игровых комнат
+        FirebaseDatabase.getInstance().getReference("games")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val generateUUID = {
+                        UUID.randomUUID().toString()
+                            .replace("-", "")
+                            .uppercase(Locale.getDefault())
+                    }
+
+                    var gameId = "game-${generateUUID()}"
+                    var activePlayers = 1
+
+                    val games = dataSnapshot.value
+
+                    // Предпочтительно ищем комнату, в которой уже есть игрок
+                    if (games != null) {
+                        for (game in games as HashMap<*, HashMap<*, *>>) {
+                            if (game.value["activePlayers"].toString() == "1") {
+                                gameId = game.key.toString()
+                                activePlayers = 2
+
+                                break
+                            }
+                        }
+                    }
+                    println("Connected to game room: $gameId\nAll rooms: $dataSnapshot")
+
+                    // Обновление кол-ва игроков в комнате в БД
+                    FirebaseDatabase.getInstance().getReference("games").child(gameId).updateChildren(
+                        mutableMapOf(
+                            "activePlayers" to activePlayers
+                        ) as Map<String, Any>
+                    ) { _, _ -> null }
+
+                    // Глобальная переменная для хранения выбранной игровой комнаты
+                    remoteGameId = gameId
+
+                    // Начинаем слушать ходы из выбранной комнаты
+                    setMoveEventListener(gameId)
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {}
+            })
 
         when (game.moveKind) {
             MoveKind.PIECE_MOVE -> {

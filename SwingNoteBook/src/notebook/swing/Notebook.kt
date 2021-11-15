@@ -1,18 +1,8 @@
 package notebook.swing
 
-import checkers.Checkers
 import chess.Chess
-import chinachess.ChinaChess
 import game.core.Game
 import game.swing.GamePanel
-import go.Go
-import halma.Halma
-import japanchess.JapanChess
-import nmm.NineMensMorris
-import renju.Renju
-import reversi.Reversi
-import tamerlan.TamerlanChess
-import vikings.Vikings
 import java.awt.BorderLayout
 import java.awt.Dimension
 import java.awt.Image
@@ -37,16 +27,17 @@ fun main() {
     }
 
     tabbedPane.addGame(Chess())
-    tabbedPane.addGame(JapanChess())
-    tabbedPane.addGame(NineMensMorris())
-    tabbedPane.addGame(Reversi())
-    tabbedPane.addGame(Checkers())
-    tabbedPane.addGame(TamerlanChess())
-    tabbedPane.addGame(ChinaChess())
-    tabbedPane.addGame(Renju())
-    tabbedPane.addGame(Go())
-    tabbedPane.addGame(Vikings())
-    tabbedPane.addGame(Halma())
+    // Временно отключим другие игры
+//    tabbedPane.addGame(JapanChess())
+//    tabbedPane.addGame(NineMensMorris())
+//    tabbedPane.addGame(Reversi())
+//    tabbedPane.addGame(Checkers())
+//    tabbedPane.addGame(TamerlanChess())
+//    tabbedPane.addGame(ChinaChess())
+//    tabbedPane.addGame(Renju())
+//    tabbedPane.addGame(Go())
+//    tabbedPane.addGame(Vikings())
+//    tabbedPane.addGame(Halma())
 }
 
 private fun JTabbedPane.addGame(game: Game) {

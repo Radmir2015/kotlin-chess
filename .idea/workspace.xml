@@ -25,16 +25,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="TODO Голяков, Корнюхина">
+    <list default="true" id="22ca2aee-830e-4fcd-943e-aced06c541a9" name="Default Changelist" comment="Рефакторинг (разбил функции по классам, убрал комментарии)">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021,_21_46_[Default_Changelist]/firebase-admin-8.1.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021,_21_46_[Default_Changelist]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_10_2021__21_46__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chess/src/chess/Chess.java" beforeDir="false" afterPath="$PROJECT_DIR$/Chess/src/chess/Chess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/GameCore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/GameCore.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/Game.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/History.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/players/RemotePlayer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/players/RemotePlayer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/GameCore/src/game/core/IBoardPanel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" beforeDir="false" afterPath="$PROJECT_DIR$/SwingNoteBook/src/notebook/swing/Notebook.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,20 +326,6 @@
       <workItem from="1634509236978" duration="79000" />
       <workItem from="1634509319466" duration="3376000" />
       <workItem from="1634995145710" duration="22673000" />
-    </task>
-    <task id="LOCAL-00083" summary="У игр реализован метод &#10;MoveKind getMoveKind()">
-      <created>1551443111319</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1551443111319</updated>
-    </task>
-    <task id="LOCAL-00084" summary="Cлушатели мыши задаются в базовом классе GameBoard.">
-      <created>1551444275387</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1551444275387</updated>
     </task>
     <task id="LOCAL-00085" summary="Прошла инициализация доски шахмат Тамерлана через новый интерфейс.">
       <created>1551458035858</created>
@@ -670,7 +656,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634205937789</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Рефакторинг (разбил функции по классам, убрал комментарии)">
+      <created>1636842464028</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1636842464028</updated>
+    </task>
+    <task id="LOCAL-00133" summary="Рефакторинг (разбил функции по классам, убрал комментарии)">
+      <created>1636842502103</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1636842502103</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -758,7 +758,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Удалены лишние KotlinRuntime" />
     <MESSAGE value="File | Project Structure | Dependency-tab&#10;select .classpath for Eclipse compatible module format&#10;from dropdown list" />
     <MESSAGE value="Блокнот игр вновь заработал" />
     <MESSAGE value="Добавлена совместимость вложенных модулей с Eclipse" />
@@ -783,7 +782,8 @@
     <MESSAGE value="draft" />
     <MESSAGE value="Обновлен список задач практикума." />
     <MESSAGE value="TODO Голяков, Корнюхина" />
-    <option name="LAST_COMMIT_MESSAGE" value="TODO Голяков, Корнюхина" />
+    <MESSAGE value="Рефакторинг (разбил функции по классам, убрал комментарии)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг (разбил функции по классам, убрал комментарии)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -795,6 +795,16 @@
           <url>jar://$PROJECT_DIR$/../../../../Program Files/Java/jdk1.8.0_112/src.zip!/java/util/Observable.java</url>
           <line>158</line>
           <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt</url>
+          <line>61</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/SwingKotlin/src/game/swing/GameBoard.kt</url>
+          <line>151</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>

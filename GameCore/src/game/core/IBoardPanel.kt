@@ -70,11 +70,4 @@ interface IBoardPanel {
      * @param listener слушатель
      */
     fun setMouseMoveListener(listener: IMouseMoveListener)
-
-    /**
-     * Задать слушателя нажатий кнопок мыши.
-     *
-     * @param listener слушатель
-     */
-//    fun setRemoteListener(listener: IGameListener)
 }
